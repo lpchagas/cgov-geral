@@ -42,7 +42,8 @@ Exemplos (PowerShell, a partir da raiz do repositório):
   python scripts\\reorganizar_cgov.py --reverter --lote b --raiz "<pasta CGOV>"
 
 Referências: plano de implantação v3.6, Seções 5.2, 5.4, 5.5, 5.6 e Fase 4;
-ADR-012 (estrutura), ADR-014 (exclusão controlada); decisões D10, D11, D14, D15, D16.
+ADR-012 (estrutura), ADR-014 (exclusão controlada); decisões D10, D11, D14, D15, D16
+e D26 (destinos encurtados em 99_arquivo, v1.1.0).
 """
 
 from __future__ import annotations
@@ -59,7 +60,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
-VERSAO = "1.0.0"
+VERSAO = "1.1.0"
 
 # --------------------------------------------------------------------------- #
 # Constantes
@@ -87,6 +88,18 @@ LOTES = {
     "g": "quarentena (99_arquivo/_a-excluir_<data>)",
 }
 LIMITE_CAMINHO_WINDOWS = 259   # MAX_PATH - 1 (sem suporte a caminhos longos)
+
+# Etapa 4.4a / D26: subárvores de 99_arquivo cujos destinos passariam de 259
+# caracteres no Windows. O prefixo é trocado na subárvore inteira (não só nos
+# arquivos longos), para os arquivos de uma mesma pasta continuarem juntos. Os
+# nomes dos arquivos não mudam. "{q}" = pasta de quarentena (_a-excluir_<data>).
+ENCURTAMENTOS_99 = [
+    ("99_arquivo/escritorio-virtual/dev-local_2026-11/_backup/analyses_pre-drive_20261006/"
+     "normative-transcription/",
+     "99_arquivo/escritorio-virtual/transcr-bkp_20261006/"),
+    ("{q}/_acervo-escritorio-virtual/analyses/normative-transcription/",
+     "{q}/transcr-analyses/"),
+]
 
 # Estrutura da Seção 5.2 (lote a). A pasta de quarentena é acrescentada em tempo
 # de execução, com a data definida no planejamento.
@@ -763,6 +776,7 @@ class Planejador:
         self.resolver_colisoes()
         self.renomear_copias()
         self.aplicar_decisoes()
+        self.encurtar_destinos()
         self.ajustar_tipo_acao()
         self.acrescentar_estrutura()
         self.numerar()
@@ -855,6 +869,24 @@ class Planejador:
         if self.decisoes_nao_aplicadas:
             print(f"[AVISO] {len(self.decisoes_nao_aplicadas)} decisão(ões) sem origem no "
                   f"inventário: " + "; ".join(self.decisoes_nao_aplicadas[:5]))
+
+    def encurtar_destinos(self) -> None:
+        """D26 (etapa 4.4a): troca prefixos longos de 99_arquivo (ENCURTAMENTOS_99)."""
+        trocas = [(a.replace("{q}", self.q), b.replace("{q}", self.q))
+                  for a, b in ENCURTAMENTOS_99]
+        for antigo, novo in trocas:
+            ocupado = [l["destino"] for l in self.linhas
+                       if l["destino"].startswith(novo) or l["destino"] == novo.rstrip("/")]
+            if ocupado:
+                sys.exit(f"[PARE] Prefixo encurtado já usado no mapa: {ocupado[0]}")
+        self.encurtados = Counter()
+        for l in self.linhas:
+            for antigo, novo in trocas:
+                if l["destino"].startswith(antigo):
+                    l["destino"] = novo + l["destino"][len(antigo):]
+                    l["motivo"] += " · destino encurtado (D26)"
+                    self.encurtados[novo] += 1
+                    break
 
     def ajustar_tipo_acao(self) -> None:
         for l in self.linhas:
@@ -1199,6 +1231,8 @@ def main() -> int:
         if not pl.inventariar():
             return 3
         linhas = pl.planejar()
+        for novo, n in sorted(getattr(pl, "encurtados", {}).items()):
+            print(f"[OK] D26: {n} destino(s) encurtado(s) para {novo}")
         n_arq = sum(1 for l in linhas if l["tipo"] == "arquivo")
         if n_arq != len(pl.arquivos):
             print(f"[ERRO] Cobertura incompleta: {n_arq} linhas × {len(pl.arquivos)} arquivos")

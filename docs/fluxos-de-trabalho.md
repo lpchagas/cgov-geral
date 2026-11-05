@@ -14,7 +14,7 @@
 | Versão das skills | Fonte em `skills/` (rascunho até o commit) | Skills **instaladas** na conta Claude |
 | Documentação | `docs/` (edição) | `_acervo-escritorio-virtual/_referencia/docs/` (cópia só leitura) |
 | Dados de processos | Não produz; só lê quando precisa de exemplo real | `_acervo-escritorio-virtual/analyses/` |
-| Publicação | Git → GitHub (**repositório público**) | Nada é publicado; tudo fica no Drive |
+| Publicação | Git → GitHub (**repositório privado**, mantido sanitizado) | Nada é publicado; tudo fica no Drive |
 
 Regra central: **o Cowork nunca edita o repositório e o Claude Code nunca
 produz trabalho de processo.** O que liga os dois é a *publicação* (§4) num
@@ -108,7 +108,7 @@ Abra o Claude Code em `~/projetos/cgov-geral-v1`. Ciclo de uma mudança:
    - evals da skill (`evals/evals.json` ou `trigger_eval.json`); saídas de
      teste vão para `local/pilots/`, nunca para `local/analyses/`;
    - sem dados pessoais, matrículas ou documentos SEI internos em `docs/` e
-     `skills/` (o repositório é público).
+     `skills/` (o repositório é privado, mas mantido sanitizado).
 4. **Registrar** a decisão em `docs/governance/decision-log.md`.
 5. **Espelhar para a Antigravity**, se usada:
    `cp skills/<família>/<skill>/SKILL.md .agents/skills/<skill>/SKILL.md`.
@@ -176,9 +176,9 @@ Abra o projeto "Escritório CGOV" no Cowork.
 
 | Regra | Por quê |
 |---|---|
-| Dados de processos só no Drive (`analyses/`) | Contêm rascunhos e informação interna; o Drive tem backup e o repositório é público |
+| Dados de processos só no Drive (`analyses/`) | Contêm rascunhos e informação interna; o Drive tem backup e o repositório, embora privado, é mantido sanitizado |
 | Nada de `local/`, `.env` ou `dist/` no Git | Já ignorados pelo `.gitignore` |
-| Commit e push sempre com confirmação | Repositório público; configurado em `.claude/settings.json` |
+| Commit e push sempre com confirmação | Repositório remoto (privado) compartilha o histórico; configurado em `.claude/settings.json` |
 | A referência no Drive é descartável | Cada publicação a substitui por inteiro |
 | Skill instalada só a partir de `dist/skills/` | Garante que produção = commit publicado |
 

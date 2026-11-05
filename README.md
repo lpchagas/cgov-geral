@@ -1,6 +1,6 @@
 # Escritório CGOV
 
-Repositório público sanitizado da Coordenação de Governança (CGOV/ICMBio) para
+Repositório privado e sanitizado da Coordenação de Governança (CGOV/ICMBio) para
 manutenção de skills, documentação metodológica e instruções de assistentes.
 
 ## Conteúdo
@@ -15,7 +15,7 @@ manutenção de skills, documentação metodológica e instruções de assistent
 
 O repositório não publica processos SEI, dados de consultas, rascunhos de
 trabalho nem cópias locais de fontes normativas. Esses materiais permanecem em
-`local/`, que é integralmente ignorado pelo Git. O catálogo público referencia
+`local/`, que é integralmente ignorado pelo Git. O catálogo normativo (`docs/references/normative-catalog.md`) referencia
 fontes oficiais sem redistribuir PDFs ou materiais de terceiros.
 
 ## Estado do projeto

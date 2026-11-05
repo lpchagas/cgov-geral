@@ -17,7 +17,7 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 
 1. Para qualquer Nota Técnica ou parecer da CGOV, inicie por `cgov-nt-01-triagem`.
 2. Use as fontes em `local/normative-sources/` somente no ambiente local; elas
-   não integram o repositório público. O catálogo público está em
+   não integram o repositório (privado, mantido sanitizado). O catálogo normativo está em
    [`docs/references/normative-catalog.md`](docs/references/normative-catalog.md).
 3. Análises de processos, dados brutos e produtos intermediários ficam em
    `local/analyses/`, link para a área operacional no Google Drive. Esse

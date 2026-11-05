@@ -1,15 +1,15 @@
 # Plano de Implantação — Escritório Virtual da CGOV/ICMBio
 
-> **Versão:** 3.3 — 05/11/2026 (Fase 3 em andamento: 3.A concluída; regras de interação com o Coordenador). Substitui a v3.0 e a v2 (04/11). A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`C:\Users\leand\My Drive\10_Institucional\CGOV`).
+> **Versão:** 3.4 — 05/11/2026 (Fase 3 em andamento: 3.A concluída com correção das instruções; 3.B.1–3.B.2 concluídas; repositório privado confirmado). Substitui a v3.0 e a v2 (04/11). A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`C:\Users\leand\My Drive\10_Institucional\CGOV`).
 > **Responsável:** Coordenador de Governança (CGOV/CGGE/ICMBio)
-> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado** ⚠️ ver 1.2), `main` = `8787e0a`
+> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `de0fa54`
 > **Repositório operacional:** `C:\Users\leand\My Drive\10_Institucional\CGOV` (Google Drive)
 > **Projetos Cowork:** "Escritório CGOV — Implantação" (desenvolvimento) e "Escritório CGOV — Operação" (trabalho da Coordenação)
 > **Ferramentas-alvo:** Claude Desktop (Cowork e Code), Google Antigravity, Obsidian, Maestri
 > **Método:** análise documental (`engineering:documentation`) e arquitetural com ADRs (`engineering:architecture`)
 > **Regra de execução:** uma fase por vez, com confirmação explícita do Coordenador antes de mover, renomear, excluir, reinstalar, fazer *commit* ou *push*.
 > **Regra de manutenção:** a cada etapa concluída, este plano é **atualizado integralmente**, conforme a lista de verificação da Seção "Regra de manutenção deste plano" (logo abaixo do sumário).
-> **Situação atual:** Fases 1 e 2 ✅ · **Fase 3 🟨 em andamento** (3.A ✅ em 05/11; **próxima: 3.B**, preservar e arquivar `cgov-geral-v1`) · Fase 0 parcial (D4–D8).
+> **Situação atual:** Fases 1 e 2 ✅ · **Fase 3 🟨 em andamento** (3.A ✅ em 05/11; 3.B.1–3.B.2 ✅; **próximo: 3.B.3**, memória do `cgov-geral-v1`, e 3.B.4, arquivamento) · Fase 0 parcial (D4–D8).
 
 ---
 
@@ -65,9 +65,10 @@ A mesma regra está nas instruções do projeto "Escritório CGOV — Implantaç
 
 | Fonte | Situação verificada |
 |---|---|
-| GitHub `lpchagas/cgov-geral` | `main` = `8787e0a` (05/11, commit do plano v3.1; etapa 3.A.0). A referência local `origin/main` coincide com o `HEAD`, o que indica o *push* feito; a conferência direta no GitHub depende de credencial (ver 1.2). Antes: `67957fe` (04/11). *Branch* antigo `claude/cgov-nt-triagem-description-loop-6x6dsc` (`f3628f1`) não incorporado |
+| GitHub `lpchagas/cgov-geral` (**privado**, confirmado pelo Coordenador em 05/11) | `main` = `de0fa54` (05/11, plano v3.3), conferido por `git ls-remote` no PowerShell do Coordenador; antes `8787e0a` (plano v3.1, etapa 3.A.0) e `67957fe` (04/11). *Branch* antigo `claude/cgov-nt-triagem-description-loop-6x6dsc` (`f3628f1`) não incorporado |
 | `C:\Projetos\cgov-geral` | Clone limpo; `local\` com ativos resgatados do WSL (63 arquivos conferidos por SHA-256); junções para o Drive; `.env` do Windows; cofre Obsidian aberto (`C:\Projetos\cgov-geral\.obsidian\` ignorado pelo Git desde a v3.3) |
-| Projeto Cowork "Escritório CGOV — Implantação" (sessão de 05/11) | Criado no Claude Desktop; instruções = Apêndice A; acesso confirmado às duas pastas: 1ª `C:\Projetos\cgov-geral` e 2ª (temporária) `C:\Users\leand\My Drive\10_Institucional\CGOV`. A sessão leu o plano e aguardou confirmação (teste 3.A.6 aceito pelo Coordenador) |
+| Projeto Cowork "Escritório CGOV — Implantação" (sessão de 05/11) | Criado no Claude Desktop; instruções = Apêndice A; acesso confirmado às duas pastas: 1ª `C:\Projetos\cgov-geral` e 2ª (temporária) `C:\Users\leand\My Drive\10_Institucional\CGOV`. A sessão leu o plano e aguardou confirmação (teste 3.A.6 aceito pelo Coordenador). Capturas de tela de 05/11: a tela do projeto no Claude Desktop mostra **Instruções** (vazio), **Contexto** (2 pastas vinculadas), **Memória** e **Programado**, sem campo de links; o texto do Apêndice A estava na **descrição** |
+| Projeto Cowork `cgov-geral-v1` (capturas de 05/11) | 4 pastas vinculadas: `cgov-geral-v1` (`C:\_cowork\cgov-geral-v1`, segundo as instruções), `pgd-agente-icmbio`, `pgd-ocde-icmbio` e `cgge-fgbio-2026`; instruções preservadas em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\cgov-geral-v1_instrucoes_2026-11-05.md` (SHA-256 `ad862755…`) |
 | Cópia do WSL `~/projetos/cgov-geral-v1` | Redundante desde 04/11: commit enviado, `.github/` arquivado, `local/` resgatado e conferido (490/490) |
 | Pasta CGOV no Drive | Inventário em 05/11 (somente leitura; nomes, contagens, tamanhos e hashes; conteúdo dos documentos **não lido**). Detalhe na Seção 3.4 |
 | Lista de projetos Cowork (captura de tela, 05/11) | 16 projetos, entre eles `cgov-geral-v1` (22/09), `02070.006604 2026-17_Política de Governança_v2`, `02070.007589/2025-35_TCs`, `Sistema Integridade ICMBio`, `pgd-icmbio`, `Painel Estratégico OCDE/ICMBio`, `CGGE_Estrutura` |
@@ -79,7 +80,8 @@ A mesma regra está nas instruções do projeto "Escritório CGOV — Implantaç
 - A classificação de cada um dos 71 processos em "ativo" ou "encerrado" depende do Coordenador; os casos não cobertos pelas regras da Seção 5.5 aparecem como **"a-decidir"** no mapa arquivo a arquivo (etapa 4.1) e são resolvidos na etapa 4.2. Os destinos ambíguos de nível de pasta já foram decididos (D10–D16).
 - As informações sobre o Maestri vêm de catálogos de terceiros (somente macOS); confirmar em `themaestri.app`.
 - **O shell do Cowork (máquina virtual Linux) não tem credencial do GitHub:** `git ls-remote`, `git fetch` e `git push` falham ali. Verificações remotas, *commit* e *push* são feitos pelo PowerShell do Coordenador (`C:\Projetos\cgov-geral`), com scripts completos fornecidos pelo Claude (D17, D18).
-- ⚠️ **Visibilidade do repositório divergente:** o plano (D3) diz **privado**, mas `C:\Projetos\cgov-geral\CLAUDE.md` diz *"the repository is **public**"*. Conferir no GitHub (*Settings → General → Danger Zone*) e corrigir o `CLAUDE.md` na Fase 5.
+- ~~Visibilidade do repositório divergente~~ — **resolvido (05/11):** o Coordenador confirmou que o repositório é **privado**; corrigidas as menções a "público" em `C:\Projetos\cgov-geral\CLAUDE.md`, `C:\Projetos\cgov-geral\README.md`, `C:\Projetos\cgov-geral\AGENTS.md` e `C:\Projetos\cgov-geral\docs\fluxos-de-trabalho.md` (D19). As demais desatualizações de `docs\fluxos-de-trabalho.md` (WSL, `~/projetos/cgov-geral-v1`) seguem para a Fase 5.
+- O Claude Desktop (05/11) **não tem campo de links** no projeto Cowork; a etapa 3.A.5 foi substituída pela menção ao repositório nas instruções (Apêndice A, "Fontes de verdade").
 
 ---
 
@@ -416,10 +418,10 @@ flowchart LR
 
 | Fase | Nome | Resultado | Executa | Estimativa* | Situação |
 |---|---|---|---|---|---|
-| 0 | Decisões | ADRs e decisões D1–D18 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D18 respondidas; D4–D8 e ADR-001, 004–011 pendentes |
+| 0 | Decisões | ADRs e decisões D1–D19 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D19 respondidas; D4–D8 e ADR-001, 004–011 pendentes |
 | 1 | Consolidação do desenvolvimento no Windows | **✅ Concluída em 04/11** | — | — | ✅ 04/11/2026 |
 | 2 | **Arquitetura dos repositórios** | Arranjo das Seções 5.1–5.6 aprovado (ADR-012/013/014; D10–D16) | Coordenador | 1 dia | ✅ 05/11/2026 |
-| 3 | Projetos Cowork | "Implantação" criado; `cgov-geral-v1` preservado e arquivado; vínculos dos demais projetos inventariados | Coordenador (interface) + Claude | ½ dia | 🟨 Em andamento: 3.A ✅ (05/11); 3.B e 3.C pendentes |
+| 3 | Projetos Cowork | "Implantação" criado; `cgov-geral-v1` preservado e arquivado; vínculos dos demais projetos inventariados | Coordenador (interface) + Claude | ½ dia | 🟨 Em andamento: 3.A ✅ (05/11, instruções a recolar); 3.B.1–3.B.2 ✅; 3.B.3–3.B.4 e 3.C pendentes |
 | 4 | **Reorganização da pasta CGOV** | Estrutura nova, documentos de navegação, fichas, índices; projeto "Operação" criado | Claude (scripts e textos) + Coordenador (aprovações e execução) | 3–5 dias | ⬜ |
 | 5 | Atualização do repositório de desenvolvimento | Scripts em Python, pasta `operacao/`, documentação corrigida, junções e `.env` com os caminhos novos | Claude, com portões | 2–3 dias | ⬜ |
 | 6 | Portfólio de skills | 12 skills promovidas a fonte; caminhos neutros; nova skill `cgov-gestao-acervo`; desatualizadas reinstaladas | Claude + Coordenador | 3–5 dias | ⬜ |
@@ -439,7 +441,7 @@ flowchart LR
 | Etapa | Ação | Situação |
 |---|---|---|
 | 0.1 | Aprovar os ADRs (Seção 4) | ADR-002, 003, 012, 013 e 014 aceitos; demais pendentes |
-| 0.2 | Responder às decisões da Seção 9 | D1–D3 e D9–D18 respondidas (04–05/11); D4–D8 pendentes, sem bloquear as Fases 3–5 |
+| 0.2 | Responder às decisões da Seção 9 | D1–D3 e D9–D19 respondidas (04–05/11); D4–D8 pendentes, sem bloquear as Fases 3–5 |
 | 0.3 | Confirmar em `themaestri.app` se existe versão Windows (D8) | Pendente |
 | 0.4 | Pré-requisitos: `git` ✅, `python --version` (≥ 3.11), `node --version` (LTS), Claude Desktop, Antigravity, Obsidian | Git conferido em 04/11 |
 
@@ -472,7 +474,7 @@ Resumo do que foi feito: remoto do WSL corrigido para `cgov-geral`; `.gitignore`
 
 ### Fase 3 — Projetos Cowork — 🟨 em andamento
 
-> Documentação oficial ("Organize work with projects"): um projeto reúne descrição, pastas locais, instruções, links, projetos do Chat vinculados e memória própria; fica no computador e não é compartilhado. Criação: **Projects → + → Start from scratch / Import a project / Use an existing folder**. **Arquivar** apaga nome, instruções, links e memória do projeto, mas **não toca nas pastas**. Arquivos arrastados vão para a **primeira pasta**.
+> Documentação oficial ("Organize work with projects"): um projeto reúne descrição, pastas locais, instruções, links (⚠️ campo ausente no Claude Desktop em 05/11; ver 1.2), projetos do Chat vinculados e memória própria; fica no computador e não é compartilhado. Criação: **Projects → + → Start from scratch / Import a project / Use an existing folder**. **Arquivar** apaga nome, instruções, links e memória do projeto, mas **não toca nas pastas**. Arquivos arrastados vão para a **primeira pasta**.
 
 #### 3.A — Criar "Escritório CGOV — Implantação"
 
@@ -481,28 +483,28 @@ Resumo do que foi feito: remoto do WSL corrigido para `cgov-geral`; `.gitignore`
 
 | Etapa | Onde                                      | O que preencher                                                                                                                                                                                                                                                                                                                                        | Situação |
 | ----- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --- |
-| 3.A.0 | PowerShell em `C:\Projetos\cgov-geral`    | **Versionar este plano** antes de tudo, para protegê-lo e registrar cada atualização: `git add cgov-geral-plano-implantacao.md` → `git commit -m "docs(plano): plano de implantação v3.1"` → `git push` (com a sua confirmação). O plano continua na raiz até a etapa 5.9                                                                              | ✅ 05/11 — `8787e0a` (v3.1); v3.2 e v3.3 no *commit* seguinte |
+| 3.A.0 | PowerShell em `C:\Projetos\cgov-geral`    | **Versionar este plano** antes de tudo, para protegê-lo e registrar cada atualização: `git add cgov-geral-plano-implantacao.md` → `git commit -m "docs(plano): plano de implantação v3.1"` → `git push` (com a sua confirmação). O plano continua na raiz até a etapa 5.9                                                                              | ✅ 05/11 — `8787e0a` (v3.1); v3.2 e v3.3 em `de0fa54` |
 | 3.A.1 | **Projects → + → Use an existing folder** | `C:\Projetos\cgov-geral` (primeira pasta)                                                                                                                                                                                                                                                                                                              | ✅ 05/11 |
 | 3.A.2 | Nome e descrição                          | **Nome:** `Escritório CGOV — Implantação` · **Descrição:** *"Desenvolvimento e implantação do Escritório Virtual da CGOV/ICMBio: skills, agentes, documentação, scripts e painéis do repositório cgov-geral, e reorganização da pasta operacional CGOV. Não é usado para Notas Técnicas nem análises de processos."*                                   | ✅ 05/11 |
 | 3.A.3 | **Folders**                               | Acrescentar `C:\Users\leand\My Drive\10_Institucional\CGOV` como **segunda pasta, temporária**, para a Fase 4 (pelas configurações do projeto ou arrastando a pasta do Explorador para o projeto). Ela é removida no fim da Fase 4 (etapa 4.10). Conferência: numa sessão do projeto, pergunte "Quais pastas você tem acesso?"; devem aparecer as duas | ✅ 05/11 — duas pastas confirmadas pelo Claude |
-| 3.A.4 | **Instructions**                          | Apêndice A                                                                                                                                                                                                                                                                                                                                             | ✅ 05/11 — ⚠️ colar a versão nova do Apêndice A (regras 9–12, v3.3) |
-| 3.A.5 | **Links**                                 | `https://github.com/lpchagas/cgov-geral`                                                                                                                                                                                                                                                                                                               | ⚠️ a conferir pelo Coordenador |
+| 3.A.4 | **Instructions**                          | Apêndice A                                                                                                                                                                                                                                                                                                                                             | ⚠️ Refazer: o texto foi colado na **descrição**; colar o Apêndice A (v3.4) em **Instruções → Adicionar** e trocar a descrição pelo texto de 3.A.2 |
+| 3.A.5 | **Links**                                 | `https://github.com/lpchagas/cgov-geral`                                                                                                                                                                                                                                                                                                               | ➖ Campo inexistente no Claude Desktop; link incluído no Apêndice A (Fontes de verdade) |
 | 3.A.6 | Teste                                     | Nova sessão: *"Leia a Fase 3.B do plano e liste o que fará, sem executar nada."* A resposta deve citar o plano e pedir confirmação                                                                                                                                                                                                                     | ✅ 05/11 — sessão de 05/11 aceita como teste |
 
-**Resultado 3.A (05/11/2026):** plano versionado (`8787e0a`, etapa 3.A.0); projeto "Escritório CGOV — Implantação" criado no Claude Desktop, com as pastas `C:\Projetos\cgov-geral` (1ª) e `C:\Users\leand\My Drive\10_Institucional\CGOV` (2ª, temporária) confirmadas pelo Claude; teste 3.A.6 aceito pelo Coordenador. Ajustes desta etapa (v3.3): `.obsidian/` incluído no `C:\Projetos\cgov-geral\.gitignore` (D18); regras de interação 9–12 no Apêndice A (D17). Pendências: conferir o link do GitHub (3.A.5) e colar no projeto a versão nova do Apêndice A.
+**Resultado 3.A (05/11/2026):** plano versionado (`8787e0a`, etapa 3.A.0); projeto "Escritório CGOV — Implantação" criado no Claude Desktop, com as pastas `C:\Projetos\cgov-geral` (1ª) e `C:\Users\leand\My Drive\10_Institucional\CGOV` (2ª, temporária) confirmadas pelo Claude; teste 3.A.6 aceito pelo Coordenador. Ajustes desta etapa (v3.3): `.obsidian/` incluído no `C:\Projetos\cgov-geral\.gitignore` (D18); regras de interação 9–12 no Apêndice A (D17). *Commit* `de0fa54` (v3.2 + v3.3) enviado e conferido por `git ls-remote` (05/11). **Correção (v3.4):** as capturas mostraram que o campo **Instruções** estava vazio e que o texto do Apêndice A tinha ido para a **descrição**; não há campo de links no Claude Desktop. Pendência: colar o Apêndice A v3.4 em **Instruções** e restaurar a descrição curta de 3.A.2.
 
 #### 3.B — Preservar e arquivar o projeto antigo `cgov-geral-v1`
 
 Não exclua esse projeto e não o reaproveite. Ele é de 22/09, anterior à separação dos fluxos e à mudança para o Windows, e pode ter instruções e memória que valem guardar.
 
-1. Abrir as configurações do `cgov-geral-v1` e anotar a **pasta vinculada**.
-2. Copiar o texto de **Instructions** para `C:\Projetos\cgov-geral\local\archive\cowork-projetos\cgov-geral-v1_instrucoes_2026-11-05.md`. A pasta `local\` é ignorada pelo Git.
-3. Se o projeto tiver memória relevante, abrir uma sessão nele e pedir: *"Resuma o que está na memória deste projeto"*. Salvar o resumo no mesmo arquivo.
-4. **Arquivar** o projeto (menu do projeto → **Archive**) só **depois** de o projeto Implantação passar no teste 3.A.6.
+1. Abrir as configurações do `cgov-geral-v1` e anotar a **pasta vinculada**. — ✅ 05/11: 4 pastas (`cgov-geral-v1`, `pgd-agente-icmbio`, `pgd-ocde-icmbio`, `cgge-fgbio-2026`); caminho completo conhecido só da primeira (`C:\_cowork\cgov-geral-v1`).
+2. Copiar o texto de **Instructions** para `C:\Projetos\cgov-geral\local\archive\cowork-projetos\cgov-geral-v1_instrucoes_2026-11-05.md`. A pasta `local\` é ignorada pelo Git. — ✅ 05/11: cópia literal gravada e conferida por SHA-256 (`ad862755…`); `git check-ignore` confirma que fica fora do Git.
+3. Se o projeto tiver memória relevante, abrir uma sessão nele e pedir: *"Resuma o que está na memória deste projeto"*. Salvar o resumo no mesmo arquivo. Alternativa mais simples: claude.ai ou Claude Desktop → projeto → **Memória → Ver**, e copiar o texto. — ⬜ Pendente.
+4. **Arquivar** o projeto (menu do projeto → **Archive**) só **depois** de o projeto Implantação passar no teste 3.A.6 e de a 3.B.3 estar concluída. — ⬜ Pendente (3.A.6 ✅).
 
 #### 3.C — Inventariar os vínculos dos demais projetos Cowork
 
-Para cada projeto da lista que possa apontar para a pasta CGOV (por exemplo, `02070.006604 2026-17_Política de Governança_v2`, `02070.007589/2025-35_TCs`, `Sistema Integridade ICMBio`, `Painel Estratégico OCDE/ICMBio`, `CGGE_Estrutura`, `oficina-planejamento-GR2`), registre num quadro em `local\archive\cowork-projetos\inventario.md`: **nome**, **pastas vinculadas** e **se a pasta será movida na Fase 4**. Esse quadro orienta a etapa 4.9 (re-apontar ou arquivar, conforme o ADR-013).
+Para cada projeto da lista que possa apontar para a pasta CGOV (por exemplo, `02070.006604 2026-17_Política de Governança_v2`, `02070.007589/2025-35_TCs`, `Sistema Integridade ICMBio`, `Painel Estratégico OCDE/ICMBio`, `CGGE_Estrutura`, `oficina-planejamento-GR2`), e para as pastas extras do `cgov-geral-v1` (`pgd-agente-icmbio`, `pgd-ocde-icmbio`, `cgge-fgbio-2026`), registre num quadro em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\inventario.md`: **nome**, **pastas vinculadas** e **se a pasta será movida na Fase 4**. Esse quadro orienta a etapa 4.9 (re-apontar ou arquivar, conforme o ADR-013).
 
 ---
 
@@ -636,7 +638,8 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | Uso por servidores sem orientação institucional sobre IA e LGPD | — | Alto | D6 antes da Fase 12 ⚠️ |
 | Dependência de uma só pessoa | Alta | Alto | Runbooks, `LEIA-ME`, guia do mantenedor |
 | Operações Git pelo shell do Cowork falharem (sem credencial do GitHub; travas `.lock` que o shell não apaga) | **Materializado** (05/11) | Médio | Verificação remota, *commit* e *push* pelo PowerShell do Coordenador, com scripts completos (regra 10 do Apêndice A) |
-| Visibilidade do repositório divergente entre o plano (privado) e o `CLAUDE.md` (público) | Média | Alto | Conferir no GitHub; corrigir o `CLAUDE.md` na Fase 5; manter a verificação de sanitização ⚠️ |
+| Documentação descrever o repositório como público | — | — | **Descartado** (05/11, D19): privado confirmado e quatro arquivos corrigidos; a verificação de sanitização continua |
+| Instruções de projeto Cowork coladas no campo errado (descrição) | **Materializado** (05/11) | Médio | Conferir pela tela do projeto que **Instruções** não está vazio; a descrição deve ter só o texto curto de 3.A.2 |
 
 ---
 
@@ -660,7 +663,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 |---|---|---|---|
 | D1 | Desenvolvimento no Windows (`C:\Projetos\cgov-geral`)? | Sim | ✅ Respondida (04/11) |
 | D2 | Dois projetos Cowork separados: Implantação e Operação? | Sim | ✅ Respondida (05/11), com os nomes "Escritório CGOV — Implantação" e "Escritório CGOV — Operação" |
-| D3 | Repositório privado com disciplina de sanitização? | Sim | ✅ Respondida (04/11) |
+| D3 | Repositório privado com disciplina de sanitização? | Sim | ✅ Respondida (04/11); visibilidade **privada** reconfirmada em 05/11; documentação corrigida (D19) |
 | D4 | `analista-processos-sei.md`: converter em skill? | Converter | Pendente (Fase 6) |
 | D5 | Acesso dos servidores: piloto com contas individuais ou plano Team/Enterprise? | Piloto com 1–2 servidores | Pendente (Fase 12) |
 | D6 | Há orientação do ICMBio sobre uso de IA generativa e LGPD? | Consultar a TI e o encarregado de dados ⚠️ | Pendente (antes da Fase 12) |
@@ -676,6 +679,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | D16 | Quarentena da Seção 5.6 com exclusão após 30 dias? | Sim | ✅ Respondida (05/11): seguir a recomendação |
 | D17 | Forma de interação do Claude neste projeto | — | ✅ Respondida (05/11): decisões por perguntas de múltipla escolha com a opção recomendada; scripts PowerShell completos; caminhos completos; próximos passos com sugestão de *prompt* ao fim de cada resposta (Apêndice A, regras 9–12) |
 | D18 | Ignorar `C:\Projetos\cgov-geral\.obsidian\` no Git? | Sim | ✅ Respondida (05/11): incluído no `.gitignore`; *commit* junto com as v3.2 e v3.3 do plano |
+| D19 | Corrigir já as menções a "repositório público" em `README.md`, `AGENTS.md` e `docs\fluxos-de-trabalho.md`? | Corrigir agora | ✅ Respondida (05/11): corrigidas junto com o `CLAUDE.md`, no *commit* da v3.4 |
 
 ---
 
@@ -698,10 +702,10 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 
 | Fase | Status | Data | Evidência |
 |---|---|---|---|
-| 0 — Decisões | 🟨 | 05/11/2026 | Respondidas: D1–D3 e D9–D18. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001 e 004–011 |
+| 0 — Decisões | 🟨 | 05/11/2026 | Respondidas: D1–D3 e D9–D19. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001 e 004–011 |
 | 1 — Consolidação no Windows | ✅ | 04/11/2026 | WSL: remoto → `cgov-geral`, *push* `4960e11..67957fe`; clone em `C:\Projetos\cgov-geral` (HEAD `67957fe`, `autocrlf=false`); manifesto `local/_manifesto_wsl_20261104.sha256` (490 arquivos): 63/63 em `local\` e 488/488 no Drive; junções e `.env` provisórios |
 | 2 — Arquitetura dos repositórios | ✅ | 05/11/2026 | Arranjo das Seções 5.1–5.6 aceito sem ajustes; ADR-012, 013 e 014 aprovados; D10–D16 respondidas e incorporadas ao mapa (5.5) |
-| 3 — Projetos Cowork | 🟨 | 05/11/2026 | 3.A ✅: plano versionado (`8787e0a`); projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: 3.B |
+| 3 — Projetos Cowork | 🟨 | 05/11/2026 | Repositório privado confirmado; documentação corrigida (D19). 3.B.1–3.B.2 ✅: 4 pastas do `cgov-geral-v1` registradas; instruções preservadas (SHA-256 `ad862755…`). 3.A ✅: *commits* `8787e0a` e `de0fa54` (conferido por `ls-remote`); ⚠️ instruções do projeto a recolar em **Instruções**; projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: 3.B |
 | 4 — Reorganização da pasta CGOV | ⬜ | | |
 | 5 — Repositório de desenvolvimento | ⬜ | | |
 | 6 — Portfólio de skills | ⬜ | | |
@@ -739,10 +743,14 @@ pasta, temporária). Este projeto NÃO produz Notas Técnicas nem análises de p
 projeto "Escritório CGOV — Operação".
 
 ## Fontes de verdade
-- Plano: cgov-geral-plano-implantacao.md (depois docs/plano-implantacao.md). Siga a fase indicada.
-- Regras do repositório: AGENTS.md e CLAUDE.md. Fluxos: docs/fluxos-de-trabalho.md.
-- Decisões: docs/governance/decision-log.md e docs/adr/. Pendências: docs/governance/pendencias.md
-  e, na operação, 90_escritorio-virtual/manutencao/PENDENCIAS.md.
+- Repositório: C:\Projetos\cgov-geral (GitHub privado https://github.com/lpchagas/cgov-geral).
+- Plano: C:\Projetos\cgov-geral\cgov-geral-plano-implantacao.md (depois
+  C:\Projetos\cgov-geral\docs\plano-implantacao.md). Siga a fase indicada.
+- Regras do repositório: C:\Projetos\cgov-geral\AGENTS.md e C:\Projetos\cgov-geral\CLAUDE.md.
+  Fluxos: C:\Projetos\cgov-geral\docs\fluxos-de-trabalho.md.
+- Decisões: C:\Projetos\cgov-geral\docs\governance\decision-log.md e C:\Projetos\cgov-geral\docs\adr\.
+  Pendências: C:\Projetos\cgov-geral\docs\governance\pendencias.md e, na operação,
+  C:\Users\leand\My Drive\10_Institucional\CGOV\90_escritorio-virtual\manutencao\PENDENCIAS.md.
 
 ## Regras obrigatórias
 1. Antes de mover, renomear, excluir, reinstalar, fazer commit ou push: mostre a lista do que vai mudar
@@ -1025,7 +1033,8 @@ cowork_projeto: ""
 | v3.1 (05/11) | Decisões D10–D16 | Fase 2 concluída; regra de manutenção integral do plano (seção própria + Apêndice A, regra 8); coluna Situação na visão geral 6.1; processo da NT 27/2026 confirmado (SEI nº 02070.017019/2026-34); etapa 3.A.0 (versionar o plano); limitação de compartilhamento resolvida |
 | v3.2 (05/11) | Dúvida sobre a criação dos projetos | Projetos criados no Claude Desktop (aba Cowork), não no navegador; como vincular pastas adicionais; pastas de cada projeto explicitadas (3.A e 4.8) |
 | v3.3 (05/11) | Etapa 3.A concluída; D17 e D18 | Fase 3 em andamento; coluna Situação e Resultado na 3.A; `main` = `8787e0a`; limitação da credencial GitHub no shell do Cowork; divergência privado × público (⚠️); `.obsidian/` ignorado; regras de interação 9–12 no Apêndice A; dois riscos novos |
+| v3.4 (05/11) | *Commit* `de0fa54`; capturas de tela do Claude Desktop; instruções do `cgov-geral-v1` | Repositório privado confirmado; menções a "público" corrigidas em `CLAUDE.md`, `README.md`, `AGENTS.md` e `docs/fluxos-de-trabalho.md` (D19); 3.A.4 a refazer (instruções estavam na descrição); 3.A.5 substituída (sem campo de links; URL nas instruções); 3.B.1–3.B.2 concluídas; Apêndice A com caminhos completos; dois riscos revistos |
 
 ---
 
-*Fim do plano v3.3. Fases 1 e 2 concluídas; Fase 3 em andamento (3.A concluída). Próximo passo: etapa 3.B — preservar as instruções e a memória do projeto `cgov-geral-v1` em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\` e depois arquivá-lo; em seguida, 3.C.*
+*Fim do plano v3.4. Fases 1 e 2 concluídas; Fase 3 em andamento (3.A concluída; 3.B.1–3.B.2 concluídas). Próximo passo: recolar o Apêndice A em **Instruções** do projeto Implantação; 3.B.3 (memória do `cgov-geral-v1`) e 3.B.4 (arquivamento); em seguida, 3.C.*

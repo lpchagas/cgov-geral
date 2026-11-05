@@ -12,7 +12,7 @@ Not a software codebase — it is the versioned source for a suite of Claude **S
 
 - **Run an eval case**: open `skills/<family>/<skill-name>/evals/evals.json`, take one `prompt`, run it through the corresponding skill, and manually check the output against that case's `expected_output` and `expectations` list. There is no runner script — do this by hand or via a subagent.
 - **Validate a `SKILL.md` edit**: confirm the YAML frontmatter still has `name` and `description`; the `description` field has a **1,024-character hard limit** when installed via Customize → Skills in Claude (this has bitten the thematic skills before — see `docs/governance/decision-log.md` §10.3).
-- **Git**: single-branch repo (`main`); the repository is **public**. `local/` is fully gitignored — never `git add` anything under it.
+- **Git**: single-branch repo (`main`); the repository is **private** (GitHub `lpchagas/cgov-geral`), but `docs/` and `skills/` are kept sanitized as if they were public (plan decision D3). `local/` is fully gitignored — never `git add` anything under it.
 - **Publish to operations**: after a commit, `bash scripts/publicar-operacao.sh` builds `dist/skills/*.zip` and refreshes the Cowork read-only reference; `--verificar` only lists installed skills that differ from source.
 - **Drive links**: `bash scripts/link-acervo.sh` (re)creates `local/normative-sources`, `local/acervo-drive` and `local/analyses` from `.env`.
 
@@ -34,7 +34,7 @@ Claude Code in this repository is the **development** side only (see `docs/fluxo
 | `skills/cgov-nt/`, `skills/thematic/` | Canonical skill **source** | Edit → run relevant evals → record decision in `docs/governance/decision-log.md` |
 | `local/installed-reference/` | Read-only snapshots of *other* skills as actually installed | Reference only; don't edit to "fix" the installed skill |
 | `archive/` | Sanitized historical evidence | Append context; never rewrite content |
-| `docs/` | Public documentation | Keep links, normative citations, and personal-data scrubbing accurate |
+| `docs/` | Publishable (sanitized) documentation | Keep links, normative citations, and personal-data scrubbing accurate |
 | `local/` | Working acervo: links to the Drive (normative sources, per-process analyses), pilots, archive | Gitignored entirely — never committed |
 
 **The critical gotcha**: editing a file in `skills/` does **not** change the skill as installed in a Claude account. Skills are installed via Customize → Skills, and source/installed can drift silently — this has happened repeatedly (decision-log §§10–11, 14) and produced skills that contradicted the actual norm they were meant to implement. Any skill edit requires: revise source → run evals → reinstall with overwrite → confirm the reinstalled version matches source → log it.
@@ -63,4 +63,4 @@ CGOV governance work depends on strictly not confusing similarly-named instrumen
 - New skills/docs: lowercase, hyphen-separated names.
 - New process workspaces only under `local/analyses/`, named `SEI_<numero-sem-barras>_<apelido-curto>/`.
 - Superseded versions go to `archive/` — never delete them.
-- No personal data, matrículas, SEI drafts, or non-redistributable source copies in anything destined for `docs/` or `skills/` (those are the publishable/public paths).
+- No personal data, matrículas, SEI drafts, or non-redistributable source copies in anything destined for `docs/` or `skills/` (those are the publishable paths, kept sanitized even though the repository is private).

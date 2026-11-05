@@ -35,3 +35,6 @@ htmlcov/
 
 # Configuração pessoal do Claude Code (caminhos absolutos)
 /.claude/settings.local.json
+
+# Cofre Obsidian (configuração pessoal do editor)
+/.obsidian/

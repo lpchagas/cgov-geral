@@ -1,8 +1,8 @@
 # Plano de Implantação — Escritório Virtual da CGOV/ICMBio
 
-> **Versão:** 3.7 — 05/11/2026 (**Fase 4 em andamento**: etapas 4.1 e 4.2 concluídas; `scripts\reorganizar_cgov.py` criado e mapa CSV de reorganização aprovado, sem mover nada). Substitui a v3.0 e a v2 (04/11). A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`C:\Users\leand\My Drive\10_Institucional\CGOV`).
+> **Versão:** 3.8 — 05/11/2026 (**Fase 4 em andamento**: 4.1 e 4.2 concluídas e versionadas no *commit* `7f5a324`, conferido por `ls-remote`; simulação no Windows sem conflitos). Substitui a v3.0 e a v2 (04/11). A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`C:\Users\leand\My Drive\10_Institucional\CGOV`).
 > **Responsável:** Coordenador de Governança (CGOV/CGGE/ICMBio)
-> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `88a5612` (plano v3.6; HEAD local, remoto não conferido nesta sessão)
+> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `7f5a324` (plano v3.7 + `scripts/reorganizar_cgov.py`), conferido por `git ls-remote` em 05/11
 > **Repositório operacional:** `C:\Users\leand\My Drive\10_Institucional\CGOV` (Google Drive)
 > **Projetos Cowork:** "Escritório CGOV — Implantação" (desenvolvimento) e "Escritório CGOV — Operação" (trabalho da Coordenação)
 > **Ferramentas-alvo:** Claude Desktop (Cowork e Code), Google Antigravity, Obsidian, Maestri
@@ -65,7 +65,7 @@ A mesma regra está nas instruções do projeto "Escritório CGOV — Implantaç
 
 | Fonte | Situação verificada |
 |---|---|
-| GitHub `lpchagas/cgov-geral` (**privado**, confirmado pelo Coordenador em 05/11) | `main` = `be2f493` (05/11, plano v3.5), conferido por `git ls-remote` no PowerShell do Coordenador. Histórico de 05/11: `be2f493` (v3.5), `8787e0a` (v3.1), `de0fa54` (v3.3), `6890b63` (`CLAUDE.md` + plano v3.4) e `320007d` (`README.md`, `AGENTS.md`, `docs/fluxos-de-trabalho.md`, D19; mesma mensagem de *commit* do anterior); antes, `8787e0a` (plano v3.1, etapa 3.A.0) e `67957fe` (04/11). *Branch* antigo `claude/cgov-nt-triagem-description-loop-6x6dsc` (`f3628f1`) não incorporado |
+| GitHub `lpchagas/cgov-geral` (**privado**, confirmado pelo Coordenador em 05/11) | `main` = `7f5a324` (05/11, plano v3.7 + `scripts/reorganizar_cgov.py`), conferido por `git ls-remote` no PowerShell do Coordenador. Histórico de 05/11: `7f5a324` (v3.7), `88a5612` (v3.6), `be2f493` (v3.5), `8787e0a` (v3.1), `de0fa54` (v3.3), `6890b63` (`CLAUDE.md` + plano v3.4) e `320007d` (`README.md`, `AGENTS.md`, `docs/fluxos-de-trabalho.md`, D19; mesma mensagem de *commit* do anterior); antes, `8787e0a` (plano v3.1, etapa 3.A.0) e `67957fe` (04/11). *Branch* antigo `claude/cgov-nt-triagem-description-loop-6x6dsc` (`f3628f1`) não incorporado |
 | `C:\Projetos\cgov-geral` | Clone limpo; `local\` com ativos resgatados do WSL (63 arquivos conferidos por SHA-256); junções para o Drive; `.env` do Windows; cofre Obsidian aberto (`C:\Projetos\cgov-geral\.obsidian\` ignorado pelo Git desde a v3.3) |
 | Projeto Cowork "Escritório CGOV — Implantação" (sessão de 05/11) | Criado no Claude Desktop; instruções = Apêndice A; acesso confirmado às duas pastas: 1ª `C:\Projetos\cgov-geral` e 2ª (temporária) `C:\Users\leand\My Drive\10_Institucional\CGOV`. A sessão leu o plano e aguardou confirmação (teste 3.A.6 aceito pelo Coordenador). Capturas de tela de 05/11: a tela do projeto no Claude Desktop mostra **Instruções**, **Contexto** (2 pastas vinculadas), **Memória** e **Programado**, sem campo de links. O texto do Apêndice A tinha ido para a **descrição**; corrigido pelo Coordenador em 05/11 (as sessões agora recebem a descrição curta de 3.A.2 e as instruções v3.4) |
 | Projeto Cowork `cgov-geral-v1` (capturas de 05/11) | 4 pastas vinculadas: `cgov-geral-v1` (`C:\_cowork\cgov-geral-v1`, segundo as instruções), `pgd-agente-icmbio`, `pgd-ocde-icmbio` e `cgge-fgbio-2026`; instruções preservadas em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\cgov-geral-v1_instrucoes_2026-11-05.md` (SHA-256 `ad862755…`) |
@@ -550,7 +550,8 @@ Para cada projeto da lista que possa apontar para a pasta CGOV (por exemplo, `02
 - **4.2:** 28 `a-decidir` resolvidos (D22–D23) e 11 apelidos atribuídos (D24). O mapa tem **zero `a-decidir`**, e o `--simular` dá **zero conflitos**, com 30 avisos de caminho longo, todos em `99_arquivo`.
 - **Processos:** 73 pastas em `01_processos`, 5 só com o número. Os 72 nomes de origem de `CGOV_Processos` incluem a pasta vazia duplicada e a `ADPF`. Entram também os processos vindos de `analyses` (PGRO, Avaliação PGD) e de `CGOV_Administrativo` (00810.000079, 000796, 010603).
 - **Teste:** numa árvore sintética, os lotes a, b, e, f e g foram executados e revertidos, e a árvore voltou idêntica, com pastas e arquivos. A pasta CGOV não foi alterada (2.831 arquivos).
-- **Pendências para a execução:** confirmar o Python no Windows (risco novo na Seção 7) e rodar `--planejar` de novo antes da 4.4, se a pasta CGOV mudar.
+- **Windows (05/11):** Python 3.12.10; `py scripts\reorganizar_cgov.py --simular` na pasta CGOV real deu **zero conflitos**, só com os avisos de caminho longo em `99_arquivo`. O prefixo `\\?\` funcionou. *Commit* `7f5a324`, conferido por `ls-remote`.
+- **Pendência para a execução:** rodar `--planejar` de novo antes da 4.4, se a pasta CGOV mudar.
 
 **Reversão:** o mesmo CSV permite desfazer (`reorganizar_cgov.py --reverter --lote X`), porque cada linha registra origem e destino.
 
@@ -666,7 +667,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | Operações Git pelo shell do Cowork falharem (sem credencial do GitHub; travas `.lock` que o shell não apaga) | **Materializado** (05/11) | Médio | Verificação remota, *commit* e *push* pelo PowerShell do Coordenador, com scripts completos (regra 10 do Apêndice A) |
 | Documentação descrever o repositório como público | — | — | **Descartado** (05/11, D19): privado confirmado e quatro arquivos corrigidos; a verificação de sanitização continua |
 | Caminhos com mais de 259 caracteres no Windows | **Materializado** (4.1) | Médio | 252 origens já passam do limite hoje (backup `dev-local_2026-11` e OCR); o script usa o prefixo `\\?\`; nenhum destino longo fora de `99_arquivo`; o `--simular` lista os avisos |
-| Python ausente ou antigo no Windows para rodar `reorganizar_cgov.py` | Média ⚠️ | Médio | Conferir `py --version` (≥ 3.8) antes da 4.3/4.5 (pré-requisito 0.4) |
+| Python ausente ou antigo no Windows para rodar `reorganizar_cgov.py` | **Descartado** (05/11) | — | Python 3.12.10 conferido; a simulação no Windows rodou sem conflitos |
 | Mapa ficar desatualizado entre a 4.2 e a execução (arquivos novos ou alterados) | Média | Médio | `--simular` confere tamanho e hash; rodar `--planejar` de novo antes da 4.4, com decisões e apelidos reaplicados automaticamente |
 | Instruções de projeto Cowork coladas no campo errado (descrição) | Materializado e **corrigido** (05/11) | Médio | Conferir pela tela do projeto que **Instruções** não está vazio e que a descrição tem só o texto curto; repetir a conferência na criação do projeto "Operação" (4.8) |
 
@@ -742,7 +743,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | 1 — Consolidação no Windows | ✅ | 04/11/2026 | WSL: remoto → `cgov-geral`, *push* `4960e11..67957fe`; clone em `C:\Projetos\cgov-geral` (HEAD `67957fe`, `autocrlf=false`); manifesto `local/_manifesto_wsl_20261104.sha256` (490 arquivos): 63/63 em `local\` e 488/488 no Drive; junções e `.env` provisórios |
 | 2 — Arquitetura dos repositórios | ✅ | 05/11/2026 | Arranjo das Seções 5.1–5.6 aceito sem ajustes; ADR-012, 013 e 014 aprovados; D10–D16 respondidas e incorporadas ao mapa (5.5) |
 | 3 — Projetos Cowork | ✅ | 05/11/2026 | 3.B.4 ✅: `cgov-geral-v1` arquivado; *commit* `be2f493` (v3.5) conferido por `ls-remote`. 3.C ✅: inventário simplificado (D21; vínculos antigos inexistentes, nenhum na pasta CGOV). 3.B.3 ✅: memória não preservada (D20). 3.A.4 ✅: instruções corrigidas. *Commits* `6890b63` e `320007d` (conferido por `ls-remote`). Repositório privado confirmado; documentação corrigida (D19). 3.B.1–3.B.2 ✅: 4 pastas do `cgov-geral-v1` registradas; instruções preservadas (SHA-256 `ad862755…`). 3.A ✅: *commits* `8787e0a` e `de0fa54` (conferido por `ls-remote`); projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: Fase 4 |
-| 4 — Reorganização da pasta CGOV | 🟨 | 05/11/2026 | 4.1 ✅: `scripts\reorganizar_cgov.py` v1.0.0; mapa `local\MAPA_REORGANIZACAO_2026-11.csv` (2.858 linhas, 100% dos 2.831 arquivos, SHA-256 `5e686e82…`). 4.2 ✅: D22–D25; zero `a-decidir`; `--simular` com zero conflitos. Nada movido. Próximo: 4.3 (manifesto anterior) e 4.4 (simulação) |
+| 4 — Reorganização da pasta CGOV | 🟨 | 05/11/2026 | 4.1 ✅: `scripts\reorganizar_cgov.py` v1.0.0; mapa `local\MAPA_REORGANIZACAO_2026-11.csv` (2.858 linhas, 100% dos 2.831 arquivos, SHA-256 `5e686e82…`). 4.2 ✅: D22–D25; zero `a-decidir`; `--simular` com zero conflitos. Nada movido. *Commit* `7f5a324` (conferido por `ls-remote`); simulação no Windows (Python 3.12.10) com zero conflitos. Próximo: 4.3 (manifesto anterior) e 4.4 (simulação) |
 | 5 — Repositório de desenvolvimento | ⬜ | | |
 | 6 — Portfólio de skills | ⬜ | | |
 | 7 — Plugin | ⬜ | | |
@@ -1073,7 +1074,8 @@ cowork_projeto: ""
 | v3.5 (05/11) | *Commits* `6890b63` e `320007d`; D20 e D21 | 3.A.4 corrigida; 3.B.3 concluída (memória não preservada); 3.C concluída (inventário simplificado; vínculos antigos inexistentes); risco de quebra de projetos rebaixado para Baixo; 3.B.4 liberada; Fase 3 aguarda só o arquivamento do `cgov-geral-v1` |
 | v3.6 (05/11) | *Commit* `be2f493`; arquivamento do `cgov-geral-v1` | 3.B.4 concluída; **Fase 3 concluída** (resultados 3.B e da fase); Fase 4 marcada como próxima |
 | v3.7 (05/11) | Etapas 4.1 e 4.2; D22–D25 | **Fase 4 em andamento**: `scripts\reorganizar_cgov.py` criado; mapa CSV com 100% dos arquivos, aprovado com zero `a-decidir` e zero conflitos; Seções 5.5 e 5.6 atualizadas com as decisões e os achados por hash; três riscos novos (caminhos longos, Python no Windows, mapa desatualizado); prompt da 4.3–4.4 |
+| v3.8 (05/11) | *Commit* `7f5a324`; simulação no Windows | Evidências do *commit* e da simulação no Windows (Python 3.12.10, zero conflitos); risco "Python no Windows" descartado |
 
 ---
 
-*Fim do plano v3.7. Fases 1, 2 e 3 concluídas; Fase 4 em andamento (4.1 e 4.2 ✅). Próximo passo: etapas 4.3 (manifesto anterior) e 4.4 (simulação), depois de conferir o Python no Windows, numa sessão do projeto "Escritório CGOV — Implantação".*
+*Fim do plano v3.8. Fases 1, 2 e 3 concluídas; Fase 4 em andamento (4.1 e 4.2 ✅, *commit* `7f5a324`). Próximo passo: etapas 4.3 (manifesto anterior) e 4.4 (simulação), numa sessão do projeto "Escritório CGOV — Implantação".*

@@ -1,15 +1,15 @@
 # Plano de Implantação — Escritório Virtual da CGOV/ICMBio
 
-> **Versão:** 3.22 — 06/11/2026 (**Fase 4 em andamento**: **4.9**: instruções dos projetos Cowork antigos copiadas (fichas e `local\archive`), arquivamento na interface pendente; **novo objetivo D34**: modelo geral de análise de atos normativos (etapa 6.9); antes, v3.21: **4.8 concluída** — projeto Operação criado e testado; teste na quarentena; `AGENTS.md` v3 (D32); 4.9 preparada (D33: copiar e arquivar); antes, 4.8 preparada: instruções finais do projeto Operação (Apêndice B v1.0), `AGENTS.md` e `LEIA-ME.md` republicados na pasta CGOV (D31), `reorganizar_cgov.py` v1.2.2; aguardando a criação e o teste do projeto pelo Coordenador; antes: limpeza das 343 pastas antigas vazias concluída (causa do erro: atributo ReadOnly); **4.7 concluída**: 74 fichas `PROCESSO.md` e 5 `_INDICE.md` publicados (D30), com `scripts/gerar_indices.py` v0.1.0; próxima: 4.8; antes: lote (g) executado e conferido (587 itens em quarentena) e **4.5 concluída nos sete lotes**; **4.6 concluída**: manifesto posterior com 2.836 arquivos e 2.833/2.833 hashes no destino previsto; limpeza das pastas vazias interrompida por `WinError 5` (nenhuma removida) e `reorganizar_cgov.py` v1.2.1 com nova tentativa; antes: lote (f) executado e conferido; D29 e v1.2.0; antes: lote (e) executado e conferido; antes: lote (d) executado e conferido; antes: lote (c) executado e conferido; antes: lote (b) executado e conferido; antes: lote (a) executado e conferido; antes: lote (a) preparado; `operacao/` antecipada da Fase 5 com 12 documentos de navegação (D28); pasta CGOV conferida com o manifesto antes do lote; 4.1 a 4.4a concluídas; destinos longos encurtados (D26, script v1.1.0); 2 arquivos novos incorporados e pasta CGOV congelada (D27); mapa vigente com 2.833 arquivos e 74 processos; manifesto anterior refeito; zero conflitos e zero caminhos longos). Substitui a v3.0 e a v2 (04/11). A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`C:\Users\leand\My Drive\10_Institucional\CGOV`).
+> **Versão:** 3.23 — 06/11/2026 (**Fase 4 concluída**: 4.9 e 4.10 ✅ — projetos antigos arquivados; mapa, manifestos e registros em `90_escritorio-virtual\manutencao\reorganizacao-2026-11\`; Decisão 28 no decision-log; congelamento da pasta CGOV encerrado; Apêndice A v2 sem a pasta CGOV; resta só a 4.11, em 05/12/2026; antes, v3.22: **4.9**: instruções dos projetos Cowork antigos copiadas (fichas e `local\archive`), arquivamento na interface pendente; **novo objetivo D34**: modelo geral de análise de atos normativos (etapa 6.9); antes, v3.21: **4.8 concluída** — projeto Operação criado e testado; teste na quarentena; `AGENTS.md` v3 (D32); 4.9 preparada (D33: copiar e arquivar); antes, 4.8 preparada: instruções finais do projeto Operação (Apêndice B v1.0), `AGENTS.md` e `LEIA-ME.md` republicados na pasta CGOV (D31), `reorganizar_cgov.py` v1.2.2; aguardando a criação e o teste do projeto pelo Coordenador; antes: limpeza das 343 pastas antigas vazias concluída (causa do erro: atributo ReadOnly); **4.7 concluída**: 74 fichas `PROCESSO.md` e 5 `_INDICE.md` publicados (D30), com `scripts/gerar_indices.py` v0.1.0; próxima: 4.8; antes: lote (g) executado e conferido (587 itens em quarentena) e **4.5 concluída nos sete lotes**; **4.6 concluída**: manifesto posterior com 2.836 arquivos e 2.833/2.833 hashes no destino previsto; limpeza das pastas vazias interrompida por `WinError 5` (nenhuma removida) e `reorganizar_cgov.py` v1.2.1 com nova tentativa; antes: lote (f) executado e conferido; D29 e v1.2.0; antes: lote (e) executado e conferido; antes: lote (d) executado e conferido; antes: lote (c) executado e conferido; antes: lote (b) executado e conferido; antes: lote (a) executado e conferido; antes: lote (a) preparado; `operacao/` antecipada da Fase 5 com 12 documentos de navegação (D28); pasta CGOV conferida com o manifesto antes do lote; 4.1 a 4.4a concluídas; destinos longos encurtados (D26, script v1.1.0); 2 arquivos novos incorporados e pasta CGOV congelada (D27); mapa vigente com 2.833 arquivos e 74 processos; manifesto anterior refeito; zero conflitos e zero caminhos longos). Substitui a v3.0 e a v2 (04/11). A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`C:\Users\leand\My Drive\10_Institucional\CGOV`).
 > **Responsável:** Coordenador de Governança (CGOV/CGGE/ICMBio)
-> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `54ae16b` (plano v3.21 + instruções do projeto Operação + navegação v3 + `reorganizar_cgov.py` v1.2.2), conferido por `git ls-remote` em 06/11
+> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `306ade5` (plano v3.22), conferido por `git ls-remote` em 06/11
 > **Repositório operacional:** `C:\Users\leand\My Drive\10_Institucional\CGOV` (Google Drive)
 > **Projetos Cowork:** "Escritório CGOV — Implantação" (desenvolvimento) e "Escritório CGOV — Operação" (trabalho da Coordenação)
 > **Ferramentas-alvo:** Claude Desktop (Cowork e Code), Google Antigravity, Obsidian, Maestri
 > **Método:** análise documental (`engineering:documentation`) e arquitetural com ADRs (`engineering:architecture`)
 > **Regra de execução:** uma fase por vez, com confirmação explícita do Coordenador antes de mover, renomear, excluir, reinstalar, fazer *commit* ou *push*.
 > **Regra de manutenção:** a cada etapa concluída, este plano é **atualizado integralmente**, conforme a lista de verificação da Seção "Regra de manutenção deste plano" (logo abaixo do sumário).
-> **Situação atual:** Fases 1, 2 e 3 ✅ · **Fase 4 🟨** (4.1 a 4.4a ✅ em 05/11: mapa vigente com 2.833 arquivos e 74 processos, manifesto anterior com 2.833 hashes, zero conflitos, zero caminhos longos; **pasta CGOV congelada** até o fim da Fase 4 (D27); **4.5 (a) ✅** em 05/11: 24 pastas e 12 documentos de navegação publicados e conferidos por SHA-256; **4.5 (b) ✅** em 05/11: 109 normativos movidos e conferidos; **4.5 (c) ✅** em 05/11: 20 NTs movidas e conferidas; **4.5 (d) ✅** em 05/11: 1.131 operações em 74 processos, conferidas; **4.5 (e) ✅** em 05/11: 24 movimentações conferidas; **4.5 (f) ✅** em 05/11: 965 movimentações conferidas, 9 delas para fora da pasta; **4.5 (g) ✅**: 587 itens em quarentena; **4.6 ✅**: manifesto posterior, 100% conferido; limpeza das 343 pastas antigas vazias ✅ (D29); **4.7 ✅**: 74 fichas e 5 índices publicados (D30); **4.8 ✅**: projeto "Escritório CGOV — Operação" criado e testado; **4.9 🟨**: instruções copiadas, falta o Coordenador arquivar os projetos na interface; **D34**: consolidar o modelo geral de análise de atos normativos na etapa 6.9) · Fase 0 parcial (D4–D8).
+> **Situação atual:** Fases 1, 2, 3 e **4** ✅ (Fase 4 concluída em 06/11: 2.860 operações, 74 processos, manifesto posterior 100% conferido, projeto "Escritório CGOV — Operação" criado e testado; resta a 4.11, exclusão da quarentena a partir de 05/12/2026) · **próxima: Fase 5** (atualização do repositório de desenvolvimento) · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D4–D8).
 
 ---
 
@@ -22,7 +22,7 @@ O Escritório Virtual tem **dois repositórios com papéis distintos**, e a v3 t
 | Onde | `C:\Projetos\cgov-geral` (Git ⇄ GitHub privado) | `My Drive\10_Institucional\CGOV` (Google Drive) |
 | Para quê | Criar e manter skills, agentes, instruções, documentação e scripts | Produzir o trabalho da CGOV: NTs, análises de processos SEI, normativos, projetos, colegiados |
 | Quem usa | Coordenador-mantenedor + projeto Cowork **Implantação** + Claude Code, Antigravity, Obsidian | Coordenador e servidores + projeto Cowork **Operação** |
-| Estado em 05/11 | Consolidado no Windows (Fase 1 ✅) | **Desorganizado**: 2.833 arquivos (3,3 GB; 2.827 no inventário inicial, 2.831 na 4.1) em 8 áreas com convenções diferentes; processos divididos entre duas árvores; acervo normativo duplicado; 433 grupos de arquivos idênticos (85 MB redundantes). **Mapa de reorganização arquivo a arquivo aprovado (4.2, revisto na 4.4a), manifesto anterior gerado (4.3) e simulação sem conflitos (4.4); pasta congelada (D27); nada movido ainda** |
+| Estado em 06/11 | Consolidado no Windows (Fase 1 ✅) | **Reorganizada (Fase 4 ✅)**: 9 áreas numeradas (`00`–`06`, `90`, `99`), `LEIA-ME.md` e `AGENTS.md` na raiz; 74 processos com ficha `PROCESSO.md`; acervo normativo único (109 arquivos); quarentena com 587 itens até 05/12/2026; mapa, manifestos e registros em `90_escritorio-virtual\manutencao\reorganizacao-2026-11\` |
 
 **O que a v3 acrescenta:**
 
@@ -65,7 +65,7 @@ A mesma regra está nas instruções do projeto "Escritório CGOV — Implantaç
 
 | Fonte | Situação verificada |
 |---|---|
-| GitHub `lpchagas/cgov-geral` (**privado**, confirmado pelo Coordenador em 05/11) | `main` = `54ae16b` (06/11, plano v3.21; completa a v3.20), conferido por `git ls-remote` no PowerShell do Coordenador; `d9c582e` (só o arquivamento do `escritorio-cgov.md`), `377c34c`, `c88bd3e`, `3dae008`, `224dc2c`, `657cb69`, `55172da`, `b9a33a3`, `cba655d`, `98789ef`, `13ea143`, `46fb7ff` e `b981d66` também foram conferidos por `git ls-remote` no PowerShell do Coordenador. Histórico de 05–06/11: `54ae16b` (v3.21), `d9c582e` (arquivamento), `377c34c` (v3.19), `c88bd3e` (v3.18), `3dae008` (v3.17), `224dc2c` (v3.16), `657cb69` (v3.15), `55172da` (v3.14), `b9a33a3` (v3.13), `cba655d` (v3.12), `98789ef` (v3.11), `13ea143` (v3.10), `46fb7ff` (v3.9), `b981d66` (v3.8), `7f5a324` (v3.7 + `scripts/reorganizar_cgov.py`), `88a5612` (v3.6), `be2f493` (v3.5), `8787e0a` (v3.1), `de0fa54` (v3.3), `6890b63` (`CLAUDE.md` + plano v3.4) e `320007d` (`README.md`, `AGENTS.md`, `docs/fluxos-de-trabalho.md`, D19; mesma mensagem de *commit* do anterior); antes, `8787e0a` (plano v3.1, etapa 3.A.0) e `67957fe` (04/11). *Branch* antigo `claude/cgov-nt-triagem-description-loop-6x6dsc` (`f3628f1`) não incorporado |
+| GitHub `lpchagas/cgov-geral` (**privado**, confirmado pelo Coordenador em 05/11) | `main` = `306ade5` (06/11, plano v3.22), conferido por `git ls-remote` no PowerShell do Coordenador; `54ae16b` (v3.21; completa a v3.20), `d9c582e` (só o arquivamento do `escritorio-cgov.md`), `377c34c`, `c88bd3e`, `3dae008`, `224dc2c`, `657cb69`, `55172da`, `b9a33a3`, `cba655d`, `98789ef`, `13ea143`, `46fb7ff` e `b981d66` também foram conferidos por `git ls-remote` no PowerShell do Coordenador. Histórico de 05–06/11: `306ade5` (v3.22), `54ae16b` (v3.21), `d9c582e` (arquivamento), `377c34c` (v3.19), `c88bd3e` (v3.18), `3dae008` (v3.17), `224dc2c` (v3.16), `657cb69` (v3.15), `55172da` (v3.14), `b9a33a3` (v3.13), `cba655d` (v3.12), `98789ef` (v3.11), `13ea143` (v3.10), `46fb7ff` (v3.9), `b981d66` (v3.8), `7f5a324` (v3.7 + `scripts/reorganizar_cgov.py`), `88a5612` (v3.6), `be2f493` (v3.5), `8787e0a` (v3.1), `de0fa54` (v3.3), `6890b63` (`CLAUDE.md` + plano v3.4) e `320007d` (`README.md`, `AGENTS.md`, `docs/fluxos-de-trabalho.md`, D19; mesma mensagem de *commit* do anterior); antes, `8787e0a` (plano v3.1, etapa 3.A.0) e `67957fe` (04/11). *Branch* antigo `claude/cgov-nt-triagem-description-loop-6x6dsc` (`f3628f1`) não incorporado |
 | `C:\Projetos\cgov-geral` | Clone limpo; `local\` com ativos resgatados do WSL (63 arquivos conferidos por SHA-256); junções para o Drive; `.env` do Windows; cofre Obsidian aberto (`C:\Projetos\cgov-geral\.obsidian\` ignorado pelo Git desde a v3.3) |
 | Projeto Cowork "Escritório CGOV — Implantação" (sessão de 05/11) | Criado no Claude Desktop; instruções = Apêndice A; acesso confirmado às duas pastas: 1ª `C:\Projetos\cgov-geral` e 2ª (temporária) `C:\Users\leand\My Drive\10_Institucional\CGOV`. A sessão leu o plano e aguardou confirmação (teste 3.A.6 aceito pelo Coordenador). Capturas de tela de 05/11: a tela do projeto no Claude Desktop mostra **Instruções**, **Contexto** (2 pastas vinculadas), **Memória** e **Programado**, sem campo de links. O texto do Apêndice A tinha ido para a **descrição**; corrigido pelo Coordenador em 05/11 (as sessões agora recebem a descrição curta de 3.A.2 e as instruções v3.4) |
 | Projeto Cowork `cgov-geral-v1` (capturas de 05/11) | 4 pastas vinculadas: `cgov-geral-v1` (`C:\_cowork\cgov-geral-v1`, segundo as instruções), `pgd-agente-icmbio`, `pgd-ocde-icmbio` e `cgge-fgbio-2026`; instruções preservadas em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\cgov-geral-v1_instrucoes_2026-11-05.md` (SHA-256 `ad862755…`) |
@@ -431,11 +431,11 @@ flowchart LR
 
 | Fase | Nome | Resultado | Executa | Estimativa* | Situação |
 |---|---|---|---|---|---|
-| 0 | Decisões | ADRs e decisões D1–D34 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D34 respondidas; D4–D8 e ADR-001, 004–011 pendentes |
+| 0 | Decisões | ADRs e decisões D1–D35 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D35 respondidas; D4–D8 e ADR-001, 004–011 pendentes |
 | 1 | Consolidação do desenvolvimento no Windows | **✅ Concluída em 04/11** | — | — | ✅ 04/11/2026 |
 | 2 | **Arquitetura dos repositórios** | Arranjo das Seções 5.1–5.6 aprovado (ADR-012/013/014; D10–D16) | Coordenador | 1 dia | ✅ 05/11/2026 |
 | 3 | Projetos Cowork | "Implantação" criado; `cgov-geral-v1` preservado e arquivado; vínculos dos demais projetos inventariados | Coordenador (interface) + Claude | ½ dia | ✅ 05/11/2026 |
-| 4 | **Reorganização da pasta CGOV** | Estrutura nova, documentos de navegação, fichas, índices; projeto "Operação" criado | Claude (scripts e textos) + Coordenador (aprovações e execução) | 3–5 dias | 🟨 Em andamento: 4.1 a 4.8 ✅ (05/11); 4.9 em andamento (arquivar projetos antigos); depois 4.10 |
+| 4 | **Reorganização da pasta CGOV** | Estrutura nova, documentos de navegação, fichas, índices; projeto "Operação" criado | Claude (scripts e textos) + Coordenador (aprovações e execução) | 3–5 dias | ✅ 06/11/2026 (4.11 em 05/12/2026) |
 | 5 | Atualização do repositório de desenvolvimento | Scripts em Python, pasta `operacao/`, documentação corrigida, junções e `.env` com os caminhos novos | Claude, com portões | 2–3 dias | ⬜ |
 | 6 | Portfólio de skills | 12 skills promovidas a fonte; caminhos neutros; nova skill `cgov-gestao-acervo`; modelo geral de análise de atos normativos (6.9, D34); desatualizadas reinstaladas | Claude + Coordenador | 3–5 dias | ⬜ |
 | 7 | Plugin `cgov-escritorio` | Um zip por versão; 26 skills avulsas substituídas; comandos de acervo | Coordenador + Claude | 1–2 dias | ⬜ |
@@ -454,7 +454,7 @@ flowchart LR
 | Etapa | Ação | Situação |
 |---|---|---|
 | 0.1 | Aprovar os ADRs (Seção 4) | ADR-002, 003, 012, 013 e 014 aceitos; demais pendentes |
-| 0.2 | Responder às decisões da Seção 9 | D1–D3 e D9–D34 respondidas (04–05/11); D4–D8 pendentes, sem bloquear as Fases 3–5 |
+| 0.2 | Responder às decisões da Seção 9 | D1–D3 e D9–D35 respondidas (04–05/11); D4–D8 pendentes, sem bloquear as Fases 3–5 |
 | 0.3 | Confirmar em `themaestri.app` se existe versão Windows (D8) | Pendente |
 | 0.4 | Pré-requisitos: `git` ✅, `python --version` (≥ 3.11), `node --version` (LTS), Claude Desktop, Antigravity, Obsidian | Git conferido em 04/11 |
 
@@ -527,7 +527,7 @@ Para cada projeto da lista que possa apontar para a pasta CGOV (por exemplo, `02
 
 ---
 
-### Fase 4 — Reorganização da pasta CGOV — 🟨 em andamento (4.1 a 4.8 ✅ em 05/11/2026; 4.9 em andamento)
+### Fase 4 — Reorganização da pasta CGOV — ✅ concluída (06/11/2026; 4.11 agendada para 05/12/2026)
 
 > Executada no projeto Implantação, com a pasta CGOV vinculada temporariamente. O Google Drive para desktop deve estar **em execução** e com a pasta **"Disponível offline"**, para que as movimentações sejam sincronizadas como movimentações (e não como exclusão + criação). Nenhuma etapa exclui arquivos (ADR-014).
 
@@ -542,8 +542,8 @@ Para cada projeto da lista que possa apontar para a pasta CGOV (por exemplo, `02
 | 4.6 | **Manifesto posterior** e conferência: todo hash anterior existe no destino previsto | Claude | 100% conferido | ✅ 05/11 |
 | 4.7 | **Fichas e índices**: criar `PROCESSO.md` em cada processo, a partir do modelo, com o frontmatter preenchido pelo que se deduz do nome e dos documentos, e campos incertos marcados `⚠️ revisar`; gerar os `_INDICE.md` | Claude (servidor revisa as fichas aos poucos) | 74 fichas; índices gerados | ✅ 05/11 (revisão das fichas em andamento) |
 | 4.8 | **Projeto "Escritório CGOV — Operação"** (Claude Desktop, aba Cowork): **+ → Use an existing folder** → pasta única `C:\Users\leand\My Drive\10_Institucional\CGOV`. Descrição: *"Trabalho técnico e administrativo da Coordenação de Governança do ICMBio: Notas Técnicas, pareceres, análises de processos SEI, normativos, colegiados e projetos."* Instruções: Apêndice B. Teste: *"Onde está o processo do Plano Setorial e qual o estado da NT?"*; e uma triagem fictícia com `cgov-nt-01-triagem`, que deve gravar em `01_processos\<processo de teste>\trabalho\`; depois mover o teste para a quarentena | Coordenador | Teste aprovado | ✅ 05/11 |
-| 4.9 | **Projetos Cowork afetados** (inventário 3.C): re-apontar as pastas ou arquivar após copiar as instruções para o `PROCESSO.md` (ADR-013) | Coordenador | Nenhum projeto apontando para caminho inexistente | 🟨 06/11: instruções copiadas; arquivamento na interface pendente |
-| 4.10 | Remover a pasta CGOV do projeto Implantação; registrar a reorganização no `decision-log` (Decisão 28) | Coordenador + Claude | — | ⬜ |
+| 4.9 | **Projetos Cowork afetados** (inventário 3.C): re-apontar as pastas ou arquivar após copiar as instruções para o `PROCESSO.md` (ADR-013) | Coordenador | Nenhum projeto apontando para caminho inexistente | ✅ 06/11 |
+| 4.10 | Remover a pasta CGOV do projeto Implantação; copiar mapa, manifestos e registros para `90_escritorio-virtual\manutencao\`; registrar a reorganização no `decision-log` (Decisão 28) | Coordenador + Claude | Pasta fora do projeto; §28 no decision-log | ✅ 06/11 (remoção da pasta pelo Coordenador) |
 | 4.11 | Após 30 dias: excluir `99_arquivo\_a-excluir_…` (ADR-014) | Coordenador | — | ⬜ |
 
 **Resultado (4.1–4.2, 05/11/2026).**
@@ -800,6 +800,26 @@ Para cada projeto da lista que possa apontar para a pasta CGOV (por exemplo, `02
 - **Fichas alteradas:** 3, com cópias anteriores em `C:\Projetos\cgov-geral\local\reorganizacao\conferencia\fichas_antes_4.9\`. O YAML foi validado. O resultado está no inventário (`C:\Projetos\cgov-geral\local\archive\cowork-projetos\inventario.md`).
 - **Falta:** o Coordenador arquivar os 11 projetos no Claude Desktop (o `mba_cdia_enap` fica sem ação).
 
+**Resultado da 4.9 e da 4.10 (06/11/2026).**
+- **4.9:**
+  - O Coordenador arquivou os projetos Cowork antigos e confirmou que `oficina-planejamento-GR2` é o mesmo projeto de `05_projetos/2026-10_oficina-pgd-gr2-fortaleza`.
+  - Essa pasta ganhou um `PROJETO.md`, com a descrição herdada e os campos ⚠️ (período 09–10/09 contra arquivos de 13/10).
+  - O inventário em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\inventario.md` foi atualizado.
+  - O `Rascunho.md` que tinha aparecido na raiz do repositório foi retirado pelo próprio Coordenador.
+- **4.10:**
+  - (i) Copiados para `90_escritorio-virtual/manutencao/reorganizacao-2026-11/`, com SHA-256 igual à fonte: o mapa vigente e o resumo dele, os manifestos anterior e posterior, `decisoes.csv`, `apelidos.csv` e 12 registros de execução. São 18 cópias, mais o `PROJETO.md` da GR2, todas `ok`. Registro: `C:\Projetos\cgov-geral\local\reorganizacao\registros\registro_4.10_20261106-114328.csv`. As fontes continuam em `local\`, de onde o `--reverter` lê.
+  - (ii) O **§28 "Reorganização da pasta operacional CGOV"** foi acrescentado ao fim de `docs/governance/decision-log.md`, com contexto, 5 decisões, resultado, achados e pendências, sem caminhos pessoais. O §27 foi superado nos pontos que trata.
+  - (iii) O Apêndice A passou para a **v2**, sem a pasta CGOV. O Coordenador colou o texto nas instruções do projeto Implantação e removeu a pasta CGOV do projeto.
+- **Fim do congelamento (D27):** a pasta volta a receber trabalho pelo projeto Operação.
+- **Efeito para a Fase 5:** o manifesto posterior deixa de descrever a pasta viva.
+- **Pendente:** 4.11, a revisão e exclusão de `99_arquivo/_a-excluir_2026-11-05/` a partir de 05/12/2026, com confirmação (ADR-014).
+
+**Resultado da Fase 4 (05–06/11/2026).**
+- **Reorganização:** 2.860 operações em sete lotes, todas `ok`. O manifesto posterior encontrou 2.833/2.833 hashes no destino previsto. 343 pastas antigas vazias foram removidas.
+- **Navegação:** 74 fichas e 5 índices, mais o `PROJETO.md` da GR2.
+- **Operação:** projeto "Escritório CGOV — Operação" com as instruções do Apêndice B v1.0, testado. Projetos antigos arquivados. Decisões D22 a D34.
+- **Scripts:** `reorganizar_cgov.py` v1.2.2 e `gerar_indices.py` v0.1.0.
+
 **Reversão:** o mesmo CSV permite desfazer (`reorganizar_cgov.py --reverter --lote X`), porque cada linha registra origem e destino.
 
 ---
@@ -918,7 +938,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | Python ausente ou antigo no Windows para rodar `reorganizar_cgov.py` | **Descartado** (05/11) | — | Python 3.12.10 conferido; a simulação no Windows rodou sem conflitos |
 | Pastas com atributo "somente leitura" impedirem a remoção (`WinError 5`) | Materializado e **resolvido** (05/11, limpeza D29) | Baixo | v1.2.1 tira o atributo e tenta de novo (343/343 removidas) |
 | Skills e junções antigas (`normative-sources`, `analyses`) deixarem de achar arquivos durante a execução dos lotes | Alta | Médio | Pasta congelada (D27) e trabalho de operação suspenso durante a Fase 4; junções novas na 5.1 e skills com caminhos neutros na Fase 6 |
-| Mapa ficar desatualizado entre a 4.2 e a execução (arquivos novos ou alterados) | **Materializado** (05/11, 2 arquivos novos; incorporados) | Médio | Pasta CGOV **congelada** até o fim da Fase 4 (D27). Antes de cada lote: contar os arquivos e comparar com o manifesto (o `--simular` não acusa arquivos fora do mapa) e repetir o `--simular`. Rodar o `--planejar` só sobre a árvore original, antes do lote a |
+| Mapa ficar desatualizado entre a 4.2 e a execução (arquivos novos ou alterados) | Materializado (05/11) e **encerrado** (06/11: execução concluída; congelamento D27 terminado) | — | A pasta voltou a receber trabalho; o manifesto posterior fica como retrato de 05/11 |
 | Instruções de projeto Cowork coladas no campo errado (descrição) | Materializado e **corrigido** (05/11) | Médio | Conferir pela tela do projeto que **Instruções** não está vazio e que a descrição tem só o texto curto; repetir a conferência na criação do projeto "Operação" (4.8) |
 
 ---
@@ -975,6 +995,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | D32 | Fechar a 4.8 (pasta de teste para a quarentena; `AGENTS.md` v3 com o caminho `_CGOV_NT` da skill instalada; pendência de índices resolvida)? | Aplicar as três | ✅ Respondida (05/11): **aplicadas** |
 | D33 | Método da 4.9 (projetos Cowork antigos) | Copiar as instruções e arquivar | ✅ Respondida (05/11): **copiar e arquivar** — as de processo vão para o `PROCESSO.md`, as temáticas para `local\archive\cowork-projetos\` |
 | D34 | Incluir no plano o aprimoramento do modelo geral de análise de atos normativos (`Instrucoes_Gerais_CGOV_Analise_Atos_Normativos_v1.md`)? | Sim, na Fase 6 | ✅ Respondida (06/11): **incluir** — objetivo do Coordenador de desenvolver o modelo com mais qualidade; etapa 6.9, piloto na Fase 11 |
+| D35 | `oficina-planejamento-GR2` e `05_projetos/2026-10_oficina-pgd-gr2-fortaleza` são o mesmo projeto? | — | ✅ Respondida (06/11): **sim**; a descrição foi para o `PROJETO.md` da pasta |
 
 ---
 
@@ -986,6 +1007,8 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | 4.1 | "Execute a etapa 4.1: crie `scripts/reorganizar_cgov.py` com os modos `--planejar`, `--simular`, `--executar --lote` e `--reverter`, e gere o mapa CSV em `local\` sem mover nada. Mostre o resumo por ação e por área e a lista de `a-decidir`." |
 | 4.3–4.4 | "Execute as etapas 4.3 e 4.4: rode de novo o `--planejar` para conferir que nada mudou, gere o manifesto anterior e rode `--simular` para todos os lotes. Mostre o resultado e aguarde minha confirmação." |
 | 4.4a | "Execute a etapa 4.4a: proponha a regra de destino mais curta para `99_arquivo` (D26), ajuste o `reorganizar_cgov.py`, rode o `--planejar` à parte, mostre a diferença de linhas para o mapa aprovado (só lotes f e g) e a nova simulação, e aguarde minha aprovação." |
+| 5 (início) | "Siga para a Fase 5: leia a seção da Fase 5 do plano e proponha a ordem das etapas, considerando o que já foi antecipado (operacao/, gerar_indices.py) e as pendências da Fase 4." |
+| 4.11 | "Siga para a 4.11: confira a quarentena `99_arquivo\_a-excluir_2026-11-05` contra o manifesto e me guie para excluí-la." |
 | 4.9–4.10 | "Arquivei os projetos Cowork antigos. Siga para a 4.10: copie o mapa e os manifestos para `90_escritorio-virtual\manutencao`, registre a reorganização no decision-log (Decisão 28) e me guie para remover a pasta CGOV deste projeto." |
 | 6.9 | "Execute a 6.9: leia `Instrucoes_Gerais_CGOV_Analise_Atos_Normativos_v1.md`, apresente as 6 decisões da Parte B.5 como perguntas de múltipla escolha e proponha as mudanças na `cgov-nt-01` e nas demais skills." |
 | 4.9 | "Siga para a 4.9: vou colar as instruções de cada projeto Cowork antigo (ou \"vazio\"); grave conforme a D33 e me diga quando posso arquivar cada um." |
@@ -1012,11 +1035,11 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 
 | Fase | Status | Data | Evidência |
 |---|---|---|---|
-| 0 — Decisões | 🟨 | 05/11/2026 | Respondidas: D1–D3 e D9–D34. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001 e 004–011 |
+| 0 — Decisões | 🟨 | 05/11/2026 | Respondidas: D1–D3 e D9–D35. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001 e 004–011 |
 | 1 — Consolidação no Windows | ✅ | 04/11/2026 | WSL: remoto → `cgov-geral`, *push* `4960e11..67957fe`; clone em `C:\Projetos\cgov-geral` (HEAD `67957fe`, `autocrlf=false`); manifesto `local/_manifesto_wsl_20261104.sha256` (490 arquivos): 63/63 em `local\` e 488/488 no Drive; junções e `.env` provisórios |
 | 2 — Arquitetura dos repositórios | ✅ | 05/11/2026 | Arranjo das Seções 5.1–5.6 aceito sem ajustes; ADR-012, 013 e 014 aprovados; D10–D16 respondidas e incorporadas ao mapa (5.5) |
 | 3 — Projetos Cowork | ✅ | 05/11/2026 | 3.B.4 ✅: `cgov-geral-v1` arquivado; *commit* `be2f493` (v3.5) conferido por `ls-remote`. 3.C ✅: inventário simplificado (D21; vínculos antigos inexistentes, nenhum na pasta CGOV). 3.B.3 ✅: memória não preservada (D20). 3.A.4 ✅: instruções corrigidas. *Commits* `6890b63` e `320007d` (conferido por `ls-remote`). Repositório privado confirmado; documentação corrigida (D19). 3.B.1–3.B.2 ✅: 4 pastas do `cgov-geral-v1` registradas; instruções preservadas (SHA-256 `ad862755…`). 3.A ✅: *commits* `8787e0a` e `de0fa54` (conferido por `ls-remote`); projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: Fase 4 |
-| 4 — Reorganização da pasta CGOV | 🟨 | 05/11/2026 | 4.1 ✅: `scripts\reorganizar_cgov.py` v1.0.0; mapa `local\MAPA_REORGANIZACAO_2026-11.csv` (2.858 linhas, 100% dos 2.831 arquivos, SHA-256 `5e686e82…`). 4.2 ✅: D22–D25; zero `a-decidir`; `--simular` com zero conflitos. Nada movido. *Commit* `7f5a324` (conferido por `ls-remote`); simulação no Windows (Python 3.12.10) com zero conflitos. 4.3 ✅: manifesto `local\reorganizacao\manifesto_pre_2026-11.sha256` (2.831; `8a6470cd…`), 100% igual ao mapa; `--planejar` refeito com mapa idêntico. 4.4 ✅: zero conflitos em todos os lotes; 312 destinos longos em `99_arquivo` (D26). Plano v3.8 no *commit* `b981d66` (conferido por `ls-remote`). 4.4a ✅: script v1.1.0; D26 (888 linhas, zero caminhos longos); D27 (pasta congelada; +2 arquivos, processo 74); mapa vigente com 2.860 linhas e 2.833 arquivos (`83db96e2…`); manifesto 2.833 (`8847c5e8…`); zero conflitos. Plano v3.9 no *commit* `46fb7ff`. Plano v3.10 no *commit* `13ea143` (conferido por `ls-remote`). 4.5(a) ✅: 24 pastas (registro `registro_lote-a_20261105-191017.csv`, 24 `ok`); 12 documentos com SHA-256 igual a `operacao/` (`98789ef`); 2.845 arquivos, os 2.833 do manifesto intactos. 4.5(b) ✅: registro `registro_lote-b_20261105-191726.csv` (109 `ok`); 2.845 arquivos íntegros por SHA-256 na posição esperada. Plano v3.12 no *commit* `cba655d` (conferido por `ls-remote`). 4.5(c) ✅: registro `registro_lote-c_20261105-192518.csv` (20 `ok`); 2.845 arquivos íntegros. Plano v3.13 no *commit* `b9a33a3`. 4.5(d) ✅: registro `registro_lote-d_20261105-192947.csv` (1.131 `ok`); 74 processos; 2.845 arquivos íntegros; 99 pastas antigas vazias listadas. Plano v3.14 no *commit* `55172da`. 4.5(e) ✅: registro `registro_lote-e_20261105-193538.csv` (24 `ok`); raiz só com `LEIA-ME.md` e `AGENTS.md`; 2.845 arquivos íntegros. Plano v3.15 no *commit* `657cb69`. 4.5(f) ✅: registro `registro_lote-f_20261105-194138.csv` (965 `ok`); 9 arquivos de `_doutorado` conferidos fora da pasta; 2.836 arquivos íntegros. Plano v3.16 no *commit* `224dc2c`. 4.5(g) ✅: registro `registro_lote-g_20261105-210722.csv` (587 `ok`); quarentena com 584 arquivos; áreas antigas sem nenhum arquivo. Plano v3.17 no *commit* `3dae008`. Limpeza (D29): `WinError 5` na 1ª tentativa; v1.2.1 removeu 343/343 (causa: ReadOnly). **4.6 ✅**: manifesto posterior (2.836; `b65b0518…`); 2.824 + 9 = 2.833 hashes conferidos (100%). Plano v3.18 no *commit* `c88bd3e`. **4.7 ✅**: `gerar_indices.py` v0.1.0; 74 fichas e 5 índices publicados (79/79 por SHA-256; D30). Plano v3.19 no *commit* `377c34c`. 4.8: Apêndice B v1.0 (`docs/system-instructions/escritorio-cgov-operacao.md`); navegação v2 republicada (D31); `reorganizar_cgov.py` v1.2.2; *commit* `d9c582e` parcial. **4.8 ✅**: projeto Operação criado; 2 testes aprovados (gravou em `trabalho/`, nada em `local/`); teste na quarentena; `AGENTS.md` v3 (D32). Plano v3.21 no *commit* `54ae16b`. **4.9 🟨**: instruções copiadas (3 fichas; 5 arquivos em `local\archive\cowork-projetos`); arquivamento na interface pendente. **D34**: modelo geral de análise de atos normativos → etapa 6.9. Próximo: arquivar os projetos e fazer a 4.10 |
+| 4 — Reorganização da pasta CGOV | ✅ | 06/11/2026 | 2.860 operações nos lotes a–g (todas `ok`); manifesto posterior 100% (2.833/2.833); 343 pastas vazias removidas; 74 fichas e 5 índices; projeto Operação criado e testado; projetos antigos arquivados; mapa, manifestos e registros em `90_…\manutencao\reorganizacao-2026-11\`; decision-log §28; `reorganizar_cgov.py` v1.2.2 e `gerar_indices.py` v0.1.0; *commits* `7f5a324` a `306ade5`. Resta a 4.11 (05/12/2026) |
 | 5 — Repositório de desenvolvimento | ⬜ | | |
 | 6 — Portfólio de skills | ⬜ | | |
 | 7 — Plugin | ⬜ | | |
@@ -1040,7 +1063,7 @@ Legenda: ⬜ não iniciada · 🟨 em andamento · ✅ concluída · ⛔ bloquea
 
 ---
 
-## Apêndice A — Instruções do projeto "Escritório CGOV — Implantação"
+## Apêndice A — Instruções do projeto "Escritório CGOV — Implantação" (v2, 06/11/2026 — sem a pasta CGOV, depois da Fase 4)
 
 ```markdown
 # Escritório CGOV — Implantação (desenvolvimento)
@@ -1048,8 +1071,8 @@ Legenda: ⬜ não iniciada · 🟨 em andamento · ✅ concluída · ⛔ bloquea
 ## Papel
 Você apoia o Coordenador de Governança (CGOV/CGGE/ICMBio) na implantação e manutenção do Escritório
 Virtual da CGOV: skills, agentes, comandos, documentação, scripts e painéis do repositório cgov-geral
-(primeira pasta) e, durante a Fase 4 do plano, a reorganização da pasta operacional CGOV (segunda
-pasta, temporária). Este projeto NÃO produz Notas Técnicas nem análises de processos: isso é feito no
+(única pasta vinculada). A reorganização da pasta operacional CGOV terminou na Fase 4; essa pasta
+não fica mais vinculada a este projeto. Este projeto NÃO produz Notas Técnicas nem análises de processos: isso é feito no
 projeto "Escritório CGOV — Operação".
 
 ## Fontes de verdade
@@ -1060,12 +1083,15 @@ projeto "Escritório CGOV — Operação".
   Fluxos: C:\Projetos\cgov-geral\docs\fluxos-de-trabalho.md.
 - Decisões: C:\Projetos\cgov-geral\docs\governance\decision-log.md e C:\Projetos\cgov-geral\docs\adr\.
   Pendências: C:\Projetos\cgov-geral\docs\governance\pendencias.md e, na operação,
-  C:\Users\leand\My Drive\10_Institucional\CGOV\90_escritorio-virtual\manutencao\PENDENCIAS.md.
+  C:\Users\leand\My Drive\10_Institucional\CGOV\90_escritorio-virtual\manutencao\PENDENCIAS.md
+  (este projeto não tem acesso à pasta CGOV: peça ao Coordenador o conteúdo ou o vínculo temporário).
 
 ## Regras obrigatórias
 1. Antes de mover, renomear, excluir, reinstalar, fazer commit ou push: mostre a lista do que vai mudar
    e aguarde confirmação explícita. Nunca exclua: use a quarentena 99_arquivo/_a-excluir_<data>/.
-2. Na pasta CGOV, toda movimentação sai do mapa CSV aprovado (Fase 4) e é conferida por SHA-256.
+2. A pasta CGOV não é vinculada a este projeto. Mudanças nela saem de operacao/ (publicação conferida
+   por SHA-256) ou são feitas no projeto "Escritório CGOV — Operação"; movimentação em lote só por mapa
+   CSV aprovado e conferido por SHA-256, com vínculo temporário autorizado pelo Coordenador.
 3. Não altere o conteúdo de documentos de processos, normas ou NTs; apenas mova, renomeie e crie
    fichas e índices.
 4. Nada de dados pessoais, matrículas, documentos SEI ou caminhos pessoais em plugins/, operacao/ ou
@@ -1394,7 +1420,8 @@ cowork_projeto: ""
 | v3.20 (05/11) | *Commit* `377c34c`; preparação da 4.8; D31 | Apêndice B na versão final 1.0 (tradução de caminhos mantida até a Fase 6.3 via `AGENTS.md`; skills listadas; sem comandos do plugin); `escritorio-cgov.md` arquivado; navegação v2 republicada; `reorganizar_cgov.py` v1.2.2; *prompt* do teste da 4.8 |
 | v3.21 (05/11) | *Commit* `d9c582e` (parcial); 4.8 concluída; D32 e D33 | Testes do projeto Operação aprovados; deriva da `cgov-nt-01` instalada (`_CGOV_NT`) registrada como risco materializado; `AGENTS.md` v3; teste na quarentena; 4.9 preparada (copiar e arquivar); *prompt* da 4.9 |
 | v3.22 (06/11) | *Commit* `54ae16b`; 4.9 (cópias); D34 | Instruções dos projetos Cowork antigos copiadas para as fichas e para `local\archive`; resumos movidos da raiz do repositório; **novo objetivo D34** (modelo geral de análise de atos normativos): etapa 6.9 e Piloto 1 da Fase 11; *prompts* da 4.10 e da 6.9 |
+| v3.23 (06/11) | *Commit* `306ade5`; 4.9 e 4.10; D35 | **Fase 4 concluída**: projetos antigos arquivados; `PROJETO.md` da GR2; mapa, manifestos e registros em `90_…\manutencao\reorganizacao-2026-11\`; decision-log §28; fim do congelamento; Apêndice A v2 (sem a pasta CGOV); próxima: Fase 5; 4.11 em 05/12/2026 |
 
 ---
 
-*Fim do plano v3.22. Fases 1, 2 e 3 concluídas; Fase 4 em andamento (4.1 a 4.4a ✅; v3.21 no *commit* `54ae16b`; pasta CGOV congelada; 4.5 a 4.8 ✅; 4.9 com cópias feitas). Próximo passo: o Coordenador arquiva os projetos antigos; depois a 4.10 (mapa e manifestos em `90_…\manutencao`, Decisão 28 no decision-log, pasta CGOV fora do projeto Implantação) da etapa 4.5, numa sessão do projeto "Escritório CGOV — Implantação".*
+*Fim do plano v3.23. Fases 1 a 4 concluídas (06/11/2026); resta a 4.11 (exclusão da quarentena a partir de 05/12/2026). Próximo passo: Fase 5 (atualização do repositório de desenvolvimento), numa sessão do projeto "Escritório CGOV — Implantação".*

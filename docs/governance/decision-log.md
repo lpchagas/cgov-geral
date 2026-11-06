@@ -1283,3 +1283,51 @@ exporia o código-fonte das skills a edições do ambiente de produção.
 instaladas de `cgov-cadeia-valor`, `cgov-pgr` e `cgov-regimento-interno`
 (caminhos antigos `REGISTRO_DECISOES.md` e `04_fontes_normativas/`). Instruções
 completas em [`docs/fluxos-de-trabalho.md`](../fluxos-de-trabalho.md).
+
+## 28. Reorganização da pasta operacional CGOV (Fase 4 do plano de implantação, 05–06/11/2026)
+
+**Contexto.** A pasta operacional CGOV (Google Drive) reunia 2.831 arquivos (3,3 GB) em oito áreas com
+convenções diferentes: processos divididos entre `CGOV_Processos/` e `_acervo-escritorio-virtual/analyses/`,
+acervo normativo duplicado (`normative-sources/` e `CGOV_Normativas/`), 433 grupos de arquivos idênticos e
+backups de desenvolvimento misturados ao trabalho. As decisões do §27 (área operacional no Drive,
+`local/analyses` como link, mapa de caminhos nas instruções do Cowork) ficam superadas nos pontos abaixo.
+
+**Decisões.**
+
+1. **Estrutura nova** (ADR-012 do plano): `00_entrada`, `01_processos` (uma pasta por processo SEI, com
+   `PROCESSO.md`, `documentos-sei/`, `trabalho/`, `referencias/` e `produtos/`), `02_notas-tecnicas`,
+   `03_normativos` (acervo único), `04_colegiados`, `05_projetos`, `06_gestao-da-coordenacao`,
+   `90_escritorio-virtual` (infraestrutura publicada) e `99_arquivo`; `LEIA-ME.md` e `AGENTS.md` na raiz.
+2. **Execução por mapa** arquivo a arquivo (`scripts/reorganizar_cgov.py`, v1.0.0 a v1.2.2), aprovado pelo
+   Coordenador, em sete lotes, com SHA-256 conferido antes de cada movimentação, registro de cada operação e
+   reversão possível. Nada foi excluído: descartes foram para `99_arquivo/_a-excluir_2026-11-05/`, a revisar
+   após 30 dias (ADR-014).
+3. **Projetos Cowork por processo passam a ser exceção** (ADR-013): o trabalho de processo é feito no projeto
+   "Escritório CGOV — Operação"; as instruções dos projetos antigos foram copiadas para as fichas
+   `PROCESSO.md`/`PROJETO.md` ou guardadas no acervo local antes do arquivamento.
+4. **Camada de navegação** (`operacao/` como fonte, antecipada da Fase 5): `LEIA-ME.md`, `AGENTS.md`,
+   `_LEIA-ME.md` por área, modelo `PROCESSO.md` e `_INDICE.md` gerados por `scripts/gerar_indices.py`.
+5. **Transição de caminhos** (ADR-006): até as skills ficarem neutras quanto ao caminho (Fase 6.3), o
+   `AGENTS.md` da pasta traduz os caminhos antigos citados pelas skills (`local/analyses/…`,
+   `CGOV_Processos/…/_CGOV_NT/`, `local/normative-sources/`) para os novos. As instruções do projeto Operação
+   estão em [`docs/system-instructions/escritorio-cgov-operacao.md`](../system-instructions/escritorio-cgov-operacao.md);
+   as anteriores (`escritorio-cgov.md`) foram arquivadas.
+
+**Resultado.**
+
+- 2.860 operações em sete lotes, todas `ok`; 74 pastas de processo; 109 normativos em `03_normativos`;
+  20 Notas Técnicas na série oficial; 587 itens em quarentena; 343 pastas antigas vazias removidas
+  (somente pastas vazias, após conferência de zero arquivos); 9 arquivos pessoais levados para fora da
+  pasta institucional.
+- Manifesto posterior: 2.833/2.833 hashes do manifesto anterior encontrados no destino previsto (100%).
+- 74 fichas `PROCESSO.md` e 5 índices publicados; campos não dedutíveis marcados ⚠️ para revisão gradual.
+- Projeto "Escritório CGOV — Operação" criado e testado: a triagem gravou em `01_processos/…/trabalho/`
+  sem criar `local/`.
+- Mapa, manifestos, decisões e registros copiados para `90_escritorio-virtual/manutencao/reorganizacao-2026-11/`.
+
+**Achados e pendências.** A `cgov-nt-01-triagem` instalada grava em `CGOV_Processos/…/_CGOV_NT/`, diferente
+da fonte (`local/analyses/`): deriva fonte × instalado a corrigir na Fase 6.1. Pendências de conteúdo
+(campos ⚠️ das fichas, nomes da série de NTs, normas ausentes do acervo, vigência dos normativos) ficam com a
+revisão gradual e com a Fase 6. O modelo geral de análise de atos normativos derivado do processo de Termos
+de Compromisso passa a ser objetivo da etapa 6.9 do plano. Detalhes, números e evidências: plano de
+implantação v3.23, Fase 4.

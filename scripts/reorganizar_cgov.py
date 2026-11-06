@@ -25,7 +25,9 @@ Modos (exatamente um por execução):
                            confere que não resta NENHUM arquivo e remove só pastas
                            vazias, da mais funda para a mais rasa (os.rmdir, que
                            falha se a pasta tiver conteúdo). Pede confirmação e
-                           grava um registro. Nunca remove arquivos.
+                           grava um registro. Nunca remove arquivos. v1.2.1: tenta
+                           de novo (bloqueio do Drive / somente leitura) e segue
+                           para as demais pastas; pode ser repetido.
 
 Lotes (etapa 4.5 do plano):
   a  estrutura de pastas            e  04_colegiados, 05_projetos, 06_gestao-da-coordenacao
@@ -59,13 +61,14 @@ import datetime as dt
 import hashlib
 import os
 import re
+import stat
 import sys
 import time
 import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
-VERSAO = "1.2.0"
+VERSAO = "1.2.1"
 
 # --------------------------------------------------------------------------- #
 # Constantes
@@ -1161,17 +1164,34 @@ def limpar_vazias(raiz: Path, sim: bool) -> int:
         for p in pastas:
             rel = os.path.relpath(p.replace("\\\\?\\", ""), str(raiz)).replace(os.sep, "/") \
                 if os.name == "nt" else os.path.relpath(p, str(raiz)).replace(os.sep, "/")
-            try:
-                os.rmdir(p)
-                sit = "removida"
-            except OSError as e:
-                sit = f"erro: {e}"
+            sit = ""
+            for tentativa in range(4):          # v1.2.1: bloqueio temporário (Drive) ou somente leitura
+                try:
+                    os.rmdir(p)
+                    sit = "removida" if tentativa == 0 else f"removida (tentativa {tentativa + 1})"
+                    break
+                except FileNotFoundError:
+                    sit = "ja-removida"
+                    break
+                except PermissionError as e:
+                    sit = f"erro: {e}"
+                    try:
+                        os.chmod(p, stat.S_IWRITE | stat.S_IREAD | stat.S_IEXEC)   # tira o "somente leitura"
+                    except OSError:
+                        pass
+                    time.sleep(2)
+                except OSError as e:            # pasta não vazia ou outro erro: não insiste
+                    sit = f"erro: {e}"
+                    break
+            if sit.startswith("erro"):
                 erros += 1
+                print(f"[AVISO] {rel}: {sit}")
             w.writerow([rel, sit, dt.datetime.now().isoformat(timespec="seconds")])
-            feitos[sit.split(":")[0]] += 1
-            if erros:
-                print(f"[PARE] {rel}: {sit}")
-                break
+            f.flush()
+            feitos[sit.split(" (")[0].split(":")[0]] += 1
+    if erros:
+        print(f"[PARCIAL] {erros} pasta(s) não removida(s); as pastas acima delas também ficam. "
+              f"Espere o Drive sincronizar e rode --limpar-vazias de novo (é seguro repetir).")
     print(f"[{'OK' if not erros else 'PARCIAL'}] Limpeza: " +
           ", ".join(f"{k}={v}" for k, v in feitos.items()) + f" · registro: {reg}")
     return 1 if erros else 0

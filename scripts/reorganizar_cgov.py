@@ -21,6 +21,11 @@ Modos (exatamente um por execução):
                            Cada operação é gravada num registro (journal) CSV.
   --reverter --lote X      Desfaz um lote a partir dos registros de execução,
                            conferindo o hash antes de cada movimentação de volta.
+  --limpar-vazias          Depois do lote g (D29): nas áreas antigas (AREAS_ANTIGAS),
+                           confere que não resta NENHUM arquivo e remove só pastas
+                           vazias, da mais funda para a mais rasa (os.rmdir, que
+                           falha se a pasta tiver conteúdo). Pede confirmação e
+                           grava um registro. Nunca remove arquivos.
 
 Lotes (etapa 4.5 do plano):
   a  estrutura de pastas            e  04_colegiados, 05_projetos, 06_gestao-da-coordenacao
@@ -43,7 +48,7 @@ Exemplos (PowerShell, a partir da raiz do repositório):
 
 Referências: plano de implantação v3.6, Seções 5.2, 5.4, 5.5, 5.6 e Fase 4;
 ADR-012 (estrutura), ADR-014 (exclusão controlada); decisões D10, D11, D14, D15, D16
-e D26 (destinos encurtados em 99_arquivo, v1.1.0).
+e D26 (destinos encurtados em 99_arquivo, v1.1.0) e D29 (--limpar-vazias, v1.2.0).
 """
 
 from __future__ import annotations
@@ -60,7 +65,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
-VERSAO = "1.1.0"
+VERSAO = "1.2.0"
 
 # --------------------------------------------------------------------------- #
 # Constantes
@@ -128,6 +133,9 @@ A_PROJ = "CGOV_Projetos"
 A_ORG = "organizar"
 A_NS = "normative-sources"
 A_ACV = "_acervo-escritorio-virtual"
+
+# Áreas da estrutura antiga, esvaziadas pelos lotes a–g (D29: --limpar-vazias).
+AREAS_ANTIGAS = [A_PROC, A_ADM, A_NORM, A_NT, A_PROJ, A_ORG, A_NS, A_ACV]
 
 # Subpastas improvisadas dos processos → subpasta padronizada (Seção 5.5).
 # Chave: nome normalizado (sem acento, minúsculas). Valor: (subpasta, prefixo).
@@ -1122,6 +1130,53 @@ def executar(linhas: list[dict], raiz: Path, lote: str, raiz_len: int,
     return 1 if erros else 0
 
 
+def limpar_vazias(raiz: Path, sim: bool) -> int:
+    """D29: remove as pastas vazias das áreas antigas, só se não houver nenhum arquivo nelas."""
+    presentes = [a for a in AREAS_ANTIGAS if caminho_abs(raiz, a).is_dir()]
+    if not presentes:
+        print("[OK] Nenhuma área antiga presente.")
+        return 0
+    arquivos, pastas = [], []
+    for a in presentes:
+        base = caminho_abs(raiz, a)
+        for dp, dn, fn in os.walk(base):
+            arquivos += [os.path.join(dp, n) for n in fn]
+            pastas.append(dp)
+    if arquivos:
+        print(f"[PARE] {len(arquivos)} arquivo(s) ainda nas áreas antigas; nada foi removido:")
+        for x in arquivos[:20]:
+            print("    ", x)
+        return 1
+    pastas.sort(key=lambda p: (-p.count(os.sep), p))
+    if not confirmar(f"Remover {len(pastas)} pasta(s) vazia(s) de {len(presentes)} área(s) antiga(s): "
+                     f"{', '.join(presentes)}. Nenhum arquivo é removido.", sim):
+        print("[CANCELADO] Nada foi feito.")
+        return 1
+    REGISTROS.mkdir(parents=True, exist_ok=True)
+    reg = REGISTROS / f"registro_limpeza-vazias_{dt.datetime.now():%Y%m%d-%H%M%S}.csv"
+    feitos, erros = Counter(), 0
+    with open(reg, "w", encoding="utf-8-sig", newline="") as f:
+        w = csv.writer(f, delimiter=DELIM)
+        w.writerow(["pasta", "situacao", "momento"])
+        for p in pastas:
+            rel = os.path.relpath(p.replace("\\\\?\\", ""), str(raiz)).replace(os.sep, "/") \
+                if os.name == "nt" else os.path.relpath(p, str(raiz)).replace(os.sep, "/")
+            try:
+                os.rmdir(p)
+                sit = "removida"
+            except OSError as e:
+                sit = f"erro: {e}"
+                erros += 1
+            w.writerow([rel, sit, dt.datetime.now().isoformat(timespec="seconds")])
+            feitos[sit.split(":")[0]] += 1
+            if erros:
+                print(f"[PARE] {rel}: {sit}")
+                break
+    print(f"[{'OK' if not erros else 'PARCIAL'}] Limpeza: " +
+          ", ".join(f"{k}={v}" for k, v in feitos.items()) + f" · registro: {reg}")
+    return 1 if erros else 0
+
+
 def reverter(raiz: Path, lote: str, verificar_hash: bool, sim: bool) -> int:
     regs = sorted(REGISTROS.glob(f"registro_lote-{lote}_*.csv"), reverse=True)
     if not regs:
@@ -1190,6 +1245,8 @@ def main() -> int:
     modo.add_argument("--simular", action="store_true", help="confere o mapa (somente leitura)")
     modo.add_argument("--executar", action="store_true", help="executa um lote")
     modo.add_argument("--reverter", action="store_true", help="desfaz um lote")
+    modo.add_argument("--limpar-vazias", action="store_true",
+                      help="remove só pastas vazias das áreas antigas (D29)")
     ap.add_argument("--lote", choices=sorted(LOTES), help="lote a–g")
     ap.add_argument("--raiz", help="pasta CGOV (ou CGOV_RAIZ no .env)")
     ap.add_argument("--mapa", default=str(MAPA_PADRAO), help="caminho do mapa CSV")
@@ -1245,6 +1302,9 @@ def main() -> int:
               f"arquivos = 100%)")
         print(f"[OK] Resumo: {arq_resumo}")
         return 0
+
+    if a.limpar_vazias:
+        return limpar_vazias(raiz, a.sim)
 
     linhas = ler_mapa(mapa)
     if a.simular:

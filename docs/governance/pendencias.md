@@ -34,5 +34,5 @@
 | E1 | Modelo geral de análise de atos normativos (instruções v1 geradas a partir de um processo real): decidir as 6 questões em aberto, tornar modelagem de processos, riscos e AIR subsídios obrigatórios da NT, corrigir 8 divergências entre skills, publicar o procedimento | Etapa 6.9 (D34); piloto na Fase 11 |
 | E2 | Decisões D4–D8 do plano (skill para o analista de processos SEI, acesso dos servidores, orientação institucional sobre IA e LGPD, Fabric/Power BI, Maestri) | Fase 0 |
 | E3 | `docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md` | Fase 5.9 |
-| E4 | `scripts/verificar_sanitizacao.py` | Fase 5.10 |
+| E4 | `scripts/verificar_sanitizacao.py` | Fase 5, bloco 1 (antecipado da 5.10 pela D37) |
 | E5 | Validar `ocr_windows.ps1` (`cgov-transcrever-normativos`) no Windows | Fase 6.7 |

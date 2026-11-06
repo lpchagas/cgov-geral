@@ -46,4 +46,4 @@ Cada pasta tem um _LEIA-ME.md com a finalidade, o que entra, o que não entra e 
 
 ## Como pedir ajuda ao Claude (projeto "Escritório CGOV — Operação")
 "Abra o processo <apelido> e resuma o andamento" · "Preciso de uma Nota Técnica sobre…"
-· "Classifique o que está em 00_entrada" · "Atualize os índices"
+· "Classifique o que está em 00_entrada" · "Atualize a ficha do processo <apelido>"

@@ -16,6 +16,19 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 | Modelos | 90_escritorio-virtual/modelos/ |
 | Pendências para o desenvolvimento | 90_escritorio-virtual/manutencao/PENDENCIAS.md |
 
+## Caminhos antigos citados pelas skills (transição até a Fase 6)
+As skills instaladas ainda foram escritas com caminhos do repositório de desenvolvimento. Traduza sempre:
+
+| Caminho citado pela skill | Caminho nesta pasta |
+|---|---|
+| local/analyses/SEI_<processo>_<apelido>/ (inclui NT_ESTADO.md) | 01_processos/<pasta do processo>/trabalho/ |
+| CGOV_Processos/<pasta>/_CGOV_NT/ (versão instalada da cgov-nt-01; pasta no padrão SEI_<nº>_<ano>_<dv>_<APELIDO>) | 01_processos/<pasta do processo>/trabalho/ (nome da pasta no padrão do LEIA-ME.md) |
+| local/normative-sources/ | 03_normativos/ |
+| local/acervo-drive/manutencao/PENDENCIAS.md | 90_escritorio-virtual/manutencao/PENDENCIAS.md |
+| docs/… (decision-log, relatórios, catálogo) | 90_escritorio-virtual/referencia/docs/… (somente leitura) |
+
+Se a pasta do processo não existir, crie-a conforme a obrigação 1, usando o padrão de nome do LEIA-ME.md.
+
 ## Obrigações
 1. Processo novo: criar a pasta com as subpastas documentos-sei/, trabalho/, referencias/ e produtos/ e
    copiar 90_escritorio-virtual/modelos/processo/PROCESSO.md, preenchendo o frontmatter.

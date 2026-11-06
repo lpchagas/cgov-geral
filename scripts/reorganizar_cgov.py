@@ -50,7 +50,8 @@ Exemplos (PowerShell, a partir da raiz do repositório):
 
 Referências: plano de implantação v3.6, Seções 5.2, 5.4, 5.5, 5.6 e Fase 4;
 ADR-012 (estrutura), ADR-014 (exclusão controlada); decisões D10, D11, D14, D15, D16
-e D26 (destinos encurtados em 99_arquivo, v1.1.0) e D29 (--limpar-vazias, v1.2.0).
+e D26 (destinos encurtados em 99_arquivo, v1.1.0) e D29 (--limpar-vazias, v1.2.0;
+v1.2.2: barra de progresso do --limpar-vazias, pelo Coordenador).
 """
 
 from __future__ import annotations
@@ -61,6 +62,7 @@ import datetime as dt
 import hashlib
 import os
 import re
+import shutil
 import stat
 import sys
 import time
@@ -68,7 +70,7 @@ import unicodedata
 from collections import Counter, defaultdict
 from pathlib import Path
 
-VERSAO = "1.2.1"
+VERSAO = "1.2.2"
 
 # --------------------------------------------------------------------------- #
 # Constantes
@@ -1158,14 +1160,30 @@ def limpar_vazias(raiz: Path, sim: bool) -> int:
     REGISTROS.mkdir(parents=True, exist_ok=True)
     reg = REGISTROS / f"registro_limpeza-vazias_{dt.datetime.now():%Y%m%d-%H%M%S}.csv"
     feitos, erros = Counter(), 0
+    total, inicio = len(pastas), time.monotonic()
+    largura = max(40, shutil.get_terminal_size((100, 20)).columns - 1)
+
+    def progresso(i: int, rel: str, extra: str = "") -> None:
+        """Linha única, reescrita no lugar (\\r), para o terminal não parecer travado."""
+        dec = time.monotonic() - inicio
+        resta = (dec / i) * (total - i) if i else 0
+        txt = f"[{i}/{total} {100 * i // total:3d}% · ~{int(resta) // 60}min{int(resta) % 60:02d}s] {extra}{rel}"
+        if len(txt) > largura:
+            txt = txt[:largura - 1] + "…"
+        print("\r" + txt.ljust(largura), end="", flush=True)
+
+    print(f"Removendo {total} pasta(s) vazia(s); o Drive pode exigir ~2 s por pasta. Registro: {reg}")
     with open(reg, "w", encoding="utf-8-sig", newline="") as f:
         w = csv.writer(f, delimiter=DELIM)
         w.writerow(["pasta", "situacao", "momento"])
-        for p in pastas:
+        for i, p in enumerate(pastas):
             rel = os.path.relpath(p.replace("\\\\?\\", ""), str(raiz)).replace(os.sep, "/") \
                 if os.name == "nt" else os.path.relpath(p, str(raiz)).replace(os.sep, "/")
+            progresso(i, rel)
             sit = ""
             for tentativa in range(4):          # v1.2.1: bloqueio temporário (Drive) ou somente leitura
+                if tentativa:
+                    progresso(i, rel, f"tentativa {tentativa + 1}/4 · ")
                 try:
                     os.rmdir(p)
                     sit = "removida" if tentativa == 0 else f"removida (tentativa {tentativa + 1})"
@@ -1185,10 +1203,13 @@ def limpar_vazias(raiz: Path, sim: bool) -> int:
                     break
             if sit.startswith("erro"):
                 erros += 1
+                print("\r" + " " * largura + "\r", end="")      # limpa a linha de progresso
                 print(f"[AVISO] {rel}: {sit}")
             w.writerow([rel, sit, dt.datetime.now().isoformat(timespec="seconds")])
             f.flush()
             feitos[sit.split(" (")[0].split(":")[0]] += 1
+        progresso(total, "concluído")
+        print()
     if erros:
         print(f"[PARCIAL] {erros} pasta(s) não removida(s); as pastas acima delas também ficam. "
               f"Espere o Drive sincronizar e rode --limpar-vazias de novo (é seguro repetir).")

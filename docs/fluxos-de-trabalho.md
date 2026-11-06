@@ -1,198 +1,148 @@
 # Fluxos de trabalho — desenvolvimento e operação
 
-> Implantado em 06/10/2026. Define como o Escritório CGOV é desenvolvido
-> (Claude Code) e como é usado no dia a dia técnico e administrativo da
-> Coordenação (Claude Cowork), e como uma versão passa de um para o outro.
+> Versão 2 — 06/11/2026, depois da Fase 4 do plano de implantação (reorganização da pasta CGOV).
+> Substitui a versão de 06/10/2026 (arquivada em `archive/docs/fluxos-de-trabalho_ate-2026-11-06.md`).
+> Itens marcados ⏳ dependem da Fase 5 do plano (scripts e junções novos).
 
 ## 1. Visão geral
 
 | | **Desenvolvimento** | **Operação (produção)** |
 |---|---|---|
 | Para quê | Criar e corrigir skills, instruções, documentação e scripts | Produzir Notas Técnicas, pareceres, análises de processos SEI e demais demandas da CGOV |
-| Ferramenta | Claude Code (WSL) | Claude Cowork (app Claude no Windows), projeto "Escritório CGOV" |
-| Pasta de trabalho | `~/projetos/cgov-geral-v1` (este repositório) | Pasta **CGOV** do Google Drive |
+| Ferramenta | Claude Code e projeto Cowork **"Escritório CGOV — Implantação"** (Windows); Antigravity e Obsidian | Projeto Cowork **"Escritório CGOV — Operação"** (app Claude no Windows) |
+| Pasta de trabalho | Este repositório (`C:\Projetos\cgov-geral` no computador do Coordenador) | Pasta **CGOV** do Google Drive (`…\My Drive\10_Institucional\CGOV`) |
 | Versão das skills | Fonte em `skills/` (rascunho até o commit) | Skills **instaladas** na conta Claude |
-| Documentação | `docs/` (edição) | `_acervo-escritorio-virtual/_referencia/docs/` (cópia só leitura) |
-| Dados de processos | Não produz; só lê quando precisa de exemplo real | `_acervo-escritorio-virtual/analyses/` |
-| Publicação | Git → GitHub (**repositório privado**, mantido sanitizado) | Nada é publicado; tudo fica no Drive |
+| Documentação | `docs/` (edição) | `90_escritorio-virtual/referencia/docs/` (cópia só leitura) ⏳ republicação na Fase 5.3 |
+| Navegação da pasta | `operacao/` (fonte) | `LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos (publicados) |
+| Dados de processos | Não produz | `01_processos/<processo>/` (ficha `PROCESSO.md`; estado da NT em `trabalho/NT_ESTADO.md`) |
+| Publicação | Git → GitHub (repositório **privado**, mantido sanitizado) | Nada é publicado; tudo fica no Drive |
 
-Regra central: **o Cowork nunca edita o repositório e o Claude Code nunca
-produz trabalho de processo.** O que liga os dois é a *publicação* (§4) num
-sentido e o arquivo de *pendências* (§5) no outro.
+Regra central: **o projeto Operação nunca edita o repositório e o desenvolvimento nunca produz trabalho de
+processo.** O que liga os dois é a *publicação* (§4) num sentido e o arquivo de *pendências* (§5) no outro.
 
 ```
- DESENVOLVIMENTO (Claude Code, WSL)            OPERAÇÃO (Claude Cowork, Windows)
- ~/projetos/cgov-geral-v1                      My Drive\...\CGOV
-   skills/  docs/  scripts/  (Git)               normative-sources\
-   local/normative-sources ──link──────────────►   (PDFs e transcrições)
-   local/analyses ─────────link──────────────►  _acervo-escritorio-virtual\
-                                                   analyses\SEI_...\NT_ESTADO.md
-        │ commit → scripts/publicar-operacao.sh    _referencia\docs\  (só leitura)
-        ├──► dist/skills/*.zip ── reinstalar ──►  skills instaladas na conta
-        └──► _referencia\docs\ ─────────────────►
-        ◄──────────── manutencao\PENDENCIAS.md ◄── registro de problemas
+ DESENVOLVIMENTO (Claude Code / Cowork "Implantação")     OPERAÇÃO (Cowork "Operação")
+ C:\Projetos\cgov-geral                                  My Drive\10_Institucional\CGOV
+   skills/  docs/  scripts/  operacao/  (Git)              LEIA-ME.md · AGENTS.md
+        │ commit → publicação (⏳ publicar_operacao.py)     00_entrada … 06_gestao-da-coordenacao
+        ├──► dist/skills/*.zip ── reinstalar ─────────►   01_processos\<processo>\PROCESSO.md
+        ├──► docs/ ───────────────────────────────────►   90_escritorio-virtual\referencia\docs\
+        └──► operacao/ ───────────────────────────────►   raiz, _LEIA-ME.md, 90_…\modelos\
+        ◄─────────────── 90_escritorio-virtual\manutencao\PENDENCIAS.md ◄── registro de problemas
 ```
 
-## 2. Configuração do computador
+## 2. Estrutura da pasta CGOV (Fase 4, 05–06/11/2026)
 
-Feita em 06/10/2026; refaça estes passos só em computador novo ou após
-reinstalar o WSL.
+| Pasta | Conteúdo |
+|---|---|
+| `00_entrada` | Arquivos novos ainda sem destino (esvaziar toda semana) |
+| `01_processos` | Uma pasta por processo SEI: `SEI_<órgão>.<número>_<ano>-<dv>_<apelido>/` com `PROCESSO.md`, `documentos-sei/`, `trabalho/`, `referencias/`, `produtos/`; índice `_INDICE.md` |
+| `02_notas-tecnicas` | Série oficial de NTs e Informações assinadas, por ano; `_INDICE.md` |
+| `03_normativos` | Acervo normativo único (PDF + transcrição `.md`); `revogados/`; `_INDICE.md` |
+| `04_colegiados` | CTGRIC, Conselho de Governança, CIG, CTGD |
+| `05_projetos` | Projetos sem processo SEI (`AAAA-MM_apelido/` + `PROJETO.md`) |
+| `06_gestao-da-coordenacao` | Plano de entregas, PGD da equipe, planejamento |
+| `90_escritorio-virtual` | Infraestrutura publicada pelo desenvolvimento: `referencia/`, `modelos/`, `manutencao/` (`PENDENCIAS.md`, `reorganizacao-2026-11/`), `transcricoes/` |
+| `99_arquivo` | Processos encerrados, versões superadas, backups e a quarentena `_a-excluir_<data>/` |
 
-### 2.1 Desenvolvimento (WSL)
+Detalhes, decisões e evidências: plano de implantação (Fase 4) e `docs/governance/decision-log.md` §28.
+Os textos de navegação (`LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos) têm fonte em `operacao/`.
 
-1. Restaurar ou clonar o repositório em `~/projetos/cgov-geral-v1`.
-2. Copiar `.env.example` para `.env` e ajustar os quatro caminhos:
-   `CGOV_NORMATIVE_SOURCES`, `CGOV_ACERVO_DRIVE`, `CGOV_ANALYSES` e
-   `CGOV_REFERENCIA`.
-3. Criar os links para o Drive:
+## 3. Configuração do computador (Windows)
 
-   ```bash
-   bash scripts/link-acervo.sh
-   ```
+### 3.1 Desenvolvimento
 
-4. Instalar o leitor de PDF usado pelos scripts de transcrição:
+1. Repositório clonado em `C:\Projetos\cgov-geral` (`git config core.autocrlf false`).
+2. Python 3.12 ou superior (`py --version`); Git; Claude Desktop (Cowork e Code).
+3. `.env` a partir de `.env.example` com `CGOV_RAIZ` (pasta CGOV). ⏳ As variáveis `CGOV_PROCESSOS`,
+   `CGOV_NORMATIVOS` e `CGOV_ESCRITORIO` e as junções `local\processos`, `local\normativos` e
+   `local\escritorio` chegam na Fase 5.1–5.2. **As junções antigas (`local\analyses`,
+   `local\normative-sources`, `local\acervo-drive`) apontam para pastas que não existem mais.**
+4. Projeto Cowork "Escritório CGOV — Implantação": pasta única `C:\Projetos\cgov-geral`; instruções no
+   Apêndice A do plano de implantação. A pasta CGOV só é vinculada temporariamente, com autorização do
+   Coordenador (por exemplo, na exclusão da quarentena).
+5. `.claude/settings.json` (versionado): pede confirmação antes de `git commit` e `git push`, bloqueia a
+   edição das áreas operacionais e oculta do modelo as skills cuja fonte está em `skills/`
+   (`skillOverrides`). ⏳ Bloqueios com os nomes novos na Fase 5.6.
 
-   ```bash
-   npm install --prefix ~/.local/share/cgov-tools pdfjs-dist
-   ```
+### 3.2 Operação
 
-5. Criar `.claude/settings.local.json` (não versionado) bloqueando edição
-   direta na pasta CGOV do Drive, ajustando o caminho:
+1. No Google Drive para desktop, deixar a pasta CGOV como **"Disponível offline"**.
+2. Projeto Cowork **"Escritório CGOV — Operação"**: pasta única = pasta CGOV; instruções = o bloco de
+   [`system-instructions/escritorio-cgov-operacao.md`](system-instructions/escritorio-cgov-operacao.md),
+   colado no campo **Instruções** (não na descrição).
+3. Skills instaladas em Customize → Skills a partir de `dist/skills/*.zip` (§4).
 
-   ```json
-   { "permissions": { "deny": ["Edit(//mnt/c/Users/<usuário>/My Drive/<pasta>/CGOV/**)"] } }
-   ```
-
-O que já vem versionado em `.claude/settings.json`:
-
-- o Claude Code **pede confirmação** antes de `git commit` e `git push`;
-- a edição em `local/analyses/`, `local/normative-sources/`,
-  `local/acervo-drive/` e `.env` é **bloqueada**;
-- as 14 skills cuja fonte está neste repositório ficam ocultas para o modelo
-  (`skillOverrides: user-invocable-only`). Assim, nas sessões de
-  desenvolvimento o Claude trabalha sobre a **fonte** em `skills/` e não é
-  acionado pela versão instalada, que pode estar desatualizada. Para testar
-  a versão instalada de propósito, chame-a pelo nome (`/cgov-nt-01-triagem`).
-
-### 2.2 Operação (Windows, Claude Cowork)
-
-1. No Google Drive para desktop, deixar a pasta CGOV como **"Disponível
-   offline"** (evita erros de leitura no WSL e no Cowork).
-2. No app Claude, aba Cowork, criar ou abrir o projeto **"Escritório CGOV"**:
-   - pasta do projeto: a pasta **CGOV** do Drive (a que contém
-     `normative-sources\` e `_acervo-escritorio-virtual\`);
-   - instruções do projeto: colar o conteúdo de
-     `_referencia\docs\system-instructions\escritorio-cgov.md` (a parte
-     abaixo da primeira linha `---`).
-3. Em Customize → Skills, instalar as skills a partir de
-   `dist/skills/*.zip` (ver §4). No Windows, a pasta é
-   `\\wsl.localhost\Ubuntu\home\<usuário>\projetos\cgov-geral-v1\dist\skills`.
-
-**Não vincule o repositório do WSL ao Cowork.** Testado em 06/10/2026: pelo
-caminho `\\wsl.localhost\...` o Windows não segue os links do repositório
-para o Drive (`local/normative-sources` aparece vazio), o WSL precisaria
-estar ligado e o Cowork poderia alterar o código-fonte das skills.
-
-## 3. Fluxo de desenvolvimento (Claude Code)
-
-Abra o Claude Code em `~/projetos/cgov-geral-v1`. Ciclo de uma mudança:
-
-1. **Origem.** Leia `_acervo-escritorio-virtual/manutencao/PENDENCIAS.md`
-   (pelo link: `local/acervo-drive/manutencao/PENDENCIAS.md`) e escolha a
-   pendência, ou descreva a melhoria.
-2. **Editar a fonte** em `skills/<família>/<skill>/SKILL.md`, `docs/` ou
-   `scripts/`. Nunca edite `.agents/skills/` nem a referência no Drive.
-3. **Validar:**
-   - cabeçalho do `SKILL.md` com `name` e `description` (até 1.024
-     caracteres);
-   - evals da skill (`evals/evals.json` ou `trigger_eval.json`); saídas de
-     teste vão para `local/pilots/`, nunca para `local/analyses/`;
-   - sem dados pessoais, matrículas ou documentos SEI internos em `docs/` e
-     `skills/` (o repositório é privado, mas mantido sanitizado).
-4. **Registrar** a decisão em `docs/governance/decision-log.md`.
-5. **Espelhar para a Antigravity**, se usada:
-   `cp skills/<família>/<skill>/SKILL.md .agents/skills/<skill>/SKILL.md`.
-6. **Commit e push** (o Claude Code pede confirmação).
-7. **Publicar para a operação** (§4).
-8. **Fechar a pendência** em `PENDENCIAS.md`: "resolvida em `<commit>`".
+**Não vincule o repositório ao projeto Operação**: ele exporia o código-fonte das skills a edições de produção.
 
 ## 4. Publicação: do desenvolvimento para a operação
 
-Depois do commit:
+⏳ **Transição.** `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` foram escritos para o WSL e para
+a estrutura antiga (`_acervo-escritorio-virtual/…`) e estão **bloqueados** desde 06/11/2026; a publicação
+de skills com `--verificar` continua disponível apenas para comparar instaladas × fonte. Até a Fase 5.3
+(`scripts/publicar_operacao.py`):
 
-```bash
-bash scripts/publicar-operacao.sh
-```
+- **Skills:** gerar o `.zip` da skill a partir do commit e reinstalar em Customize → Skills; conferir a
+  paridade instalada × fonte.
+- **`operacao/`:** publicar na pasta CGOV por cópia sem sobrescrita, com a versão anterior na quarentena e
+  conferência por SHA-256, como na Fase 4 (registros em `90_escritorio-virtual/manutencao/reorganizacao-2026-11/registros/`).
+- **`docs/`:** a cópia em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 e será republicada
+  na Fase 5.3.
+- **Instruções do projeto Operação:** se `escritorio-cgov-operacao.md` mudar, colar o novo bloco no campo
+  Instruções do projeto.
 
-O script:
+Depois da Fase 5.3, a publicação será um único comando (`py scripts\publicar_operacao.py`), que recusa
+publicar alterações sem commit, gera os pacotes, republica `docs/` e `operacao/` e lista as skills a
+reinstalar.
 
-1. recusa publicar se houver alteração sem commit em `skills/` ou `docs/`;
-2. gera `dist/skills/<skill>.zip` (sem `evals/`) a partir do commit atual;
-3. substitui `_acervo-escritorio-virtual/_referencia/docs/` pela versão do
-   commit e grava `LEIA-ME.md` com o número do commit;
-4. compara as skills instaladas na conta com a fonte e lista as que precisam
-   ser reinstaladas.
+## 5. Fluxo de desenvolvimento
 
-Em seguida, para cada skill listada, no app Claude: Customize → Skills →
-enviar o `.zip` correspondente, substituindo a versão anterior. Se
-`escritorio-cgov.md` mudou, cole o novo texto nas instruções do projeto no
-Cowork. Para só conferir as skills instaladas, sem publicar:
+Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgov-geral`):
 
-```bash
-bash scripts/publicar-operacao.sh --verificar
-```
+1. **Origem.** Ler `90_escritorio-virtual/manutencao/PENDENCIAS.md` da pasta CGOV (colado pelo Coordenador
+   ou ⏳ pela junção `local\escritorio`) e [`governance/pendencias.md`](governance/pendencias.md).
+2. **Editar a fonte** em `skills/<família>/<skill>/SKILL.md`, `docs/`, `operacao/` ou `scripts/`.
+3. **Validar:** frontmatter do `SKILL.md` com `name` e `description` (até 1.024 caracteres); evals
+   (`evals/evals.json`), com saídas de teste em `local/pilots/`; sanitização de `docs/`, `skills/` e
+   `operacao/` (⏳ `scripts/verificar_sanitizacao.py`, Fase 5.10).
+4. **Registrar** a decisão em [`governance/decision-log.md`](governance/decision-log.md) (só acréscimos).
+5. **Espelhar para a Antigravity**, se usada (`.agents/skills/`, ver `CONTRIBUTING.md`).
+6. **Commit e push**, com confirmação do Coordenador. O shell do Cowork não tem credencial do GitHub:
+   `git push` e `git ls-remote` ficam no PowerShell do Coordenador.
+7. **Publicar para a operação** (§4) e reinstalar as skills alteradas.
+8. **Fechar a pendência** em `PENDENCIAS.md`: "resolvida em `<commit>`".
 
-A comparação usa a cópia que o Claude Code sincroniza da conta em
-`~/.claude/skills/synced/`; depois de reinstalar, ela se atualiza em até
-10 minutos com o Claude Code aberto.
+## 6. Fluxo operacional (projeto "Escritório CGOV — Operação")
 
-## 5. Fluxo operacional (Claude Cowork)
+- **Antes de tudo:** o assistente lê `LEIA-ME.md` e `AGENTS.md` da raiz; para um processo, o
+  `01_processos/_INDICE.md` e o `PROCESSO.md` (campos ⚠️ ainda não revisados não são fatos).
+- **Nota Técnica ou parecer:** sempre `cgov-nt-01-triagem`; o estado fica em
+  `01_processos/<processo>/trabalho/NT_ESTADO.md`. Processo novo: pasta e ficha a partir de
+  `90_escritorio-virtual/modelos/processo/PROCESSO.md`.
+- **Caminhos antigos nas skills:** até a Fase 6.3, as skills ainda citam `local/analyses/…`,
+  `CGOV_Processos/…/_CGOV_NT/` e `local/normative-sources/`; a tabela "Caminhos antigos citados pelas
+  skills" do `AGENTS.md` da pasta traduz para a estrutura nova. Se aparecer uma pasta `local/`,
+  `analyses/` ou `_CGOV_NT/` na pasta CGOV, mova o conteúdo para o lugar certo e registre uma pendência.
+- **NT assinada:** PDF em `02_notas-tecnicas/<ano>/` (`NT_<nº>-<ano>_SEI_<nº documento>_<tema>.pdf`) e
+  registro no `PROCESSO.md`.
+- **Índices:** os `_INDICE.md` são gerados por `scripts/gerar_indices.py` no desenvolvimento; a operação
+  registra "regenerar índices" em `PENDENCIAS.md`.
+- **Normas:** `03_normativos/`; para transcrever um PDF novo, `cgov-transcrever-normativos`.
+- **Problema ou melhoria:** não corrigir a skill na operação; registrar em
+  `90_escritorio-virtual/manutencao/PENDENCIAS.md` (sem dados pessoais).
 
-Abra o projeto "Escritório CGOV" no Cowork.
-
-- **Nota Técnica ou parecer:** comece sempre por `cgov-nt-01-triagem`. A
-  pasta do processo é criada em
-  `_acervo-escritorio-virtual/analyses/SEI_<nº sem barras>_<apelido>/`, com
-  `NT_ESTADO.md`; as skills seguintes (`cgov-nt-02` a `07`) leem e
-  atualizam esse arquivo.
-- **Demandas temáticas** (riscos, AIR/ARR, cadeia de valor, regimento,
-  PGR, QCF): use a skill correspondente; os produtos vão para a mesma pasta
-  do processo.
-- **Rotina administrativa:** o Cowork enxerga também as pastas `CGOV_*`
-  (processos, projetos, normativas, Notas Técnicas assinadas). Tarefas
-  recorrentes podem virar tarefas agendadas do Cowork.
-- **Normas:** consulte `normative-sources\`. Para transcrever um PDF novo,
-  use `cgov-transcrever-normativos`; o `.md` é gravado ao lado do PDF.
-- **Mapa de caminhos:** as skills citam caminhos do repositório; as
-  instruções do projeto mandam traduzir `local/analyses/` →
-  `_acervo-escritorio-virtual/analyses/` e `local/normative-sources/` →
-  `normative-sources/`. Se o Cowork criar uma pasta `local/` dentro da pasta
-  CGOV, mova o conteúdo para o lugar certo e registre uma pendência.
-- **Problema ou melhoria:** não corrija a skill no Cowork. Peça ao Cowork
-  para registrar em `_acervo-escritorio-virtual/manutencao/PENDENCIAS.md`
-  (modelo no próprio arquivo, sem dados pessoais).
-
-## 6. Regras de segurança
+## 7. Regras de segurança
 
 | Regra | Por quê |
 |---|---|
-| Dados de processos só no Drive (`analyses/`) | Contêm rascunhos e informação interna; o Drive tem backup e o repositório, embora privado, é mantido sanitizado |
-| Nada de `local/`, `.env` ou `dist/` no Git | Já ignorados pelo `.gitignore` |
-| Commit e push sempre com confirmação | Repositório remoto (privado) compartilha o histórico; configurado em `.claude/settings.json` |
-| A referência no Drive é descartável | Cada publicação a substitui por inteiro |
-| Skill instalada só a partir de `dist/skills/` | Garante que produção = commit publicado |
+| Dados de processos só no Drive (`01_processos/`) | Rascunhos e informação interna; o repositório, embora privado, é mantido sanitizado |
+| Nada se apaga direto: quarentena `99_arquivo/_a-excluir_<data>/`, revista após 30 dias | ADR-014; permite recuperar |
+| Movimentação em lote só por mapa aprovado, conferida por SHA-256 e com registro | Rastreabilidade e reversão |
+| Nada de `local/`, `.env` ou `dist/` no Git | Ignorados pelo `.gitignore` |
+| Commit e push sempre com confirmação | `.claude/settings.json` e regra do projeto Implantação |
+| A referência e a navegação publicadas no Drive não se editam à mão | São substituídas a cada publicação |
+| Skill instalada só a partir do commit publicado | Produção = commit publicado |
 
-## 7. Pendências conhecidas (06/10/2026)
+## 8. Pendências
 
-- Reinstalar `cgov-cadeia-valor`, `cgov-pgr` e `cgov-regimento-interno`: as
-  versões instaladas ainda citam caminhos antigos (`REGISTRO_DECISOES.md`,
-  `04_fontes_normativas/`).
-- Atualizar as instruções do projeto no Cowork com a nova versão de
-  `escritorio-cgov.md` e trocar a pasta do projeto para a pasta CGOV.
-- Avaliar, no fluxo de desenvolvimento, deixar as skills neutras quanto ao
-  caminho (hoje dependem do mapa de caminhos das instruções do Cowork).
-- `ocr_windows.ps1` (`cgov-transcrever-normativos`) depende do PowerShell do
-  Windows: não roda no WSL e o funcionamento no Cowork ainda não foi verificado.
-- Cópia local das análises anterior à mudança mantida em
-  `local/_backup/analyses_pre-drive_20261006/` (fora do Git); pode ser
-  apagada depois de confirmado o uso pelo Drive.
+Lista consolidada e atualizada em [`governance/pendencias.md`](governance/pendencias.md).

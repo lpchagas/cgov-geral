@@ -5,6 +5,10 @@
 # Uso: bash scripts/link-acervo.sh
 set -euo pipefail
 cd "$(dirname "$0")/.."
+# BLOQUEADO desde 06/11/2026 (Fase 4 do plano de implantação): os destinos antigos
+# (normative-sources, _acervo-escritorio-virtual, analyses) não existem mais na pasta CGOV.
+# Substituto: scripts/link_acervo.py (Fase 5.1). Ver docs/governance/pendencias.md (P1).
+echo "  [PARE] link-acervo.sh bloqueado (estrutura antiga da pasta CGOV). Ver docs/governance/pendencias.md (P1)."; exit 1
 [ -f .env ] || { echo "  [PARE] .env não encontrado — copie .env.example para .env e ajuste"; exit 1; }
 set -a; . ./.env; set +a
 

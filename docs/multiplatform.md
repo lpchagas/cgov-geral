@@ -8,7 +8,8 @@
 | Aplicativo / superfície | O que lê automaticamente | Mecanismo |
 |---|---|---|
 | **Claude Code** (este repositório aberto localmente) | `CLAUDE.md` (raiz) | Nativo. `CLAUDE.md` importa `AGENTS.md` via `@AGENTS.md` — Claude Code **não** lê `AGENTS.md` diretamente, só via esse import. |
-| **Claude Cowork** (projeto "Escritório CGOV") | Campo de instruções do projeto + pasta vinculada | Manual: colar `docs/system-instructions/escritorio-cgov.md` no campo de instruções; pasta vinculada = pasta CGOV do Google Drive, não este repositório; skills instaladas via Customize → Skills a partir de `dist/skills/` (ver `fluxos-de-trabalho.md`). |
+| **Claude Cowork** — projeto "Escritório CGOV — Operação" | Campo de instruções do projeto + pasta vinculada | Manual: colar o bloco de `docs/system-instructions/escritorio-cgov-operacao.md` no campo Instruções; pasta vinculada = pasta CGOV do Google Drive, não este repositório; a pasta tem `LEIA-ME.md` e `AGENTS.md` próprios (fonte em `operacao/`); skills instaladas via Customize → Skills (ver `fluxos-de-trabalho.md`). |
+| **Claude Cowork** — projeto "Escritório CGOV — Implantação" | Campo de instruções + este repositório | Instruções no Apêndice A do plano de implantação; desenvolvimento, sem trabalho de processo. |
 | **Antigravity IDE** (repositório aberto como workspace) | `AGENTS.md` (regras) + `.agents/skills/*/SKILL.md` (skills) | Regras nativas desde a IDE 1.20.5. Skills: **resolvido em 29/08/2026** — ver Seção 2. |
 | **OpenAI Codex** (CLI, app desktop ou a superfície de código dentro do ChatGPT) | `AGENTS.md` + `.codex/config.toml` | Nativo — mesmo `AGENTS.md` que a Antigravity lê. Já antecipado: `.gitignore` já ignora `/.codex/`. Codex não tem conceito de "Skill"/`SKILL.md` — só arquivo de instruções. |
 | **ChatGPT desktop / Projects** (sem acesso a este repositório) | Nada automaticamente | Manual: colar o núcleo de `analista-governanca.md` no campo "Instructions" do Project + anexar os dois anexos à Library do Project — ver Seção 3. |
@@ -68,5 +69,5 @@ A Antigravity também reconhece `GEMINI.md`, e **`GEMINI.md` tem precedência so
 ## 5. Pendências que ainda dependem de decisão sua
 
 1. Revisar o núcleo `analista-governanca.md` (v4.0) linha a linha antes de usá-lo em produção — é uma condensação de um documento validado por várias rodadas, feita sem segunda verificação humana (Seção 3.3).
-2. Decidir se `analista-processos-sei.md` deve ser fundido com `escritorio-cgov.md`, mantido separado, ou aposentado em favor das próprias skills — as três fontes se sobrepõem dentro do Claude Cowork (Seção 3.2). Não decidi isso por você.
+2. Decidir se `analista-processos-sei.md` deve ser fundido com `escritorio-cgov-operacao.md` (que substituiu `escritorio-cgov.md` em 05/11/2026), mantido separado, ou aposentado em favor das próprias skills (decisão D4 do plano, Fase 6.6) — as três fontes se sobrepõem dentro do Claude Cowork (Seção 3.2). Não decidi isso por você.
 3. Se for usar o núcleo em um Gem do Gemini, testar diretamente ou pedir uma segunda condensação mais curta (Seção 3.4).

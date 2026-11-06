@@ -5,17 +5,20 @@ manutenção de skills, documentação metodológica e instruções de assistent
 
 ## Conteúdo
 
-- [Visão geral](docs/overview.md) e [arquitetura](docs/architecture.md).
+- [Visão geral](docs/overview.md), [arquitetura](docs/architecture.md) e [fluxos de desenvolvimento e operação](docs/fluxos-de-trabalho.md).
+- Plano de implantação do Escritório Virtual: `cgov-geral-plano-implantacao.md` (andamento, decisões e evidências).
+- [Pendências](docs/governance/pendencias.md).
 - [Skills canônicas](skills/cgov-nt/) e [skills temáticas](skills/thematic/).
-- [Instruções de assistentes](docs/system-instructions/).
+- [Instruções de assistentes](docs/system-instructions/), entre elas as do projeto Cowork ["Escritório CGOV — Operação"](docs/system-instructions/escritorio-cgov-operacao.md).
+- [Navegação da pasta operacional](operacao/) (fonte de `LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md` e modelos) e [scripts](scripts/) de manutenção.
 - [Catálogo de fontes normativas](docs/references/normative-catalog.md).
 - [Registro de decisões](docs/governance/decision-log.md).
 
 ## Política de dados
 
 O repositório não publica processos SEI, dados de consultas, rascunhos de
-trabalho nem cópias locais de fontes normativas. Esses materiais permanecem em
-`local/`, que é integralmente ignorado pelo Git. O catálogo normativo (`docs/references/normative-catalog.md`) referencia
+trabalho nem cópias locais de fontes normativas. Esses materiais ficam na pasta
+operacional CGOV (Google Drive) ou em `local/`, que é integralmente ignorado pelo Git. O catálogo normativo (`docs/references/normative-catalog.md`) referencia
 fontes oficiais sem redistribuir PDFs ou materiais de terceiros.
 
 ## Estado do projeto

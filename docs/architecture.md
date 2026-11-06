@@ -15,7 +15,9 @@ em `NT_ESTADO.md`, seguem-se, quando aplicáveis, `cgov-nt-02-instrucao`,
 `cgov-nt-06-quesitos-pfe` e `cgov-nt-07-conclusao`.
 
 O estado de cada processo vive exclusivamente em
-`local/analyses/SEI_<numero-sem-barras>_<apelido-curto>/NT_ESTADO.md`.
+`01_processos/SEI_<órgão>.<número>_<ano>-<dv>_<apelido>/trabalho/NT_ESTADO.md`, na pasta CGOV
+(Google Drive). Até a Fase 6.3, as skills ainda citam `local/analyses/…` ou `CGOV_Processos/…/_CGOV_NT/`;
+a tradução está no `AGENTS.md` da pasta CGOV.
 
 ## Classes de artefatos
 
@@ -25,13 +27,15 @@ O estado de cada processo vive exclusivamente em
 | `local/installed-reference/` | Snapshot de skills instaladas ou externas | Consulta local; não publicar sem sanitização. |
 | `archive/` | Evidência histórica sanitizada | Não alterar conteúdo; apenas acrescentar contexto. |
 | `docs/` | Documentação pública sanitizada | Revisar links, precisão normativa e dados pessoais. |
+| `operacao/` | Fonte da navegação publicada na pasta CGOV | Publicar sem sobrescrita, com a versão anterior na quarentena. |
+| `scripts/` | Ferramentas de manutenção (`reorganizar_cgov.py`, `gerar_indices.py`) | Versão no cabeçalho; testar antes de usar na pasta CGOV. |
 | `local/` | Processos, insumos e acervo local | Nunca adicionar ao Git. |
 
 ## Fluxos de trabalho
 
-O desenvolvimento (Claude Code, este repositório) e a operação (Claude
-Cowork, pasta CGOV no Google Drive) são separados; a passagem de um para o
-outro é feita por `scripts/publicar-operacao.sh`. Ver
+O desenvolvimento (Claude Code e projeto Cowork "Escritório CGOV — Implantação", este repositório) e
+a operação (projeto Cowork "Escritório CGOV — Operação", pasta CGOV no Google Drive) são separados; a
+passagem de um para o outro é a publicação (⏳ `scripts/publicar_operacao.py`, Fase 5.3). Ver
 [`fluxos-de-trabalho.md`](fluxos-de-trabalho.md).
 
 ## Multiplataforma
@@ -45,6 +49,6 @@ conhecidas e as pendências de decisão estão em
 
 Editar uma skill em `skills/` não altera uma skill instalada em plataforma
 externa. Toda atualização requer: revisão do conteúdo, execução dos evals,
-publicação (`scripts/publicar-operacao.sh`), reinstalação manual quando
+publicação (procedimento de transição até a Fase 5.3), reinstalação manual quando
 cabível e registro em
 [`decision-log.md`](governance/decision-log.md).

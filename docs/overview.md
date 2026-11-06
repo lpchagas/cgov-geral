@@ -13,14 +13,14 @@
 | Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `cgge-especialista-pgd`, `cgov-elaborar-entrega`, `cgov-avaliar-entrega`, `cgov-registro-execucao`) | Continuam instaladas, não foram tocadas | ✅ Ativas |
 | Relatório técnico completo (diagnóstico + arquitetura + revisão + piloto) | `docs/reports/RELATORIO_cgov-nt.md` | ✅ |
 | Artefatos do piloto | `docs/reports/NT_ESTADO_piloto.md` | ✅ |
-| Fontes normativas | `local/normative-sources` (local) + catálogo público | ✅ |
+| Fontes normativas | `03_normativos/` da pasta CGOV (desde 05/11/2026; antes `normative-sources/`) + catálogo público | ✅ |
 | System Instructions independente | `docs/system-instructions/analista-governanca.md` | ✅ versão canônica v3 |
 | Catálogo normativo público | `docs/references/normative-catalog.md` | ✅ |
 | PDF completo da Portaria nº 5.592/2025 | Ainda apenas em `<Google Drive>\CGOV\CGOV_Normativas\` (não copiado — ver limitação na Seção 11.3 do relatório) | ⚠️ Cópia manual pendente, se desejada |
 | Skills temáticas do Art. 37 | Instaladas na conta Claude; código-fonte em `skills/thematic/` | ✅ |
 | System Instructions do Analista de Processos SEI | `docs/system-instructions/analista-processos-sei.md` | ✅ v7.2 |
-| Análises e produtos de skills por processo SEI | `local/analyses/SEI_[processo]_[apelido]/` | ✅ fora do Git |
-| Suíte `cgov-nt-01` a `07` | Cria/lê `NT_ESTADO.md` em `local/analyses/` | ✅ |
+| Análises e produtos de skills por processo SEI | `01_processos/<processo>/trabalho/` da pasta CGOV (desde 05/11/2026) | ✅ fora do Git |
+| Suíte `cgov-nt-01` a `07` | Cria/lê `trabalho/NT_ESTADO.md` (skills ainda citam caminhos antigos; tradução no `AGENTS.md` da pasta até a Fase 6.3) | ✅ |
 
 ## A suíte `cgov-nt`, em uma tabela
 

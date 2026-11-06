@@ -1,7 +1,7 @@
 # Catálogo público de fontes normativas
 
-Este é o catálogo público e sanitizado do acervo em
-`local/normative-sources/`. Ele substitui o antigo índice local de fontes
+Este é o catálogo público e sanitizado do acervo normativo da pasta CGOV, hoje em
+`03_normativos/` (até 05/11/2026, `normative-sources/`; ver decision-log §28). Ele substitui o antigo índice local de fontes
 normativas: registra a referência, o estado de consulta por máquina e o canal
 oficial de obtenção, mas não redistribui PDFs locais, materiais de terceiros ou
 normas técnicas protegidas.

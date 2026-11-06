@@ -10,6 +10,14 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 ok(){ printf '  [OK] %s\n' "$*"; }; falha(){ printf '  [PARE] %s\n' "$*"; exit 1; }
 
+# BLOQUEADO desde 06/11/2026 (Fase 4 do plano de implantação): a publicação escrevia em
+# _acervo-escritorio-virtual/_referencia, que não existe mais na pasta CGOV reorganizada.
+# Só --verificar (comparação instaladas × fonte, somente leitura) continua permitido.
+# Substituto: scripts/publicar_operacao.py (Fase 5.3). Ver docs/fluxos-de-trabalho.md §4.
+if [ "${1:-}" != "--verificar" ]; then
+  falha "publicar-operacao.sh bloqueado (estrutura antiga). Use --verificar ou o procedimento de transição em docs/fluxos-de-trabalho.md §4."
+fi
+
 verificar_instaladas() {
   echo "== Skills instaladas na conta x fonte (HEAD)"
   python3 - <<'PY'

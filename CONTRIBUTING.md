@@ -3,10 +3,10 @@
 ## Convenções
 
 - Use nomes em minúsculas, separados por hífen, para skills e documentos novos.
-- Workspaces de processos são criados pelo fluxo operacional (Cowork) em
-  `local/analyses/` (link para o Drive), no formato
-  `SEI_<numero-sem-barras>_<apelido-curto>/`. Testes de desenvolvimento vão
-  para `local/pilots/`.
+- Pastas de processos são criadas pelo fluxo operacional (projeto Cowork "Escritório CGOV —
+  Operação") em `01_processos/` da pasta CGOV, no formato
+  `SEI_<órgão>.<número>_<ano>-<dv>_<apelido>/`, com a ficha `PROCESSO.md`. Testes de desenvolvimento
+  vão para `local/pilots/`.
 - Mantenha versões supersedidas em `archive/`; não as apague.
 
 ## Mudanças em skills
@@ -15,9 +15,10 @@
 2. Atualize ou execute os evals aplicáveis.
 3. Confirme que instruções, exemplos e caminhos ativos permanecem coerentes.
 4. Registre a decisão e o resultado em `docs/governance/decision-log.md`.
-5. Após o commit, rode `bash scripts/publicar-operacao.sh` e reinstale no
-   Claude as skills que o script listar (pacotes em `dist/skills/`). Ver
-   [`docs/fluxos-de-trabalho.md`](docs/fluxos-de-trabalho.md).
+5. Após o commit, publique para a operação e reinstale no Claude as skills alteradas. Até a Fase 5.3
+   do plano, a publicação segue o procedimento de transição de
+   [`docs/fluxos-de-trabalho.md`](docs/fluxos-de-trabalho.md) §4 (`publicar-operacao.sh` está
+   bloqueado, salvo `--verificar`).
 
 ## Espelho para a Antigravity — `.agents/skills/`
 

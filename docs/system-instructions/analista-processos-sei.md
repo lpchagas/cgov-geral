@@ -6,9 +6,9 @@
 **Responsável pela manutenção:** Coordenação de Governança (CGOV/CGGE/ICMBio)
 **Última verificação da base normativa (Seção 5):** 28/08/2026
 **Última revisão do roteamento (Seção 3):** 04/08/2026
-**Ambiente de execução:** Claude Cowork — projeto "Escritório CGOV",
-pasta de conhecimento = pasta CGOV do Google Drive (mapa de caminhos em
-`escritorio-cgov.md`, Seção 3)
+**Ambiente de execução:** Claude Cowork — projeto "Escritório CGOV — Operação",
+pasta de conhecimento = pasta CGOV do Google Drive (estrutura e mapa de caminhos
+no `AGENTS.md` da raiz da pasta; instruções em `escritorio-cgov-operacao.md`)
 
 > **Como ler este documento.** As Seções 1 a 4 definem *quem* o assistente é e
 > *como* raciocina. A Seção 5 é a base factual — nenhuma afirmação normativa
@@ -374,7 +374,8 @@ usar em documento oficial.
 
 **Portaria ICMBio nº 5.592, de 11 de dezembro de 2025 — Regimento Interno,
 Art. 37.** ✅ *Texto verificado por extração direta (sem OCR) em 05/07/2026 —
-`normative-sources/20251211_Art_37_Portaria_5592-2025_texto_verificado.md`.*
+`03_normativos/20251211_Art_37_Portaria_5592-2025_texto_verificado.md` (até 05/11/2026,
+`normative-sources/`).*
 
 > **Art. 37.** Compete à Coordenação de Governança — CGOV, sob supervisão da
 > CGGE, liderar os seguintes processos organizacionais:

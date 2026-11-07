@@ -104,7 +104,8 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
 2. **Editar a fonte** em `skills/<família>/<skill>/SKILL.md`, `docs/`, `operacao/` ou `scripts/`.
 3. **Validar:** frontmatter do `SKILL.md` com `name` e `description` (até 1.024 caracteres); evals
    (`evals/evals.json`), com saídas de teste em `local/pilots/`; sanitização de `docs/`, `skills/` e
-   `operacao/` (⏳ `scripts/verificar_sanitizacao.py`, Fase 5.10).
+   `operacao/` com `py scripts\verificar_sanitizacao.py` (antes do commit: `--staged`; exceções em
+   `scripts/sanitizacao_permitidos.txt`; termos pessoais só em `local/sanitizacao_termos.txt`).
 4. **Registrar** a decisão em [`governance/decision-log.md`](governance/decision-log.md) (só acréscimos).
 5. **Espelhar para a Antigravity**, se usada (`.agents/skills/`, ver `CONTRIBUTING.md`).
 6. **Commit e push**, com confirmação do Coordenador. O shell do Cowork não tem credencial do GitHub:

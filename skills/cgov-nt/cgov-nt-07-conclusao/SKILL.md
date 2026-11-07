@@ -40,6 +40,9 @@ description: >
 
 ## FORMATO DE SAÍDA
 
+> A conclusão é a Seção 5 do modelo SEI, fora da Seção 4: `## 5. CONCLUSÃO E
+> PROPOSIÇÃO`, com `### 5.1`, `### 5.2`… (os capítulos 1 a 4 ficam na Seção 4,
+> com `### Capítulo N` e `#### N.1`; ver `cgov-nt-03`).
 > Formato validado por piloto contra NT real protocolada (nº 20/2026/CGOV):
 > capítulo com numeração reiniciada (`### 5.1`, não `#### 5.1`), proposição em
 > algarismos romanos minúsculos entre parênteses — (i), (ii), (iii) — e
@@ -54,7 +57,9 @@ description: >
 [Um a dois parágrafos: total de achados, distribuição por eixo temático e por
 prioridade (Urgente/Prioritário/Desejável) — usar os números exatos
 registrados em NT_ESTADO.md pelo Capítulo 3. Tom objetivo e quantificado,
-citando percentuais/índices relevantes já calculados nos capítulos anteriores.]
+citando percentuais/índices relevantes já calculados nos capítulos anteriores.
+Em análise de ato normativo, inclua também o número de recomendações, a
+distribuição dos riscos por nível residual e a situação da AIR.]
 
 ### 5.2. Conclusão técnica.
 [Posicionamento assertivo, adaptado à natureza do objeto analisado:

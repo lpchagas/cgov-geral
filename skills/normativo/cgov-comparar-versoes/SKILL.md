@@ -25,8 +25,9 @@ redação saneada** pronta para uso pela CGOV.
 
 ## CONTEXTO INSTITUCIONAL
 
-Este comando opera no âmbito do processo de referência (PSPEADBio) ou
-de qualquer outro processo normativo da CGOV/ICMBio. As normas de referência são:
+Este comando opera em qualquer processo normativo da CGOV/ICMBio (o PSPEADBio é
+o ato de referência em que nasceu, não um contexto padrão). As normas de
+referência são:
 
 - **Técnica legislativa:** Lei Complementar nº 95/1998 e Decreto nº 12.002/2024
 - **Processo administrativo:** Lei nº 9.784/1999
@@ -45,7 +46,7 @@ Se o usuário ainda não forneceu as informações abaixo, solicite **somente** 
 estiver faltando:
 
 1. **Identificação do dispositivo:** Qual artigo, inciso, parágrafo ou capítulo está
-   em análise? (ex.: "Art. 12 da minuta do PSPEADBio")
+   em análise? (ex.: "Art. 12 da minuta")
 2. **Versões disponíveis:** Cole ou descreva cada versão do texto — idealmente com a
    origem de cada uma (ex.: "minuta original enviada pela CGGP", "texto sugerido pela
    PFE no Parecer nº 00101/2026", "texto alterado pela Corregedoria em despacho de

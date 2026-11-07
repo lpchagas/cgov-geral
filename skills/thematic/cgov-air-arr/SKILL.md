@@ -271,6 +271,34 @@ Com base na análise, emitir um dos diagnósticos:
 
 ---
 
+## USO COMO SUBSÍDIO DE NOTA TÉCNICA (Níveis 1 e 2)
+
+Quando esta skill rodar como subsídio obrigatório do roteiro da `cgov-nt-01`, entregue
+dois níveis, rotulados como **subsídio metodológico** (Art. 37, p.u., X, da Portaria
+ICMBio nº 5.592/2025). O produto não é o relatório de AIR.
+
+**Nível 1 — Enquadramento (sempre):** na ordem do Decreto nº 10.411/2020, verifique a
+incidência, a não incidência (art. 3º, § 2º) e a dispensa (art. 4º) (Modo 1, Passo
+1.1). Registre se há nos autos relatório de AIR ou decisão fundamentada de dispensa.
+Não confunda não incidência com dispensa.
+
+**Nível 2 — Subsídios (padrão, salvo quando o Nível 1 afastar a obrigação):** organize
+pelo conteúdo do art. 6º o que a análise já permite afirmar:
+- problema regulatório e árvore de causas, sem apresentar a própria norma como problema;
+- afetados e impactos;
+- objetivos;
+- alternativas, inclusive não ação e solução não normativa;
+- efeitos e riscos, a partir da matriz da `cgov-gestao-riscos`;
+- critérios de comparação (metodologias do art. 7º);
+- estratégia de implementação, monitoramento e dados para a futura ARR.
+
+Marque com ⚠️ o que depende de dado da unidade proponente; não estime custos nem
+número de afetados sem fonte. **Limite:** a decisão entre AIR e dispensa, e a escolha
+da alternativa, cabem à unidade proponente; a NT indica o caminho e os elementos de que
+a decisão depende.
+
+---
+
 ## REGRAS TRANSVERSAIS
 
 - A AIR é um instrumento de **suporte à decisão**, não substituto dela — a

@@ -28,8 +28,10 @@ description: >
       arquivo está fora da convenção.
    Se houver mais de um candidato e não for possível identificar o processo
    pelo contexto, pergunte ao usuário antes de prosseguir.
-2. Leia `NT_ESTADO.md`, em especial o Quadro Consolidado de Achados (Capítulo 3,
-   produzido por `cgov-nt-04`).
+2. Leia o Quadro Consolidado de Achados (Capítulo 3, produzido por `cgov-nt-04`)
+   **no produto do Cap. 2-3**, cujo caminho está no `NT_ESTADO.md`; o
+   `NT_ESTADO.md` traz só a contagem. Se o produto não estiver gravado, peça o
+   Capítulo 3 ao usuário.
 3. **Pré-requisito de conteúdo:** cada recomendação desta skill deve derivar de
    um achado numerado do Capítulo 3. Não introduza recomendações "novas" sem
    lastro em achado registrado — se identificar uma questão relevante não
@@ -82,7 +84,7 @@ isso determina o formato da proposta na Fase 2:
 | "..." | ... | "..." |
 
 **Fundamento normativo:** [norma e artigo — sem invenção]
-**Risco institucional se não corrigido:** [consequência prática]
+**Risco institucional se não corrigido:** [consequência prática; cite os riscos pelo código, ex.: RSC-03]
 
 ---
 [repetir para cada recomendação numerada]
@@ -98,7 +100,18 @@ isso determina o formato da proposta na Fase 2:
 | URGENTE | | | |
 | PRIORITÁRIO | | | |
 | DESEJÁVEL | | | |
+
+[Em análise de ato normativo:]
+**Quadro — Riscos × Recomendações**
+| Risco (código) | Residual | Recomendação(ões) | Resposta ou justificativa |
+|---|---|---|---|
 ```
+
+Em análise de ato normativo: todo risco residual **Alto ou Extremo** tem
+resposta ou justificativa no quadro Riscos × Recomendações, e há uma
+recomendação sobre as vias do Decreto nº 10.411/2020 (AIR, dispensa ou não
+incidência), indicando os elementos de que a decisão da unidade proponente
+depende. Não crie providências fora da numeração das recomendações.
 
 As prioridades devem ser **herdadas** das prioridades já atribuídas aos
 achados correspondentes no Capítulo 3 (`cgov-nt-04`) — não reclassifique sem

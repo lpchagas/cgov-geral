@@ -367,8 +367,8 @@ evidência não passa de "Fraco".
 - **Regime A:** a norma manda reclassificar o valor residual pela máscara da
   Tabela 9. A máscara original é coerente por valor: cada produto pertence a uma
   única classe. Daí se derivam as faixas **1–2 Baixo · 3–6 Médio · 8–12 Alto ·
-  15–25 Extremo**. Um residual decimal **entre 6 e 8** ou **entre 12 e 15** cai
-  numa lacuna da norma. Nesse caso, adote a classe superior por prudência e
+  15–25 Extremo**. Um residual decimal **entre 2 e 3**, **entre 6 e 8** ou **entre 12 e 15** cai
+  numa lacuna da norma (ex.: 2,4 vai para Médio). Nesse caso, adote a classe superior por prudência e
   declare a lacuna. Se a unidade tiver adequado a máscara, use a dela.
 - **Regime B:** aplique as faixas do Quadro 8 ao valor exato, **sem arredondar**
   (10,2 é Alto; 17,1 é Extremo). A minuta não trata de arredondamento; registre
@@ -543,6 +543,29 @@ ao CIG, com recomendações.
   metodologias; elaborar e monitorar o **Plano de Integridade**; supervisionar o
   Plano de Gestão de Riscos; assessorar o Comitê Gestor. Compõe o SITAI como
   unidade setorial.
+
+### 3.9 Uso como subsídio de Nota Técnica de ato normativo
+
+Quando esta skill rodar como subsídio obrigatório do roteiro da `cgov-nt-01`:
+
+1. **Objeto:** os riscos da **aplicação do ato analisado**. Os insumos são os fluxos,
+   as competências, a legística e os pontos jurídicos já levantados.
+2. **Teste de Integridade:** registre uma linha por risco (sim/não e subcategoria)
+   sempre que houver decisão sobre beneficiário, autorização, sanção ou atestação.
+   Não use a categoria "Operacional com interface de Integridade".
+3. **Controles:** considere só os previstos no ato ou comprovados nos autos,
+   avaliados pelo desenho. No Regime A, sem evidência de funcionamento, nenhum
+   controle fica acima de **Mediano** (no Regime B vale a regra do item 3.3:
+   **Fraco**). O mesmo controle recebe a mesma eficácia em toda a matriz.
+4. **Categoria Legal:** inclui não conformidade com norma superior e vício de
+   competência ou de rito; declare o critério na matriz.
+5. **Limites:** probabilidade e impacto são **preliminares**, a validar pelo gestor
+   de riscos que a unidade proponente designar; a CGOV verifica a consistência
+   metodológica e não decide o mérito do tratamento. Fato não verificado nos autos é
+   premissa e fica marcado como tal. Ao comparar com respostas anteriores ou testes,
+   registre as divergências em arquivo próprio.
+
+Numere os riscos `RSC-01`, `RSC-02`… (convenção de códigos da `cgov-nt-03`).
 
 ---
 

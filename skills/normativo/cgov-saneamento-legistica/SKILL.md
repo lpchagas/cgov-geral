@@ -52,9 +52,9 @@ Verifique:
 
 **Regras do Decreto nº 12.002/2024 e Manual de Redação da Presidência da República:**
 
-- **Presente do indicativo para obrigações e definições permanentes:** evitar "deverá", "deverão" com sentido imperativo. Preferir "deve" ou o presente simples ("A unidade constitui..." em vez de "A unidade deverá constituir...").
-- **Futuro simples para atos únicos e futuros:** quando a ação ocorrerá uma única vez no futuro ("O Presidente publicará o edital em 30 dias").
-- **Evitar auxiliar modal desnecessário:** "poderá" implica faculdade; "deverá" implica obrigação futura — em normas de vigência continuada, ambos devem ser substituídos por presente.
+- **Uniformidade do tempo verbal (Decreto nº 12.002/2024, art. 11, I, "e"):** o texto usa um só tempo, o presente ou o futuro do presente do indicativo. Aponte a mistura como erro.
+- **Convenção da CGOV para a redação saneada:** futuro do presente do indicativo ("A unidade constituirá…", "O Presidente publicará o edital em 30 dias"), salvo decisão diversa registrada no `NT_ESTADO.md`. O texto limpo da Seção 3 segue essa convenção, e é dele que partem as propostas da NT.
+- **Evitar auxiliar modal desnecessário:** "deverá constituir" → "constituirá"; "poderá" só quando houver faculdade real.
 - **Um verbo de ação por inciso:** cada inciso deve conter um único núcleo verbal (uma única ação).
 - **Sujeito explícito:** nunca usar "o mesmo", "ele", "aquele" para retomar sujeito; repetir o substantivo ou usar pronome relativo.
 - **Evitar nominalizações:** preferir verbo ao substantivo derivado ("analisar" > "realizar a análise de").
@@ -74,7 +74,9 @@ Verifique:
 
 ## FASE 3 — GERAÇÃO DO RELATÓRIO
 
-Produza obrigatoriamente as três seções abaixo, nesta ordem e com este cabeçalho:
+Produza obrigatoriamente as três seções abaixo, nesta ordem e com este cabeçalho.
+Numere os desvios: `E-01`, `E-02`… na Seção 1 (estrutura) e `L-01`, `L-02`… na
+Seção 2 (redação), conforme a convenção de códigos da `cgov-nt-03`.
 
 ```
 ### Relatório de Saneamento de Técnica Legislativa
@@ -107,7 +109,7 @@ Para cada desvio encontrado, use o par De:/Para: com indicação obrigatória do
 **Dispositivo:** [ex: Art. 3º, caput | Art. 7º, § 2º | Art. 10, inciso III]
 **De:** `[texto original com o erro destacado]`
 **Para:** `[texto corrigido]`
-**Justificativa:** [norma + raciocínio — ex: "Decreto nº 12.002/2024, Art. 11: presente do indicativo para obrigações de vigência continuada"]
+**Justificativa:** [norma + raciocínio — ex: "Decreto nº 12.002/2024, art. 11, I, 'e': uniformidade do tempo verbal; convenção da CGOV: futuro do presente"]
 ```
 
 ⚠️ **O campo `Dispositivo:` é obrigatório.** Nunca omitir a localização exata do erro no texto normativo.

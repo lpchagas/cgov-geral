@@ -51,7 +51,14 @@ subseções pertinentes ao caso concreto (não force um template único):
 | Viabilidade operacional de fluxo/processo | Viabilidade operacional | Diagrama Mermaid (BPMN simplificado, ```mermaid```) |
 | Sobreposição de competências | Auditoria de competências | Matriz RACI |
 | Governança institucional/organizacional | Sobreposição de instâncias | Tabela comparativa de atribuições |
-| Gestão de riscos | Mapeamento de riscos | Tabela de riscos (Causa → Evento → Consequência → Impacto) na sintaxe da Portaria ICMBio nº 975/2021 |
+| Gestão de riscos | Gestão de riscos do instrumento | Matriz de riscos (Causa → Evento → Consequência → Objetivo), com o regime declarado (`cgov-gestao-riscos`) |
+| Impacto regulatório | Análise de impacto regulatório | Enquadramento no Decreto nº 10.411/2020 e subsídios do art. 6º (`cgov-air-arr`) |
+
+**Em análise de ato normativo**, as subseções do Capítulo 2 seguem esta ordem:
+fluxos; competências; cotejo com a norma anterior; técnica legislativa; gestão de
+riscos do instrumento; análise de impacto regulatório; pontos jurídicos. Cada uma
+tem método → quadro ou diagrama com dados reais → leitura crítica. O detalhe fica
+no produto de cada subsídio; a NT traz a síntese, sem repetir alertas um a um.
 
 ## FASE 2 — REDAÇÃO
 
@@ -88,6 +95,13 @@ literalmente).
 | 1 | ... | ... | ... | ... | Urgente / Prioritário / Desejável |
 ```
 
+**Regras do Quadro Consolidado:**
+- um único quadro, com até cerca de 25 linhas e achados correlatos agrupados;
+- em análise de ato normativo, eixos **Fluxo, Competência, Legística, Riscos e AIR**;
+- risco já explicado por um achado é vinculado a ele; risco sem achado
+  correspondente gera achado novo;
+- justifique se um achado ligado a risco residual Extremo não for Urgente.
+
 **Critério de priorização (aplicar de forma consistente a todos os achados):**
 - **Urgente:** risco jurídico, operacional ou institucional iminente, ou
   achado que inviabiliza a continuidade do processo sem correção.
@@ -103,7 +117,9 @@ puramente quantitativos ou de mérito jurídico — nesses casos, a tabela basta
 
 ## PÓS-EXECUÇÃO
 
-Acrescente ao `NT_ESTADO.md` (na subpasta localizada na Pré-execução):
+O Quadro Consolidado fica no produto do Cap. 2-3 (na pasta de trabalho do
+processo, quando gravado); o `NT_ESTADO.md` guarda a contagem e o caminho desse
+arquivo. Acrescente ao `NT_ESTADO.md` (na pasta localizada na Pré-execução):
 `Cap. 2-3 — Diagnóstico: concluído em [data]. N achados consolidados (X
 Urgentes, Y Prioritários, Z Desejáveis).` Essa contagem será reaproveitada
 literalmente pela síntese de `cgov-nt-07` — mantenha-a precisa.

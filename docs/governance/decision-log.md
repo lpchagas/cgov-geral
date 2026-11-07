@@ -1575,3 +1575,36 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
    - o *branch* é apagado.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 37. Modelo geral de análise de atos normativos nas skills (Fase 6.9(b)–(d), 07/11/2026)
+
+**Decisões (D50 do plano).**
+
+1. **Roteiro da `cgov-nt-01`.** A análise de ato normativo passa a exigir cinco subsídios **antes** dos capítulos:
+   fluxos, competências, legística, riscos e AIR (D44). Só o Coordenador pode dispensar um deles, e a dispensa fica
+   registrada em "Decisões do projeto" no `NT_ESTADO.md`. A triagem também passa a perguntar o foco da análise e se o
+   ato substitui norma vigente.
+2. **As 8 divergências da Parte B.4** das instruções gerais v1 foram corrigidas nas skills. As principais:
+   - **tempo verbal:** o futuro do presente nos dispositivos propostos é convenção da CGOV, e a legística passa a
+     cobrar uniformidade, que é o que o Decreto nº 12.002/2024 (art. 11, I, "e") exige;
+   - **Quadro Consolidado:** a `nt-05` passa a lê-lo no produto do Cap. 2-3;
+   - **`cgov-gestao-riscos`:** ganhou a seção 3.9, com a regra para controles sem evidência de funcionamento: no
+     máximo Mediano no Regime A e Fraco no Regime B;
+   - **PSPEADBio:** deixa de ser o contexto padrão e fica só como exemplo;
+   - **códigos:** convenção única (`F1-01`, `C-01`, `LS-01`, `E-01`/`L-01`, `RSC-01`, `PJ-01`).
+3. **Ampliações (D45):**
+   - `cgov-nt-06`: Modo 2, para consulta jurídica facultativa e NT de subsídio. A Portaria Conjunta nº 3, de
+     13/05/2021, teve só a ementa confirmada; os artigos e anexos ainda precisam ser conferidos no acervo (⚠️);
+   - `cgov-modelar-fluxo`: Modo 2, de BPMN para tabela de atividades/POP;
+   - `cgov-air-arr`: uso como subsídio, com o Nível 1 sempre e o Nível 2 como padrão.
+4. **Inciso do Art. 37 para competências e legística:** fica com ⚠️ até o piloto da Fase 11.
+5. **Publicação:** o procedimento v2 vai para `docs/procedimentos/analise-atos-normativos.md`, e o modelo de
+   instruções para `operacao/90_escritorio-virtual/modelos/analise-ato-normativo/INSTRUCOES-PROJETO.md`. A citação nas
+   instruções do projeto Operação (Apêndice B) fica para a 6.8.
+6. **Pasta de rascunhos da transcrição:** a D48 (§35) é alterada. Os rascunhos passam a ficar em
+   `90_escritorio-virtual/transcricoes/`, pasta que já existia, e não em `03_normativos/_transcricao/`. A obrigação 3 do
+   `operacao/AGENTS.md` ganhou essa exceção.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

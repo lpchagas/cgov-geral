@@ -41,14 +41,21 @@ description: >
   nº 20/2026/CGOV. **Não use futuro simples na prosa da Nota Técnica.**
 - **Redação de dispositivo de ato normativo** (quando a NT propuser ou citar
   texto de artigo/inciso de portaria/IN que ainda entrará em vigor): aí sim,
-  futuro simples do indicativo, por força do Decreto nº 12.002/2024 — essa
-  regra é do texto normativo em si, não da prosa analítica da NT. Não confunda
-  os dois registros.
+  **futuro do presente do indicativo**, por convenção da CGOV. O Decreto nº
+  12.002/2024 (art. 11, I, "e") admite o presente ou o futuro do presente e exige
+  **uniformidade**: a proposta parte do texto limpo da legística, para que não haja
+  duas redações do mesmo artigo. Essa regra é do texto normativo em si, não da
+  prosa analítica da NT. Não confunda os dois registros.
+- Dispositivos novos recebem numeração provisória com letra (ex.: art. 6º-A);
+  prazos a calibrar pela unidade proponente ficam como "[X]"; um termo definido
+  é o mesmo em todas as redações.
 - Remissões normativas sempre com número e data completos na primeira menção
   (ex.: "Decreto nº 12.002, de 22 de abril de 2024"); menções subsequentes podem
   ser abreviadas ("Decreto nº 12.002/2024").
 - Cada capítulo é um cabeçalho `### Capítulo N — [Nome]` dentro da Seção 4
-  (FUNDAMENTAÇÃO/ANÁLISE TÉCNICA/PARECER); as subseções usam numeração decimal
+  (FUNDAMENTAÇÃO/ANÁLISE TÉCNICA/PARECER), **exceto a conclusão**, que é a Seção
+  `## 5. CONCLUSÃO E PROPOSIÇÃO`, com subitens `### 5.1`, `### 5.2`… (ver
+  `cgov-nt-07`); as subseções usam numeração decimal
   **reiniciada por capítulo** (`#### N.1`, `#### N.2`...), nunca subordinada a
   "4.N.M". Este padrão foi validado por piloto contra NT real protocolada da
   CGOV — não use a variante "4.1/4.1.1".
@@ -58,6 +65,13 @@ description: >
   houver certeza, cite a norma de forma geral e sinalize com ⚠️ a necessidade de
   confirmação pelo servidor responsável.
 - Não gerar arquivo `.docx` — entregar sempre em Markdown, diretamente no chat.
+- **Códigos (prefixos que não colidem):** alertas de fluxo `F1-01`, `F2-01`… (um
+  prefixo por fluxo); conflitos de competência `C-01`; lacunas sistêmicas `LS-01`;
+  legística `E-01` (estrutura) e `L-01` (redação); riscos `RSC-01`; pontos
+  jurídicos `PJ-01`. Achados e recomendações são citados por número (Achado nº,
+  Rec. nº).
+- **Rastreabilidade:** cada recomendação permite o caminho alerta/conflito →
+  achado → risco → recomendação.
 
 ## FORMATO DE SAÍDA
 
@@ -97,7 +111,10 @@ Art. 37 identificado em NT_ESTADO.md]
 #### 1.2. Histórico e metodologia
 [1-2 parágrafos: como surgiu a demanda, período/processo de coleta de dados
 ou de análise normativa, universo considerado — apenas se aplicável ao caso;
-omita o que não existir no processo concreto]
+omita o que não existir no processo concreto. Em análise de ato normativo,
+descreva os subsídios **já realizados** (fluxos, competências, cotejo, legística,
+riscos e AIR), com a base de competência de cada um e as dispensas registradas no
+`NT_ESTADO.md`; não descreva etapa "em execução"]
 
 #### 1.3. Escopo do documento
 [texto: estrutura das seções seguintes, ajustada ao roteiro definido em

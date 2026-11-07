@@ -9,7 +9,9 @@ description: >
   "esse prazo é exequível?", "transformar o artigo em fluxo", "o fluxo fecha?". Acione
   também quando o usuário colar um artigo ou capítulo de portaria e perguntar se o
   processo descrito é viável operacionalmente, mesmo sem esses termos. Costuma vir
-  depois de COMPARAR_VERSOES ou AUDITORIA_COMPETENCIAS.
+  depois de COMPARAR_VERSOES ou AUDITORIA_COMPETENCIAS. Também faz o caminho inverso
+  (MODO 2): tabela de executores, atividades e objetos (POP) a partir de um diagrama
+  BPMN ("tabela do processo", "POP a partir do BPMN").
 ---
 
 # SKILL: Modelar Fluxo de Processos — CGOV/ICMBio
@@ -25,12 +27,12 @@ que a CGOV pode usar para revisar o normativo antes da publicação.
 
 ## CONTEXTO INSTITUCIONAL
 
-Este comando opera no âmbito de processos normativos da CGOV/ICMBio, especialmente
-o PSPEADBio (processo de referência). Os atores institucionais típicos
-são: Ouvidoria, Corregedoria, CGGP, PFE, Comissão de Ética, chefias, denunciante,
-investigado e instâncias de recursos (DIRAD, Presidência).
-
-Normas de referência para prazos e competências:
+Os atores, prazos e competências vêm **do próprio ato analisado** e do Regimento
+Interno do ICMBio: identifique-os no texto, sem presumir um contexto padrão. Se o
+ato tratar de prevenção ao assédio ou de regime disciplinar (como o PSPEADBio, ato
+de referência em que esta skill nasceu), os atores típicos são: Ouvidoria, Corregedoria, CGGP, PFE, Comissão de Ética, chefias,
+denunciante, investigado e instâncias de recursos (DIRAD, Presidência), e as normas
+de referência para prazos e competências são:
 - Lei nº 8.112/1990 (regime disciplinar)
 - Lei nº 9.784/1999 (processo administrativo — prazos gerais)
 - Decreto nº 12.122/2024 (programa federal de prevenção ao assédio)
@@ -53,6 +55,18 @@ Solicite apenas o que não foi fornecido:
 
 > Se o texto foi produzido por COMPARAR_VERSOES nesta mesma sessão, use
 > diretamente a Proposta de Redação Saneada como base, sem pedir o texto novamente.
+
+**Como subsídio de Nota Técnica de ato normativo** (roteiro da `cgov-nt-01`):
+- extraia o texto diretamente da minuta e separe **um fluxo por macroetapa**:
+  nível **micro** na etapa central e **macro** nas demais; entregue um fluxo por vez;
+- por fluxo, entregue: diagrama Mermaid validado; tabela de passos (ator, ação,
+  dispositivo, prazo); veredito sobre se o fluxo fecha;
+- procure decisões sem critério, laços sem saída, etapas sem responsável, prazos
+  ausentes e atores sem competência regimental aparente;
+- numere os alertas por fluxo: `F1-01`, `F1-02`… `F2-01` (convenção de códigos da
+  `cgov-nt-03`);
+- não inicie a auditoria de competências nesta etapa: indique os alertas a
+  aprofundar nela.
 
 ---
 
@@ -160,6 +174,30 @@ Em vez disso, produza o diagrama mostrando onde o processo trava (use `FIM_TRAVA
 > **Recomendação à CGOV:** O fluxo não é modelável como está. Antes de publicar
 > este dispositivo, é necessário revisar [indicar os pontos]. Sugere-se acionar
 > o comando COMPARAR_VERSOES para sanar a redação antes de retornar à modelagem.
+
+---
+
+## MODO 2 — TABELA DO PROCESSO A PARTIR DE UM DIAGRAMA BPMN
+
+Use quando o usuário trouxer um diagrama BPMN (imagem, PDF ou arquivo de modelagem)
+e pedir a descrição do processo em tabela, por exemplo para um Procedimento
+Operacional Padrão (POP) ou para conferir o desenho TO-BE.
+
+1. **Nome do processo:** localize-o na *pool* (canto esquerdo do modelo).
+2. **Executores:** liste todos os atores representados nas raias.
+3. **Atividades por executor**, em ordem de execução, no formato
+   `XX. [Nome da atividade]` (XX = número na sequência do processo).
+4. **Objetos resultantes** de cada atividade, no formato `OBJ-XX — [Descrição]`.
+5. **Tabela**, uma linha por atividade, em ordem de execução:
+
+| Ordem de execução | Executor | Atividade | Objeto resultante |
+|---|---|---|---|
+| 01 | [raia] | 01. [atividade] | OBJ-01 — [descrição] |
+
+6. Se o usuário fornecer uma tabela de referência (por exemplo, um modelo TO-BE
+   anterior), compare-a com o resultado e liste as diferenças.
+7. Não invente atividade, executor ou objeto que não esteja no diagrama: o que for
+   ilegível ou ambíguo fica marcado com ⚠️.
 
 ---
 

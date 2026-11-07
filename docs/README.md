@@ -11,7 +11,7 @@ pasta CGOV, por `scripts/publicar_operacao.py`.
 | Entender o que é o Escritório CGOV e a suíte de Notas Técnicas | [Visão geral](overview.md) |
 | Saber como desenvolvimento e operação se conversam (projetos Cowork, publicação, pendências) | [Fluxos de trabalho](fluxos-de-trabalho.md) |
 | Ver a arquitetura dos dois repositórios | [Arquitetura](architecture.md) |
-| Acompanhar a implantação (fases, decisões D1–D40, evidências) | [Plano de implantação](plano-implantacao.md) |
+| Acompanhar a implantação (fases, decisões, evidências) | [Plano de implantação](plano-implantacao.md) |
 | Saber por que algo foi decidido assim | [ADRs](adr/README.md) e [registro de decisões](governance/decision-log.md) |
 | Saber o que falta fazer | [Pendências](governance/pendencias.md) |
 | Encontrar uma skill e saber se está atualizada | [Catálogo de skills](catalogo-skills.md) |
@@ -26,7 +26,8 @@ pasta CGOV, por `scripts/publicar_operacao.py`.
 - [`multiplatform.md`](multiplatform.md) — compatibilidade com Claude, ChatGPT e Antigravity.
 - [`plano-implantacao.md`](plano-implantacao.md) — plano de implantação do Escritório Virtual (fonte de
   verdade do andamento).
-- [`catalogo-skills.md`](catalogo-skills.md) — as 26 skills do inventário, com fonte e situação.
+- [`catalogo-skills.md`](catalogo-skills.md) — as skills do inventário, com fonte e situação.
+- [`procedimentos/analise-atos-normativos.md`](procedimentos/analise-atos-normativos.md) — procedimento de análise de atos normativos (v2), com o modelo de instruções de projeto.
 - [`adr/`](adr/README.md) — os 14 registros de decisão de arquitetura.
 - [`governance/`](governance/decision-log.md) — [registro de decisões](governance/decision-log.md) (só
   acréscimos) e [pendências](governance/pendencias.md) do desenvolvimento.

@@ -42,6 +42,13 @@ arquivos do projeto, ou anexos já enviados):
    indicadores, atas) — se houver, peça que sejam anexados ao projeto/conversa.
 5. **Destino final do produto:** apenas parecer interno da CGOV, ou NT que seguirá
    para manifestação da PFE/ICMBio (isso decide se cgov-nt-06 será necessária).
+6. **Foco da análise** (só em análise de ato normativo): apenas o **conteúdo do ato**
+   (competências, fluxos, riscos, melhoria regulatória) ou também aspectos de
+   **trâmite do processo**? Pergunte em todo projeto e registre a resposta em
+   "Decisões do projeto" no `NT_ESTADO.md`.
+7. **Norma substituída ou versões em disputa** (só em análise de ato normativo): o
+   ato substitui norma vigente, ou há versões concorrentes do texto? (decide se
+   `cgov-comparar-versoes` entra no roteiro).
 
 > Não interrompa o fluxo pedindo tudo de uma vez — se o essencial (objeto da análise)
 > já estiver claro pela mensagem do usuário ou por arquivo anexado, prossiga e apenas
@@ -90,9 +97,9 @@ necessidade de quesitos PFE (`cgov-nt-06`) é decidida à parte, no Passo 3.1
 abaixo — nunca infira PFE apenas a partir do Tipo.**
 
 - **Tipo A — Análise crítica de minuta normativa articulada** (auditoria de
-  remissões, fluxo ou competências de um texto normativo): precisa de diagnóstico
-  normativo prévio (`cgov-comparar-versoes`, `cgov-modelar-fluxo`,
-  `cgov-auditoria-competencias`, `cgov-saneamento-legistica`) antes de `cgov-nt-02`.
+  remissões, fluxo ou competências de um texto normativo): exige os **cinco
+  subsídios obrigatórios** do Passo 3.2, executados **antes** da redação dos
+  capítulos.
 - **Tipo B — Análise de consulta interna com dados** (survey, formulário,
   indicadores): precisa de tabulação quantitativa e/ou qualitativa (`cgov-nt-02`)
   antes da redação.
@@ -118,10 +125,36 @@ uma IN/portaria (como no caso de referência da revisão da IN nº 14/2025 — P
 Se houver dúvida, pergunte diretamente: "Este parecer seguirá para manifestação da
 PFE/ICMBio sobre a validade do ato normativo correspondente?"
 
+**Passo 3.2 — Subsídios obrigatórios em análise de ato normativo.** Sempre que a
+NT analisar uma minuta de ato normativo (Tipo A) ou subsidiar a edição, alteração
+ou revisão de um ato normativo (Passo 3.1), o roteiro inclui, **antes** de
+`cgov-nt-03`, estes cinco subsídios:
+
+| # | Subsídio | Skill | Base de competência da CGOV | Produto para a NT |
+|---|---|---|---|---|
+| 1 | Modelagem dos fluxos | `cgov-modelar-fluxo` | Art. 37, p.u., III | Fluxos, gargalos, desfechos sem saída |
+| 2 | Auditoria de competências | `cgov-auditoria-competencias` | ⚠️ inciso a confirmar | Conflitos, lacunas, RACI |
+| 3 | Técnica legislativa | `cgov-saneamento-legistica` | ⚠️ inciso a confirmar | Erros de estrutura e de redação; texto limpo |
+| 4 | Análise de riscos do instrumento | `cgov-gestao-riscos` | Art. 37, p.u., IX | Matriz de riscos (regime declarado) |
+| 5 | Análise de impacto regulatório | `cgov-air-arr` | Art. 37, p.u., X | Nível 1 (enquadramento) sempre; Nível 2 (subsídios) como padrão |
+
+- `cgov-comparar-versoes` entra quando o ato substitui norma vigente ou há versões
+  em disputa (pergunta 7 da Fase 1). `cgov-nt-02` entra só se houver dados brutos.
+  `cgov-nt-06` segue o Passo 3.1.
+- **Dispensa:** só o Coordenador de Governança dispensa um subsídio, por decisão
+  expressa registrada em "Decisões do projeto" no `NT_ESTADO.md`, com o motivo. Se o
+  ato não tiver procedimento a modelar, registre isso como **resultado** da etapa.
+  A triagem de AIR (Nível 1) é sempre feita, mesmo quando concluir pela não
+  incidência.
+- **Os subsídios vêm antes dos capítulos:** riscos e AIR não são acrescentados
+  depois da NT pronta.
+
 **Passo 4 — Definição do roteiro de execução.** Com base nos passos 1 a 3, defina
 quais das skills `cgov-nt-02` a `cgov-nt-07` serão executadas e em que ordem,
 marcando como "dispensável" as que não se aplicam ao caso concreto (nunca execute
-uma etapa que não agrega valor apenas por rigidez ao roteiro-padrão).
+uma etapa que não agrega valor apenas por rigidez ao roteiro-padrão). **Exceção:**
+os cinco subsídios do Passo 3.2 não são dispensáveis pela triagem; só o
+Coordenador os dispensa, com registro no `NT_ESTADO.md`.
 
 ---
 
@@ -148,7 +181,12 @@ uma etapa que não agrega valor apenas por rigidez ao roteiro-padrão).
 **7. Roteiro de execução recomendado:**
 | Etapa | Skill | Necessária? | Observação |
 |---|---|---|---|
-| Diagnóstico normativo prévio | cgov-comparar-versoes / cgov-modelar-fluxo / cgov-auditoria-competencias | [Sim/Não] | [motivo] |
+| Modelagem dos fluxos | cgov-modelar-fluxo | [Obrigatória em ato normativo / Não se aplica] | [ou dispensa registrada pelo Coordenador] |
+| Auditoria de competências | cgov-auditoria-competencias | [Obrigatória em ato normativo / Não se aplica] | |
+| Cotejo com a norma anterior | cgov-comparar-versoes | [Sim/Não] | [ato substitui norma vigente ou há versões em disputa?] |
+| Técnica legislativa | cgov-saneamento-legistica | [Obrigatória em ato normativo / Não se aplica] | |
+| Análise de riscos | cgov-gestao-riscos | [Obrigatória em ato normativo / Não se aplica] | [regime a declarar] |
+| AIR — enquadramento e subsídios | cgov-air-arr | [Obrigatória em ato normativo / Não se aplica] | [Nível 1 sempre; Nível 2 salvo não incidência ou dispensa] |
 | Instrução técnica (dados) | cgov-nt-02 | [Sim/Não] | [motivo] |
 | Cap. 1 — Introdução | cgov-nt-03 | Sim | — |
 | Cap. 2-3 — Diagnóstico | cgov-nt-04 | Sim | — |
@@ -210,9 +248,19 @@ não será necessário repetir o contexto.
 ## Normas de referência
 - [lista]
 
+## Decisões do projeto
+- Foco da análise: [conteúdo do ato / também trâmite]
+- Quesitos à PFE (cgov-nt-06): [sim/não, motivo]
+- Dispensas de subsídio pelo Coordenador: [nenhuma / subsídio, data e motivo]
+
 ## Roteiro de execução
-- [ ] Diagnóstico normativo prévio (se aplicável)
-- [ ] cgov-nt-02 — Instrução técnica (se aplicável)
+- [ ] cgov-modelar-fluxo — Fluxos (obrigatório em ato normativo)
+- [ ] cgov-auditoria-competencias — Competências (obrigatório em ato normativo)
+- [ ] cgov-comparar-versoes — Cotejo com a norma anterior (se aplicável)
+- [ ] cgov-saneamento-legistica — Técnica legislativa (obrigatório em ato normativo)
+- [ ] cgov-gestao-riscos — Riscos do instrumento (obrigatório em ato normativo)
+- [ ] cgov-air-arr — AIR: enquadramento e subsídios (obrigatório em ato normativo)
+- [ ] cgov-nt-02 — Instrução técnica (se houver dados brutos)
 - [ ] cgov-nt-03 — Cap. 1 Introdução
 - [ ] cgov-nt-04 — Cap. 2-3 Diagnóstico
 - [ ] cgov-nt-05 — Cap. 4 Propostas (se aplicável)
@@ -254,7 +302,8 @@ não force o enquadramento. Responda com transparência:
 ```
 /cgov-nt-01 (Triagem — ESTA SKILL)
         ↓
-[Diagnóstico normativo prévio, se Tipo A: cgov-comparar-versoes → cgov-modelar-fluxo → cgov-auditoria-competencias]
+[Ato normativo — subsídios obrigatórios, nesta ordem: cgov-modelar-fluxo → cgov-auditoria-competencias
+ → (cgov-comparar-versoes, se houver norma anterior) → cgov-saneamento-legistica → cgov-gestao-riscos → cgov-air-arr]
         ↓
 /cgov-nt-02 (Instrução Técnica — se houver dados brutos)
         ↓

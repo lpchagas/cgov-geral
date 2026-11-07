@@ -11,7 +11,9 @@ description: >
   `NT_ESTADO.md` (na pasta de trabalho do processo) pela triagem
   (`cgov-nt-01`, Passo 3.1) com base no destino do produto (a NT seguirá para
   a PFE?), não pelo Tipo de dado (A/B/C/D). Para NTs que não subsidiam ato
-  administrativo, esta skill deve ser dispensada.
+  administrativo, esta skill deve ser dispensada. Também apoia a consulta jurídica
+  facultativa à PFE e a NT de subsídio que a acompanha (MODO 2: "consulta à PFE",
+  "consulta facultativa", "formulário de consulta jurídica").
 ---
 
 # cgov-nt-06 — Análise para a PFE-ICMBio (Anexo II da Portaria nº 271/2013)
@@ -123,6 +125,33 @@ informações; imposição de multas e penas; outras sanções.
 > análise e parecer com as justificativas da proposição" — estrutura que
 > corresponde, na suíte cgov-nt, aos Capítulos 1 (`cgov-nt-03`), 2-3
 > (`cgov-nt-04`) e 4 (`cgov-nt-05`), já produzidos antes desta skill.
+
+## MODO 2 — CONSULTA JURÍDICA FACULTATIVA E NT DE SUBSÍDIO
+
+Use quando a CGOV for **consultar a PFE** sobre uma dúvida jurídica (consulta
+facultativa) ou instruir a NT que subsidia a análise jurídica de uma minuta.
+
+**Norma de procedimento:** Portaria Conjunta nº 3, de 13 de maio de 2021, que dispõe
+sobre a elaboração e o envio de consultas jurídicas à PFE junto ao Instituto Chico
+Mendes. ⚠️ Antes de citar artigo, anexo ou formulário, confira o texto da Portaria
+Conjunta no acervo normativo; se ele não estiver lá, sinalize a lacuna e peça o texto.
+
+**Consulta facultativa:** formule a dúvida jurídica de forma objetiva (o que se
+pergunta, por que a dúvida existe, quais dispositivos estão em jogo e qual a posição
+técnica da CGOV), no formulário previsto pela Portaria Conjunta (⚠️ confirmar o anexo).
+
+**NT de subsídio à análise jurídica de minuta** — além dos capítulos da suíte, confira
+se a NT contém:
+1. contextualização da competência da CGOV (Art. 37 da Portaria ICMBio nº 5.592/2025);
+2. histórico do processo de elaboração da minuta;
+3. justificativa dos capítulos e artigos da minuta;
+4. análise de não sobreposição com outros colegiados, quando a minuta criar ou
+   alterar colegiado (⚠️ conferir a norma federal aplicável antes de citá-la);
+5. declaração sobre impacto orçamentário (⚠️ conferir o fundamento antes de citá-lo);
+6. as respostas aos 8 quesitos do Anexo II da Portaria ICMBio nº 271/2013 (Modo 1).
+
+A CGOV não decide questão jurídica: registra os pontos jurídicos (`PJ-01`…) e
+apresenta as propostas que deles dependam como condicionadas ou com alternativas.
 
 ## FORMATO DE SAÍDA
 

@@ -23,7 +23,7 @@
 |---|---|---|
 | C1 | Campos ⚠️ das 74 fichas `PROCESSO.md` (título em 16, inciso, situação, unidade, abertura, objeto) | Preencher só com informação confirmada |
 | C2 | Nomes da série de NTs fora do padrão `NT_<nº>-<ano>_SEI_<nº documento>_<tema>.pdf` | Duas NTs de 2025 com o mesmo nº de documento no nome do arquivo; uma NT de outra unidade na série |
-| C3 | Normas citadas pelas skills e ausentes de `03_normativos` (Decreto nº 12.002/2024, LC nº 95/1998) e 9 normativos sem o par PDF/`.md` | Curadoria do acervo |
+| C3 | Normas citadas pelas skills e ausentes de `03_normativos` (Decreto nº 12.002/2024, LC nº 95/1998 e, desde a 6.9, a Portaria Conjunta nº 3, de 13/05/2021, sobre consultas jurídicas à PFE, citada pela `cgov-nt-06` com ⚠️) e 9 normativos sem o par PDF/`.md` | Curadoria do acervo |
 | C4 | Vigência dos normativos (`_INDICE.md` marca "⚠️ verificar") | Curadoria do acervo |
 | C5 | `05_projetos/fundo-rio-doce` fora do padrão `AAAA-MM_apelido`; período do projeto da oficina da GR2 | Ficha `PROJETO.md` |
 | C7 | Criar `06_gestao-da-coordenacao/equipe.md` (nome e papel, sem matrícula nem e-mail) e a pasta `06_gestao-da-coordenacao/pgd/`, lidas pelas skills do PGD desde a 6.2/6.3 (D46, D48); caminhos já no `operacao/AGENTS.md` | Pela operação; sem a lista, a skill pergunta os responsáveis |
@@ -33,7 +33,7 @@
 
 | # | Pendência | Onde se resolve |
 |---|---|---|
-| E1 | Modelo geral de análise de atos normativos (instruções v1 geradas a partir de um processo real): ~~decidir as 6 questões em aberto~~ (✅ 07/11/2026, D44: AIR Nível 2 padrão; competências e legística também obrigatórias; foco por projeto; dispositivos no futuro; residual na classe superior; `trabalho/` neutro), tornar modelagem de processos, competências, legística, riscos e AIR subsídios obrigatórios da NT, corrigir 8 divergências entre skills, publicar o procedimento | Etapa 6.9 (D34); piloto na Fase 11 |
+| E1 | Modelo geral de análise de atos normativos (instruções v1 geradas a partir de um processo real): ~~decidir as 6 questões em aberto~~ (✅ 07/11/2026, D44: AIR Nível 2 padrão; competências e legística também obrigatórias; foco por projeto; dispositivos no futuro; residual na classe superior; `trabalho/` neutro), ~~tornar modelagem de processos, competências, legística, riscos e AIR subsídios obrigatórios da NT, corrigir 8 divergências entre skills, publicar o procedimento~~ (✅ 07/11/2026, 6.9(b)–(d), D50; procedimento em `docs/procedimentos/analise-atos-normativos.md`). Falta: inciso do Art. 37 para competências e legística (⚠️), evals da `nt-01` com o roteiro novo (6.8) e o piloto | Piloto na Fase 11 |
 | E2 | Decisões D5–D8 do plano (D4 respondida em 07/11/2026: skill `cgov-triagem-processo-sei` + `.md` mantido; acesso dos servidores, orientação institucional sobre IA e LGPD, Fabric/Power BI, Maestri) | Fase 0 |
 | E3 | ~~`docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md`~~ | ✅ Fase 5.9, bloco 5 (07/11/2026; D40) |
 | E4 | ~~`scripts/verificar_sanitizacao.py`~~ — criado em 06/11/2026 (v0.1.1, Fase 5, bloco 1) | Resolvida; uso em `docs/fluxos-de-trabalho.md` |

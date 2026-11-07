@@ -27,13 +27,17 @@ institucionais após a publicação do ato normativo.
 
 ## CONTEXTO INSTITUCIONAL
 
-Os atores típicos do PSPEADBio e de atos normativos similares do ICMBio são:
+Os atores, prazos e competências vêm **do próprio ato analisado** e do Regimento
+Interno do ICMBio: identifique-os no texto, sem presumir um contexto padrão. Se o
+ato tratar de prevenção ao assédio ou de regime disciplinar (como o PSPEADBio, ato
+de referência em que esta skill nasceu), os atores típicos são:
 Ouvidoria, Corregedoria, CGGP (Coordenação-Geral de Gestão de Pessoas), PFE
 (Procuradoria Federal Especializada), Comissão de Ética, chefias imediatas,
 DIRAD (Diretoria de Administração), Presidência do ICMBio e Comitê de Prevenção
 ao Assédio.
 
-Normas de referência para competências institucionais:
+Normas de referência para competências institucionais (o Regimento Interno vale
+sempre; as demais, conforme o tema do ato):
 - Regimento Interno do ICMBio (Portaria nº 5.592/2025 ou vigente)
 - Lei nº 8.112/1990 (competências disciplinares)
 - Decreto nº 12.122/2024 (competências do programa federal de assédio)
@@ -92,6 +96,10 @@ responsáveis?
 ---
 
 ## FASE 3 — GERAÇÃO DA RESPOSTA
+
+Numere os conflitos `C-01`, `C-02`… e as lacunas sistêmicas `LS-01`… (convenção
+de códigos da `cgov-nt-03`). Classifique cada competência contra o Regimento
+Interno vigente e corrija a premissa do pedido quando a fonte a contrariar.
 
 Use **exatamente** o seguinte formato:
 

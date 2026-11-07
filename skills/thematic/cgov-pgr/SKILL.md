@@ -4,7 +4,7 @@ description: >
   IMPORTANTE: aqui PGR = Programa de Gestão para Resultados e Inovação do
   ICMBio (Portaria ICMBio nº 1.572/2023). NÃO é a PGRI — Política de Gestão de
   Riscos e Integridade, Portaria ICMBio nº 255/2020 (use cgov-gestao-riscos) —
-  nem o PGD de teletrabalho (use cgge-especialista-pgd). Suporte à
+  nem o PGD de teletrabalho (use pgd-especialista). Suporte à
   implementação, ao funcionamento e ao monitoramento do PGR (Art. 37, parágrafo
   único, VIII, da Portaria ICMBio nº 5.592/2025): eixos de Capacitação,
   Consultoria Interna e Laboratório de Inovação; ações transversais de Gestão
@@ -37,8 +37,8 @@ Antes de qualquer análise, confirme o contexto da demanda:
 | Programa de Gestão e Desempenho | PGD | IN MGI nº 24/2023; IN ICMBio nº 14/2025 | Teletrabalho e planos de trabalho individuais | CGGP + CGOV (Art. 37, VII) |
 | Política de Gestão Estratégica | PGE | Portaria ICMBio nº 768/2020 | Planejamento e avaliação da estratégia (RAE) | — |
 
-> Teletrabalho ou planos individuais (**PGD**) → `cgge-especialista-pgd` ou
-> `cgov-elaborar-entrega`. Gestão de riscos (**PGRI**) → `cgov-gestao-riscos`.
+> Teletrabalho ou planos individuais (**PGD**) → `pgd-especialista` ou
+> `pgd-elaborar-entrega`. Gestão de riscos (**PGRI**) → `cgov-gestao-riscos`.
 > Esta skill trata exclusivamente do **PGR**.
 >
 > ⚠️ **Nunca escreva "PGR de riscos" nem "Plano de Gestão de Riscos — PGR".** A

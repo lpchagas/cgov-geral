@@ -23,7 +23,7 @@ a tradução está no `AGENTS.md` da pasta CGOV.
 
 | Local | Papel | Regra de alteração |
 |---|---|---|
-| `skills/cgov-nt/` e `skills/thematic/` | Código-fonte de skills mantidas pela CGOV | Revisar, executar evals e registrar decisão. |
+| `skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/` e `skills/cgge-fgbio/` | Código-fonte de skills mantidas pela CGOV (a família `cgge-fgbio/` fica fora do plugin `cgov-escritorio`) | Revisar, executar evals e registrar decisão. |
 | `local/installed-reference/` | Snapshot de skills instaladas ou externas | Consulta local; não publicar sem sanitização. |
 | `archive/` | Evidência histórica sanitizada | Não alterar conteúdo; apenas acrescentar contexto. |
 | `docs/` | Documentação pública sanitizada | Revisar links, precisão normativa e dados pessoais. |

@@ -1,0 +1,50 @@
+{
+  "skill_name": "cgov-saneamento-legistica",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Aplique SANEAMENTO_LEGISTICA no trecho abaixo, extraído de minuta de Portaria ICMBio:\n\n---\nCAPITULO I\nDAS DISPOSIÇÕES GERAIS\n\nArt. 1°. A presente Portaria deverá estabelecer o Plano Setorial de Prevenção e Enfrentamento ao Assédio do ICMBio, denominado PSPEADBio.\n\nArt. 2°. Para os fins desta Portaria, deverão ser adotados os seguintes conceitos:\nI. assédio moral: toda conduta que tenha por objetivo ou efeito degradar;\nII. assédio sexual: todo comportamento de natureza sexual não desejado;\nIII. discriminação: toda distinção, exclusão ou restrição.\n\nArt. 3°. O PSPEADBio deverá ter como objetivos:\n§ 1°. Prevenir e combater o assédio e a discriminação;\n§ 2°. Promover uma cultura organizacional de respeito.\n---\n\nGere o Relatório de Saneamento completo com as três seções.",
+      "expected_output": "Relatório com Seção 1 apontando erros de estrutura/numeração, Seção 2 com pares De:/Para: para erros verbais, Seção 3 com texto corrigido.",
+      "assertions": [
+        {"name": "contem-relatorio-saneamento", "type": "contains_any", "values": ["Relatório de Saneamento", "RELATÓRIO DE SANEAMENTO"]},
+        {"name": "identifica-erro-capitulo", "type": "contains_any", "values": ["CAPITULO", "CAPÍTULO", "acento", "grafia"]},
+        {"name": "identifica-erro-artigo-ordinal", "type": "contains_any", "values": ["Art. 1º", "ordinal", "1°", "grau"]},
+        {"name": "identifica-erro-verbal-devera", "type": "contains_any", "values": ["deverá", "deverão", "presente do indicativo", "tempo verbal"]},
+        {"name": "par-de-para", "type": "contains_any", "values": ["**De:**", "**Para:**", "De:", "Para:"]},
+        {"name": "contem-texto-limpo", "type": "contains_any", "values": ["Texto Limpo", "SEÇÃO 3", "Seção 3", "Trecho Corrigido"]},
+        {"name": "contem-fundamento-normativo", "type": "contains_any", "values": ["LC 95", "Decreto nº 12.002", "12.002/2024", "LC nº 95"]},
+        {"name": "oferece-proximos-passos", "type": "contains_any", "values": ["COMPARAR_VERSOES", "MODELAR_FLUXO", "AUDITORIA_COMPETENCIAS"]}
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Execute SANEAMENTO_LEGISTICA no fragmento abaixo da minuta PSPEADBio:\n\n---\nArt. 10º. A Comissão de Prevenção e Enfrentamento ao Assédio (COPEA) poderá reunir-se mensalmente, em caráter ordinário, e, quando necessário, extraordinariamente.\n\nParágrafo único. As reuniões da mesma serão convocadas por seu Presidente, com antecedência mínima de 72 (setenta e duas) horas.\n\nArt. 11º. Compete à COPEA:\nI - realizar o acompanhamento e monitoramento das ações do PSPEADBio;\nII - fazer a elaboração de relatórios semestrais;\nIII - promover a articulação com as demais áreas do ICMBio.\n\nArt. 12º. As deliberações da COPEA serão formalizadas mediante Ata, que deverá ser assinada por todos os membros presentes.\n---\n\nGere o Relatório completo.",
+      "expected_output": "Seção 1 identificando Art. 10º como inválido (cardinal a partir do 10), Seção 2 com De:/Para: para nominalização e pronome 'mesma', Seção 3 corrigida.",
+      "assertions": [
+        {"name": "contem-relatorio", "type": "contains_any", "values": ["Relatório de Saneamento", "RELATÓRIO"]},
+        {"name": "identifica-art10-ordinal", "type": "contains_any", "values": ["Art. 10º", "cardinal", "10º", "ordinal"]},
+        {"name": "identifica-mesma-como-pronome", "type": "contains_any", "values": ["mesma", "pronome", "sujeito explícito", "retomada"]},
+        {"name": "identifica-nominalizacao", "type": "contains_any", "values": ["nominalização", "realizar o acompanhamento", "fazer a elaboração", "verbo", "nominal"]},
+        {"name": "par-de-para", "type": "contains_any", "values": ["**De:**", "**Para:**", "De:", "Para:"]},
+        {"name": "texto-limpo", "type": "contains_any", "values": ["Texto Limpo", "Seção 3", "SEÇÃO 3", "Trecho Corrigido"]},
+        {"name": "fundamento-citado", "type": "contains_any", "values": ["Decreto nº 12.002", "LC 95", "12.002/2024", "LC nº 95"]},
+        {"name": "proximos-comandos", "type": "contains_any", "values": ["COMPARAR_VERSOES", "MODELAR_FLUXO", "AUDITORIA_COMPETENCIAS"]}
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Faça a revisão de técnica legislativa (SANEAMENTO_LEGISTICA) no trecho abaixo. Há múltiplos tipos de erro:\n\n---\nSeção II\nDos Canais de Recebimento\n\nArt. 15. A Ouvidoria do ICMBio deverá disponibilizar canais para recebimento de denúncias de assédio, inclusive em conformidade com o disposto na Lei 14.540/2023 de 03 de abril de 2023 e no Decreto 12.122/2024.\n\nArt. 16. Recebida a denúncia, a Ouvidoria deverá:\nI - realizar o registro em sistema;\nII - fazer a triagem do caso;\nIII - encaminhar à unidade competente, no prazo de 05 (cinco) dias úteis.\n\nArt. 16. Fica revogada a Portaria ICMBio nº 100/2020.\n\nArt. 17. Esta Portaria entra em vigor na data de sua publicação no Diário Oficial da União.\n---\n\nGere o Relatório completo com todas as três seções.",
+      "expected_output": "Seção 1 identificando Art. 16 duplicado, Seção 2 com De:/Para: para remissão redundante e nominalizações, Seção 3 com Art. 16 renumerado e texto corrigido.",
+      "assertions": [
+        {"name": "contem-relatorio", "type": "contains_any", "values": ["Relatório de Saneamento", "RELATÓRIO"]},
+        {"name": "identifica-art16-duplicado", "type": "contains_any", "values": ["Art. 16", "duplicado", "repetido", "numeração", "sequência"]},
+        {"name": "identifica-remissao-errada", "type": "contains_any", "values": ["14.540", "remissão", "referência", "data", "nome completo"]},
+        {"name": "identifica-nominalizacao", "type": "contains_any", "values": ["realizar o registro", "fazer a triagem", "nominalização", "verbo direto"]},
+        {"name": "par-de-para", "type": "contains_any", "values": ["**De:**", "**Para:**", "De:", "Para:"]},
+        {"name": "texto-limpo", "type": "contains_any", "values": ["Texto Limpo", "Seção 3", "SEÇÃO 3", "Trecho Corrigido"]},
+        {"name": "fundamento-citado", "type": "contains_any", "values": ["Decreto nº 12.002", "LC 95", "12.002/2024"]},
+        {"name": "proximos-comandos", "type": "contains_any", "values": ["COMPARAR_VERSOES", "MODELAR_FLUXO", "AUDITORIA_COMPETENCIAS"]}
+      ]
+    }
+  ]
+}

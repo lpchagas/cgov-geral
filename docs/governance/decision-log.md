@@ -1476,3 +1476,50 @@ nº 5.592/2025.
    servem só de insumo: as normas são conferidas no acervo e o texto passa pela sanitização.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 33. Promoção das skills sem fonte a `skills/` (Fase 6.2, 07/11/2026)
+
+**Decisões (D46 do plano).**
+
+1. **Famílias:** `skills/pgd/`, com as 8 skills do PGD (Art. 37, p.u., VII), e `skills/normativo/`, com as 4 de análise de
+   atos normativos. As famílias são provisórias: a Fase 7.1 passa todas para a estrutura plana do plugin.
+2. **`cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`:** versionadas em `skills/cgge-fgbio/`, **fora** do plugin
+   `cgov-escritorio`. Os nomes do docente e dos convidados foram trocados por papéis, e os dados da turma ficam em `local/`.
+3. **Nomes da equipe** na `cgov-elaborar-entrega`: trocados por marcadores. A skill passa a ler a lista da equipe mantida
+   na pasta CGOV (pendência C7).
+4. **Número do processo de referência do PSPEADBio** nas três skills normativas: retirado agora. A retirada do contexto
+   padrão fica para a 6.9(c).
+
+**Resultado.**
+
+- 22 arquivos copiados da exportação `_export_2026-11-07`, depois de preparados em `local/pilots/6.2_promocao/`.
+- Também saneados: e-mail pessoal, CPF de exemplo, caminhos absolutos da unidade H: e caminhos `/home/…` de exemplo.
+- Nas três skills de entregas, a nota de correção do ciclo quadrimestral virou regra no corpo (D43).
+- 14 skills novas em `skillOverrides` no `.claude/settings.json`.
+- Sanitização: 0 erros.
+- **Lição aprendida:** a busca manual na exportação não pegou o CPF de exemplo nem os caminhos absolutos da unidade H:. A verificação
+  definitiva é o `verificar_sanitizacao.py` no `skills/`, que não alcança `local/`. Quando houver preparo em `local/`, a
+  varredura com o script vem logo depois da cópia e antes do *commit*.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 34. Prefixo `pgd-` nas skills do PGD (Fase 6.2, 07/11/2026)
+
+**Decisão (D47 do plano, pedido do Coordenador).** As 8 skills de `skills/pgd/` passam a se chamar `pgd-especialista`
+(antes `cgge-especialista-pgd`), `pgd-elaborar-entrega`, `pgd-registro-execucao` e `pgd-avaliar-entrega` (antes com o
+prefixo `cgov-`), e `pgd-analisar-indicador`, `pgd-desenvolver-indicador`, `pgd-implementar-indicador` e
+`pgd-testar-indicador` (antes `cgov-pgd-…`).
+
+**Aplicação.**
+
+- **Antes do *commit* da 6.2:** pastas, campo `name:`, referências cruzadas em `skills/` (inclusive `cgov-pgr` e
+  `cgov-gestao-riscos`), `skillOverrides` e documentação atual (catálogo, `overview.md`, pendências, plano). Os registros
+  anteriores deste log mantêm os nomes antigos.
+- **Na 6.8:** instalar as 8 com os nomes novos, excluir da conta os 8 nomes antigos (com confirmação) e atualizar as
+  instruções do projeto Operação e `analista-processos-sei.md`. Até lá, o `--verificar` mostra as 8 como "NÃO INSTALADA".
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

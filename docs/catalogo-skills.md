@@ -4,9 +4,9 @@
 > (`local/installed-reference/`, fora do Git) e de `py scripts\publicar_operacao.py --verificar` (HEAD `d94235e`).
 > Atualizar a cada mudança de skill (runbook "Alterar uma skill" do [plano de implantação](plano-implantacao.md)).
 
-**Resumo:** 26 skills no inventário da Fase 6.
-- **14 com fonte versionada:** 5 iguais ao instalado e 9 desatualizadas na conta (pendência P4; reinstalação na Fase 6.8).
-- **12 sem fonte**, só na conta (promoção a `skills/` na Fase 6.2). Na 6.1 (07/11/2026), 3 delas (`cgov-avaliar-entrega`, `cgov-elaborar-entrega`, `cgov-registro-execucao`) estavam mais novas na conta que em `local/installed-reference/`; a promoção parte da exportação `_export_2026-11-07` (D43).
+**Resumo:** 26 skills no inventário da Fase 6 + 2 `cgge-fgbio-*`, **todas com fonte versionada desde a Fase 6.2 (07/11/2026)**.
+- **14 com fonte desde antes:** 5 iguais ao instalado e 9 desatualizadas na conta (pendência P4; reinstalação na Fase 6.8).
+- **12 promovidas na 6.2** (`skills/pgd/` e `skills/normativo/`) e as 2 `cgge-fgbio-*` (`skills/cgge-fgbio/`); a reinstalação de todas fica para a 6.8. Na 6.1 (07/11/2026), 3 delas (`pgd-avaliar-entrega`, `pgd-elaborar-entrega`, `pgd-registro-execucao`) estavam mais novas na conta que em `local/installed-reference/`; a promoção parte da exportação `_export_2026-11-07` (D43).
 
 Inciso = parágrafo único do Art. 37 da Portaria ICMBio nº 5.592/2025. Siglas fixas: **PGR** (Portaria nº 1.572/2023, inciso VIII) ≠ **PGRI** (Portaria nº 255/2020, inciso IX) ≠ **PGD** (IN ICMBio nº 14/2025, inciso VII); a PGE (Portaria nº 768/2020) está revogada.
 
@@ -36,28 +36,37 @@ Pipeline de toda NT, para qualquer inciso. A `cgov-nt-01` cria o `NT_ESTADO.md` 
 | `cgov-air-arr` | X | AIR e ARR (Decreto nº 10.411/2020) | ✅ igual |
 | `cgov-transcrever-normativos` | — | OCR, transcrição e gravação em Markdown de atos normativos do acervo | ✅ igual |
 
-## 3. Skills sem fonte versionada (só na conta)
+## 3. Skills do PGD (`skills/pgd/`)
 
-Cópias de referência em `local/installed-reference/` (fora do Git). Na Fase 6.2, elas são promovidas a `skills/<família>/`, sem dados pessoais nem caminhos absolutos.
+Renomeadas com o prefixo `pgd-` em 07/11/2026 (D47). Na conta, até a reinstalação da 6.8, ainda aparecem com os nomes antigos: `cgge-especialista-pgd`, `cgov-elaborar-entrega`, `cgov-registro-execucao`, `cgov-avaliar-entrega` e `cgov-pgd-<ação>-indicador`.
 
-| Skill | Inciso | Função |
-|---|---|---|
-| `cgge-especialista-pgd` | VII | Especialista em PGD (teletrabalho, IN ICMBio nº 14/2025): conformidade regimental de entregas e atividades |
-| `cgov-elaborar-entrega` | VII | Criar entrega no Plano de Entregas do PGD |
-| `cgov-registro-execucao` | VII | Registrar a execução das etapas das entregas |
-| `cgov-avaliar-entrega` | VII | Avaliar a entrega no fim do ciclo (parecer e conceito) |
-| `cgov-pgd-analisar-indicador` | VII | Análise metodológica de indicador do Instrumento de Avaliação do PGD |
-| `cgov-pgd-desenvolver-indicador` | VII | ETL de indicador do PGD a partir do Data Mart do Petrvs |
-| `cgov-pgd-implementar-indicador` | VII | Automação (DataOps) de indicador do PGD |
-| `cgov-pgd-testar-indicador` | VII | Qualidade, LGPD e desempenho do script de indicador do PGD |
-| `cgov-auditoria-competencias` | — | Duplicidades e conflitos de competência entre unidades num ato normativo |
-| `cgov-comparar-versoes` | — | Comparar versões de dispositivo normativo e propor redação saneada |
-| `cgov-modelar-fluxo` | — | Transformar texto normativo em fluxo BPMN com diagrama Mermaid |
-| `cgov-saneamento-legistica` | — | Técnica legislativa em minutas (Decreto nº 12.002/2024 e LC nº 95/1998) |
+Promovidas a fonte na Fase 6.2 (07/11/2026) a partir da exportação da conta (`_export_2026-11-07`), saneadas (D46). Saneadas: as três de entregas (nomes da equipe e ciclo quadrimestral como regra, D43) e a de implementar indicador (e-mail e caminhos de exemplo). As três de entregas já trazem o ciclo quadrimestral como regra (D43).
 
-## 4. Fora do inventário
+| Skill | Inciso | Função | Instalada × fonte (07/11) |
+|---|---|---|---|
+| `pgd-especialista` | VII | Especialista em PGD (teletrabalho, IN ICMBio nº 14/2025): conformidade regimental de entregas e atividades | ✅ igual (texto da conta) |
+| `pgd-elaborar-entrega` | VII | Criar entrega no Plano de Entregas do PGD | ⚠️ reinstalar (6.8) |
+| `pgd-registro-execucao` | VII | Registrar a execução das etapas das entregas | ⚠️ reinstalar (6.8) |
+| `pgd-avaliar-entrega` | VII | Avaliar a entrega no fim do ciclo (parecer e conceito) | ⚠️ reinstalar (6.8) |
+| `pgd-analisar-indicador` | VII | Análise metodológica de indicador do Instrumento de Avaliação do PGD | ✅ igual (texto da conta) |
+| `pgd-desenvolver-indicador` | VII | ETL de indicador do PGD a partir do Data Mart do Petrvs | ✅ igual (texto da conta) |
+| `pgd-implementar-indicador` | VII | Automação (DataOps) de indicador do PGD | ⚠️ reinstalar (6.8) |
+| `pgd-testar-indicador` | VII | Qualidade, LGPD e desempenho do script de indicador do PGD | ✅ igual (texto da conta) |
 
-⚠️ Também aparecem na conta `cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`, que não estão entre as 26 do inventário. Foram exportadas na Fase 6.1 (07/11/2026); decidir na 6.2 se entram no plugin `cgov-escritorio` ou ficam à parte.
+## 4. Skills de análise de atos normativos (`skills/normativo/`)
+
+Promovidas na 6.2; o número do processo de referência foi retirado (D46); o contexto padrão do PSPEADBio sai na 6.9(c).
+
+| Skill | Inciso | Função | Instalada × fonte (07/11) |
+|---|---|---|---|
+| `cgov-auditoria-competencias` | — | Duplicidades e conflitos de competência entre unidades num ato normativo | ✅ igual (texto da conta) |
+| `cgov-comparar-versoes` | — | Comparar versões de dispositivo normativo e propor redação saneada | ⚠️ reinstalar (6.8) |
+| `cgov-modelar-fluxo` | — | Transformar texto normativo em fluxo BPMN com diagrama Mermaid | ⚠️ reinstalar (6.8) |
+| `cgov-saneamento-legistica` | — | Técnica legislativa em minutas (Decreto nº 12.002/2024 e LC nº 95/1998) | ⚠️ reinstalar (6.8) |
+
+## 4-A. Formação em Gestão da Biodiversidade (`skills/cgge-fgbio/`, fora do plugin)
+
+`cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`: versionadas na 6.2 (D46), com os nomes do docente e dos convidados trocados por papéis (`[Docente responsável]`, `[Convidado 1]` …); os dados da turma ficam em `local/`. Não entram no plugin `cgov-escritorio`.
 
 ## 5. Previstas
 

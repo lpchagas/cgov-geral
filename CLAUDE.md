@@ -24,7 +24,7 @@ Not a software codebase — it is the versioned source for a suite of Claude **S
 Claude Code in this repository (and the Cowork project "Escritório CGOV — Implantação") is the **development** side only (see `docs/fluxos-de-trabalho.md`). Day-to-day CGOV work — Notas Técnicas, SEI process analyses — runs in the Cowork project "Escritório CGOV — Operação" against the CGOV folder on Google Drive, not here.
 
 - Don't produce process work here. Process material lives in the CGOV folder (`01_processos/<processo>/`); editing the operational areas is denied in `.claude/settings.json`. Eval/test output goes to `local/pilots/`.
-- The 14 skills whose source lives in `skills/` are hidden from the model here (`skillOverrides`), because the installed copy synced into Claude Code can lag behind the source. Read and test the source `SKILL.md`, not the installed skill.
+- The 28 skills whose source lives in `skills/` (families `cgov-nt/`, `thematic/`, `pgd/`, `normativo/`, `cgge-fgbio/`; since Fase 6.2, 07/11/2026) are hidden from the model here (`skillOverrides`), because the installed copy synced into Claude Code can lag behind the source. Read and test the source `SKILL.md`, not the installed skill.
 - Operational feedback arrives in `90_escritorio-virtual/manutencao/PENDENCIAS.md` of the CGOV folder (ask the user for it until the phase 5.1 junction `local\escritorio` exists); development backlog: `docs/governance/pendencias.md`.
 - `git commit` and `git push` always ask for confirmation; the user must approve explicitly.
 
@@ -34,7 +34,7 @@ Claude Code in this repository (and the Cowork project "Escritório CGOV — Imp
 
 | Path | Role | Change rule |
 |---|---|---|
-| `skills/cgov-nt/`, `skills/thematic/` | Canonical skill **source** | Edit → run relevant evals → record decision in `docs/governance/decision-log.md` |
+| `skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/cgge-fgbio/` | Canonical skill **source** (`cgge-fgbio/` stays outside the `cgov-escritorio` plugin) | Edit → run relevant evals → record decision in `docs/governance/decision-log.md` |
 | `local/installed-reference/` | Read-only snapshots of *other* skills as actually installed | Reference only; don't edit to "fix" the installed skill |
 | `archive/` | Sanitized historical evidence | Append context; never rewrite content |
 | `docs/` | Publishable (sanitized) documentation | Keep links, normative citations, and personal-data scrubbing accurate |

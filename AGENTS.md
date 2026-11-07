@@ -36,6 +36,9 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 
 - `skills/cgov-nt/`: fonte canônica da suíte de Notas Técnicas.
 - `skills/thematic/`: fontes das skills temáticas da CGOV.
+- `skills/pgd/`: fontes das skills do PGD (Art. 37, p.u., VII).
+- `skills/normativo/`: fontes das skills de análise de atos normativos (competências, versões, fluxos, legística).
+- `skills/cgge-fgbio/`: fontes das skills da Formação em Gestão da Biodiversidade (CGGE), fora do plugin `cgov-escritorio`.
 - `local/installed-reference/`: snapshots locais de referência de skills instaladas.
 - `operacao/`: fonte dos textos de navegação publicados na pasta CGOV (`LEIA-ME.md`, `AGENTS.md`,
   `_LEIA-ME.md`, modelos).

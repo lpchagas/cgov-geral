@@ -33,7 +33,7 @@ aplicando a **PGRI** (Portaria ICMBio nº 255/2020) e, sobretudo, a
 |---|---|---|---|
 | **PGRI** | **Política de Gestão de Riscos e Integridade** | Portaria ICMBio nº 255/2020 | ✅ **sim** |
 | **PGR** | Programa de Gestão para Resultados e Inovação | Portaria ICMBio nº 1.572/2023 | ❌ use `cgov-pgr` |
-| **PGD** | Programa de Gestão e Desempenho (teletrabalho) | IN ICMBio nº 14/2025 | ❌ use `cgge-especialista-pgd` |
+| **PGD** | Programa de Gestão e Desempenho (teletrabalho) | IN ICMBio nº 14/2025 | ❌ use `pgd-especialista` |
 
 > **Nunca escreva "PGR de riscos" ou "Plano de Gestão de Riscos — PGR".** O
 > instrumento de riscos é a **PGRI**. A sigla PGR pertence exclusivamente ao

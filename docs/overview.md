@@ -10,7 +10,7 @@
 |---|---|---|
 | Suíte canônica `cgov-nt-01` a `07` | Instalada na conta Claude (Customize → Skills) + código-fonte em `skills/cgov-nt` | ✅ Ativa, validada por piloto |
 | 13 skills antigas (`pgd-sk*`, `pspeadbio-sk*`) | Removidas da conta Claude; backup em `archive/skills-legacy` | ❌ Desativadas (backup disponível) |
-| Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `cgge-especialista-pgd`, `cgov-elaborar-entrega`, `cgov-avaliar-entrega`, `cgov-registro-execucao`) | Continuam instaladas, não foram tocadas | ✅ Ativas |
+| Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao`) | Continuam instaladas, não foram tocadas | ✅ Ativas |
 | Relatório técnico completo (diagnóstico + arquitetura + revisão + piloto) | `docs/reports/RELATORIO_cgov-nt.md` | ✅ |
 | Artefatos do piloto | `docs/reports/NT_ESTADO_piloto.md` | ✅ |
 | Fontes normativas | `03_normativos/` da pasta CGOV (desde 05/11/2026; antes `normative-sources/`) + catálogo público | ✅ |
@@ -58,13 +58,13 @@
 
 | Inciso | Competência | Skill |
 |---|---|---|
-| I | Coordenação dos processos organizacionais | `cgov-elaborar-entrega`, `cgov-avaliar-entrega`, `cgov-registro-execucao` |
-| II | Política de Governança Institucional | suíte `cgov-nt`, `cgge-especialista-pgd` |
+| I | Coordenação dos processos organizacionais | `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao` |
+| II | Política de Governança Institucional | suíte `cgov-nt`, `pgd-especialista` |
 | III | Gestão por processos | `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-cadeia-valor` |
 | IV | Regimento Interno | `cgov-regimento-interno` |
 | V | Quadro de Cargos e Funções (QCF) | ❌ **sem skill dedicada** |
 | VI | Cadeia de Valor / DFT | `cgov-cadeia-valor` |
-| VII | PGD (com a CGGP) | `cgge-especialista-pgd`, `cgov-*-entrega` |
+| VII | PGD (com a CGGP) | `pgd-especialista`, `pgd-*-entrega` |
 | VIII | PGR — Gestão para Resultados | `cgov-pgr` |
 | IX | Gestão de Riscos / CTGRIC | `cgov-gestao-riscos` |
 | X | AIR / ARR | `cgov-air-arr` |

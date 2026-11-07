@@ -11,10 +11,11 @@
 |---|---|---|---|
 | P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontam para pastas que não existem mais | Fase 5.1–5.2 (`link_acervo.py`, `.env`) | ✅ Resolvida em 07/11/2026: `scripts/link_acervo.py --executar` criou `local\processos`, `local\normativos` e `local\escritorio` e removeu as antigas |
 | P2 | `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` (WSL, estrutura antiga) bloqueados em 06/11/2026 | Fase 5.3 (`publicar_operacao.py`) e 5.8 (mover os `.sh` para `archive/scripts-wsl/`) | ✅ Resolvida em 07/11/2026: substitutos em Python prontos; `.sh` em `archive/scripts-wsl/` |
-| P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 | Fase 5.10 (`publicar_operacao.py --publicar --executar`, depois do *merge*) | `--verificar` mostra a diferença; republicação única no bloco 6 (D37) |
-| P4 | Deriva fonte × instalado: a `cgov-nt-01-triagem` instalada grava em `CGOV_Processos/…/_CGOV_NT/`; a fonte diz `local/analyses/` | Fase 6.1 (comparar e reinstalar) | Contornado pela tabela de caminhos do `AGENTS.md` da pasta CGOV |
+| P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 | Fase 5.10 | ✅ Resolvida em 07/11/2026: republicada no commit `e305404` (33/33 conferidos); anterior em `99_arquivo/_a-excluir_2026-11-07/` |
+| P4 | Deriva fonte × instalado: 9 das 14 skills com fonte estão desatualizadas na conta (`publicar_operacao.py --verificar`, 07/11/2026: as 7 da `cgov-nt`, `cgov-gestao-riscos` e `cgov-regimento-interno`); a `cgov-nt-01-triagem` instalada grava em `CGOV_Processos/…/_CGOV_NT/` e a fonte diz `local/analyses/` | Fase 6.1 (comparar) e 6.8 (reinstalar) | Contornado pela tabela de caminhos do `AGENTS.md` da pasta CGOV |
 | P5 | Skills citam caminhos literais (`local/analyses/`, `local/normative-sources/`, `_CGOV_NT/`) | Fase 6.3 (caminhos neutros, ADR-006) | Depois, retirar a seção "Caminhos" das instruções do projeto Operação e a tabela do `AGENTS.md` |
 | P6 | Exclusão da quarentena `99_arquivo/_a-excluir_2026-11-05/` | Etapa 4.11, a partir de 05/12/2026 | Vínculo temporário da pasta CGOV; confirmação explícita |
+| P7 | Quarentena da publicação de 07/11/2026: `99_arquivo/_a-excluir_2026-11-07/publicacao_e305404/` (referência de `docs/` do commit `4960e11`, 14 arquivos) | A partir de 07/12/2026 (30 dias, ADR-014), junto com ou depois da 4.11 | Confirmação explícita; nada a recuperar se a referência atual estiver íntegra (`--verificar`) |
 
 ## Conteúdo da pasta CGOV (revisão gradual pela operação)
 

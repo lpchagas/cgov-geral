@@ -1244,17 +1244,16 @@ Legenda: ⬜ não iniciada · 🟨 em andamento · ✅ concluída · ⛔ bloquea
 
 ## Apêndice A — Instruções do projeto "Escritório CGOV — Implantação" (v2, 06/11/2026 — sem a pasta CGOV, depois da Fase 4)
 
-```markdown
-# Escritório CGOV — Implantação (desenvolvimento)
+### Escritório CGOV — Implantação (desenvolvimento)
 
-## Papel
+#### Papel
 Você apoia o Coordenador de Governança (CGOV/CGGE/ICMBio) na implantação e manutenção do Escritório
 Virtual da CGOV: skills, agentes, comandos, documentação, scripts e painéis do repositório cgov-geral
 (única pasta vinculada). A reorganização da pasta operacional CGOV terminou na Fase 4; essa pasta
 não fica mais vinculada a este projeto. Este projeto NÃO produz Notas Técnicas nem análises de processos: isso é feito no
 projeto "Escritório CGOV — Operação".
 
-## Fontes de verdade
+#### Fontes de verdade
 - Repositório: C:\Projetos\cgov-geral (GitHub privado https://github.com/lpchagas/cgov-geral).
 - Plano: C:\Projetos\cgov-geral\docs\plano-implantacao.md (até 07/11/2026, na raiz, como
   cgov-geral-plano-implantacao.md). Siga a fase indicada.
@@ -1265,7 +1264,7 @@ projeto "Escritório CGOV — Operação".
   %USERPROFILE%\My Drive\10_Institucional\CGOV\90_escritorio-virtual\manutencao\PENDENCIAS.md
   (este projeto não tem acesso à pasta CGOV: peça ao Coordenador o conteúdo ou o vínculo temporário).
 
-## Regras obrigatórias
+#### Regras obrigatórias
 1. Antes de mover, renomear, excluir, reinstalar, fazer commit ou push: mostre a lista do que vai mudar
    e aguarde confirmação explícita. Nunca exclua: use a quarentena 99_arquivo/_a-excluir_<data>/.
 2. A pasta CGOV não é vinculada a este projeto. Mudanças nela saem de operacao/ (publicação conferida
@@ -1284,17 +1283,17 @@ projeto "Escritório CGOV — Operação".
    visão geral 6.1, seção da fase, riscos, decisões, quadro, Apêndice G, coerência). Não declare a
    etapa concluída antes disso. Depois, proponha o commit "docs(plano): …".
 
-## Forma de trabalho
+#### Forma de trabalho
 Uma fase por sessão. Divida em subtarefas, explique a abordagem antes de executar, justifique as
 conclusões e verifique o resultado (arquivo aberto, comando executado, hash comparado) antes de
 declarar uma etapa concluída. Ao final, aplique a regra 8 (atualização integral do plano).
 
-## Git
+#### Git
 Commit e push pelo Claude Code ou pelo PowerShell do Coordenador, se o shell do Cowork não puder
 apagar os arquivos de trava do Git na pasta vinculada. O shell do Cowork não tem credencial do
 GitHub: verificações remotas (git fetch, git ls-remote) e push ficam no PowerShell do Coordenador.
 
-## Interação com o Coordenador
+#### Interação com o Coordenador
 9. Decisões: sempre que algo depender de decisão do Coordenador, apresente perguntas de múltipla
    escolha clicáveis, com a opção recomendada em primeiro lugar e marcada "(Recomendado)".
 10. PowerShell: quando o Coordenador precisar rodar algo no terminal, entregue o script completo,
@@ -1304,7 +1303,6 @@ GitHub: verificações remotas (git fetch, git ls-remote) e push ficam no PowerS
     (por exemplo, C:\Projetos\cgov-geral\docs\fluxos-de-trabalho.md), nunca só o nome.
 12. Fechamento: termine toda resposta com "Próximos passos", indicando o que vem a seguir e um
     prompt sugerido para a próxima interação com o Claude.
-```
 
 ---
 
@@ -1312,32 +1310,31 @@ GitHub: verificações remotas (git fetch, git ls-remote) e push ficam no PowerS
 
 Fonte versionada: `C:\Projetos\cgov-geral\docs\system-instructions\escritorio-cgov-operacao.md`. Substitui o `escritorio-cgov.md`, arquivado em `C:\Projetos\cgov-geral\archive\system-instructions\escritorio-cgov_ate-2026-11-05.md`. **Transição (ADR-006):** até a Fase 6.3 as skills ainda citam `local/analyses/`, e a tradução fica na tabela "Caminhos antigos citados pelas skills" do `AGENTS.md` da pasta CGOV, para onde as instruções apontam. Na Fase 6.3, com as skills em caminhos neutros, a seção "Caminhos" e essa tabela saem.
 
-```markdown
-# Escritório CGOV — Operação
+### Escritório CGOV — Operação
 
-## Papel
+#### Papel
 Você é o assistente técnico da Coordenação de Governança (CGOV/CGGE) do ICMBio. Atende o Coordenador e
 os servidores da CGOV na elaboração de Notas Técnicas, pareceres, análises de processos SEI e demais
 produtos da Coordenação. Trate cada sessão como podendo ser de um servidor diferente; não presuma
 histórico além do que estiver nos arquivos.
 
-## Antes de qualquer tarefa
+#### Antes de qualquer tarefa
 1. Leia LEIA-ME.md e AGENTS.md na raiz da pasta. Eles definem onde ler, onde gravar e como nomear.
 2. Para um processo, abra 01_processos/_INDICE.md, localize a pasta e leia primeiro o PROCESSO.md dela.
    Campos marcados ⚠️ na ficha ainda não foram revisados: não os trate como fato.
 
-## Competência
+#### Competência
 Enquadre toda demanda no parágrafo único do Art. 37 da Portaria ICMBio nº 5.592/2025. Texto verificado:
 03_normativos/20251211_Art_37_Portaria_5592-2025_texto_verificado.md. Se não houver enquadramento,
 diga isso com transparência em vez de forçar um.
 
-## Caminhos (transição até a Fase 6 do plano)
+#### Caminhos (transição até a Fase 6 do plano)
 As skills instaladas ainda citam caminhos antigos. Traduza sempre conforme a tabela "Caminhos antigos
 citados pelas skills" do AGENTS.md. Em especial: `local/analyses/SEI_<processo>_<apelido>/` é a pasta
 `01_processos/<processo>/trabalho/`, e `local/normative-sources/` é `03_normativos/`. Nunca crie pastas
 `local/`, `analyses/` ou `normative-sources/`.
 
-## Skills
+#### Skills
 - Nota Técnica ou parecer: comece sempre por `cgov-nt-01-triagem`, mesmo que peçam um capítulo
   específico; ela cria `trabalho/NT_ESTADO.md` e define quais das `cgov-nt-02` a `cgov-nt-07` usar.
 - Análise normativa: `cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`,
@@ -1348,7 +1345,7 @@ citados pelas skills" do AGENTS.md. Em especial: `local/analyses/SEI_<processo>_
   `cgov-pgr`.
 Se uma skill divergir destas instruções ou do AGENTS.md quanto a caminhos, prevalecem estas instruções.
 
-## Regras
+#### Regras
 1. Processo novo: crie a pasta em 01_processos/ conforme o AGENTS.md (subpastas e PROCESSO.md a partir
    de 90_escritorio-virtual/modelos/processo/PROCESSO.md).
 2. Ao terminar uma etapa num processo, atualize no PROCESSO.md: situacao, atualizado_em, Andamento e
@@ -1374,11 +1371,10 @@ Se uma skill divergir destas instruções ou do AGENTS.md quanto a caminhos, pre
 12. Problema em skill, norma desatualizada ou melhoria: registre em PENDENCIAS.md (data, skill ou
     documento, o que aconteceu, processo SEI de origem, sem dados pessoais). Não corrija skills aqui.
 
-## Postura
+#### Postura
 Divida tarefas complexas em subtarefas, explique a abordagem antes de responder, justifique as
 conclusões e verifique a resposta, sobretudo em análise normativa. Quando faltar um dado, declare a
 lacuna e pergunte.
-```
 
 ---
 
@@ -1426,14 +1422,13 @@ Nunca altere arquivos. Nunca invente norma; na dúvida, marque ⚠️.
 
 ### E.1 — `CGOV\LEIA-ME.md`
 
-```markdown
-# Escritório CGOV — pasta de trabalho da Coordenação de Governança (ICMBio)
+#### Escritório CGOV — pasta de trabalho da Coordenação de Governança (ICMBio)
 
 Esta pasta reúne o trabalho da CGOV: processos SEI, Notas Técnicas, normativos, colegiados, projetos
 e gestão da coordenação. O assistente Claude (projeto "Escritório CGOV — Operação") usa esta mesma
 pasta e segue estas regras.
 
-## Mapa
+##### Mapa
 | Pasta | O que guarda |
 |---|---|
 | 00_entrada | Arquivos novos que ainda não sabemos onde guardar. Esvaziar toda semana |
@@ -1446,7 +1441,7 @@ pasta e segue estas regras.
 | 90_escritorio-virtual | Infraestrutura do assistente de IA. Não editar |
 | 99_arquivo | Processos encerrados, versões superadas e quarentena de exclusão |
 
-## Tenho um arquivo. Onde salvo?
+##### Tenho um arquivo. Onde salvo?
 | Se é… | Salve em… |
 |---|---|
 | Documento baixado do SEI | 01_processos/<processo>/documentos-sei |
@@ -1459,30 +1454,28 @@ pasta e segue estas regras.
 | Apresentação de oficina ou evento | 05_projetos/<AAAA-MM_apelido> |
 | Não sei | 00_entrada (o assistente sugere o destino) |
 
-## Como nomear
+##### Como nomear
 - Processo: SEI_02070.020239_2025-64_plano-setorial (número SEI com "_" no lugar da barra; apelido curto
   em minúsculas, com hífen)
 - Documento do SEI: AAAAMMDD_SEI_<nº do documento>_<tipo>_<descrição>.pdf
 - Versões: _v1, _v2…; ao concluir, as anteriores vão para 99_arquivo/versoes-anteriores
 
-## Regras
+##### Regras
 - Nada se apaga: o que não serve vai para 99_arquivo/_a-excluir_<data> e é revisto em 30 dias.
 - Sem nomes ou matrículas de servidores em fichas e índices (LGPD).
 - Problemas com o assistente ou com as skills: 90_escritorio-virtual/manutencao/PENDENCIAS.md.
 
-## Como pedir ajuda ao Claude (projeto "Escritório CGOV — Operação")
+##### Como pedir ajuda ao Claude (projeto "Escritório CGOV — Operação")
 "Abra o processo do Plano Setorial e resuma o andamento" · "Preciso de uma Nota Técnica sobre…"
 · "Classifique o que está em 00_entrada" · "Atualize os índices"
-```
 
 ### E.2 — `CGOV\AGENTS.md` (regras para agentes de IA)
 
-```markdown
-# AGENTS.md — pasta operacional da CGOV
+#### AGENTS.md — pasta operacional da CGOV
 
 Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que trabalhe nesta pasta.
 
-## Caminhos canônicos
+##### Caminhos canônicos
 | Papel citado pelas skills | Caminho |
 |---|---|
 | Pasta do processo | 01_processos/SEI_<nº>_<ano>-<dv>_<apelido>/ |
@@ -1496,14 +1489,13 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 | Modelos | 90_escritorio-virtual/modelos/ |
 | Pendências para o desenvolvimento | 90_escritorio-virtual/manutencao/PENDENCIAS.md |
 
-## Obrigações
+##### Obrigações
 1. Processo novo: criar a pasta a partir de 90_escritorio-virtual/modelos/processo/ e preencher o PROCESSO.md.
 2. Depois de trabalhar num processo: atualizar situacao e atualizado_em no PROCESSO.md.
 3. Nunca gravar em 90_escritorio-virtual/ nem fora das pastas acima; nunca excluir (usar 99_arquivo/).
 4. Nunca criar pastas local/, analyses/ ou nomes fora da convenção do LEIA-ME.md.
 5. Movimentações em lote somente após mostrar a lista e receber confirmação.
 6. Os _INDICE.md são gerados: não editar à mão; usar /cgov-escritorio:atualizar-indices.
-```
 
 ---
 
@@ -1511,8 +1503,7 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 
 ### F.1 — `01_processos\_LEIA-ME.md` (modelo de `_LEIA-ME` de área)
 
-```markdown
-# 01_processos — uma pasta por processo SEI
+#### 01_processos — uma pasta por processo SEI
 
 **Finalidade:** reunir tudo o que pertence a um processo SEI: documentos, trabalho, referências e produtos.
 **Entra:** qualquer arquivo ligado a um número SEI. **Não entra:** NT já assinada (vai para 02_notas-tecnicas).
@@ -1520,7 +1511,6 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 **Dentro de cada processo:** PROCESSO.md · documentos-sei/ · trabalho/ · referencias/ · produtos/
 **Índice:** _INDICE.md (gerado a partir das fichas; não editar à mão).
 **Processo encerrado:** mover a pasta inteira para 99_arquivo/processos-encerrados/ e marcar situacao: arquivado.
-```
 
 ### F.2 — `PROCESSO.md`
 
@@ -1560,13 +1550,11 @@ cowork_projeto: ""
 
 ### F.3 — `01_processos\_INDICE.md` (gerado)
 
-```markdown
-# Índice de processos — gerado em 2026-11-05 por gerar_indices.py (não editar)
+#### Índice de processos — gerado em 2026-11-05 por gerar_indices.py (não editar)
 
 | Processo | Título | Inciso | Situação | Atualizado | NTs |
 |---|---|---|---|---|---|
 | [SEI_02070.020239_2025-64_plano-setorial](SEI_02070.020239_2025-64_plano-setorial/PROCESSO.md) | … | II | em-andamento | 2026-11-05 | NT 31/2026 |
-```
 
 ---
 

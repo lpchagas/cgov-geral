@@ -1,0 +1,40 @@
+{
+  "skill_name": "cgov-secretaria-colegiados",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Gere a minuta de ata da reunião extraordinária do CTGRIC a partir desta transcrição resumida (dados fictícios): 'Abertura às 14h05 pela Presidente (Unidade A). Presentes: Membro 1 (Unidade B), Membro 2 (Unidade C), Membro 3 (Unidade D), Membro 4 (Unidade E), Membro 5 (Unidade F), Membro 6 (Unidade G). Item 1: o Membro 2 apresentou a proposta de cronograma do Plano de Gestão de Riscos; houve concordância geral e a Presidente declarou o cronograma aprovado. Item 2: o Membro 4 sugeriu criar um GT para riscos de integridade; ficou de trazer proposta na próxima reunião. Encerramento às 15h20.'",
+      "expected_output": "Minuta de ata do CTGRIC com o conteúdo mínimo do art. 12 da Portaria ICMBio nº 4.529/2025; cronograma registrado como deliberação aprovada; a sugestão do GT registrada como proposta, não como deliberação, com o encaminhamento para a próxima reunião; data e número da reunião como [⚠️ confirmar]; quórum comparado com os 11 membros do art. 2º, com ⚠️ sobre a diferença entre os arts. 9º e 11; lembrete de que a minuta vai aos membros pelo SEI antes da assinatura.",
+      "expectations": [
+        "Segue o conteúdo mínimo do art. 12 da Portaria ICMBio nº 4.529/2025",
+        "Registra o cronograma como deliberação aprovada e o GT como proposta",
+        "Marca a data e o número da reunião como [⚠️ confirmar], sem inventá-los",
+        "Compara os presentes com a composição de 11 membros e sinaliza o quórum com ⚠️",
+        "Lembra que a minuta vai aos membros pelo SEI antes da assinatura (art. 12, § 1º)"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Prepare a pauta e a convocação da reunião ordinária do CTGRIC para depois de amanhã, com dois itens: monitoramento trimestral do Plano de Integridade e informe sobre o Plano de Gestão de Riscos.",
+      "expected_output": "Antes de redigir, avisa que a convocação de reunião ordinária exige antecedência mínima de 5 dias úteis (art. 8º da Portaria nº 4.529/2025) e que a data não cumpre o prazo; oferece remarcar ou tratar como extraordinária (48 horas). Depois, apresenta a pauta numerada com objetivo, responsável e documento de suporte, e o texto de convocação com data, horário e local, pauta e documentação.",
+      "expectations": [
+        "Aponta o descumprimento do prazo de 5 dias úteis para reunião ordinária (art. 8º)",
+        "Oferece alternativa (nova data ou reunião extraordinária com 48 horas)",
+        "Apresenta a pauta com objetivo de cada item (informe, discussão ou deliberação)",
+        "Inclui na convocação os três elementos do art. 8º",
+        "Não inventa nomes de responsáveis; usa unidades ou [⚠️ confirmar]"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Faça a ata da última reunião do Conselho de Governança. Não tenho a transcrição, só lembro que aprovamos tudo.",
+      "expected_output": "Informa que o ato do Conselho de Governança não foi localizado no acervo normativo e pergunta qual é; explica que não pode redigir ata sem transcrição ou anotações, porque deliberações, presenças e prazos não podem ser inventados; pede a transcrição ou as anotações e oferece o modelo de ata em branco.",
+      "expectations": [
+        "Sinaliza com ⚠️ que o ato do Conselho de Governança não está no acervo",
+        "Não redige deliberações, presenças ou prazos sem fonte",
+        "Pede a transcrição ou as anotações da reunião",
+        "Oferece o modelo de ata em branco"
+      ]
+    }
+  ]
+}

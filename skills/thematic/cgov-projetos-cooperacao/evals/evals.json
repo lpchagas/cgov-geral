@@ -1,0 +1,38 @@
+{
+  "skill_name": "cgov-projetos-cooperacao",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Redija o TdR da GIZ para uma consultoria que desenvolva um agente de IA para consulta ao guia de gestão do ICMBio. Ainda não sei quantos dias nem os perfis.",
+      "expected_output": "Minuta no modelo da GIZ (references/giz.md) com as seções I a V; dias, perfis, produtos com datas e ID do projeto como [A DEFINIR PELO GESTOR]; inclui viagens com compensação de CO2 e a cláusula de confidencialidade e proteção de dados (LGPD e GDPR), com acesso a dados institucionais; avisa que os eixos do projeto vêm das instruções e precisam ser confirmados; sugere o CHECAR_INSUMOS.",
+      "expectations": [
+        "Segue as seções I a V do modelo da GIZ",
+        "Usa [A DEFINIR PELO GESTOR] para dias, perfis e ID do projeto, sem inventar",
+        "Inclui compensação de CO2 nas viagens",
+        "Inclui cláusula de confidencialidade e proteção de dados (LGPD e GDPR)",
+        "Sinaliza com ⚠️ que os eixos do projeto precisam de confirmação"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Prepare uma Nota Informativa sobre o andamento da iniciativa do catálogo de serviços no projeto de cooperação. Já entregamos o diagnóstico e o próximo passo é um TdR para a modelagem.",
+      "expected_output": "Nota Informativa com destinatário, interessados, referência ao projeto (processo SEI como campo a preencher), análise com histórico, produto entregue (diagnóstico) e próximos passos com a tabela Consultoria | Objetivo | Áreas envolvidas, e conclusão; campos sem informação entre colchetes; não inventa datas nem nomes.",
+      "expectations": [
+        "Segue a estrutura destinatário, interessados, referência, análise e conclusão",
+        "Registra o diagnóstico como produto entregue e o TdR como próximo passo",
+        "Inclui a tabela Consultoria | Objetivo | Áreas envolvidas",
+        "Deixa o número do processo SEI e as datas como campos a preencher"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Quero contratar diretamente uma empresa pelo ICMBio, por dispensa de licitação, para o mesmo serviço do TdR da GIZ. Monte o processo.",
+      "expected_output": "Explica que contratação direta pelo ICMBio segue a Lei nº 14.133/2021 e está fora desta skill; não monta o processo de dispensa; oferece reaproveitar o escopo e os produtos do TdR como insumo para a área de contratações e indica a cgov-triagem-processo-sei para a triagem do processo.",
+      "expectations": [
+        "Declara que contratação pela Lei nº 14.133/2021 está fora da skill",
+        "Não monta processo de dispensa",
+        "Oferece o escopo do TdR como insumo para a área de contratações"
+      ]
+    }
+  ]
+}

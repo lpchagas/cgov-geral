@@ -51,8 +51,8 @@ Use quando o ICMBio está **prestes a editar ou revisar** um ato normativo.
 ### Passo 1.1 — Triagem: incidência, não incidência e dispensa
 
 Antes de estruturar a AIR, faça a triagem em três perguntas, **nesta ordem**.
-Colete do usuário: tipo do ato (Portaria, IN, Resolução, Norma de Execução,
-Ordem de Serviço), objeto, e se os efeitos alcançam agentes econômicos ou
+Colete do usuário: tipo do ato (Portaria, Resolução ou Instrução Normativa — Portaria
+ICMBio nº 129/2020, art. 2º), objeto, e se os efeitos alcançam agentes econômicos ou
 usuários dos serviços prestados — ou apenas o âmbito interno do Instituto.
 
 #### (a) O Decreto se aplica ao caso?

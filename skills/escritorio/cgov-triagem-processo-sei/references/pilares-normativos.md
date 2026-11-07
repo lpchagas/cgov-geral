@@ -13,6 +13,7 @@
 - Lei nº 12.527/2011 (LAI) — acesso à informação e sigilo
 - Lei nº 13.709/2018 (LGPD) — dados pessoais
 - Lei nº 14.133/2021 — licitações e contratos (só se o processo tiver objeto contratual)
+- Portaria PFE/ICMBio nº 3, de 26/05/2021 — aprova a OJN nº 27/2021: juntada obrigatória do aviso de recebimento na comunicação por via postal
 
 ## 2. Competência regimental da CGOV
 - Lei nº 11.516/2007 — criação do ICMBio
@@ -44,7 +45,7 @@
 
 ## 6. Forma dos atos administrativos do ICMBio
 - Lei Complementar nº 95/1998 e Decreto nº 12.002/2024 — elaboração e redação de atos normativos
-- Portaria ICMBio nº 271/2013 — elaboração e expedição de atos administrativos no ICMBio (espécies, competência, submissão à PFE, Anexo II)
-- Portaria ICMBio nº 129/2020 — atos normativos do ICMBio ⚠️ (transcrita em 07/11/2026; conferir a relação com a Portaria nº 271/2013 antes de citar qualquer das duas)
-- Portaria Conjunta PFE/ICMBio nº 3/2021 — consultas jurídicas à PFE ⚠️ (transcrita em 07/11/2026; conferir data e anexos)
+- Portaria ICMBio nº 129, de 18/02/2020 — revisão e consolidação de atos normativos: espécies (art. 2º), PFE (arts. 5º e 7º), vigência (art. 10), documentos da proposta (art. 13); prevalece sobre a nº 271/2013 onde colidirem
+- Portaria ICMBio nº 271, de 27/12/2013 — elaboração e expedição de atos administrativos (competência, estrutura, redação, submissão à PFE, consulta jurídica, Anexo II); ⚠️ não revogada expressamente
+- Portaria Conjunta nº 3, de 13/05/2021 — consultas jurídicas à PFE ⚠️ (não está no acervo)
 - Manual de Redação da Presidência da República

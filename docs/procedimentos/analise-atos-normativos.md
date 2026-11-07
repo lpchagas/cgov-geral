@@ -134,6 +134,7 @@ Marque o que depende de dado da unidade proponente com ⚠️. Não estime custo
 - Prosa da NT no presente do indicativo, fluida e objetiva. Tabelas só para dados comparativos ou consolidados.
 - Propostas de dispositivo partem do texto limpo da legística e ficam no **futuro do presente do indicativo**, por convenção da CGOV (o Decreto nº 12.002/2024, art. 11, I, "e", admite o presente ou o futuro do presente e exige uniformidade), para que não haja duas redações do mesmo artigo. Dispositivos novos recebem numeração provisória com letra (art. 6º-A); prazos a calibrar pela proponente ficam em "[X]". Termo definido é único em todas as redações.
 - Modelo SEI: `## 1. DESTINATÁRIO` a `## 4. FUNDAMENTAÇÃO/ANÁLISE TÉCNICA/PARECER`, com `### Capítulo N — …` e `#### N.1 …` dentro do item 4; conclusão em `## 5. CONCLUSÃO E PROPOSIÇÃO`, com `### 5.1 …`. Proposição em (i), (ii), (iii); encaminhamentos com destinatário em negrito.
+- Espécie do ato e cláusula de vigência conforme a Portaria ICMBio nº 129/2020 (arts. 2º e 10): Portaria, Resolução ou Instrução Normativa; vigência em data certa, no mínimo uma semana após a publicação, no primeiro dia do mês ou no seu primeiro dia útil, salvo urgência justificada.
 - Correções normativas: "Redação Atual × Problema × Proposta Saneada", com fundamento e risco. Competências: RACI corrigida.
 
 **Códigos**
@@ -214,5 +215,5 @@ A versão 1 nasceu das dez sessões do projeto de referência (triagem, fluxos, 
 ### B.3 Pendências
 
 - ⚠️ Inciso do Art. 37 que fundamenta a auditoria de competências e a técnica legislativa.
-- ⚠️ Texto da Portaria Conjunta nº 3/2021 no acervo normativo (consulta facultativa à PFE).
+- ⚠️ Texto da Portaria Conjunta nº 3, de 13/05/2021 (consultas jurídicas à PFE), que não está no acervo. A consulta jurídica e a NT de subsídio já se apoiam na Portaria nº 271/2013 (Anexo I, arts. 6º a 8º) e na Portaria nº 129/2020 (arts. 5º, 7º e 13), conferidas em 07/11/2026.
 - Piloto num ato normativo real (Fase 11).

@@ -131,14 +131,22 @@ informações; imposição de multas e penas; outras sanções.
 Use quando a CGOV for **consultar a PFE** sobre uma dúvida jurídica (consulta
 facultativa) ou instruir a NT que subsidia a análise jurídica de uma minuta.
 
-**Norma de procedimento:** Portaria Conjunta nº 3, de 13 de maio de 2021, que dispõe
-sobre a elaboração e o envio de consultas jurídicas à PFE junto ao Instituto Chico
-Mendes. ⚠️ Antes de citar artigo, anexo ou formulário, confira o texto da Portaria
-Conjunta no acervo normativo; se ele não estiver lá, sinalize a lacuna e peça o texto.
+**Normas de procedimento (conferidas no acervo em 07/11/2026):**
+- Portaria ICMBio nº 271/2013, Anexo I: submissão da proposta de ato à PFE (art. 6º),
+  documentos que a acompanham (art. 7º, § 2º), custeio ou declaração de ausência de
+  incremento financeiro (art. 7º, §§ 3º e 4º) e conteúdo da consulta jurídica (art. 8º);
+- Portaria ICMBio nº 129/2020: parecer conclusivo da PFE (art. 5º), avaliação conjunta e
+  devolução por falta de requisitos formais (art. 7º) e documentos da proposta pelo SEI
+  (art. 13). Onde colidir com a nº 271/2013, prevalece a nº 129/2020 (posterior).
+- ⚠️ A Portaria Conjunta nº 3, de 13/05/2021 (elaboração e envio de consultas jurídicas
+  à PFE), não está no acervo: confira o texto antes de citá-la. Não a confunda com a
+  Portaria PFE/ICMBio nº 3, de 26/05/2021, que aprova a OJN nº 27/2021 (aviso de
+  recebimento em comunicação postal).
 
-**Consulta facultativa:** formule a dúvida jurídica de forma objetiva (o que se
-pergunta, por que a dúvida existe, quais dispositivos estão em jogo e qual a posição
-técnica da CGOV), no formulário previsto pela Portaria Conjunta (⚠️ confirmar o anexo).
+**Consulta jurídica:** monte-a com o conteúdo do art. 8º do Anexo I da Portaria nº
+271/2013: (I) manifestação conclusiva do órgão consulente; (II) atos e diplomas aplicáveis
+ao caso; (III) explicitação da dúvida jurídica; (IV) opiniões contrárias que evidenciam a
+dúvida, quando houver; (V) documentos que facilitem o exame da matéria.
 
 **NT de subsídio à análise jurídica de minuta** — além dos capítulos da suíte, confira
 se a NT contém:
@@ -147,8 +155,12 @@ se a NT contém:
 3. justificativa dos capítulos e artigos da minuta;
 4. análise de não sobreposição com outros colegiados, quando a minuta criar ou
    alterar colegiado (⚠️ conferir a norma federal aplicável antes de citá-la);
-5. declaração sobre impacto orçamentário (⚠️ conferir o fundamento antes de citá-lo);
-6. as respostas aos 8 quesitos do Anexo II da Portaria ICMBio nº 271/2013 (Modo 1).
+5. indicação da fonte de custeio, se houver acréscimo de despesa, ou declaração formal
+   de que a proposta não implica incremento financeiro (Portaria nº 271/2013, Anexo I,
+   art. 7º, §§ 3º e 4º);
+6. as respostas aos 8 quesitos do Anexo II da Portaria ICMBio nº 271/2013 (Modo 1);
+7. nos atos de alteração ou consolidação, o quadro comparativo entre o texto vigente e o
+   proposto (Portaria nº 129/2020, art. 13, III).
 
 A CGOV não decide questão jurídica: registra os pontos jurídicos (`PJ-01`…) e
 apresenta as propostas que deles dependam como condicionadas ou com alternativas.

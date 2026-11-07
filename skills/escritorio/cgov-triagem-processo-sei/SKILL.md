@@ -37,12 +37,16 @@ Se existe skill dedicada ao produto pedido, **acione a skill**; não reproduza d
 | Técnica legislativa em minuta | `cgov-saneamento-legistica` |
 | Plano de Entregas, PTI, conformidade de entrega | `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao` |
 | Indicadores do PGD | `pgd-analisar-indicador`, `pgd-desenvolver-indicador`, `pgd-implementar-indicador`, `pgd-testar-indicador` |
-| Gestão de riscos, matriz, plano de tratamento, CTGRIC | `cgov-gestao-riscos` |
+| Gestão de riscos, matriz, plano de tratamento | `cgov-gestao-riscos` |
+| Pauta, convocação, ata e encaminhamentos de colegiado (CTGRIC e outros) | `cgov-secretaria-colegiados` |
+| Programa e Plano de Integridade, SITAI, Agentes de Integridade | `cgov-integridade` |
 | AIR/ARR | `cgov-air-arr` |
 | Cadeia de Valor, SIPOC, Catálogo, DFT | `cgov-cadeia-valor` |
 | Regimento Interno | `cgov-regimento-interno` |
 | Quadro de cargos e funções (QCF) | `cgov-qcf` |
 | PGR | `cgov-pgr` |
+| Carta de Serviços ao Usuário (Lei nº 13.460/2017) | `cgov-carta-servicos` |
+| TdR, Nota Informativa ou alinhamento de projeto de cooperação | `cgov-projetos-cooperacao` |
 | Transcrição de norma em PDF | `cgov-transcrever-normativos` |
 | Pasta, ficha ou índice de processo | `cgov-gestao-acervo` |
 | **Triagem, despacho, ofício, diligência, quadro normativo, checagem de instrução, orientação** | **Esta skill** (seção 3 e `references/formatos-de-saida.md`) |
@@ -78,8 +82,9 @@ recorte (é o caso mais frequente; não force o enquadramento integral).
 **Passo 4 — Forma, instrução e prazos (saneamento):** competência de quem praticou o ato; espécie do expediente;
 documentos essenciais e anexos citados; assinaturas; motivação dos atos decisórios; prazos; ordem cronológica.
 Use a Lei nº 9.784/1999 e as normas internas sobre forma dos atos (ver `references/pilares-normativos.md`,
-item 6). ⚠️ Antes de citar a Portaria ICMBio nº 271/2013, confira no acervo se a Portaria ICMBio nº 129/2020 a
-alterou.
+item 6): espécies e vigência pela Portaria ICMBio nº 129/2020 (arts. 2º e 10), documentos da proposta pelo seu art. 13,
+e estrutura, submissão à PFE e Anexo II pela Portaria ICMBio nº 271/2013, que vale onde não colidir com a nº 129/2020.
+Em comunicação por via postal, confira a juntada do aviso de recebimento (OJN PFE/ICMBio nº 27/2021).
 
 **Passo 5 — Mérito técnico:** só se o Passo 3 deu SIM ou PARCIAL. Se o mérito exigir método de skill dedicada,
 volte à seção 1 e delegue.

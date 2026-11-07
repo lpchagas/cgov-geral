@@ -1630,3 +1630,41 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
    nº 271/2013, base da `cgov-nt-06`.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+## 39. Normas sobre atos administrativos: Portarias nº 271/2013 e nº 129/2020 (pendência E8, 07/11/2026)
+
+1. **Leitura do acervo:** o Coordenador vinculou de novo a pasta `03_normativos` (leitura). Foram lidas a Portaria
+   ICMBio nº 271/2013 (27/12/2013), a Portaria ICMBio nº 129/2020 e o arquivo "Portaria Conjunta ICMBio PFE 03-2021".
+   Esse arquivo é a Portaria PFE/ICMBio nº 3/2021, que aprova a OJN nº 27/2021 (aviso de recebimento na comunicação
+   postal). A Portaria Conjunta nº 3, de 13/05/2021, sobre consultas jurídicas à PFE, não está no acervo.
+2. **Relação entre as normas (D52):** a nº 129/2020 define as espécies de ato normativo desde 02/03/2020 (Portarias,
+   Resoluções e Instruções Normativas; art. 2º) e a vigência em data certa (art. 10), e não revoga expressamente a
+   nº 271/2013. Onde as duas colidem (espécies e vigência), prevalece a nº 129/2020; no resto, vale a nº 271/2013
+   (Anexo I: submissão à AGU, documentos da proposta, impacto orçamentário e conteúdo da consulta jurídica), com ⚠️
+   sobre a vigência residual, a confirmar com a PFE.
+3. **Correções (13 arquivos):** `cgov-nt-06`, `cgov-nt-01`, `cgov-saneamento-legistica`, `cgov-air-arr`,
+   `cgov-comparar-versoes`, `cgov-triagem-processo-sei` (com duas referências), `analista-processos-sei.md` v7.3, dois
+   anexos do `analista-governanca`, o procedimento de análise de atos normativos e o modelo de instruções do projeto.
+4. **Curadoria (C8):** renomear os dois arquivos do acervo e refazer a numeração do Anexo II da nº 271/2013 na
+   transcrição fica com a operação. A Portaria Conjunta nº 3/2021 continua na pendência C3.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+## 40. Quatro skills temáticas novas da pasta de prompts (Fase 6.10, 07/11/2026)
+
+1. **Skills (D53):** `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e
+   `cgov-projetos-cooperacao`, em `skills/thematic/`, com `skillOverrides` *user-invocable-only* e 3 evals
+   sintéticos cada. Os prompts da pasta `02_dev-prompts` foram só insumo (D45); toda norma foi conferida no acervo.
+2. **Normas atualizadas em relação aos prompts:** o CTGRIC é regido pela Portaria ICMBio nº 4.529/2025, que
+   revogou a nº 4.007/2023 e faz da CGOV a Secretaria-Executiva (art. 2º, II); o Programa Integra+ e o Plano de
+   Integridade 2026–2028 são as Portarias nº 253/2026 e nº 257/2026, e a CGOV é Unidade Setorial de Integridade
+   (Portaria nº 253/2026, art. 5º, § 2º).
+3. **Carta de Serviços:** enquadrada pelo Coordenador no Art. 37, parágrafo único, VI, como desdobramento do
+   Catálogo de Produtos e Serviços; a skill não diz que o inciso menciona a Carta.
+4. **Script:** o script original tinha credencial de banco em texto aberto (pendência S1). A skill usa
+   `scripts/classificar_entregas.py` v0.1.0, que lê um CSV exportado pelo usuário, não se conecta a banco e compara
+   palavras inteiras sem acento.
+5. **Projetos de cooperação:** a skill é genérica; os dados do projeto com a GIZ ficam em `references/giz.md`,
+   marcados para confirmação.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

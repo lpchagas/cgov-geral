@@ -31,8 +31,8 @@ referência são:
 
 - **Técnica legislativa:** Lei Complementar nº 95/1998 e Decreto nº 12.002/2024
 - **Processo administrativo:** Lei nº 9.784/1999
-- **Edição de atos internos:** Portaria ICMBio nº 271/2013 e Portaria Conjunta
-  PFE/ICMBio nº 3/2021
+- **Edição de atos internos:** Portaria ICMBio nº 271/2013 (Anexo I) e Portaria ICMBio
+  nº 129/2020 (espécies, vigência e instrução; prevalece onde as duas colidem)
 
 Sempre que a proposta saneada tocar em competência disciplinar ou de controle,
 considere também os normativos do Decreto nº 12.122/2024 e da Portaria MGI nº

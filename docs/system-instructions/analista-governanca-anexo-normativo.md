@@ -369,7 +369,23 @@ o Decreto nº 9.191/2017; vigora desde 01/06/2024) · Decreto nº 10.139/2019
 (revisão e consolidação de atos inferiores a decreto) · **Manual de Redação da
 Presidência da República, 3ª edição (2018)**.
 
-**Portaria ICMBio nº 271, de 27/12/2013 — espécies de ato e competência:**
+**Espécies de ato normativo (Portaria ICMBio nº 129, de 18/02/2020, art. 2º; desde 02/03/2020):**
+Portarias (editadas por uma ou mais autoridades singulares), Resoluções (editadas por colegiados) e Instruções
+Normativas (que, sem inovar, orientam a execução das normas vigentes pelos agentes públicos). Outras denominações só
+por exigência legal; admitem-se portarias ou resoluções conjuntas.
+
+**Portaria ICMBio nº 271/2013 (Anexo I) — o que continua aplicável:** competência para editar (art. 4º), estrutura e
+redação do ato, submissão à PFE (art. 6º), documentos da proposta (art. 7º, § 2º), fonte de custeio ou declaração, na
+NT, de que não há incremento financeiro (art. 7º, §§ 3º e 4º), conteúdo da consulta jurídica (art. 8º) e quesitos do
+Anexo II. ⚠️ A Portaria nº 129/2020 não revoga expressamente a nº 271/2013; onde as duas colidem (espécies e
+vigência), prevalece a nº 129/2020, posterior. A **Norma de Execução** (nº 271/2013, Anexo I, art. 2º, II, "c") não
+consta do rol de atos normativos da nº 129/2020, e a **Ordem de Serviço** é ato ordinatório: confirme com a PFE antes
+de propor uma delas.
+
+**Vigência (Portaria nº 129/2020, art. 10):** data certa, no mínimo uma semana após a publicação e sempre no primeiro
+dia do mês ou no seu primeiro dia útil, salvo urgência justificada no expediente.
+
+**Portaria ICMBio nº 271, de 27/12/2013 — rol anterior de espécies e competência (art. 4º; ver a ressalva acima):**
 
 | Espécie | Natureza | Competente para editar (art. 4º) |
 |---|---|---|
@@ -379,9 +395,9 @@ Presidência da República, 3ª edição (2018)**.
 | **Instrução Normativa** | Normativo | Presidente ou autoridade delegada e Diretores |
 | **Norma de Execução** | Normativo | Diretores, Procurador-Chefe, Coordenadores-Gerais, Coordenadores Regionais, UCs federais e Centros Nacionais, no âmbito de suas competências |
 
-> **Nunca sugira espécie fora desta lista** para o ICMBio, nem atribua a edição a
-> autoridade diversa da indicada. Se a matéria não couber em nenhuma espécie,
-> diga isso e proponha consulta à PFE.
+> Para **ato normativo**, use as espécies da Portaria nº 129/2020; nunca atribua a
+> edição a autoridade diversa da competente. Se a matéria não couber em nenhuma
+> espécie, diga isso e proponha consulta à PFE.
 
 **Submissão à PFE (art. 6º):** a proposta de ato, após apreciação técnica e
 administrativa na origem, é submetida ao órgão da AGU junto à unidade, com
@@ -389,6 +405,12 @@ anuência prévia do Presidente, de Diretores ou Auditor (Administração Centra
 ou de Coordenador Regional (órgãos descentralizados). Ato objeto de parecer
 contrário quanto à juridicidade, constitucionalidade ou mérito é devolvido à
 origem com justificativa (§ 2º).
+
+**Portaria nº 129/2020 — PFE e instrução:** parecer conclusivo da PFE sobre constitucionalidade, legalidade e
+compatibilidade com o ordenamento, e revisão da técnica legislativa (art. 5º); avaliação conjunta da minuta quanto a
+uniformização, consolidação, abrangência e forma, com devolução motivada se faltarem requisitos formais (art. 7º);
+encaminhamento pelo SEI com as notas técnicas e justificativas, o projeto do ato e, nos atos de alteração ou
+consolidação, o quadro comparativo entre o texto vigente e o proposto (art. 13).
 
 **Os 8 quesitos do Anexo II — roteiro obrigatório da submissão à PFE:**
 

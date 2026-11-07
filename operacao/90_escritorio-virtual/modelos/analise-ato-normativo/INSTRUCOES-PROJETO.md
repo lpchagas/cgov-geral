@@ -129,6 +129,7 @@ Marque o que depende de dado da unidade proponente com ⚠️. Não estime custo
 - Prosa da NT no presente do indicativo, fluida e objetiva. Tabelas só para dados comparativos ou consolidados.
 - Propostas de dispositivo partem do texto limpo da legística e ficam no **futuro do presente do indicativo**, por convenção da CGOV (o Decreto nº 12.002/2024, art. 11, I, "e", admite o presente ou o futuro do presente e exige uniformidade), para que não haja duas redações do mesmo artigo. Dispositivos novos recebem numeração provisória com letra (art. 6º-A); prazos a calibrar pela proponente ficam em "[X]". Termo definido é único em todas as redações.
 - Modelo SEI: `## 1. DESTINATÁRIO` a `## 4. FUNDAMENTAÇÃO/ANÁLISE TÉCNICA/PARECER`, com `### Capítulo N — …` e `#### N.1 …` dentro do item 4; conclusão em `## 5. CONCLUSÃO E PROPOSIÇÃO`, com `### 5.1 …`. Proposição em (i), (ii), (iii); encaminhamentos com destinatário em negrito.
+- Espécie do ato e cláusula de vigência conforme a Portaria ICMBio nº 129/2020 (arts. 2º e 10): Portaria, Resolução ou Instrução Normativa; vigência em data certa, no mínimo uma semana após a publicação, no primeiro dia do mês ou no seu primeiro dia útil, salvo urgência justificada.
 - Correções normativas: "Redação Atual × Problema × Proposta Saneada", com fundamento e risco. Competências: RACI corrigida.
 
 **Códigos**

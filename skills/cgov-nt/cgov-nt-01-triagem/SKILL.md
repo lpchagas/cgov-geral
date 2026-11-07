@@ -85,7 +85,7 @@ Especial ao final) em vez de forçar um enquadramento artificial.
 **Passo 2 — Identificação das normas aplicáveis.** Combine o Regimento Interno
 (sempre citado como base de competência) com as normas específicas do eixo
 identificado (ex.: risco → Portaria ICMBio nº 975/2021; AIR/ARR → Decreto nº
-10.411/2020; atos normativos → Decreto nº 12.002/2024 e LC nº 95/1998; integridade →
+10.411/2020; atos normativos → Decreto nº 12.002/2024, LC nº 95/1998 e Portarias ICMBio nº 129/2020 e nº 271/2013; integridade →
 Decreto nº 11.529/2023). **Nunca presuma o número de artigo/inciso de uma norma que
 você não tem certeza** — cite a norma de forma geral e sinalize a necessidade de
 confirmação, em vez de inventar.

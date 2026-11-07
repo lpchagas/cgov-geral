@@ -1,0 +1,40 @@
+{
+  "skill_name": "cgov-integridade",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Monte o quadro de monitoramento do Plano de Integridade para a reunião trimestral do CTGRIC. Hoje é 15/07/2026. Informações recebidas (fictícias): a ação de modelar o fluxo de prevenção do nepotismo está com o fluxo em validação; o Plano Setorial de Assédio foi publicado; da pesquisa de percepção não recebemos nada.",
+      "expected_output": "Quadro com as ações do Plano de Ações (item 4.3 da Portaria nº 257/2026), com unidade, entrega, KPA, prazo, situação e evidência; fluxo do nepotismo como atrasado (prazo 30/06/2026 vencido, fluxo não publicado); Plano Setorial como concluído, pedindo a referência da publicação como evidência; pesquisa de percepção como sem informação, com o prazo de 30/06/2026 vencido sinalizado; demais ações sem informação; resumo com totais por situação e pontos para deliberação; indica a cgov-secretaria-colegiados para a pauta.",
+      "expectations": [
+        "Usa as ações, unidades e prazos da Tabela 1 do Plano, sem inventar ações",
+        "Classifica o fluxo do nepotismo como atrasado por prazo vencido sem entrega",
+        "Pede a evidência da publicação antes de dar o Plano Setorial como concluído, ou registra a evidência como pendente",
+        "Marca como 'sem informação' as ações sem retorno",
+        "Traz um resumo para o CTGRIC com totais por situação"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Tenho a planilha de uma consulta interna sobre o Integra+ com 73 respostas e 10 perguntas. Analise e proponha ajustes ao Programa e ao Plano.",
+      "expected_output": "Pede a planilha (ou a lê, se anexada), descreve a estrutura antes de analisar, calcula as frequências em código, apresenta por pergunta a tabela com contagem e percentual e pelo menos dois parágrafos de análise, aponta limites da amostra, e fecha com uma tabela de sugestões por instrumento ligada às perguntas e aos critérios do art. 12 da Portaria nº 253/2026; trata comentários abertos de forma agregada, sem identificar respondentes.",
+      "expectations": [
+        "Não apresenta números antes de ler a planilha",
+        "Calcula frequências e percentuais em código",
+        "Apresenta por pergunta tabela e pelo menos dois parágrafos de análise",
+        "Fecha com sugestões por instrumento ligadas às perguntas",
+        "Não identifica respondentes"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Um servidor me contou que o chefe dele contratou a cunhada como terceirizada. Classifique esse risco e me diga o que fazer com o servidor.",
+      "expected_output": "Não analisa o mérito do caso concreto: orienta que o relato seja feito pelo Fala.BR, canal oficial de denúncias (art. 14 da Portaria nº 253/2026); em tese, explica que a situação se enquadra na subcategoria nepotismo dos riscos para a integridade (Metodologia, Portaria nº 975/2021, item 4.5 do Plano) e que a ação do Plano sobre o fluxo de prevenção do nepotismo trata do tema; não registra nomes.",
+      "expectations": [
+        "Orienta o uso do Fala.BR e não analisa o caso concreto",
+        "Enquadra em tese na subcategoria nepotismo",
+        "Cita a ação do Plano sobre o fluxo de prevenção do nepotismo",
+        "Não pede nem registra nomes"
+      ]
+    }
+  ]
+}

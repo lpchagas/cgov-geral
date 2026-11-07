@@ -4,7 +4,7 @@
 > (`local/installed-reference/`, fora do Git) e de `py scripts\publicar_operacao.py --verificar` (HEAD `d94235e`).
 > Atualizar a cada mudança de skill (runbook "Alterar uma skill" do [plano de implantação](plano-implantacao.md)).
 
-**Resumo:** 26 skills no inventário da Fase 6 + 2 `cgge-fgbio-*`, **todas com fonte versionada desde a Fase 6.2 (07/11/2026)**.
+**Resumo:** 26 skills no inventário da Fase 6 + 2 `cgge-fgbio-*`, **todas com fonte versionada desde a Fase 6.2 (07/11/2026)**. Depois vieram 2 skills de operação (6.4, D51) e 4 temáticas novas (6.10, D53): **34 fontes** em `skills/`, 32 delas no plugin `cgov-escritorio`.
 - **14 com fonte desde antes:** 5 iguais ao instalado e 9 desatualizadas na conta (pendência P4; reinstalação na Fase 6.8).
 - **12 promovidas na 6.2** (`skills/pgd/` e `skills/normativo/`) e as 2 `cgge-fgbio-*` (`skills/cgge-fgbio/`); a reinstalação de todas fica para a 6.8. Na 6.1 (07/11/2026), 3 delas (`pgd-avaliar-entrega`, `pgd-elaborar-entrega`, `pgd-registro-execucao`) estavam mais novas na conta que em `local/installed-reference/`; a promoção parte da exportação `_export_2026-11-07` (D43).
 
@@ -35,6 +35,10 @@ Pipeline de toda NT, para qualquer inciso. A `cgov-nt-01` cria o `NT_ESTADO.md` 
 | `cgov-gestao-riscos` | IX | Gestão de riscos — Metodologia da Portaria ICMBio nº 975/2021 (PGRI: Portaria nº 255/2020) | ⚠️ desatualizada |
 | `cgov-air-arr` | X | AIR e ARR (Decreto nº 10.411/2020) | ✅ igual |
 | `cgov-transcrever-normativos` | — | OCR, transcrição e gravação em Markdown de atos normativos do acervo | ✅ igual |
+| `cgov-secretaria-colegiados` | — (CTGRIC: Portaria nº 4.529/2025, art. 2º, II) | Pauta, convocação, minuta de ata, encaminhamentos e conferência de ata de colegiados | ⚠️ nova, não instalada (6.10, D53) |
+| `cgov-integridade` | IX (com a Portaria nº 253/2026, art. 5º, § 2º) | Integra+, Plano de Integridade 2026–2028, monitoramento para o CTGRIC, pesquisa de percepção, riscos para a integridade, Agentes de Integridade | ⚠️ nova, não instalada (6.10, D53) |
+| `cgov-carta-servicos` | VI (desdobramento do Catálogo, D53) | Carta de Serviços ao Usuário (Lei nº 13.460/2017): candidatos a partir do PETRVS (script sem conexão a banco), ficha, conferência e NT de método | ⚠️ nova, não instalada (6.10, D53) |
+| `cgov-projetos-cooperacao` | ⚠️ pelo objeto | TdR, Nota Informativa, despacho e alinhamento de projetos de cooperação (primeiro caso: GIZ) | ⚠️ nova, não instalada (6.10, D53) |
 
 ## 3. Skills do PGD (`skills/pgd/`)
 
@@ -79,7 +83,6 @@ Criadas na Fase 6.4 (07/11/2026, D51); ainda não instaladas na conta (6.8).
 
 ## 5. Previstas
 
-- `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao` (Fase 6.10, D45, a partir da pasta de prompts `02_dev-prompts`).
 - Ampliações feitas na Fase 6.9(b) (07/11/2026, D45, D50): `cgov-nt-06-quesitos-pfe` (consulta jurídica facultativa e NT de subsídio) e `cgov-modelar-fluxo` (BPMN → tabela de atividades/POP).
 - Adiada (E7): skill da Política de Governança Institucional (Art. 37, p.u., II).
 - `cgov-pbi-documentar-painel` e `cgov-pbi-revisar-modelo` (Fase 10).

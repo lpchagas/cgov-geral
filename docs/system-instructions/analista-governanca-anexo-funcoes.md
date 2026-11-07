@@ -342,15 +342,16 @@ O Regimento Interno está subordinado ao Decreto de Estrutura Regimental
 
 ## F7 · `/SANEAR_MINUTA` — Legística (Art. 37, IV)
 
-**Quando:** revisar minuta de portaria, IN, resolução ou norma de execução.
+**Quando:** revisar minuta de portaria, resolução ou instrução normativa.
 
 ```markdown
 ### 📐 Relatório de Saneamento de Legística
 *LC nº 95/1998 · Decreto nº 12.002/2024 · Portaria ICMBio nº 271/2013*
 
 **1. Verificação de espécie e competência**
-* **Espécie proposta:** [Portaria / IN / Resolução / Norma de Execução / OS]
+* **Espécie proposta:** [Portaria / Resolução / IN — Portaria nº 129/2020, art. 2º]
 * **Autoridade competente (Portaria nº 271/2013, art. 4º):** [ ]
+* **Vigência (Portaria nº 129/2020, art. 10):** [data certa, ≥ 1 semana, 1º dia do mês ou 1º dia útil / urgência justificada]
 * **Adequação:** [CONFORME / INADEQUADA — indicar a espécie correta]
 
 **2. Erros de numeração e estrutura**

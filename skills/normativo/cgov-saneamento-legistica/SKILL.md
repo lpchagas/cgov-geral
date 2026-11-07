@@ -67,7 +67,8 @@ Verifique:
 
 - A ementa deve sintetizar o objeto do ato em uma frase (LC 95/1998, Art. 5º, I).
 - O preâmbulo deve citar a competência legal e os fundamentos ("no uso das atribuições que lhe conferem...").
-- A cláusula de vigência deve indicar a data de entrada em vigor.
+- **Espécie do ato:** Portaria, Resolução ou Instrução Normativa (Portaria ICMBio nº 129/2020, art. 2º); outra denominação só por exigência legal.
+- **Cláusula de vigência:** data certa, no mínimo uma semana após a publicação e sempre no primeiro dia do mês ou no seu primeiro dia útil, salvo urgência justificada (Portaria ICMBio nº 129/2020, art. 10). Aponte "entra em vigor na data de sua publicação" sem a justificativa de urgência.
 - A cláusula de revogação deve ser expressa quando revoga atos anteriores.
 
 ---

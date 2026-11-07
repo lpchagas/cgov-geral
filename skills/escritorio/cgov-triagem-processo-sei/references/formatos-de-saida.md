@@ -183,15 +183,17 @@ Para uso rápido antes de tramitar, sem relatório completo.
 | # | Item | Situação | Fundamento | Providência |
 | :-- | :--- | :--- | :--- | :--- |
 | 1 | Competência da autoridade | ✅/❌/⚠️ | Lei nº 9.784/1999, arts. 11-17 | |
-| 2 | Espécie e forma do expediente | | Portaria ICMBio nº 271/2013, art. 2º | |
+| 2 | Espécie e forma do expediente | | Portaria ICMBio nº 129/2020, art. 2º (atos normativos); Portaria ICMBio nº 271/2013, Anexo I, art. 2º (demais) | |
 | 3 | Documentos essenciais juntados | | | |
 | 4 | Anexos citados efetivamente juntados | | | |
 | 5 | Assinaturas eletrônicas válidas | | Decreto nº 8.539/2015 | |
 | 6 | Motivação dos atos decisórios | | Lei nº 9.784/1999, art. 50 | |
 | 7 | Prazos observados | | Lei nº 9.784/1999, arts. 24, 42, 49 | |
-| 8 | Manifestação da PFE, se exigível | | Portaria ICMBio nº 271/2013, art. 6º | |
+| 8 | Manifestação da PFE, se exigível | | Portaria ICMBio nº 271/2013, Anexo I, art. 6º; Portaria ICMBio nº 129/2020, arts. 5º e 7º | |
 | 9 | Classificação de sigilo adequada | | Lei nº 12.527/2011, arts. 23-24 | |
 | 10 | Dados pessoais tratados conforme LGPD | | Lei nº 13.709/2018 | |
+| 11 | Proposta de ato instruída (NT e justificativas, projeto do ato, quadro comparativo se alterar ou consolidar) | | Portaria ICMBio nº 129/2020, art. 13 | |
+| 12 | Aviso de recebimento juntado, se houve comunicação postal | | Lei nº 9.784/1999, art. 26, § 3º; OJN PFE/ICMBio nº 27/2021 | |
 
 **Impedimentos ao prosseguimento:** [listar apenas os ❌ que bloqueiam.]
 **Ajustes recomendáveis:** [listar os ⚠️.]

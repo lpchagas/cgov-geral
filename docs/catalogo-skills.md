@@ -63,4 +63,7 @@ Cópias de referência em `local/installed-reference/` (fora do Git). Na Fase 6.
 
 - `cgov-gestao-acervo` (Fase 6.4): triagem de `00_entrada`, pasta e ficha de processo, índices.
 - `cgov-triagem-processo-sei` (D4, 07/11/2026: criar a skill e manter `docs/system-instructions/analista-processos-sei.md` como versão autocontida; escrita junto com a 6.4).
+- `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao` (Fase 6.10, D45, a partir da pasta de prompts `02_dev-prompts`).
+- Ampliações (Fase 6.9(b), D45): `cgov-nt-06-quesitos-pfe` (consulta jurídica facultativa e NT de subsídio) e `cgov-modelar-fluxo` (BPMN → tabela de atividades/POP).
+- Adiada (E7): skill da Política de Governança Institucional (Art. 37, p.u., II).
 - `cgov-pbi-documentar-painel` e `cgov-pbi-revisar-modelo` (Fase 10).

@@ -1446,3 +1446,33 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
      trabalho do processo"), conforme o ADR-006 e a etapa 6.3.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 32. Propostas de skills a partir da pasta de prompts (Fase 6, etapa 6.10, 07/11/2026)
+
+**Contexto.** O Coordenador pediu uma análise da pasta de prompts `%USERPROFILE%\My Drive\_projetos\02_dev-prompts\`
+(instruções de sistema do Google AI Studio, de 2023 a 2026) para identificar propostas de skills. A pasta foi lida
+sem alterações e comparada com as 28 skills exportadas na 6.1, com as previstas e com o Art. 37 da Portaria ICMBio
+nº 5.592/2025.
+
+**Decisões (D45 do plano).**
+
+1. **Novas skills, na etapa 6.10:**
+   - `cgov-secretaria-colegiados`: atas a partir de transcrição, pautas e encaminhamentos;
+   - `cgov-integridade`: Programa e Plano de Integridade, SITAI, Integra+;
+   - `cgov-carta-servicos`: Lei nº 13.460/2017, com o script de classificação das entregas do PETRVS;
+   - `cgov-projetos-cooperacao`: TdR, Nota Informativa e POA, genérica para cooperantes (primeiro caso, GIZ).
+2. **Ampliações, junto com a 6.9(b):**
+   - `cgov-nt-06-quesitos-pfe`: consulta jurídica facultativa e NT de subsídio. A Portaria Conjunta nº 3/2021 precisa
+     ser conferida antes;
+   - `cgov-modelar-fluxo`: modo BPMN → tabela de atividades/POP.
+3. **Escopo da `cgov-triagem-processo-sei` (D4):** só a CGOV (Art. 37). As instruções da CGGE (Art. 36) ficam como
+   referência.
+4. **Adiada:** a skill da Política de Governança Institucional (inciso II), na pendência E7.
+5. **Descartados:** Microsoft Teams, Relatório de Gestão, Transparência Ativa, LGPD, Dev gov.br, prompts acadêmicos e
+   pessoais.
+6. **Cuidado:** os prompts citam o Regimento Interno anterior (Art. 50) e trazem números SEI e caminhos pessoais. Eles
+   servem só de insumo: as normas são conferidas no acervo e o texto passa pela sanitização.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

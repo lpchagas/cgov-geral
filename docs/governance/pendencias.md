@@ -36,5 +36,6 @@
 | E2 | Decisões D5–D8 do plano (D4 respondida em 07/11/2026: skill `cgov-triagem-processo-sei` + `.md` mantido; acesso dos servidores, orientação institucional sobre IA e LGPD, Fabric/Power BI, Maestri) | Fase 0 |
 | E3 | ~~`docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md`~~ | ✅ Fase 5.9, bloco 5 (07/11/2026; D40) |
 | E4 | ~~`scripts/verificar_sanitizacao.py`~~ — criado em 06/11/2026 (v0.1.1, Fase 5, bloco 1) | Resolvida; uso em `docs/fluxos-de-trabalho.md` |
+| E7 | Skill da Política de Governança Institucional (Art. 37, p.u., II; Portaria ICMBio nº 4.101/2023): instâncias internas de governança, Conselho de Governança, não sobreposição de colegiados. Insumos na pasta de prompts `02_dev-prompts` (`CGOV_Política de Governança`, Analista v4.6, `CGOV_Conselho de Participação`) | Adiada pelo Coordenador (D45, 07/11/2026); depois da Fase 6 |
 | E6 | Evals da `cgov-nt-01-triagem` e da `cgov-nt-03-introducao` citam um número real de processo SEI (aviso do `verificar_sanitizacao.py`) | Fase 6.8: trocar por número fictício (D38) |
 | E5 | Validar `ocr_windows.ps1` (`cgov-transcrever-normativos`) no Windows | Fase 6.7 |

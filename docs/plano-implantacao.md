@@ -1,15 +1,15 @@
 # Plano de Implantação — Escritório Virtual da CGOV/ICMBio
 
-> **Versão:** 3.30 — 07/11/2026 (bloco 4 da Fase 5 concluído — `publicar_operacao.py --verificar` funcionando no Windows, `operacao/` 12/12 igual ao publicado, `.sh` em `archive/scripts-wsl/`, *commit* `d94235e`; bloco 5 preparado — 14 ADRs em `docs/adr/` (D40: ADR-004 e ADR-007 aceitos), `docs/catalogo-skills.md`, `docs/README.md` e referências ao novo caminho deste plano —, falta ao Coordenador mover este arquivo para `docs/plano-implantacao.md` e fazer o *commit*. Histórico completo das versões v1–v3.30: **Apêndice G**.) A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`%USERPROFILE%\My Drive\10_Institucional\CGOV`).
+> **Versão:** 3.31 — 07/11/2026 (bloco 5 da Fase 5 concluído — plano em `docs/plano-implantacao.md`, 14 ADRs, catálogo e índice, *commit* `4ab53c1`; bloco 6 preparado — revisão do diff do *branch* sem achados, Decisão 29 no decision-log, D41 (*merge* `--no-ff`, `.vscode/` ignorado, *branch* só local) —, falta ao Coordenador o *commit* do preparo, o *merge*, o *push* e a publicação. Histórico completo das versões v1–v3.31: **Apêndice G**.) A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`%USERPROFILE%\My Drive\10_Institucional\CGOV`).
 > **Responsável:** Coordenador de Governança (CGOV/CGGE/ICMBio)
-> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `53ec122` (plano v3.24 + documentação D36), conferido pelo Coordenador em 06/11; Fase 5 no *branch* `implantacao/fase-5` (D37; HEAD `d94235e` em 07/11)
+> **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `53ec122` (plano v3.24 + documentação D36), conferido pelo Coordenador em 06/11; Fase 5 no *branch* `implantacao/fase-5` (D37; HEAD `4ab53c1` em 07/11; *merge* `--no-ff` no `main` na 5.10, D41)
 > **Repositório operacional:** `%USERPROFILE%\My Drive\10_Institucional\CGOV` (Google Drive)
 > **Projetos Cowork:** "Escritório CGOV — Implantação" (desenvolvimento) e "Escritório CGOV — Operação" (trabalho da Coordenação)
 > **Ferramentas-alvo:** Claude Desktop (Cowork e Code), Google Antigravity, Obsidian, Maestri
 > **Método:** análise documental (`engineering:documentation`) e arquitetural com ADRs (`engineering:architecture`)
 > **Regra de execução:** uma fase por vez, com confirmação explícita do Coordenador antes de mover, renomear, excluir, reinstalar, fazer *commit* ou *push*.
 > **Regra de manutenção:** a cada etapa concluída, este plano é **atualizado integralmente**, conforme a lista de verificação da Seção "Regra de manutenção deste plano" (logo abaixo do sumário).
-> **Situação atual:** Fases 1, 2, 3 e **4** ✅ (Fase 4 concluída em 06/11: 2.860 operações, 74 processos, manifesto posterior 100% conferido, projeto "Escritório CGOV — Operação" criado e testado; resta a 4.11, exclusão da quarentena a partir de 05/12/2026) · **Fase 5 🟨** (documentação antecipada em 06/11, D36; ordem aprovada em 06/11, D37; *branch* `implantacao/fase-5` criado (`a2effef`); bloco 1 ✅ (`115b336`); bloco 2 ✅ (`0d0c8d2`); bloco 3 ✅ (`b6a1bd5`); bloco 4 ✅ (`d94235e`); bloco 5 (5.9) preparado, falta mover o plano para `docs/` e fazer o *commit*; depois, bloco 6: 5.10) · lembrete da 4.11 agendado para 05/12/2026 · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D4–D8).
+> **Situação atual:** Fases 1, 2, 3 e **4** ✅ (Fase 4 concluída em 06/11: 2.860 operações, 74 processos, manifesto posterior 100% conferido, projeto "Escritório CGOV — Operação" criado e testado; resta a 4.11, exclusão da quarentena a partir de 05/12/2026) · **Fase 5 🟨** (documentação antecipada em 06/11, D36; ordem aprovada em 06/11, D37; *branch* `implantacao/fase-5` criado (`a2effef`); bloco 1 ✅ (`115b336`); bloco 2 ✅ (`0d0c8d2`); bloco 3 ✅ (`b6a1bd5`); bloco 4 ✅ (`d94235e`); bloco 5 ✅ (`4ab53c1`); bloco 6 (5.10) preparado, falta ao Coordenador o *merge*, o *push* e a publicação) · lembrete da 4.11 agendado para 05/12/2026 · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D4–D8).
 
 ---
 
@@ -435,12 +435,12 @@ flowchart LR
 
 | Fase | Nome | Resultado | Executa | Estimativa* | Situação |
 |---|---|---|---|---|---|
-| 0 | Decisões | ADRs e decisões D1–D40 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D40 respondidas; D4–D8 e ADR-001, 005, 006 e 008–011 pendentes |
+| 0 | Decisões | ADRs e decisões D1–D41 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D41 respondidas; D4–D8 e ADR-001, 005, 006 e 008–011 pendentes |
 | 1 | Consolidação do desenvolvimento no Windows | **✅ Concluída em 04/11** | — | — | ✅ 04/11/2026 |
 | 2 | **Arquitetura dos repositórios** | Arranjo das Seções 5.1–5.6 aprovado (ADR-012/013/014; D10–D16) | Coordenador | 1 dia | ✅ 05/11/2026 |
 | 3 | Projetos Cowork | "Implantação" criado; `cgov-geral-v1` preservado e arquivado; vínculos dos demais projetos inventariados | Coordenador (interface) + Claude | ½ dia | ✅ 05/11/2026 |
 | 4 | **Reorganização da pasta CGOV** | Estrutura nova, documentos de navegação, fichas, índices; projeto "Operação" criado | Claude (scripts e textos) + Coordenador (aprovações e execução) | 3–5 dias | ✅ 06/11/2026 (4.11 em 05/12/2026) |
-| 5 | Atualização do repositório de desenvolvimento | Scripts em Python, pasta `operacao/`, documentação corrigida, junções e `.env` com os caminhos novos | Claude, com portões | 2–3 dias | 🟨 06/11: documentação antecipada (D36); ordem em seis blocos aprovada (D37); blocos 1 ✅ (`115b336`) e 2 ✅ (`0d0c8d2`); blocos 3 ✅ (`b6a1bd5`) e 4 ✅ (`d94235e`); bloco 5 (5.9) preparado, falta o `git mv` do plano e o *commit*; fechamento (5.10) pendente |
+| 5 | Atualização do repositório de desenvolvimento | Scripts em Python, pasta `operacao/`, documentação corrigida, junções e `.env` com os caminhos novos | Claude, com portões | 2–3 dias | 🟨 06/11: documentação antecipada (D36); ordem em seis blocos aprovada (D37); blocos 1 ✅ (`115b336`) e 2 ✅ (`0d0c8d2`); blocos 3 ✅ (`b6a1bd5`), 4 ✅ (`d94235e`) e 5 ✅ (`4ab53c1`); bloco 6 (5.10) preparado: falta *merge*, *push* e publicação |
 | 6 | Portfólio de skills | 12 skills promovidas a fonte; caminhos neutros; nova skill `cgov-gestao-acervo`; modelo geral de análise de atos normativos (6.9, D34); desatualizadas reinstaladas | Claude + Coordenador | 3–5 dias | ⬜ |
 | 7 | Plugin `cgov-escritorio` | Um zip por versão; 26 skills avulsas substituídas; comandos de acervo | Coordenador + Claude | 1–2 dias | ⬜ |
 | 8 | Multiplataforma e aposentadoria do WSL | Claude Code, Antigravity, Codex e Obsidian (dois cofres) | Coordenador + Claude | 1 dia | ⬜ |
@@ -458,7 +458,7 @@ flowchart LR
 | Etapa | Ação | Situação |
 |---|---|---|
 | 0.1 | Aprovar os ADRs (Seção 4) | ADR-002, 003, 012, 013 e 014 aceitos; demais pendentes |
-| 0.2 | Responder às decisões da Seção 9 | D1–D3 e D9–D40 respondidas (04–07/11); D4–D8 pendentes, sem bloquear as Fases 3–5 |
+| 0.2 | Responder às decisões da Seção 9 | D1–D3 e D9–D41 respondidas (04–07/11); D4–D8 pendentes, sem bloquear as Fases 3–5 |
 | 0.3 | Confirmar em `themaestri.app` se existe versão Windows (D8) | Pendente |
 | 0.4 | Pré-requisitos: `git` ✅, `python --version` (≥ 3.11), `node --version` (LTS), Claude Desktop, Antigravity, Obsidian | Git conferido em 04/11 |
 
@@ -931,7 +931,7 @@ Além disso, `.gitattributes` não existe; os arquivos rastreados estão em LF, 
 - **5.4:** marcada como concluída.
 - **Sanitização:** 0 erros.
 
-**Resultado do bloco 5 (07/11/2026) — 🟨 preparado; falta o `git mv` deste plano e o *commit*.**
+**Resultado do bloco 5 (07/11/2026) — ✅ concluído** (*commit* `4ab53c1`: 22 arquivos; plano renomeado com 96% de semelhança; sanitização 0 erros e 22 avisos).
 - **D40:**
   - os 14 ADRs viram arquivo, cada um com o seu status;
   - ADR-004 (scripts em Python) e ADR-007 (separação de dados) passam a **Aceito**, porque já estão praticados na Fase 5;
@@ -947,6 +947,24 @@ Além disso, `.gitattributes` não existe; os arquivos rastreados estão em LF, 
 - **Novo caminho deste plano (`docs/plano-implantacao.md`):** referências ajustadas em `README.md`, `AGENTS.md`, `CLAUDE.md` e no Apêndice A; a pendência E3 foi encerrada.
 - **Verificação:** links internos conferidos por script (considerando este arquivo já em `docs/`); sanitização 0 erros.
 
+**Resultado do bloco 6 (07/11/2026) — 🟨 preparado; falta a execução pelo Coordenador.**
+- **Revisão do diff `main...implantacao/fase-5`:** 7 *commits* (`a2effef` a `4ab53c1`), 35 arquivos, +1.679/−111 linhas. O `main` local (`53ec122`) é ancestral do *branch*, então o *merge* não tem conflito. Conferido:
+  - os 5 scripts compilam e o `settings.json` é JSON válido;
+  - o diff não traz marcas `TODO`, `FIXME` nem de conflito;
+  - sanitização da árvore: 0 erros, 26 avisos conhecidos (números SEI, D38);
+  - links já conferidos no bloco 5.
+- **Decisão 29** acrescentada ao final do decision-log: registro da Fase 5 (regra 6, só acréscimo).
+- **D41:**
+  - *merge* `--no-ff`, que cria um *commit* de fechamento da Fase 5;
+  - `/.vscode/` no `.gitignore` (apareceu `.vscode/settings.json` com configuração local do VS Code);
+  - o *branch* `implantacao/fase-5` fica só na máquina do Coordenador.
+- **Falta (Coordenador):**
+  1. *commit* do preparo no *branch*;
+  2. `git fetch` e confirmação de que `origin/main` = `53ec122`;
+  3. *merge* `--no-ff` no `main` e *push*;
+  4. no `main`: `publicar_operacao.py --publicar` (simulação) e, conferida, `--publicar --executar`; depois, `--verificar`.
+- **Depois:** um último *commit* deste plano (Fase 5 ✅). Ele altera `docs/` depois da publicação, então a referência fica um *commit* atrás só neste arquivo até a próxima publicação.
+
 | Etapa | Ação | Aceite | Situação |
 |---|---|---|---|
 | 5.1 | `scripts/link_acervo.py`: junções no Windows com os nomes novos (`local\processos`, `local\normativos`, `local\escritorio`) a partir do `.env`; remover as junções antigas (`analyses`, `normative-sources`, `acervo-drive`) | Três junções novas listam conteúdo | ✅ 07/11: `--executar` no Windows; junções novas criadas e antigas removidas (*commit* `b6a1bd5`) |
@@ -957,8 +975,8 @@ Além disso, `.gitattributes` não existe; os arquivos rastreados estão em LF, 
 | 5.6 | `.claude/settings.json`: atualizar os bloqueios de edição para `local/processos/**`, `local/normativos/**`, `local/escritorio/**` e `.env` | Teste de bloqueio | ✅ 07/11: gravado (D39) e teste de bloqueio feito pelo Coordenador no Claude Code (*commit* `b6a1bd5`) |
 | 5.7 | `.gitignore` (`/.obsidian/`, `/notas/`, `*.pbix`, `**/.pbi/cache.abf`, `paineis/**/dados/`) e `.gitattributes` (`* text=auto eol=lf`, `*.ps1 text eol=crlf`) | `git status` sem ruído | ✅ 07/11, *commit* `0d0c8d2` |
 | 5.8 | Corrigir fatos desatualizados (privado, `cgov-geral`, Windows, estrutura nova) em `README.md`, `CLAUDE.md`, `AGENTS.md`, `fluxos-de-trabalho.md`, `architecture.md`; remover ou renomear `cgov-geral-v1.code-workspace`; mover os `.sh` para `archive/scripts-wsl/` (**antecipada em 06/11, D36:** `README.md`, `CLAUDE.md`, `AGENTS.md`, `CONTRIBUTING.md`, `docs/fluxos-de-trabalho.md` (v2; v1 em `archive/docs/`), `architecture.md`, `overview.md`, `multiplatform.md`, catálogo normativo e `analista-processos-sei.md` atualizados; workspace já renomeado na v3.8; os `.sh` foram **bloqueados**, salvo `publicar-operacao.sh --verificar`, e a ida para `archive/scripts-wsl/` fica para depois dos substitutos em Python) | `grep` sem ocorrências fora do log e de `archive/` | ✅ 07/11: `.sh` movidos para `archive/scripts-wsl/` (*commit* `d94235e`); fora do log, de `archive/` e deste plano, nenhuma referência ativa aos `.sh` |
-| 5.9 | `docs/`: ADRs, `catalogo-skills.md`, `governance/pendencias.md`, `docs/README.md` (índice do cofre); mover este plano para `docs/plano-implantacao.md`; Decisão 28 no log (**parcial, 06/11, D36:** `docs/governance/pendencias.md` criado; Decisão 28 registrada na 4.10) | Links internos válidos | 🟨 bloco 5 preparado (07/11): 14 ADRs, catálogo, índice e referências; falta o `git mv` deste plano |
-| 5.10 | `verificar_sanitizacao.py`; revisão do diff; *merge*; *push* (com confirmação); `python scripts\publicar_operacao.py` | `90_…\referencia\LEIA-ME.md` mostra o novo *commit* | ⬜ bloco 6; sanitização: script criado no bloco 1 (v0.1.1) |
+| 5.9 | `docs/`: ADRs, `catalogo-skills.md`, `governance/pendencias.md`, `docs/README.md` (índice do cofre); mover este plano para `docs/plano-implantacao.md`; Decisão 28 no log (**parcial, 06/11, D36:** `docs/governance/pendencias.md` criado; Decisão 28 registrada na 4.10) | Links internos válidos | ✅ 07/11 (*commit* `4ab53c1`): 105 links relativos válidos; plano em `docs/` (renomeação a 96%) |
+| 5.10 | `verificar_sanitizacao.py`; revisão do diff; *merge*; *push* (com confirmação); `python scripts\publicar_operacao.py` | `90_…\referencia\LEIA-ME.md` mostra o novo *commit* | 🟨 bloco 6 preparado (07/11): diff revisado, Decisão 29, D41; falta *merge*, *push* e publicação |
 
 ---
 
@@ -1123,6 +1141,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | D37 | Ordem das etapas pendentes da Fase 5 e uso do *branch* | Seis blocos (sanitização → 5.7 → 5.6/5.1/5.2 → 5.3/5.5/5.8 → 5.9 → 5.10); *branch* `implantacao/fase-5` | ✅ Respondida (06/11): **ordem aprovada** e **trabalho no *branch* `implantacao/fase-5`**, com *merge* e *push* só na 5.10 |
 | D38 | Achados da primeira rodada de `verificar_sanitizacao.py`: 11 caminhos pessoais no plano e 22 números de processo SEI | Trocar por `%USERPROFILE%`; manter os números SEI como aviso, com as evals na Fase 6 | ✅ Respondida (06/11): **as duas recomendações**; aplicadas no plano v3.26 |
 | D39 | Bloquear no `.claude/settings.json` também a pasta CGOV pelo caminho real (`~/My Drive/10_Institucional/CGOV/**`), além das junções e do `.env`? | Sim | ✅ Respondida (07/11): **sim**; antecipa o bloqueio da 8.1 sem `settings.local.json` |
+| D41 | Como integrar o *branch* da Fase 5; o que fazer com `.vscode/` e com o *branch* depois do *merge*? | `--no-ff`; ignorar; manter só local | ✅ Respondida (07/11): **as três recomendações** |
 | D40 | Quais ADRs viram arquivo em `docs/adr/` e quais propostos aprovar agora? | Os 14, com status; aprovar ADR-004 e ADR-007 | ✅ Respondida (07/11): **os 14**, e **ADR-004 e ADR-007 aceitos**; o ADR-011 continua proposto |
 
 ---
@@ -1159,6 +1178,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | 5 (bloco 3, conferência) | "Atualizei o `.env`, rodei `link_acervo.py --executar`, testei o bloqueio no Claude Code e fiz o *commit* do bloco 3 (saídas e `<hash>` abaixo). Confira e siga para o bloco 4 da Fase 5 (`publicar_operacao.py --verificar`)." |
 | 5 (bloco 4, conferência) | "Rodei `publicar_operacao.py --verificar` e `--publicar` (simulação), movi os `.sh` e fiz o commit do bloco 4 (saídas e `<hash>` abaixo). Confira e siga para o bloco 5 da Fase 5 (5.9: ADRs, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/`)." |
 | 5 (bloco 6) | "Movi o plano para `docs/` e fiz o commit do bloco 5 (`<hash>`). Siga para o bloco 6 da Fase 5 (5.10): revisão do diff do *branch*, *merge* no `main`, *push* e publicação com `publicar_operacao.py`." |
+| 5 (bloco 6, publicação) | "Fiz o *merge*, o *push* e a publicação (saídas abaixo). Confira, registre a Fase 5 como concluída e me diga o que vem a seguir." |
 | 6 | "Execute 6.1 e apresente as divergências entre instalado e fonte em tabela, para eu decidir." |
 | 7 | "Execute 7.1 a 7.4 e gere o zip do plugin; depois me guie em 7.5 e 7.6." |
 | 9 | "Crie os agentes da Fase 9 conforme o Apêndice D, um por vez, e valide com uma NT fictícia no projeto Operação." |
@@ -1169,12 +1189,12 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 
 | Fase | Status | Data | Evidência |
 |---|---|---|---|
-| 0 — Decisões | 🟨 | 06/11/2026 | Respondidas: D1–D3 e D9–D40. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001, 005, 006 e 008–011 (ADR-004 e 007 aceitos em 07/11, D40) |
+| 0 — Decisões | 🟨 | 06/11/2026 | Respondidas: D1–D3 e D9–D41. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001, 005, 006 e 008–011 (ADR-004 e 007 aceitos em 07/11, D40) |
 | 1 — Consolidação no Windows | ✅ | 04/11/2026 | WSL: remoto → `cgov-geral`, *push* `4960e11..67957fe`; clone em `C:\Projetos\cgov-geral` (HEAD `67957fe`, `autocrlf=false`); manifesto `local/_manifesto_wsl_20261104.sha256` (490 arquivos): 63/63 em `local\` e 488/488 no Drive; junções e `.env` provisórios |
 | 2 — Arquitetura dos repositórios | ✅ | 05/11/2026 | Arranjo das Seções 5.1–5.6 aceito sem ajustes; ADR-012, 013 e 014 aprovados; D10–D16 respondidas e incorporadas ao mapa (5.5) |
 | 3 — Projetos Cowork | ✅ | 05/11/2026 | 3.B.4 ✅: `cgov-geral-v1` arquivado; *commit* `be2f493` (v3.5) conferido por `ls-remote`. 3.C ✅: inventário simplificado (D21; vínculos antigos inexistentes, nenhum na pasta CGOV). 3.B.3 ✅: memória não preservada (D20). 3.A.4 ✅: instruções corrigidas. *Commits* `6890b63` e `320007d` (conferido por `ls-remote`). Repositório privado confirmado; documentação corrigida (D19). 3.B.1–3.B.2 ✅: 4 pastas do `cgov-geral-v1` registradas; instruções preservadas (SHA-256 `ad862755…`). 3.A ✅: *commits* `8787e0a` e `de0fa54` (conferido por `ls-remote`); projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: Fase 4 |
 | 4 — Reorganização da pasta CGOV | ✅ | 06/11/2026 | 2.860 operações nos lotes a–g (todas `ok`); manifesto posterior 100% (2.833/2.833); 343 pastas vazias removidas; 74 fichas e 5 índices; projeto Operação criado e testado; projetos antigos arquivados; mapa, manifestos e registros em `90_…\manutencao\reorganizacao-2026-11\`; decision-log §28; `reorganizar_cgov.py` v1.2.2 e `gerar_indices.py` v0.1.0; *commits* `7f5a324` a `306ade5`. Resta a 4.11 (05/12/2026) |
-| 5 — Repositório de desenvolvimento | 🟨 | 07/11/2026 | *Branch* `implantacao/fase-5` (D37). Blocos 1 ✅ (`115b336`, D38), 2 ✅ (`0d0c8d2`), 3 ✅ (`b6a1bd5`, D39) e 4 ✅ (`d94235e`: `--verificar` no Windows, `operacao/` 12/12, `.sh` arquivados). Bloco 5 (5.9; D40): 14 ADRs, catálogo de skills, `docs/README.md` e novo caminho do plano preparados; falta o `git mv` e o *commit*. Pendente: 5.10 (*merge*, *push* e publicação) |
+| 5 — Repositório de desenvolvimento | 🟨 | 07/11/2026 | *Branch* `implantacao/fase-5` (D37). Blocos 1 ✅ (`115b336`, D38), 2 ✅ (`0d0c8d2`), 3 ✅ (`b6a1bd5`, D39), 4 ✅ (`d94235e`) e 5 ✅ (`4ab53c1`, D40). Bloco 6 (5.10; D41): diff revisado e Decisão 29 registrada; falta *merge* `--no-ff`, *push* e publicação |
 | 6 — Portfólio de skills | ⬜ | | |
 | 7 — Plugin | ⬜ | | |
 | 8 — Multiplataforma / WSL | ⬜ | | |
@@ -1562,7 +1582,8 @@ cowork_projeto: ""
 | v3.28 (07/11) | *Commit* `0d0c8d2`; bloco 3 preparado; D39 | Bloco 2 concluído; bloqueios novos no `.claude/settings.json`, inclusive a pasta CGOV pelo caminho real (D39, antecipa a 8.1); `scripts/link_acervo.py` v0.1.0 testado; `.env.example` ativo; documentação ajustada; dois riscos mitigados e um novo (scripts fora do alcance das regras deny); *prompt* da conferência do bloco 3 |
 | v3.29 (07/11) | *Commits* `9f3849b` e `b6a1bd5`; blocos 3 e 4 | Bloco 3 concluído (junções, `.env`, bloqueio testado; P1 resolvida); bloco 4: `scripts/publicar_operacao.py` v0.1.0 testado, `archive/scripts-wsl/README.md`, referências aos `.sh` atualizadas (P2 resolvida; P3 para a 5.10); 5.4 concluída; risco dos `.sh` descartado; *prompt* da conferência do bloco 4 |
 | v3.30 (07/11) | *Commit* `d94235e`; blocos 4 e 5; D40 | Bloco 4 concluído (`--verificar` no Windows: 9 skills desatualizadas, `operacao/` 12/12, referência de `docs/` em `4960e11`); bloco 5: 14 ADRs em `docs/adr/` (ADR-004 e 007 aceitos), `docs/catalogo-skills.md`, `docs/README.md`, referências ao novo caminho do plano; Apêndice A com o caminho novo; *prompt* do bloco 6 |
+| v3.31 (07/11) | *Commit* `4ab53c1`; bloco 5; bloco 6 preparado; D41 | Bloco 5 concluído; revisão do diff do *branch* (sem achados); Decisão 29 no decision-log; `.vscode/` ignorado; roteiro de *merge* `--no-ff`, *push* e publicação; *prompt* da conferência da publicação |
 
 ---
 
-*Fim do plano v3.30. Fases 1 a 4 concluídas (06/11/2026); Fase 5 com os blocos 1 a 4 concluídos (`115b336`, `0d0c8d2`, `b6a1bd5`, `d94235e`) e o bloco 5 preparado (ADRs, catálogo, índice e mudança deste plano para `docs/plano-implantacao.md`); depois, bloco 6 (5.10: *merge*, *push* e publicação). Resta também a 4.11 (exclusão da quarentena a partir de 05/12/2026, com lembrete agendado), numa sessão do projeto "Escritório CGOV — Implantação".*
+*Fim do plano v3.31. Fases 1 a 4 concluídas (06/11/2026); Fase 5 com os blocos 1 a 5 concluídos (`115b336`, `0d0c8d2`, `b6a1bd5`, `d94235e`, `4ab53c1`) e o bloco 6 (5.10) preparado: *merge* `--no-ff`, *push* e publicação pelo Coordenador. Resta também a 4.11 (exclusão da quarentena a partir de 05/12/2026, com lembrete agendado), numa sessão do projeto "Escritório CGOV — Implantação".*

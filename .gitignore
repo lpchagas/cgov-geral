@@ -39,6 +39,9 @@ htmlcov/
 # Cofre Obsidian (configuração pessoal do editor)
 /.obsidian/
 
+# Configuração local do VS Code (pessoal do editor; D41)
+/.vscode/
+
 # Notas pessoais do cofre Obsidian (fora do Git)
 /notas/
 

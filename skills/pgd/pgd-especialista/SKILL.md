@@ -1,12 +1,16 @@
 ---
 name: pgd-especialista
 description: >
-  Especialista em PGD para a CGGE/ICMBio e suas unidades vinculadas (CGOV, DPAE, DINFI). Use esta skill sempre que o usuário precisar de:
-  (1) análise de conformidade regimental de entregas ou atividades (comando ANALISAR_CONFORMIDADE ou frases como "está conforme?", "enquadramento regimental", "verificar conformidade");
-  (2) estruturação de Plano de Entregas para a CGGE, CGOV, DPAE ou DINFI (comando ESTRUTURAR_PLANO, "montar plano de entregas", "proposta de plano");
-  (3) desdobramento de uma entrega em etapas para os Planos de Trabalho Individuais — PTIs (comando DESDOBRAR_ENTREGA, "detalhar etapas", "preencher PTI", "desdobrar entrega", "atividades para o plano de trabalho");
-  (4) qualquer pergunta sobre competências regimentais da CGGE, CGOV, DPAE ou DINFI com base na Portaria ICMBio nº 5.592/2025.
-  Acione também quando o usuário mencionar análise de impacto regulatório, Política de Governança, Cadeia de Valor, PGD, Plano de Integridade, Gestão de Riscos ou Planejamento Estratégico no contexto da CGGE/ICMBio.
+  Especialista em PGD (IN ICMBio nº 14/2025; Art. 37, p.u., VII, da Portaria ICMBio nº
+  5.592/2025) para a CGGE e suas unidades (CGOV, DPAE, DINFI). Use para: (1) analisar
+  a conformidade regimental de entregas ou atividades (ANALISAR_CONFORMIDADE, "está
+  conforme?", "enquadramento regimental"); (2) estruturar o Plano de Entregas
+  (ESTRUTURAR_PLANO, "montar plano de entregas", "proposta de plano"); (3) desdobrar
+  uma entrega em etapas para os Planos de Trabalho Individuais (DESDOBRAR_ENTREGA,
+  "detalhar etapas", "preencher PTI"); (4) responder sobre competências regimentais da
+  CGGE, CGOV, DPAE ou DINFI. Acione também quando AIR, Política de Governança, Cadeia
+  de Valor, Plano de Integridade, Gestão de Riscos ou Planejamento Estratégico
+  aparecerem no contexto do PGD da CGGE.
 ---
 
 # Especialista-CGGE — Assistente PGD/CGGE-ICMBio

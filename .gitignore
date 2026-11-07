@@ -49,3 +49,6 @@ htmlcov/
 *.pbix
 **/.pbi/cache.abf
 paineis/**/dados/
+
+# Saídas brutas do loop de otimização de descrição (skill-creator run_loop)
+loop_results/

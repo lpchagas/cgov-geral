@@ -1,19 +1,16 @@
 ---
 name: cgge-fgbio-apresentacao
 description: >
-  Use esta skill SEMPRE que o docente responsável (CGOV/ICMBio) pedir apresentação, slides,
-  arquitetura de apresentação, roteiro de slides, notas do apresentador, deck,
-  PowerPoint, Google Slides, Mentimeter, contexto para IA, insumo para NotebookLM,
-  ChatGPT ou Gemini, para qualquer aula da Formação em Gestão da Biodiversidade
-  — Turma 2026 (FGBio 2026). Acione também quando o usuário disser "preparar a
-  palestra", "montar os slides", "desenvolver o material", "criar a arquitetura"
-  ou "especificação de slides" para os Planos 01 a 04 — mesmo sem citar
-  "apresentação" ou "slides" explicitamente. Gera dois artefatos: (1) Arquitetura
-  de Apresentação com tabela completa de slides (título assertivo, mensagem,
-  visual, notas, tempo) e atividades Mentimeter; (2) Arquivo de Contexto para IA
-  otimizado para upload em NotebookLM, ChatGPT Plus ou Gemini. Complementar à
-  skill cgge-fgbio-plano-aula: o plano de aula é o insumo; esta skill produz o
-  material visual.
+  Use SEMPRE que o docente responsável (CGOV/ICMBio) pedir apresentação, slides,
+  arquitetura ou roteiro de slides, notas do apresentador, deck, PowerPoint, Google
+  Slides, Mentimeter ou contexto para IA (NotebookLM, ChatGPT, Gemini) para qualquer
+  aula da Formação em Gestão da Biodiversidade — Turma 2026 (FGBio 2026). Acione
+  também com "preparar a palestra", "montar os slides", "desenvolver o material" ou
+  "especificação de slides" para os Planos 01 a 04, mesmo sem citar slides. Gera: (1)
+  Arquitetura de Apresentação com a tabela de slides (título assertivo, mensagem,
+  visual, notas, tempo) e atividades Mentimeter; (2) Arquivo de Contexto para IA,
+  pronto para upload. Complementa a cgge-fgbio-plano-aula: o plano de aula é o insumo;
+  esta skill produz o material visual.
 ---
 
 # SKILL: Desenvolver Arquitetura de Apresentação — FGBio 2026

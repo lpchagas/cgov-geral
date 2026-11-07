@@ -1552,3 +1552,26 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
 `normative-sources`, `_CGOV_NT` e `CGOV_Processos` em `skills/` dá 0, e a sanitização não acusou erros.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 36. Descrições, rebase da `cgov-gestao-riscos` e eval da `cgov-nt-01` (Fase 6.5, 07/11/2026)
+
+**Decisões (D49 do plano).**
+
+1. **Descrições:** as 8 descrições acima de 950 caracteres foram encurtadas sem mudar o corpo das skills. Agora as 28
+   têm no máximo 950 caracteres (a maior, 878). No `pgd-especialista`, o gatilho genérico passa a valer só no contexto
+   do PGD da CGGE, para não disputar o acionamento com as skills temáticas.
+2. **`cgov-gestao-riscos`:** aplicada a D43 (§30). A fonte passa a ser a versão da conta, com os Regimes A e B, saneada:
+   - os números de documentos SEI das minutas foram retirados, e o número passa a ser buscado na ficha ou na pasta de
+     trabalho do processo;
+   - as minutas ficam na pasta de trabalho do processo da Política de Gestão de Riscos, e não no acervo (D23).
+3. **Eval de gatilho da `cgov-nt-01`:** incorporado do *branch* `claude/cgov-nt-triagem-description-loop-6x6dsc`, de
+   29/08/2026, em `evals/trigger_eval.json`:
+   - os números de processo foram trocados por fictícios;
+   - 5 rótulos foram corrigidos para "não aciona", porque pertencem a outras skills: riscos, competências, AIR, SIPOC
+     e conclusão;
+   - entrou `loop_results/` no `.gitignore`, mas não `/.claude/`, porque `.claude/settings.json` é versionado;
+   - o *branch* é apagado.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

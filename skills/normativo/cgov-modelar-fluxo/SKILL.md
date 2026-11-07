@@ -1,18 +1,15 @@
 ---
 name: cgov-modelar-fluxo
 description: >
-  Use esta skill sempre que o usuário da CGOV/ICMBio precisar transformar o texto de um
-  artigo, capítulo ou procedimento normativo em um fluxo de processos lógico (BPMN),
-  com identificação de atores, sequência de passos, pontos de decisão, alertas de
-  gargalo e diagrama visual em Mermaid.js. Gatilhos típicos: "MODELAR_FLUXO",
-  "modelar o fluxo", "desenhar o processo", "como funciona esse fluxo", "quem faz o quê",
-  "qual é a sequência de passos", "mapeie o processo", "diagrama de fluxo", "fluxograma",
-  "swimlane", "BPMN", "o processo está claro?", "tem gargalo nesse fluxo",
-  "esse prazo é exequível?", "simular o processo", "representar visualmente",
-  "transformar o artigo em fluxo", "modelar o procedimento", "o fluxo fecha?".
-  Acione também quando o usuário colar um artigo ou capítulo de portaria e perguntar
-  se o processo descrito é viável operacionalmente — mesmo sem usar os termos acima.
-  Esta skill é frequentemente acionada após COMPARAR_VERSOES ou AUDITORIA_COMPETENCIAS.
+  Transforma o texto de um artigo, capítulo ou procedimento normativo da CGOV/ICMBio
+  em fluxo de processo (BPMN): atores, sequência de passos, pontos de decisão, prazos,
+  alertas de gargalo e diagrama em Mermaid.js. Gatilhos: MODELAR_FLUXO, "modelar o
+  fluxo", "desenhar o processo", "quem faz o quê", "qual a sequência de passos",
+  "mapeie o processo", "fluxograma", "swimlane", "BPMN", "tem gargalo nesse fluxo",
+  "esse prazo é exequível?", "transformar o artigo em fluxo", "o fluxo fecha?". Acione
+  também quando o usuário colar um artigo ou capítulo de portaria e perguntar se o
+  processo descrito é viável operacionalmente, mesmo sem esses termos. Costuma vir
+  depois de COMPARAR_VERSOES ou AUDITORIA_COMPETENCIAS.
 ---
 
 # SKILL: Modelar Fluxo de Processos — CGOV/ICMBio

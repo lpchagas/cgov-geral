@@ -2,19 +2,15 @@
 name: cgov-air-arr
 description: >
   Suporte metodológico à Análise de Impacto Regulatório (AIR) e à Avaliação de
-  Resultado Regulatório (ARR) no ICMBio, conforme Art. 37, X, da Portaria
-  ICMBio nº 5.592/2025 e o Decreto nº 10.411/2020. Cobre: triagem de
-  incidência, não incidência (art. 3º, § 2º) e dispensa (art. 4º); diagnóstico
-  do problema regulatório com árvore de causas; análise de alternativas
-  normativas e não normativas; impactos sobre partes afetadas; estrutura do
-  relatório de AIR; e ARR de normas em vigor. Use ao invocar /cgov-air-arr,
-  AIR_ARR, "análise de impacto regulatório", "avaliação de resultado
-  regulatório", "AIR", "ARR", "Decreto 10.411", "problema regulatório",
-  "alternativas não normativas", "dispensa de AIR", "nota de dispensa",
-  "impacto de norma", "custo-benefício regulatório", "partes afetadas pela
-  norma", "qualidade regulatória", "justificativa de edição de norma". Acione
-  também quando o usuário perguntar se um ato precisa de AIR ou se pode
-  dispensá-la antes de ser editado.
+  Resultado Regulatório (ARR) no ICMBio (Art. 37, p.u., X, da Portaria ICMBio nº
+  5.592/2025; Decreto nº 10.411/2020): triagem de incidência, não incidência (art. 3º,
+  § 2º) e dispensa (art. 4º); problema regulatório e árvore de causas; alternativas
+  normativas e não normativas; impactos sobre os afetados; estrutura do relatório de
+  AIR; ARR de normas em vigor. Use ao invocar /cgov-air-arr, AIR_ARR, "análise de
+  impacto regulatório", "avaliação de resultado regulatório", "AIR", "ARR", "Decreto
+  10.411", "problema regulatório", "alternativas não normativas", "dispensa de AIR",
+  "nota de dispensa", "custo-benefício regulatório", "qualidade regulatória". Acione
+  também quando perguntarem se um ato precisa de AIR ou pode dispensá-la.
 ---
 
 # cgov-air-arr — Análise de Impacto Regulatório e Avaliação de Resultado Regulatório (CGOV/ICMBio)

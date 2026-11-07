@@ -1,20 +1,16 @@
 ---
 name: cgov-cadeia-valor
 description: >
-  Suporte à elaboração, atualização e análise da Cadeia de Valor, do Catálogo
-  de Produtos e Serviços e do Dimensionamento da Força de Trabalho (DFT) do
-  ICMBio, conforme Art. 37, VI, da Portaria ICMBio nº 5.592/2025 e a Portaria
-  SEDGG/ME nº 7.888/2022. Cobre: arquitetura de macroprocessos (finalísticos,
-  de apoio e gerenciais); modelagem com SIPOC; elaboração e revisão do
-  Catálogo; alinhamento da Cadeia de Valor com o Planejamento Estratégico; e
-  orientação sobre DFT. Use ao invocar /cgov-cadeia-valor, CADEIA_VALOR,
-  "cadeia de valor", "catálogo de produtos", "catálogo de serviços",
-  "macroprocesso", "processo finalístico", "processo de apoio", "processo
-  gerencial", "SIPOC", "Portaria 7.888", "DFT", "dimensionamento da força de
-  trabalho", "arquitetura de processos", "atualizar a cadeia de valor",
-  "revisar os macroprocessos". Acione também quando o usuário descrever um
-  fluxo de atividades e pedir para estruturá-lo na arquitetura institucional
-  do ICMBio.
+  Elaboração, atualização e análise da Cadeia de Valor, do Catálogo de Produtos e
+  Serviços e do Dimensionamento da Força de Trabalho (DFT) do ICMBio (Art. 37, p.u.,
+  VI, da Portaria ICMBio nº 5.592/2025; Portaria SEDGG/ME nº 7.888/2022): arquitetura
+  de macroprocessos finalísticos, de apoio e gerenciais; SIPOC; elaboração e revisão
+  do Catálogo; alinhamento com o Planejamento Estratégico; orientação sobre DFT. Use
+  ao invocar /cgov-cadeia-valor, CADEIA_VALOR, "cadeia de valor", "catálogo de
+  produtos", "catálogo de serviços", "macroprocesso", "processo finalístico",
+  "processo de apoio", "SIPOC", "Portaria 7.888", "DFT", "dimensionamento da força de
+  trabalho", "arquitetura de processos". Acione também quando o usuário descrever um
+  fluxo de atividades e pedir para encaixá-lo na arquitetura institucional do ICMBio.
 ---
 
 # cgov-cadeia-valor — Cadeia de Valor, Catálogo de Produtos/Serviços e DFT (CGOV/ICMBio)

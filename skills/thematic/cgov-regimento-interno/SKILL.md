@@ -1,20 +1,18 @@
 ---
 name: cgov-regimento-interno
 description: >
-  Suporte à coordenação da atualização do Regimento Interno (RI) do ICMBio,
-  conforme Art. 37, IV, da Portaria ICMBio nº 5.592/2025. Cobre revisão geral
-  por novo Decreto de Estrutura Regimental, alteração pontual por criação,
-  extinção ou fusão de unidade, e correção de inconsistência em vigência.
-  Orienta o diagnóstico de gatilho e impacto, a articulação interunidades, a
-  redação da minuta de portaria de alteração, a hierarquia normativa, a
-  legística e a submissão à PFE. Integra-se com cgov-auditoria-competencias,
-  cgov-comparar-versoes e cgov-saneamento-legistica. Use ao invocar
-  /cgov-regimento-interno, REGIMENTO_INTERNO, "atualizar o regimento",
-  "alterar o RI", "revisão do regimento interno", "Portaria 5.592", "Decreto
-  de Estrutura Regimental", "criação de unidade", "extinção de unidade",
-  "mudança de competência", "alterar artigo do regimento", "minuta de
-  portaria de alteração do RI". Acione também quando o usuário perguntar se
-  uma mudança organizacional exige atualização do RI.
+  Coordenação da atualização do Regimento Interno (RI) do ICMBio (Art. 37, p.u., IV,
+  da Portaria ICMBio nº 5.592/2025): revisão geral por novo Decreto de Estrutura
+  Regimental, alteração pontual por criação, extinção ou fusão de unidade e correção
+  de inconsistência em vigência. Orienta o diagnóstico de gatilho e impacto, a
+  articulação entre unidades, a minuta de portaria de alteração, a hierarquia
+  normativa, a legística e a submissão à PFE; integra-se com
+  cgov-auditoria-competencias, cgov-comparar-versoes e cgov-saneamento-legistica. Use
+  ao invocar /cgov-regimento-interno, REGIMENTO_INTERNO, "atualizar o regimento",
+  "alterar o RI", "Portaria 5.592", "Decreto de Estrutura Regimental", "criação de
+  unidade", "extinção de unidade", "mudança de competência", "alterar artigo do
+  regimento". Acione também quando perguntarem se uma mudança organizacional exige
+  atualizar o RI.
 ---
 
 # cgov-regimento-interno — Coordenação da Atualização do Regimento Interno (CGOV/ICMBio)

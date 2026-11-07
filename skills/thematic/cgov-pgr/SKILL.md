@@ -1,20 +1,17 @@
 ---
 name: cgov-pgr
 description: >
-  IMPORTANTE: aqui PGR = Programa de Gestão para Resultados e Inovação do
-  ICMBio (Portaria ICMBio nº 1.572/2023). NÃO é a PGRI — Política de Gestão de
-  Riscos e Integridade, Portaria ICMBio nº 255/2020 (use cgov-gestao-riscos) —
-  nem o PGD de teletrabalho (use pgd-especialista). Suporte à
-  implementação, ao funcionamento e ao monitoramento do PGR (Art. 37, parágrafo
-  único, VIII, da Portaria ICMBio nº 5.592/2025): eixos de Capacitação,
-  Consultoria Interna e Laboratório de Inovação; ações transversais de Gestão
-  do Programa e Rede de Multiplicadores; papéis de consultor interno,
-  multiplicador, ponto focal e Liderança do Programa; seleção de iniciativas;
-  e Relatório Anual de Resultados. Use ao invocar /cgov-pgr, PGR, "Programa de
-  Gestão para Resultados", "Portaria 1.572", "gestão para resultados",
-  "consultoria interna", "consultor interno PGR", "multiplicador PGR",
-  "laboratório de inovação", "rede de multiplicadores", "inovação
-  institucional", "relatório de resultados do PGR", "iniciativa PGR".
+  PGR = Programa de Gestão para Resultados e Inovação do ICMBio (Portaria ICMBio nº
+  1.572/2023). Não é a PGRI, Política de Gestão de Riscos e Integridade (Portaria nº
+  255/2020; use cgov-gestao-riscos), nem o PGD (use pgd-especialista). Apoia a
+  implementação, o funcionamento e o monitoramento do PGR (Art. 37, p.u., VIII, da
+  Portaria ICMBio nº 5.592/2025): eixos de Capacitação, Consultoria Interna e
+  Laboratório de Inovação; Gestão do Programa e Rede de Multiplicadores; papéis de
+  consultor interno, multiplicador, ponto focal e Liderança do Programa; seleção de
+  iniciativas; Relatório Anual de Resultados. Use ao invocar /cgov-pgr, PGR, "Programa
+  de Gestão para Resultados", "Portaria 1.572", "consultoria interna", "multiplicador
+  PGR", "laboratório de inovação", "rede de multiplicadores", "relatório de resultados
+  do PGR", "iniciativa PGR".
 ---
 
 # cgov-pgr — Programa de Gestão para Resultados e Inovação (CGOV/ICMBio)

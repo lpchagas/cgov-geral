@@ -37,9 +37,12 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 - `local/installed-reference/`: snapshots locais de referência de skills instaladas.
 - `operacao/`: fonte dos textos de navegação publicados na pasta CGOV (`LEIA-ME.md`, `AGENTS.md`,
   `_LEIA-ME.md`, modelos).
-- `scripts/`: `reorganizar_cgov.py` (Fase 4), `gerar_indices.py` (fichas e índices); os `.sh` do WSL
-  estão bloqueados até a Fase 5.
-- Junções `local\processos`, `local\normativos` e `local\escritorio` para a pasta CGOV: Fase 5.1
-  (as antigas `local/analyses`, `local/normative-sources` e `local/acervo-drive` estão obsoletas).
+- `scripts/`: `reorganizar_cgov.py` (Fase 4), `gerar_indices.py` (fichas e índices),
+  `verificar_sanitizacao.py` (antes de cada commit) e `link_acervo.py` (junções); os `.sh` do WSL
+  estão bloqueados até os substitutos da Fase 5.
+- Junções `local\processos`, `local\normativos` e `local\escritorio` para a pasta CGOV, criadas por
+  `scripts/link_acervo.py` a partir do `.env` (as antigas `local/analyses`, `local/normative-sources` e
+  `local/acervo-drive` são removidas pelo mesmo script). A edição por elas e na pasta CGOV é bloqueada
+  em `.claude/settings.json`.
 - `archive/`: local reservado a histórico já sanitizado para publicação.
 - `local/`: acervo interno e workspaces de análise, fora do Git.

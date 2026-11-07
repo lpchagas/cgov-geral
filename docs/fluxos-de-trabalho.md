@@ -54,16 +54,19 @@ Os textos de navegação (`LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos) tê
 
 1. Repositório clonado em `C:\Projetos\cgov-geral` (`git config core.autocrlf false`).
 2. Python 3.12 ou superior (`py --version`); Git; Claude Desktop (Cowork e Code).
-3. `.env` a partir de `.env.example` com `CGOV_RAIZ` (pasta CGOV). ⏳ As variáveis `CGOV_PROCESSOS`,
-   `CGOV_NORMATIVOS` e `CGOV_ESCRITORIO` e as junções `local\processos`, `local\normativos` e
-   `local\escritorio` chegam na Fase 5.1–5.2. **As junções antigas (`local\analyses`,
-   `local\normative-sources`, `local\acervo-drive`) apontam para pastas que não existem mais.**
+3. `.env` a partir de `.env.example`, com `CGOV_RAIZ`, `CGOV_PROCESSOS`, `CGOV_NORMATIVOS` e
+   `CGOV_ESCRITORIO` (caminhos completos, sem variáveis). Depois, `py scripts\link_acervo.py` (simulação)
+   e `py scripts\link_acervo.py --executar`: cria as junções `local\processos`, `local\normativos` e
+   `local\escritorio` e remove as antigas (`local\analyses`, `local\normative-sources`,
+   `local\acervo-drive`), tirando só o ponteiro.
 4. Projeto Cowork "Escritório CGOV — Implantação": pasta única `C:\Projetos\cgov-geral`; instruções no
    Apêndice A do plano de implantação. A pasta CGOV só é vinculada temporariamente, com autorização do
    Coordenador (por exemplo, na exclusão da quarentena).
 5. `.claude/settings.json` (versionado): pede confirmação antes de `git commit` e `git push`, bloqueia a
    edição das áreas operacionais e oculta do modelo as skills cuja fonte está em `skills/`
-   (`skillOverrides`). ⏳ Bloqueios com os nomes novos na Fase 5.6.
+   (`skillOverrides`). Bloqueios: `local/processos/**`, `local/normativos/**`, `local/escritorio/**`, a
+   pasta CGOV (`~/My Drive/10_Institucional/CGOV/**`) e `.env`. Regras deny valem para o link e para o
+   alvo, mas não para scripts Python ou Node, que abrem arquivos por conta própria.
 
 ### 3.2 Operação
 

@@ -5,9 +5,10 @@
       "Bash(git push *)"
     ],
     "deny": [
-      "Edit(/local/analyses/**)",
-      "Edit(/local/normative-sources/**)",
-      "Edit(/local/acervo-drive/**)",
+      "Edit(/local/processos/**)",
+      "Edit(/local/normativos/**)",
+      "Edit(/local/escritorio/**)",
+      "Edit(~/My Drive/10_Institucional/CGOV/**)",
       "Edit(/.env)"
     ]
   },

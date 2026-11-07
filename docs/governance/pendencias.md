@@ -9,7 +9,7 @@
 
 | # | Pendência | Onde se resolve | Observação |
 |---|---|---|---|
-| P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontam para pastas que não existem mais | Fase 5.1–5.2 (`link_acervo.py`, `.env`) | Novas: `local\processos`, `local\normativos`, `local\escritorio` |
+| P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontam para pastas que não existem mais | Fase 5.1–5.2 (`link_acervo.py`, `.env`) | Novas: `local\processos`, `local\normativos`, `local\escritorio`. `scripts/link_acervo.py` pronto (07/11); fecha com o `--executar` do Coordenador |
 | P2 | `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` (WSL, estrutura antiga) bloqueados em 06/11/2026 | Fase 5.3 (`publicar_operacao.py`) e 5.8 (mover os `.sh` para `archive/scripts-wsl/`) | `--verificar` segue disponível |
 | P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 | Fase 5.3 | Republicar depois do commit |
 | P4 | Deriva fonte × instalado: a `cgov-nt-01-triagem` instalada grava em `CGOV_Processos/…/_CGOV_NT/`; a fonte diz `local/analyses/` | Fase 6.1 (comparar e reinstalar) | Contornado pela tabela de caminhos do `AGENTS.md` da pasta CGOV |

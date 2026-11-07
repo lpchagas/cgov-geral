@@ -1,0 +1,6 @@
+# Exceções versionadas de scripts/verificar_sanitizacao.py (sem dados pessoais).
+# Formato: <regex>  ou  <caminho-glob>::<regex>   (o regex casa com o valor encontrado)
+# Cada exceção precisa de justificativa no comentário logo acima.
+
+# decision-log: histórico não se reescreve (regra 6); "H:\Meu Drive\CGOV_PGD\" não identifica pessoa
+docs/governance/decision-log.md::^H:\\$

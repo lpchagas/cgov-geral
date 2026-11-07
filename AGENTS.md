@@ -7,7 +7,9 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 ## Fonte de instruções
 
 - Instruções do projeto Cowork "Escritório CGOV — Operação": [`docs/system-instructions/escritorio-cgov-operacao.md`](docs/system-instructions/escritorio-cgov-operacao.md).
-- Plano de implantação (andamento e decisões D1–D35): `cgov-geral-plano-implantacao.md` (raiz).
+- Documentação: [`docs/README.md`](docs/README.md) (página inicial), [ADRs](docs/adr/README.md) e
+  [catálogo de skills](docs/catalogo-skills.md).
+- Plano de implantação (andamento e decisões): [`docs/plano-implantacao.md`](docs/plano-implantacao.md).
 - Pendências de desenvolvimento: [`docs/governance/pendencias.md`](docs/governance/pendencias.md).
 - Assistente de processos SEI: [`docs/system-instructions/analista-processos-sei.md`](docs/system-instructions/analista-processos-sei.md).
 - Registro de decisões: [`docs/governance/decision-log.md`](docs/governance/decision-log.md).
@@ -37,9 +39,12 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 - `local/installed-reference/`: snapshots locais de referência de skills instaladas.
 - `operacao/`: fonte dos textos de navegação publicados na pasta CGOV (`LEIA-ME.md`, `AGENTS.md`,
   `_LEIA-ME.md`, modelos).
-- `scripts/`: `reorganizar_cgov.py` (Fase 4), `gerar_indices.py` (fichas e índices); os `.sh` do WSL
-  estão bloqueados até a Fase 5.
-- Junções `local\processos`, `local\normativos` e `local\escritorio` para a pasta CGOV: Fase 5.1
-  (as antigas `local/analyses`, `local/normative-sources` e `local/acervo-drive` estão obsoletas).
+- `scripts/`: `reorganizar_cgov.py` (Fase 4), `gerar_indices.py` (fichas e índices),
+  `verificar_sanitizacao.py` (antes de cada commit), `link_acervo.py` (junções) e
+  `publicar_operacao.py` (publicação para a pasta CGOV); os `.sh` do WSL foram para `archive/scripts-wsl/`.
+- Junções `local\processos`, `local\normativos` e `local\escritorio` para a pasta CGOV, criadas por
+  `scripts/link_acervo.py` a partir do `.env` (as antigas `local/analyses`, `local/normative-sources` e
+  `local/acervo-drive` são removidas pelo mesmo script). A edição por elas e na pasta CGOV é bloqueada
+  em `.claude/settings.json`.
 - `archive/`: local reservado a histórico já sanitizado para publicação.
 - `local/`: acervo interno e workspaces de análise, fora do Git.

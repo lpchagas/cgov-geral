@@ -1,0 +1,23 @@
+# Quebras de linha do repositório cgov-geral (Fase 5.7 do plano de implantação; D37)
+# Regra geral: texto em LF no índice e na árvore, inclusive no Windows (core.autocrlf=false).
+* text=auto eol=lf
+
+# Scripts do Windows em CRLF na árvore (no índice continuam em LF)
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binários: nunca converter nem mostrar diff de texto (a maioria não deve entrar no Git;
+# ver .gitignore e scripts/verificar_sanitizacao.py)
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.ico  binary
+*.pdf  binary
+*.zip  binary
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.pbix binary
+*.abf  binary

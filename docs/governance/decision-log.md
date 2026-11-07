@@ -1331,3 +1331,53 @@ da fonte (`local/analyses/`): deriva fonte × instalado a corrigir na Fase 6.1. 
 revisão gradual e com a Fase 6. O modelo geral de análise de atos normativos derivado do processo de Termos
 de Compromisso passa a ser objetivo da etapa 6.9 do plano. Detalhes, números e evidências: plano de
 implantação v3.23, Fase 4.
+
+## 29. Atualização do repositório de desenvolvimento (Fase 5 do plano de implantação, 06–07/11/2026)
+
+**Contexto.** Depois da reorganização da pasta CGOV (§28), o repositório ainda tinha scripts *bash* do WSL
+que recriariam a estrutura antiga, junções `local/analyses`, `local/normative-sources` e `local/acervo-drive`
+apontando para pastas inexistentes, bloqueios de edição com os nomes antigos, nenhuma verificação automática
+de sanitização e uma cópia de `docs/` publicada para a operação anterior à migração para o Windows.
+
+**Decisões.**
+
+1. **Ordem e método** (D37 do plano): seis blocos no *branch* `implantacao/fase-5`, um *commit* por bloco,
+   com *merge* e publicação só no fim. A verificação de sanitização foi antecipada para o início, e os
+   bloqueios de edição entraram antes das junções.
+2. **Sanitização automática** (D38): `scripts/verificar_sanitizacao.py`.
+   - **Erros (bloqueiam o *commit*):** caminhos pessoais, e-mails, CPF, matrícula, segredos e arquivos PDF ou
+     Office.
+   - **Avisos:** números de processo e documento SEI.
+   - **Configuração:** exceções versionadas em `scripts/sanitizacao_permitidos.txt`; termos pessoais só em
+     `local/`.
+   - **Plano de implantação:** os caminhos com o nome de usuário passaram a usar `%USERPROFILE%`.
+3. **Quebras de linha** (etapa 5.7): `.gitattributes` com LF, e CRLF só para `.ps1`, `.bat` e `.cmd`; o
+   `.gitignore` passou a cobrir as notas do Obsidian e o Power BI.
+4. **Bloqueios de edição** (D39): `.claude/settings.json` nega a edição pelas junções novas, pela pasta CGOV
+   no caminho real (`~/My Drive/10_Institucional/CGOV/**`) e no `.env`. A documentação do Claude Code
+   confirma que a regra deny vale para o link e para o alvo, mas não alcança scripts que abrem arquivos por
+   conta própria.
+5. **Scripts em Python** (ADR-004, aceito pela D40):
+   - `scripts/link_acervo.py` cria `local\processos`, `local\normativos` e `local\escritorio` e remove
+     só o ponteiro das junções antigas;
+   - `scripts/publicar_operacao.py` publica só o HEAD; o que substitui na pasta CGOV vai antes para
+     `99_arquivo/_a-excluir_<data>/publicacao_<commit>/`, e o que grava é conferido por SHA-256;
+   - os `.sh` do WSL foram para `archive/scripts-wsl/`.
+6. **Documentação** (D36 e D40):
+   - `docs/fluxos-de-trabalho.md` v2;
+   - `docs/governance/pendencias.md`;
+   - os 14 ADRs em `docs/adr/` (ADR-004 e ADR-007 aceitos);
+   - `docs/catalogo-skills.md` e `docs/README.md`;
+   - o plano movido para `docs/plano-implantacao.md`.
+
+**Resultado.**
+
+- Junções novas criadas e antigas removidas no Windows; o teste de bloqueio no Claude Code negou a gravação
+  pela junção e pelo caminho real.
+- Sanitização: 0 erros na árvore inteira (os avisos são números SEI, conforme a D38).
+- `publicar_operacao.py --verificar`: `operacao/` 12/12 igual ao publicado. A referência de `docs/` estava
+  no *commit* `4960e11` e é republicada no fechamento da fase.
+- **Pendência confirmada:** 9 das 14 skills com fonte estão desatualizadas na conta (P4), maior que o
+  registrado antes; a reinstalação fica para a Fase 6.8, depois da comparação da 6.1.
+
+Detalhes, números e evidências: plano de implantação (`docs/plano-implantacao.md`), Fase 5.

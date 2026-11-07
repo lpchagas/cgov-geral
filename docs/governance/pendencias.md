@@ -9,9 +9,9 @@
 
 | # | Pendência | Onde se resolve | Observação |
 |---|---|---|---|
-| P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontam para pastas que não existem mais | Fase 5.1–5.2 (`link_acervo.py`, `.env`) | Novas: `local\processos`, `local\normativos`, `local\escritorio` |
-| P2 | `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` (WSL, estrutura antiga) bloqueados em 06/11/2026 | Fase 5.3 (`publicar_operacao.py`) e 5.8 (mover os `.sh` para `archive/scripts-wsl/`) | `--verificar` segue disponível |
-| P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 | Fase 5.3 | Republicar depois do commit |
+| P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontam para pastas que não existem mais | Fase 5.1–5.2 (`link_acervo.py`, `.env`) | ✅ Resolvida em 07/11/2026: `scripts/link_acervo.py --executar` criou `local\processos`, `local\normativos` e `local\escritorio` e removeu as antigas |
+| P2 | `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` (WSL, estrutura antiga) bloqueados em 06/11/2026 | Fase 5.3 (`publicar_operacao.py`) e 5.8 (mover os `.sh` para `archive/scripts-wsl/`) | ✅ Resolvida em 07/11/2026: substitutos em Python prontos; `.sh` em `archive/scripts-wsl/` |
+| P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 | Fase 5.10 (`publicar_operacao.py --publicar --executar`, depois do *merge*) | `--verificar` mostra a diferença; republicação única no bloco 6 (D37) |
 | P4 | Deriva fonte × instalado: a `cgov-nt-01-triagem` instalada grava em `CGOV_Processos/…/_CGOV_NT/`; a fonte diz `local/analyses/` | Fase 6.1 (comparar e reinstalar) | Contornado pela tabela de caminhos do `AGENTS.md` da pasta CGOV |
 | P5 | Skills citam caminhos literais (`local/analyses/`, `local/normative-sources/`, `_CGOV_NT/`) | Fase 6.3 (caminhos neutros, ADR-006) | Depois, retirar a seção "Caminhos" das instruções do projeto Operação e a tabela do `AGENTS.md` |
 | P6 | Exclusão da quarentena `99_arquivo/_a-excluir_2026-11-05/` | Etapa 4.11, a partir de 05/12/2026 | Vínculo temporário da pasta CGOV; confirmação explícita |
@@ -33,6 +33,7 @@
 |---|---|---|
 | E1 | Modelo geral de análise de atos normativos (instruções v1 geradas a partir de um processo real): decidir as 6 questões em aberto, tornar modelagem de processos, riscos e AIR subsídios obrigatórios da NT, corrigir 8 divergências entre skills, publicar o procedimento | Etapa 6.9 (D34); piloto na Fase 11 |
 | E2 | Decisões D4–D8 do plano (skill para o analista de processos SEI, acesso dos servidores, orientação institucional sobre IA e LGPD, Fabric/Power BI, Maestri) | Fase 0 |
-| E3 | `docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md` | Fase 5.9 |
-| E4 | `scripts/verificar_sanitizacao.py` | Fase 5.10 |
+| E3 | ~~`docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md`~~ | ✅ Fase 5.9, bloco 5 (07/11/2026; D40) |
+| E4 | ~~`scripts/verificar_sanitizacao.py`~~ — criado em 06/11/2026 (v0.1.1, Fase 5, bloco 1) | Resolvida; uso em `docs/fluxos-de-trabalho.md` |
+| E6 | Evals da `cgov-nt-01-triagem` e da `cgov-nt-03-introducao` citam um número real de processo SEI (aviso do `verificar_sanitizacao.py`) | Fase 6.8: trocar por número fictício (D38) |
 | E5 | Validar `ocr_windows.ps1` (`cgov-transcrever-normativos`) no Windows | Fase 6.7 |

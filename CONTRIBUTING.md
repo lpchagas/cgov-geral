@@ -15,10 +15,9 @@
 2. Atualize ou execute os evals aplicáveis.
 3. Confirme que instruções, exemplos e caminhos ativos permanecem coerentes.
 4. Registre a decisão e o resultado em `docs/governance/decision-log.md`.
-5. Após o commit, publique para a operação e reinstale no Claude as skills alteradas. Até a Fase 5.3
-   do plano, a publicação segue o procedimento de transição de
-   [`docs/fluxos-de-trabalho.md`](docs/fluxos-de-trabalho.md) §4 (`publicar-operacao.sh` está
-   bloqueado, salvo `--verificar`).
+5. Após o commit, publique para a operação com `py scripts\publicar_operacao.py --publicar` (simulação) e
+   `--publicar --executar`, e reinstale no Claude as skills alteradas; confira com `--verificar`
+   (ver [`docs/fluxos-de-trabalho.md`](docs/fluxos-de-trabalho.md) §4).
 
 ## Espelho para a Antigravity — `.agents/skills/`
 

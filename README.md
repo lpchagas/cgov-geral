@@ -6,7 +6,8 @@ manutenção de skills, documentação metodológica e instruções de assistent
 ## Conteúdo
 
 - [Visão geral](docs/overview.md), [arquitetura](docs/architecture.md) e [fluxos de desenvolvimento e operação](docs/fluxos-de-trabalho.md).
-- Plano de implantação do Escritório Virtual: `cgov-geral-plano-implantacao.md` (andamento, decisões e evidências).
+- [Página inicial da documentação](docs/README.md), [ADRs](docs/adr/README.md) e [catálogo de skills](docs/catalogo-skills.md).
+- [Plano de implantação do Escritório Virtual](docs/plano-implantacao.md) (andamento, decisões e evidências).
 - [Pendências](docs/governance/pendencias.md).
 - [Skills canônicas](skills/cgov-nt/) e [skills temáticas](skills/thematic/).
 - [Instruções de assistentes](docs/system-instructions/), entre elas as do projeto Cowork ["Escritório CGOV — Operação"](docs/system-instructions/escritorio-cgov-operacao.md).

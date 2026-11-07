@@ -30,7 +30,7 @@ htmlcov/
 # Configuração local (caminhos do acervo no Drive)
 .env
 
-# Pacotes gerados por scripts/publicar-operacao.sh
+# Pacotes gerados por scripts/publicar_operacao.py (dist/skills/<commit>/)
 /dist/
 
 # Configuração pessoal do Claude Code (caminhos absolutos)
@@ -38,3 +38,14 @@ htmlcov/
 
 # Cofre Obsidian (configuração pessoal do editor)
 /.obsidian/
+
+# Configuração local do VS Code (pessoal do editor; D41)
+/.vscode/
+
+# Notas pessoais do cofre Obsidian (fora do Git)
+/notas/
+
+# Power BI: arquivos binários, cache do modelo e dados (os painéis vão como PBIP/PBIR, sem dados; Fase 10)
+*.pbix
+**/.pbi/cache.abf
+paineis/**/dados/

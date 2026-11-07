@@ -2,7 +2,7 @@
 
 > Versão 2 — 06/11/2026, depois da Fase 4 do plano de implantação (reorganização da pasta CGOV).
 > Substitui a versão de 06/10/2026 (arquivada em `archive/docs/fluxos-de-trabalho_ate-2026-11-06.md`).
-> Itens marcados ⏳ dependem da Fase 5 do plano (scripts e junções novos).
+> Itens marcados ⏳ dependem do fechamento da Fase 5 do plano (republicação de `docs/` na 5.10).
 
 ## 1. Visão geral
 
@@ -12,7 +12,7 @@
 | Ferramenta | Claude Code e projeto Cowork **"Escritório CGOV — Implantação"** (Windows); Antigravity e Obsidian | Projeto Cowork **"Escritório CGOV — Operação"** (app Claude no Windows) |
 | Pasta de trabalho | Este repositório (`C:\Projetos\cgov-geral` no computador do Coordenador) | Pasta **CGOV** do Google Drive (`…\My Drive\10_Institucional\CGOV`) |
 | Versão das skills | Fonte em `skills/` (rascunho até o commit) | Skills **instaladas** na conta Claude |
-| Documentação | `docs/` (edição) | `90_escritorio-virtual/referencia/docs/` (cópia só leitura) ⏳ republicação na Fase 5.3 |
+| Documentação | `docs/` (edição) | `90_escritorio-virtual/referencia/docs/` (cópia só leitura) ⏳ republicação na Fase 5.10 |
 | Navegação da pasta | `operacao/` (fonte) | `LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos (publicados) |
 | Dados de processos | Não produz | `01_processos/<processo>/` (ficha `PROCESSO.md`; estado da NT em `trabalho/NT_ESTADO.md`) |
 | Publicação | Git → GitHub (repositório **privado**, mantido sanitizado) | Nada é publicado; tudo fica no Drive |
@@ -24,7 +24,7 @@ processo.** O que liga os dois é a *publicação* (§4) num sentido e o arquivo
  DESENVOLVIMENTO (Claude Code / Cowork "Implantação")     OPERAÇÃO (Cowork "Operação")
  C:\Projetos\cgov-geral                                  My Drive\10_Institucional\CGOV
    skills/  docs/  scripts/  operacao/  (Git)              LEIA-ME.md · AGENTS.md
-        │ commit → publicação (⏳ publicar_operacao.py)     00_entrada … 06_gestao-da-coordenacao
+        │ commit → publicação (publicar_operacao.py)      00_entrada … 06_gestao-da-coordenacao
         ├──► dist/skills/*.zip ── reinstalar ─────────►   01_processos\<processo>\PROCESSO.md
         ├──► docs/ ───────────────────────────────────►   90_escritorio-virtual\referencia\docs\
         └──► operacao/ ───────────────────────────────►   raiz, _LEIA-ME.md, 90_…\modelos\
@@ -54,16 +54,19 @@ Os textos de navegação (`LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos) tê
 
 1. Repositório clonado em `C:\Projetos\cgov-geral` (`git config core.autocrlf false`).
 2. Python 3.12 ou superior (`py --version`); Git; Claude Desktop (Cowork e Code).
-3. `.env` a partir de `.env.example` com `CGOV_RAIZ` (pasta CGOV). ⏳ As variáveis `CGOV_PROCESSOS`,
-   `CGOV_NORMATIVOS` e `CGOV_ESCRITORIO` e as junções `local\processos`, `local\normativos` e
-   `local\escritorio` chegam na Fase 5.1–5.2. **As junções antigas (`local\analyses`,
-   `local\normative-sources`, `local\acervo-drive`) apontam para pastas que não existem mais.**
+3. `.env` a partir de `.env.example`, com `CGOV_RAIZ`, `CGOV_PROCESSOS`, `CGOV_NORMATIVOS` e
+   `CGOV_ESCRITORIO` (caminhos completos, sem variáveis). Depois, `py scripts\link_acervo.py` (simulação)
+   e `py scripts\link_acervo.py --executar`: cria as junções `local\processos`, `local\normativos` e
+   `local\escritorio` e remove as antigas (`local\analyses`, `local\normative-sources`,
+   `local\acervo-drive`), tirando só o ponteiro.
 4. Projeto Cowork "Escritório CGOV — Implantação": pasta única `C:\Projetos\cgov-geral`; instruções no
    Apêndice A do plano de implantação. A pasta CGOV só é vinculada temporariamente, com autorização do
    Coordenador (por exemplo, na exclusão da quarentena).
 5. `.claude/settings.json` (versionado): pede confirmação antes de `git commit` e `git push`, bloqueia a
    edição das áreas operacionais e oculta do modelo as skills cuja fonte está em `skills/`
-   (`skillOverrides`). ⏳ Bloqueios com os nomes novos na Fase 5.6.
+   (`skillOverrides`). Bloqueios: `local/processos/**`, `local/normativos/**`, `local/escritorio/**`, a
+   pasta CGOV (`~/My Drive/10_Institucional/CGOV/**`) e `.env`. Regras deny valem para o link e para o
+   alvo, mas não para scripts Python ou Node, que abrem arquivos por conta própria.
 
 ### 3.2 Operação
 
@@ -77,34 +80,39 @@ Os textos de navegação (`LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos) tê
 
 ## 4. Publicação: do desenvolvimento para a operação
 
-⏳ **Transição.** `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` foram escritos para o WSL e para
-a estrutura antiga (`_acervo-escritorio-virtual/…`) e estão **bloqueados** desde 06/11/2026; a publicação
-de skills com `--verificar` continua disponível apenas para comparar instaladas × fonte. Até a Fase 5.3
-(`scripts/publicar_operacao.py`):
+A publicação usa `scripts/publicar_operacao.py` (Windows, na raiz do repositório) e parte sempre de um
+commit: alterações pendentes em `skills/`, `docs/` ou `operacao/` bloqueiam.
 
-- **Skills:** gerar o `.zip` da skill a partir do commit e reinstalar em Customize → Skills; conferir a
-  paridade instalada × fonte.
-- **`operacao/`:** publicar na pasta CGOV por cópia sem sobrescrita, com a versão anterior na quarentena e
-  conferência por SHA-256, como na Fase 4 (registros em `90_escritorio-virtual/manutencao/reorganizacao-2026-11/registros/`).
-- **`docs/`:** a cópia em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 e será republicada
-  na Fase 5.3.
-- **Instruções do projeto Operação:** se `escritorio-cgov-operacao.md` mudar, colar o novo bloco no campo
-  Instruções do projeto.
+1. `py scripts\publicar_operacao.py --verificar` — somente leitura:
+   - skills instaladas na conta (`~/.claude/skills/synced`) × fonte;
+   - `operacao/` × pasta CGOV, por SHA-256;
+   - `docs/` × `90_escritorio-virtual/referencia/docs/`.
+2. `py scripts\publicar_operacao.py --publicar` — simulação: mostra o que seria criado, substituído e
+   enviado para a quarentena.
+3. `py scripts\publicar_operacao.py --publicar --executar`:
+   - gera os pacotes das skills em `dist/skills/<commit>/`, sem `evals/`;
+   - publica `operacao/` na raiz da pasta CGOV (só o que difere);
+   - republica `docs/` em `90_escritorio-virtual/referencia/`, com um `LEIA-ME.md` que registra o commit.
+   Tudo o que for substituído vai antes para `99_arquivo/_a-excluir_<data>/publicacao_<commit>/`. Depois,
+   o script confere por SHA-256 o que gravou.
+4. **Skills:** enviar cada `dist\skills\<commit>\<skill>.zip` em Customize → Skills (substituir) e repetir
+   o `--verificar`.
+5. **Instruções do projeto Operação:** se `escritorio-cgov-operacao.md` mudar, colar o novo bloco no campo
+   Instruções do projeto.
 
-Depois da Fase 5.3, a publicação será um único comando (`py scripts\publicar_operacao.py`), que recusa
-publicar alterações sem commit, gera os pacotes, republica `docs/` e `operacao/` e lista as skills a
-reinstalar.
+Os scripts `.sh` do WSL foram aposentados em 07/11/2026 (`archive/scripts-wsl/`).
 
 ## 5. Fluxo de desenvolvimento
 
 Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgov-geral`):
 
 1. **Origem.** Ler `90_escritorio-virtual/manutencao/PENDENCIAS.md` da pasta CGOV (colado pelo Coordenador
-   ou ⏳ pela junção `local\escritorio`) e [`governance/pendencias.md`](governance/pendencias.md).
+   ou pela junção `local\escritorio`) e [`governance/pendencias.md`](governance/pendencias.md).
 2. **Editar a fonte** em `skills/<família>/<skill>/SKILL.md`, `docs/`, `operacao/` ou `scripts/`.
 3. **Validar:** frontmatter do `SKILL.md` com `name` e `description` (até 1.024 caracteres); evals
    (`evals/evals.json`), com saídas de teste em `local/pilots/`; sanitização de `docs/`, `skills/` e
-   `operacao/` (⏳ `scripts/verificar_sanitizacao.py`, Fase 5.10).
+   `operacao/` com `py scripts\verificar_sanitizacao.py` (antes do commit: `--staged`; exceções em
+   `scripts/sanitizacao_permitidos.txt`; termos pessoais só em `local/sanitizacao_termos.txt`).
 4. **Registrar** a decisão em [`governance/decision-log.md`](governance/decision-log.md) (só acréscimos).
 5. **Espelhar para a Antigravity**, se usada (`.agents/skills/`, ver `CONTRIBUTING.md`).
 6. **Commit e push**, com confirmação do Coordenador. O shell do Cowork não tem credencial do GitHub:

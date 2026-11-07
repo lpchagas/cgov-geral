@@ -52,7 +52,7 @@ Antes de qualquer análise, confirme o contexto da demanda:
 
 | Documento | Objeto | Status |
 |---|---|---|
-| **Portaria ICMBio nº 1.572, de 29/05/2023** | Institui o PGR | ✅ **Fonte primária** — texto integral local em `local/normative-sources/20230529_Portaria ICMBio 1572-2023_Institui o PGR.md` |
+| **Portaria ICMBio nº 1.572, de 29/05/2023** | Institui o PGR | ✅ **Fonte primária** — texto integral no acervo normativo (localize-o pelo número da norma no índice do acervo) |
 | Portaria ICMBio nº 5.592/2025, Art. 37, § único, VIII | Competência da CGOV sobre o PGR | ✅ verificado |
 | Decreto nº 10.382/2020 | Programa de Gestão Estratégica e Transformação do Estado | Considerando da Portaria nº 1.572/2023 |
 | Portaria ICMBio nº 99, de 07/02/2020 | Regras do trabalho consultivo (Art. 25) | ⚠️ não consta do projeto |

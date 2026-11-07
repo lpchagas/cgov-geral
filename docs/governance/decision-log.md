@@ -1523,3 +1523,32 @@ prefixo `cgov-`), e `pgd-analisar-indicador`, `pgd-desenvolver-indicador`, `pgd-
   instruções do projeto Operação e `analista-processos-sei.md`. Até lá, o `--verificar` mostra as 8 como "NÃO INSTALADA".
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 35. Caminhos neutros nas skills (Fase 6.3, 07/11/2026)
+
+**Decisões (D48 do plano).**
+
+1. **ADR-006 aceito.** As skills citam papéis, e os caminhos concretos ficam nos dois `AGENTS.md`: a seção "Caminhos
+   por papel" do repositório e a tabela "Caminhos canônicos" de `operacao/AGENTS.md`.
+2. **Papéis novos na pasta CGOV:**
+   - pasta de rascunhos da transcrição: `03_normativos/_transcricao/<data-hora>-<slug>/`, fora do `_INDICE.md`;
+   - pasta de trabalho do PGD: `06_gestao-da-coordenacao/pgd/`;
+   - lista da equipe: `06_gestao-da-coordenacao/equipe.md`, com nome e papel, sem matrícula nem e-mail;
+   - registro de decisões: `PROCESSO.md` do processo, seção Andamento;
+   - pasta de processos: `01_processos/`.
+3. **Localização do `NT_ESTADO.md`** (7 skills `cgov-nt`, conforme a D43): a busca segue esta ordem: pasta conectada,
+   pasta de processos pelo número SEI e, por fim, local antigo listado no `AGENTS.md` ou pasta com `MOVIDO_PARA.txt`,
+   com aviso ao usuário. A `cgov-nt-01` cria a pasta do processo pela obrigação 1 do `AGENTS.md`.
+4. **Normas citadas por nome de arquivo** (`cgov-pgr`, `cgov-qcf`): passam a ser localizadas no acervo pelo número da
+   norma, porque os nomes dos arquivos mudaram na Fase 4.
+5. **Publicação:** os papéis novos do `operacao/AGENTS.md` são publicados logo depois do *commit*. Na 6.8, depois da
+   reinstalação, sai só a frase de tradução para as skills instaladas. A tabela de caminhos antigos continua como
+   "Locais antigos", porque as skills a usam para achar arquivos legados.
+6. **`gerar_indices.py` v0.1.1:** pastas iniciadas por `_` ficam fora do índice do acervo normativo.
+
+**Resultado.** 13 arquivos de skills alterados. A busca por `local/analyses`, `_acervo-escritorio-virtual`,
+`normative-sources`, `_CGOV_NT` e `CGOV_Processos` em `skills/` dá 0, e a sanitização não acusou erros.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

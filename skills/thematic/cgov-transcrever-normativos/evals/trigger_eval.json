@@ -1,6 +1,6 @@
 [
   {
-    "query": "tenho várias portarias em PDF sem camada de texto em local/normative-sources; faça OCR, transcreva e salve um .md para cada uma",
+    "query": "tenho várias portarias em PDF sem camada de texto no acervo normativo; faça OCR, transcreva e salve um .md para cada uma",
     "should_trigger": true
   },
   {

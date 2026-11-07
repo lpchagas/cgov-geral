@@ -33,7 +33,7 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
-VERSAO = "0.1.0"
+VERSAO = "0.1.1"
 REPO = Path(__file__).resolve().parent.parent
 SUBPASTAS = ["documentos-sei", "trabalho", "referencias", "produtos"]
 RE_PASTA = re.compile(r"^SEI_(\d{5})\.(\d{6})_(\d{4})-(\d{2})(?:_(.+))?$")
@@ -265,6 +265,8 @@ def main() -> int:
         grupos = defaultdict(dict)
         base = raiz / "03_normativos"
         for rel in arquivos(base):
+            if any(p.startswith("_") for p in rel.split("/")[:-1]):
+                continue  # rascunhos (_transcricao/ etc.) ficam fora do índice
             nome = os.path.basename(rel)
             m = RE_NORMA.match(nome)
             if not m:

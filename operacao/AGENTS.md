@@ -15,9 +15,15 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 | Documentação do Escritório (somente leitura) | 90_escritorio-virtual/referencia/ |
 | Modelos | 90_escritorio-virtual/modelos/ |
 | Pendências para o desenvolvimento | 90_escritorio-virtual/manutencao/PENDENCIAS.md |
+| Pasta de rascunhos da transcrição de normativos | 03_normativos/_transcricao/<data-hora>-<slug>/ (fora do _INDICE.md) |
+| Pasta de trabalho do PGD | 06_gestao-da-coordenacao/pgd/ |
+| Lista da equipe da Coordenação | 06_gestao-da-coordenacao/equipe.md (nome e papel; sem matrícula nem e-mail) |
+| Registro de decisões | <pasta do processo>/PROCESSO.md, seção Andamento |
+| Pasta de processos | 01_processos/ |
 
-## Caminhos antigos citados pelas skills (transição até a Fase 6)
-As skills instaladas ainda foram escritas com caminhos do repositório de desenvolvimento. Traduza sempre:
+## Caminhos antigos citados pelas skills (transição até a reinstalação da Fase 6.8)
+As skills instaladas ainda foram escritas com caminhos do repositório de desenvolvimento. Traduza sempre.
+As skills de fonte atual citam só os papéis da tabela acima; esta tabela também serve para achar o NT_ESTADO.md em locais antigos:
 
 | Caminho citado pela skill | Caminho nesta pasta |
 |---|---|

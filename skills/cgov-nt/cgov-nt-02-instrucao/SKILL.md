@@ -11,8 +11,8 @@ description: >
   a planilha/CSV para a NT". NÃO use para auditoria de texto normativo isolado
   (use cgov-auditoria-competencias, cgov-comparar-versoes ou
   cgov-saneamento-legistica) nem para redigir capítulos de texto corrido (use
-  cgov-nt-03 a 07). Requer `NT_ESTADO.md` já criado por cgov-nt-01, em
-  `local/analyses/SEI_[processo]_[apelido]/`; se não existir, redirecione para
+  cgov-nt-03 a 07). Requer `NT_ESTADO.md` já criado por cgov-nt-01, na
+  pasta de trabalho do processo; se não existir, redirecione para
   cgov-nt-01 primeiro.
 ---
 
@@ -26,14 +26,18 @@ fluxo adaptativo.
 
 ## PRÉ-REQUISITO
 
-1. **Localização do `NT_ESTADO.md`:** o arquivo do processo em análise vive em
-   `local/analyses/SEI_[processo]_[apelido]/NT_ESTADO.md` — não na raiz do
-   projeto. Identifique a subpasta pelo processo SEI mencionado nesta
-   conversa; se houver apenas um processo com triagem em andamento sob
-   `local/analyses/`, use-o diretamente. Se houver mais de um e não for possível
-   identificar o processo pelo contexto, pergunte ao usuário antes de
-   prosseguir.
-2. Confirme a existência de `NT_ESTADO.md` nessa subpasta. Se ausente,
+1. **Localização do `NT_ESTADO.md`:** o arquivo vive na **pasta de trabalho do
+   processo**, nunca na raiz do projeto; o caminho concreto está no `AGENTS.md`
+   do repositório em uso. Procure-o nesta ordem:
+   a. na pasta do processo conectada a esta conversa;
+   b. na pasta de processos, identificando o processo pelo número SEI citado na
+      conversa (compare pelo número, não pelo formato do nome da pasta);
+   c. num local antigo listado na tabela de caminhos antigos do `AGENTS.md`, ou
+      numa pasta com `MOVIDO_PARA.txt` — nesse caso, avise o usuário de que o
+      arquivo está fora da convenção.
+   Se houver mais de um candidato e não for possível identificar o processo
+   pelo contexto, pergunte ao usuário antes de prosseguir.
+2. Confirme a existência de `NT_ESTADO.md` nessa pasta. Se ausente,
    interrompa e oriente o usuário a executar `cgov-nt-01` primeiro.
 3. Leia `NT_ESTADO.md` para recuperar o enquadramento e o tipo de produto (A/B/C/D)
    definidos na triagem — isso orienta qual variante da Fase 2 usar abaixo.

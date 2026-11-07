@@ -170,7 +170,8 @@ Ao final de qualquer análise, apresentar:
 ## REGRAS TRANSVERSAIS
 
 - A Cadeia de Valor é um **instrumento dinâmico** — toda revisão deve ser
-  registrada com data e motivação no `docs/governance/decision-log.md` do projeto.
+  registrada com data e motivação no registro de decisões (caminho no
+  `AGENTS.md` do repositório em uso).
 - Macroprocessos não são organogramas: um macroprocesso pode envolver várias
   unidades. Não confundir estrutura funcional com arquitetura de processos.
 - O ICMBio é órgão de missão ambiental — os processos finalísticos devem sempre

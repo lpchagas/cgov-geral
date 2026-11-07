@@ -1,7 +1,7 @@
 # ADR-006 — Skills neutras quanto a caminho
 
-- **Status:** Proposto
-- **Data:** — (aprovação pendente na Fase 0)
+- **Status:** Aceito
+- **Data:** 07/11/2026 (D48 do plano; aplicado na Fase 6.3)
 
 ## Contexto
 
@@ -15,6 +15,7 @@ As skills citam **papéis** ("pasta do processo", "pasta de trabalho do processo
 
 - Até a Fase 6.3, a tabela de tradução do `AGENTS.md` da pasta CGOV cobre os caminhos antigos.
 - Depois dela, sai a seção "Caminhos" das instruções do projeto Operação.
+- Aplicação (07/11/2026): as skills citam pasta do processo, pasta de trabalho do processo, pasta de processos, acervo normativo, pasta de rascunhos da transcrição, pasta de trabalho do PGD, lista da equipe e registro de decisões. O mapeamento está na seção "Caminhos por papel" do `AGENTS.md` do repositório e na tabela "Caminhos canônicos" de `operacao/AGENTS.md`. A tabela de caminhos antigos continua, depois da reinstalação, como "Locais antigos", para achar arquivos legados.
 
 ## Referências
 

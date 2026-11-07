@@ -5,7 +5,7 @@ description: >
   como PDF no acervo local da CGOV/ICMBio. Use quando o usuário pedir OCR,
   transcrição fidedigna, conversão para texto legível por máquina, criação de
   arquivo .md ao lado de Lei, Decreto, Portaria, Instrução Normativa,
-  Resolução ou outro ato em local/normative-sources, inclusive em lote. Inclui
+  Resolução ou outro ato do acervo normativo, inclusive em lote. Inclui
   inspeção da camada textual, OCR local em português, preservação de artigos,
   anexos, tabelas e redações revogadas, segunda revisão visual e controle de
   qualidade antes da gravação final. Não acione para simples interpretação
@@ -30,10 +30,11 @@ visíveis no PDF.
   a pasta inteira, separe atos normativos de livros, guias e normas técnicas;
   processe os atos ainda sem `.md` e reporte os demais itens fora do escopo.
 - Mantenha PDFs, páginas renderizadas, OCR e rascunhos em ambiente local. Nunca
-  envie `local/normative-sources/` ou documentos internos a serviços externos.
-- Use `local/analyses/normative-transcription/<data-hora>-<slug>/` para páginas,
-  OCR, rascunhos e relatório de revisão. Esse material permanece fora do Git.
-- Grave o resultado definitivo em `local/normative-sources/`, com o mesmo nome
+  envie o acervo normativo ou documentos internos a serviços externos.
+- Use a **pasta de rascunhos da transcrição** (`<data-hora>-<slug>/`; caminho no
+  `AGENTS.md` do repositório em uso) para páginas, OCR, rascunhos e relatório de
+  revisão. Esse material nunca é versionado nem entra no índice do acervo.
+- Grave o resultado definitivo no acervo normativo, com o mesmo nome
   base do PDF e extensão `.md`.
 - Se já existir um `.md` correspondente, não o sobrescreva sem pedido explícito
   de atualização. Compare as versões e preserve o arquivo anterior até a
@@ -45,13 +46,13 @@ visíveis no PDF.
 ## 1. Precheck e inventário
 
 1. Leia as instruções do projeto e confirme o destino autorizado.
-2. Execute `skills/thematic/cgov-transcrever-normativos/scripts/inventory_normative_sources.py`
+2. Execute `scripts/inventory_normative_sources.py` (na pasta desta skill)
    para relacionar PDFs,
    arquivos Markdown existentes, páginas e hashes quando solicitados.
 3. Registre para cada PDF: total de páginas, tamanho, existência de `.md`, tipo
    de publicação e provável natureza da camada textual.
-4. Antes de editar, confira `git status`. Não toque em alterações alheias; o
-   diretório `local/` deve continuar ignorado pelo Git.
+4. Se estiver num repositório Git, confira `git status` antes de editar e não
+   toque em alterações alheias; a pasta de rascunhos não pode ser versionada.
 
 ## 2. Diagnóstico da extração
 
@@ -61,7 +62,7 @@ códigos de glifos ou incapaz de preservar caracteres e palavras. Nesses casos:
 
 1. renderize todas as páginas, normalmente a 250–300 dpi;
 2. execute OCR em `pt-BR`; em Windows, use
-   `skills/thematic/cgov-transcrever-normativos/scripts/ocr_windows.ps1` sobre
+   `scripts/ocr_windows.ps1` (na pasta desta skill) sobre
    as imagens renderizadas;
 3. mantenha a ordem das páginas e, no rascunho de trabalho, a referência de
    origem de cada trecho;
@@ -125,14 +126,14 @@ Confira, página por página:
 - cabeçalhos e rodapés que pertençam à publicação;
 - páginas em branco, evitando tratá-las como conteúdo ausente.
 
-Registre no workspace local quais páginas foram conferidas e os erros de OCR
+Registre na pasta de rascunhos quais páginas foram conferidas e os erros de OCR
 corrigidos. Quando houver dúvida material não resolvida pela imagem nem por
 fonte primária equivalente, marque `[trecho ilegível no PDF]`; nunca adivinhe.
 
 ## 5. Barreira de qualidade e gravação
 
 Execute
-`skills/thematic/cgov-transcrever-normativos/scripts/qa_transcription.py` para
+`scripts/qa_transcription.py` (na pasta desta skill) para
 cada par PDF/Markdown ainda no workspace. A gravação definitiva só ocorre
 quando não houver erro bloqueante.
 
@@ -145,10 +146,10 @@ Além das verificações automáticas, confirme manualmente:
 
 Depois da aprovação:
 
-1. copie o rascunho revisado para `local/normative-sources/<mesmo-stem>.md`;
+1. copie o rascunho revisado para o acervo normativo, como `<mesmo-stem>.md`;
 2. compare os hashes do rascunho e do arquivo final;
 3. confirme UTF-8 válido, zero caracteres `U+FFFD` e PDF original intacto;
-4. confirme que o arquivo final continua ignorado pelo Git;
+4. se estiver num repositório Git, confirme que o arquivo final não foi versionado;
 5. remova apenas imagens e arquivos temporários gerados nesta execução, após
    validar o caminho exato. Preserve o relatório de revisão se o usuário pedir
    trilha de auditoria.

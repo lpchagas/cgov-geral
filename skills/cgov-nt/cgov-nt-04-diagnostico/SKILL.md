@@ -10,7 +10,7 @@ description: >
   Use ao invocar /cgov-nt-04, "capítulo de diagnóstico", "capítulos 2 e 3",
   "redigir a análise técnica", "quadro consolidado de achados", ou qualquer
   pedido de transformar achados já levantados em texto de Nota Técnica.
-  Requer `NT_ESTADO.md` (em `local/analyses/SEI_[processo]_[apelido]/`) com
+  Requer `NT_ESTADO.md` (na pasta de trabalho do processo) com
   achados já consolidados (por cgov-nt-02 e/ou pelas skills analíticas
   normativas); se não houver achados registrados, redirecione para a skill de
   instrução/diagnóstico correspondente primeiro.
@@ -20,13 +20,17 @@ description: >
 
 ## PRÉ-EXECUÇÃO OBRIGATÓRIA
 
-1. **Localização do `NT_ESTADO.md`:** o arquivo do processo em análise vive em
-   `local/analyses/SEI_[processo]_[apelido]/NT_ESTADO.md` — não na raiz do
-   projeto. Identifique a subpasta pelo processo SEI mencionado nesta
-   conversa; se houver apenas um processo com triagem em andamento sob
-   `local/analyses/`, use-o diretamente. Se houver mais de um e não for possível
-   identificar o processo pelo contexto, pergunte ao usuário antes de
-   prosseguir.
+1. **Localização do `NT_ESTADO.md`:** o arquivo vive na **pasta de trabalho do
+   processo**, nunca na raiz do projeto; o caminho concreto está no `AGENTS.md`
+   do repositório em uso. Procure-o nesta ordem:
+   a. na pasta do processo conectada a esta conversa;
+   b. na pasta de processos, identificando o processo pelo número SEI citado na
+      conversa (compare pelo número, não pelo formato do nome da pasta);
+   c. num local antigo listado na tabela de caminhos antigos do `AGENTS.md`, ou
+      numa pasta com `MOVIDO_PARA.txt` — nesse caso, avise o usuário de que o
+      arquivo está fora da convenção.
+   Se houver mais de um candidato e não for possível identificar o processo
+   pelo contexto, pergunte ao usuário antes de prosseguir.
 2. Leia `NT_ESTADO.md` — em especial a seção "Achados e insumos consolidados".
 3. **Pré-requisito de conteúdo:** se essa seção estiver vazia ou incompleta,
    interrompa e informe: "Os achados de [cgov-nt-02 / diagnóstico normativo]

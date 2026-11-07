@@ -38,8 +38,8 @@ do ICMBio, conforme o instrumento cabível (ver Fase 4).
 
 | Norma | Objeto | Papel nesta skill |
 |---|---|---|
-| Portaria ICMBio nº 5.592, de 11/12/2025, Art. 37, V | Competência da CGOV sobre o QCF | Enquadramento regimental (texto verificado — ver `local/normative-sources/20251211_Art_37_Portaria_5592-2025_texto_verificado.md`) |
-| Decreto nº 12.258, de 25/11/2024 | Aprova a Estrutura Regimental e o Quadro Demonstrativo dos Cargos em Comissão e das Funções de Confiança do ICMBio (Anexos I a IV) | Fonte primária do QCF vigente — transcrição verificada em `local/normative-sources/20241125_Decreto 12.258_Estrutura Regimental e Quadro de Cargos.md` |
+| Portaria ICMBio nº 5.592, de 11/12/2025, Art. 37, V | Competência da CGOV sobre o QCF | Enquadramento regimental (texto verificado — ver o texto verificado do Art. 37 no acervo normativo (localize-o pelo número da norma no índice do acervo)) |
+| Decreto nº 12.258, de 25/11/2024 | Aprova a Estrutura Regimental e o Quadro Demonstrativo dos Cargos em Comissão e das Funções de Confiança do ICMBio (Anexos I a IV) | Fonte primária do QCF vigente — transcrição verificada no acervo normativo (localize-o pelo número da norma no índice do acervo) |
 | Lei nº 14.204, de 16/09/2021 | Institui os Cargos Comissionados Executivos (CCE) e as Funções Comissionadas Executivas (FCE); extinguiu o DAS e a FCPE; disciplina transformação, critérios de ocupação e remuneração | Regime jurídico de fundo dos CCE/FCE — confirmado via texto oficial do Planalto nesta rodada |
 | Decreto nº 10.829, de 05/10/2021 | Regulamenta a Lei nº 14.204/2021 | Regulamento aplicável a apostilamento, permuta CCE↔FCE, registro no SIORG, regimento interno e realocação (arts. 11 a 14, conforme citado no Art. 4º do Decreto nº 12.258/2024) |
 | Decreto nº 9.739, de 28/03/2019 | Normas gerais sobre estrutura, cargos em comissão e funções de confiança na APF | ⚠️ Citado no Art. 4º do Decreto nº 12.258/2024 (arts. 14 e 15, quanto a SIORG e apostilamento) — texto integral não verificado nesta rodada; usar a citação apenas no escopo já confirmado pelo Decreto nº 12.258/2024 |

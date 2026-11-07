@@ -190,7 +190,8 @@ Quesitos críticos para alteração de RI:
 
 - Atualizar os sistemas e repositórios internos com a nova versão do RI.
 - Comunicar formalmente às unidades afetadas a entrada em vigor.
-- Registrar a alteração no `docs/governance/decision-log.md` do projeto com data,
+- Registrar a alteração no registro de decisões (caminho no `AGENTS.md` do
+  repositório em uso) com data,
   número da portaria publicada e síntese das mudanças.
 
 ---

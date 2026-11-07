@@ -8,7 +8,7 @@ description: >
   /cgov-nt-07, "conclusão da NT", "capítulo 5", "encaminhamentos",
   "fechar a nota técnica", "finalizar o parecer". Requer que todos os
   capítulos anteriores aplicáveis (cgov-nt-03 a cgov-nt-06, conforme o roteiro
-  definido em `NT_ESTADO.md`, em `local/analyses/SEI_[processo]_[apelido]/`) já
+  definido em `NT_ESTADO.md`, na pasta de trabalho do processo) já
   estejam concluídos.
 ---
 
@@ -16,13 +16,17 @@ description: >
 
 ## PRÉ-EXECUÇÃO OBRIGATÓRIA
 
-1. **Localização do `NT_ESTADO.md`:** o arquivo do processo em análise vive em
-   `local/analyses/SEI_[processo]_[apelido]/NT_ESTADO.md` — não na raiz do
-   projeto. Identifique a subpasta pelo processo SEI mencionado nesta
-   conversa; se houver apenas um processo com triagem em andamento sob
-   `local/analyses/`, use-o diretamente. Se houver mais de um e não for possível
-   identificar o processo pelo contexto, pergunte ao usuário antes de
-   prosseguir.
+1. **Localização do `NT_ESTADO.md`:** o arquivo vive na **pasta de trabalho do
+   processo**, nunca na raiz do projeto; o caminho concreto está no `AGENTS.md`
+   do repositório em uso. Procure-o nesta ordem:
+   a. na pasta do processo conectada a esta conversa;
+   b. na pasta de processos, identificando o processo pelo número SEI citado na
+      conversa (compare pelo número, não pelo formato do nome da pasta);
+   c. num local antigo listado na tabela de caminhos antigos do `AGENTS.md`, ou
+      numa pasta com `MOVIDO_PARA.txt` — nesse caso, avise o usuário de que o
+      arquivo está fora da convenção.
+   Se houver mais de um candidato e não for possível identificar o processo
+   pelo contexto, pergunte ao usuário antes de prosseguir.
 2. Leia `NT_ESTADO.md` por completo — roteiro de execução, achados
    consolidados (com contagem por prioridade) e recomendações formuladas.
 3. **Pré-requisito de conteúdo:** confira, no roteiro do `NT_ESTADO.md`, que

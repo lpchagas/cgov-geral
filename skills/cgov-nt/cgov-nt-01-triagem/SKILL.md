@@ -6,7 +6,7 @@ description: >
   não apenas PGD ou PSPEADBio. Triagem e enquadramento regimental da demanda
   (Art. 37, Portaria ICMBio nº 5.592/2025), identificação de normas aplicáveis,
   definição de quais skills cgov-nt-02 a 07 são necessárias, e criação do
-  arquivo de estado `NT_ESTADO.md` em `local/analyses/SEI_[processo]_[apelido]/`
+  arquivo de estado `NT_ESTADO.md` na pasta de trabalho do processo
   (substitui CLAUDE.md por processo). Use ao invocar /cgov-nt-01, /TRIAGEM_NT,
   "nova nota técnica", "quero elaborar uma NT", "abrir NT sobre [tema]",
   "enquadrar essa demanda", "qual eixo do Art. 37 se aplica", "essa NT precisa
@@ -160,34 +160,37 @@ uma etapa que não agrega valor apenas por rigidez ao roteiro-padrão).
 - [itens não informados pelo usuário, se houver]
 
 ---
-✅ Arquivo `NT_ESTADO.md` criado/atualizado em `local/analyses/SEI_[processo]_[apelido]/`.
+✅ Arquivo `NT_ESTADO.md` criado/atualizado na pasta de trabalho do processo.
 Ao invocar as próximas skills desta suíte, elas lerão este arquivo automaticamente —
 não será necessário repetir o contexto.
 ```
 
 ### 3.2. Arquivo de estado `NT_ESTADO.md`
 
-> **Convenção de localização (fixada em 05/08/2026):** o `NT_ESTADO.md` de cada
-> processo vive em `local/analyses/SEI_[nº do processo sem barra]_[apelido curto]/`,
-> nunca na raiz do projeto. Essa pasta não é sincronizada em repositórios Git do
-> projeto (está no `.gitignore`) — é o espaço de rascunho e histórico de trabalho
-> por processo.
+> **Convenção de localização (ADR-006; revista em 07/11/2026):** o `NT_ESTADO.md`
+> de cada processo vive na **pasta de trabalho do processo**, nunca na raiz do
+> projeto. O caminho concreto, a convenção de nome da pasta do processo e os locais
+> antigos estão no `AGENTS.md` do repositório em uso.
 
-1. **Determine o nome da subpasta:**
-   - `[processo SEI]`: número do processo com o `/` substituído por `_`
-     (ex.: `00000.000000/0000-00` → `00000.000000_0000-00`). Se não houver
-     processo SEI ainda formalizado, use `sem-processo` seguido de uma data
-     curta (ex.: `sem-processo_2026-08-05`).
-   - `[apelido curto]`: uma palavra ou sigla que identifique o objeto da
-     análise para humanos (ex.: `RADAR`, `REGIMENTO`, `IN14`, `PGR`). Infira do
-     objeto da análise; se não houver um apelido óbvio, pergunte ao usuário em
-     vez de inventar um.
-   - Nome final da subpasta: `local/analyses/SEI_[processo SEI]_[apelido curto]/`.
-2. **Verifique se a subpasta já existe** (pode haver trabalho anterior no mesmo
-   processo). Se existir um `NT_ESTADO.md` prévio, **atualize-o** em vez de
+1. **Localize a pasta do processo:**
+   - se uma pasta de processo estiver conectada a esta conversa, use-a;
+   - caso contrário, procure-a na pasta de processos pelo número do processo SEI
+     (os nomes antigos variam: compare pelo número, não pelo formato);
+   - se não existir, crie-a conforme a obrigação de criação de processo do
+     `AGENTS.md` (nome, subpastas e ficha `PROCESSO.md`). O `[apelido curto]` é
+     uma palavra ou sigla que identifique o objeto (ex.: `RADAR`, `REGIMENTO`,
+     `IN14`, `PGR`); se não houver apelido óbvio, pergunte em vez de inventar.
+     Sem processo SEI formalizado, use `sem-processo_[data curta]_[apelido]` como
+     identificador e pergunte onde gravar;
+   - se o ambiente não der acesso à pasta de processos, peça ao usuário que
+     conecte a pasta do processo antes de gravar o estado.
+2. **Verifique se já existe `NT_ESTADO.md`** na pasta de trabalho do processo ou
+   num local antigo listado no `AGENTS.md` (pode haver trabalho anterior no mesmo
+   processo). Se existir, **atualize-o** em vez de
    sobrescrever do zero — preserve "Achados e insumos consolidados" e
-   "Capítulos já redigidos" já registrados.
-3. **Se a subpasta não existir, crie-a** e, dentro dela, crie o arquivo
+   "Capítulos já redigidos" já registrados. Se estiver num local antigo, proponha
+   movê-lo, com os produtos que o acompanham, para a pasta de trabalho do processo.
+3. **Se não existir, crie** na pasta de trabalho do processo o arquivo
    `NT_ESTADO.md` com esta estrutura:
 
 ```markdown
@@ -198,7 +201,7 @@ não será necessário repetir o contexto.
 - Destinatário: [unidade]
 - Interessado: [unidade(s)]
 - Data de abertura da triagem: [data]
-- Local deste arquivo: `local/analyses/SEI_[processo SEI]_[apelido curto]/`
+- Local deste arquivo: [caminho completo da pasta de trabalho do processo]
 
 ## Enquadramento (Art. 37, Portaria ICMBio nº 5.592/2025)
 - Inciso(s): [...]
@@ -227,11 +230,10 @@ _(cada skill acrescenta aqui um resumo de uma linha + status ao concluir)_
 sem projeto), informe isso ao usuário e ofereça reapresentar a Ficha de Enquadramento
 completa no início de cada nova skill da suíte, para que ele copie/cole como contexto.
 
-**Se houver mais de um `NT_ESTADO.md` sob `local/analyses/`** ao final desta triagem
-(múltiplos processos em andamento simultaneamente), deixe isso explícito na resposta
-ao usuário, citando o caminho completo do arquivo recém-criado/atualizado — as skills
-seguintes (`cgov-nt-02` a `07`) precisarão dessa referência para localizar o arquivo
-correto (ver "Localização do NT_ESTADO.md" em cada uma delas).
+**Sempre cite, na resposta ao usuário, o caminho completo do `NT_ESTADO.md`**
+recém-criado/atualizado — as skills seguintes (`cgov-nt-02` a `07`) usam o
+processo SEI e esse caminho para localizar o arquivo correto (ver
+"Localização do NT_ESTADO.md" em cada uma delas).
 
 ---
 

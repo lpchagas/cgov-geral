@@ -62,5 +62,5 @@ Cópias de referência em `local/installed-reference/` (fora do Git). Na Fase 6.
 ## 5. Previstas
 
 - `cgov-gestao-acervo` (Fase 6.4): triagem de `00_entrada`, pasta e ficha de processo, índices.
-- `cgov-triagem-processo-sei` (Fase 6.6, se a decisão D4 for por convertê-la).
+- `cgov-triagem-processo-sei` (D4, 07/11/2026: criar a skill e manter `docs/system-instructions/analista-processos-sei.md` como versão autocontida; escrita junto com a 6.4).
 - `cgov-pbi-documentar-painel` e `cgov-pbi-revisar-modelo` (Fase 10).

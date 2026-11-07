@@ -1420,3 +1420,29 @@ editar qualquer skill na Fase 6, era preciso fixar qual texto vale para cada uma
 - Relatório e diffs: `local/installed-reference/_export_2026-11-07/COMPARACAO.md` e `diffs/` (fora do Git).
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 31. Analista de processos SEI e modelo geral de análise de atos normativos (Fase 6.6 e 6.9(a), 07/11/2026)
+
+**Decisões.**
+
+1. **D4 (etapa 6.6):** criar a skill `cgov-triagem-processo-sei` a partir de `docs/system-instructions/analista-processos-sei.md`
+   (roteamento e cadeia de raciocínio, passos 0–7), lendo a base normativa no acervo em vez de copiá-la. O `.md` continua
+   como versão autocontida para assistentes sem acesso a arquivos (Gems, GPTs); quando um fato normativo mudar, os dois
+   textos são atualizados juntos (lição do §11.6). A skill nasce com caminhos neutros, junto com a 6.4.
+2. **D44 (etapa 6.9(a)), as 6 questões da Parte B.5 das instruções gerais v1:**
+   - AIR: o **Nível 2** (subsídios pelo art. 6º do Decreto nº 10.411/2020) é padrão sempre que o Nível 1 não concluir por
+     não incidência ou dispensa;
+   - **competências e legística são obrigatórias**, como a modelagem de fluxos, os riscos e a AIR. São cinco subsídios
+     obrigatórios da NT, com dispensa só pelo Coordenador, registrada com o motivo no `NT_ESTADO.md`;
+   - o **foco no conteúdo do ato** não vira regra geral: a triagem (`cgov-nt-01`) pergunta o foco em cada projeto;
+   - os **dispositivos propostos** na NT ficam no **futuro do presente**, que é a convenção atual da suíte. O Decreto
+     nº 12.002/2024, art. 11, I, "e", admite o presente ou o futuro do presente e pede uniformidade (texto conferido na
+     publicação original, no portal da Câmara dos Deputados). A `cgov-saneamento-legistica` é ajustada; a `cgov-nt-03` não;
+   - no Regime A, um **risco residual** com valor em lacuna da máscara vai para a **classe superior**, com a lacuna
+     declarada (entre 2 e 3, Médio);
+   - `01_processos/…/trabalho/` substitui `_CGOV_NT/` e `local/analyses/`, e as skills usam **texto neutro** ("pasta de
+     trabalho do processo"), conforme o ADR-006 e a etapa 6.3.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

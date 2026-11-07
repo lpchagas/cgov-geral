@@ -37,7 +37,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.1.0"
+VERSAO = "0.2.0"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
@@ -151,10 +151,15 @@ def verificar_skills() -> int:
 
 
 # ---------------------------------------------------------------- 2. operacao/
+# Ferramentas do repositório publicadas na pasta CGOV (fonte única aqui; destino somente para execução)
+FERRAMENTAS = {"scripts/gerar_indices.py": "90_escritorio-virtual/ferramentas/gerar_indices.py"}
+
+
 def plano_operacao(raiz: Path) -> list[tuple[str, Path, str, bytes]]:
     saida = []
-    for f in arquivos_head("operacao/"):
-        rel = f[len("operacao/"):]
+    pares = [(f, f[len("operacao/"):]) for f in arquivos_head("operacao/")]
+    pares += list(FERRAMENTAS.items())
+    for f, rel in pares:
         dados = blob(f)
         destino = raiz / rel
         atual = sha_arquivo(destino)

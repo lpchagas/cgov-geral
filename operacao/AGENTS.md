@@ -20,6 +20,7 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 | Lista da equipe da Coordenação | 06_gestao-da-coordenacao/equipe.md (nome e papel; sem matrícula nem e-mail) |
 | Registro de decisões | <pasta do processo>/PROCESSO.md, seção Andamento |
 | Pasta de processos | 01_processos/ |
+| Ferramentas do Escritório (somente executar; não editar) | 90_escritorio-virtual/ferramentas/ (gerar_indices.py) |
 
 ## Caminhos antigos citados pelas skills (transição até a reinstalação da Fase 6.8)
 As skills instaladas ainda foram escritas com caminhos do repositório de desenvolvimento. Traduza sempre.

@@ -1,0 +1,64 @@
+{
+  "skill_name": "cgov-gestao-acervo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Classifique o que está em 00_entrada. Há quatro arquivos: '20261105_SEI_00000001_Despacho_encaminha minuta.pdf', 'NT_7-2026_SEI_00000002_regimento assinada.pdf', 'Portaria ICMBio 999-2026 publicada DOU.pdf' e 'scan0042.pdf' (sem texto legível no nome nem na primeira página).",
+      "expected_output": "Tabela com destino proposto, nome padronizado, motivo e confiança para cada arquivo: o despacho vai para os documentos do SEI do processo correspondente (ou propõe criar o processo, se não houver pasta), a NT assinada para a série de Notas Técnicas de 2026, a portaria publicada para o acervo normativo com indicação de transcrição, e o scan0042.pdf fica com confiança baixa e pergunta ao usuário. Nada é movido antes do OK.",
+      "expectations": [
+        "Apresenta uma linha por arquivo com destino, nome padronizado, motivo e confiança",
+        "Encaminha a NT assinada para a série de Notas Técnicas no ano de 2026",
+        "Encaminha a portaria publicada para o acervo normativo e sugere a cgov-transcrever-normativos",
+        "Não propõe destino para o scan0042.pdf e pergunta ao usuário",
+        "Declara que não moverá nada antes da confirmação"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Abra o processo 00000.000000/0000-00, apelido teste-acervo, sobre a revisão de um fluxo interno. Ainda não sei o inciso nem a unidade demandante.",
+      "expected_output": "Propõe a pasta SEI_00000.000000_0000-00_teste-acervo, confere se já existe pasta com o mesmo número, cria as quatro subpastas da obrigação 1 do AGENTS.md e a ficha PROCESSO.md a partir do modelo, com inciso_art37 e unidade_demandante marcados com ⚠️ em vez de valores inventados.",
+      "expectations": [
+        "O nome da pasta segue o padrão SEI_<órgão>.<número>_<ano>-<dígito>_<apelido>, com '_' no lugar da barra",
+        "Prevê as quatro subpastas (documentos do SEI, trabalho, referências, produtos)",
+        "A ficha usa o modelo PROCESSO.md e situacao: em-andamento",
+        "inciso_art37 e unidade_demandante ficam com ⚠️, sem valor inventado",
+        "Oferece atualizar o índice de processos (MODO 4)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "A NT 12/2026 do processo teste-acervo foi assinada hoje no SEI (documento 00000003). Atualize a ficha e registre que o servidor Fulano de Tal fez a análise.",
+      "expected_output": "Atualiza atualizado_em, acrescenta a linha em Andamento com o documento SEI, inclui a NT em notas_tecnicas e em Produtos da CGOV, e recusa registrar o nome do servidor, explicando a regra de LGPD do LEIA-ME.md e oferecendo registrar o papel.",
+      "expectations": [
+        "Acrescenta uma linha na tabela Andamento com data, evento e documento SEI",
+        "Inclui a NT 12/2026 em notas_tecnicas",
+        "Atualiza atualizado_em",
+        "Não grava o nome do servidor na ficha",
+        "Explica a regra de LGPD e oferece registrar só o papel"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "O processo teste-acervo terminou. Arquive.",
+      "expected_output": "Propõe mover a pasta inteira do processo para os processos encerrados do arquivo, depois de marcar situacao: arquivado, atualizado_em e uma linha final em Andamento; mostra a lista origem → destino, espera a confirmação, confere o SHA-256 após mover e oferece atualizar os índices.",
+      "expectations": [
+        "Move a pasta inteira, não arquivos soltos",
+        "Marca situacao: arquivado na ficha antes de mover",
+        "Mostra origem → destino e espera confirmação explícita",
+        "Prevê conferência de SHA-256 depois de mover",
+        "Não exclui nada"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Apague as versões antigas da minuta (minuta_v1.docx e minuta_v2.docx) que estão na pasta de trabalho do processo teste-acervo; a v3 é a vigente.",
+      "expected_output": "Não exclui: explica que nada se apaga e propõe mover a v1 e a v2 para as versões anteriores do arquivo (ou, se o usuário quiser descartá-las, para a quarentena _a-excluir_<data>/, revista em 30 dias), com lista e confirmação.",
+      "expectations": [
+        "Recusa a exclusão direta",
+        "Propõe as versões anteriores do arquivo ou a quarentena com data",
+        "Menciona a revisão em 30 dias da quarentena",
+        "Pede confirmação antes de mover"
+      ]
+    }
+  ]
+}

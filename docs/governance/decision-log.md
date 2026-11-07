@@ -1608,3 +1608,25 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
    `operacao/AGENTS.md` ganhou essa exceção.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+---
+
+## 38. Skills de operação do Escritório (Fase 6.4 e skill da 6.6, 07/11/2026)
+
+**Decisões (D51 do plano).**
+
+1. **Família nova `skills/escritorio/`** para as skills de operação que não pertencem a um inciso do Art. 37.
+2. **`cgov-gestao-acervo`:** 5 modos (TRIAR_ENTRADA, NOVO_PROCESSO, ATUALIZAR_FICHA, ATUALIZAR_INDICES, ARQUIVAR), com
+   5 casos sintéticos de eval. A skill nunca exclui nem sobrescreve arquivos e só move em lote depois de mostrar a lista
+   e receber confirmação, com conferência por SHA-256.
+3. **Índices na operação:** `publicar_operacao.py` v0.2.0 passa a publicar `scripts/gerar_indices.py` em
+   `90_escritorio-virtual/ferramentas/`. A fonte continua única, no repositório; na pasta CGOV o script só é executado,
+   nunca editado.
+4. **`cgov-triagem-processo-sei`** (D4, só CGOV): roteamento, cadeia de raciocínio e guardrails do
+   `analista-processos-sei.md` v7.2. A base normativa não é copiada: `references/pilares-normativos.md` traz só os nomes
+   das normas, e `references/formatos-de-saida.md` traz os comandos. Tem 3 casos sintéticos.
+5. **Pendência E8:** o Coordenador transcreveu a Portaria ICMBio nº 129/2020 (atos normativos do ICMBio) e a Portaria
+   Conjunta PFE/ICMBio nº 3/2021. Elas precisam ser lidas antes da 6.10, porque a 129/2020 pode ter alterado a Portaria
+   nº 271/2013, base da `cgov-nt-06`.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

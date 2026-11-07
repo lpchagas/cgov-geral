@@ -1,0 +1,40 @@
+{
+  "skill_name": "cgov-triagem-processo-sei",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "/ANALISAR_PROCESSO — Chegou à CGOV o processo 00000.000000/0000-00 com uma minuta de portaria que cria um comitê de acompanhamento de indicadores e um despacho da diretoria pedindo 'manifestação técnica da CGOV'. A minuta tem 14 artigos. Faça a triagem.",
+      "expected_output": "Relatório de Análise Processual no formato de formatos-de-saida.md, com metadados citando a origem e [NÃO CONSTA] no que faltar, enquadramento SIM ou PARCIAL com inciso específico do Art. 37, e proposição de Nota Técnica com encaminhamento à cgov-nt-01-triagem, indicando que, por ser ato normativo, o roteiro inclui os cinco subsídios obrigatórios. Termina com a nota de revisão humana.",
+      "expectations": [
+        "Usa o formato do Relatório de Análise Processual",
+        "Não inventa dado ausente; usa [NÃO CONSTA NOS AUTOS FORNECIDOS]",
+        "Indica inciso específico do Art. 37",
+        "Encaminha a elaboração da NT à cgov-nt-01-triagem, sem redigi-la",
+        "Menciona os cinco subsídios obrigatórios em análise de ato normativo",
+        "Encerra com a nota de revisão humana"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "/REDIGIR_RESTITUICAO — O processo 00000.000000/0000-00 chegou sem o anexo citado no despacho ('planilha de entregas em anexo') e sem a minuta assinada pela unidade proponente. Redija a restituição.",
+      "expected_output": "Minuta de despacho de restituição no formato de formatos-de-saida.md, listando objetivamente as pendências de instrução (anexo citado e ausente; minuta sem assinatura), sem inventar número de documento, com parágrafos numerados e a nota de revisão humana.",
+      "expectations": [
+        "Usa o formato da Minuta de Despacho de Restituição",
+        "Lista as duas pendências de instrução",
+        "Não inventa número de documento SEI nem prazo não informado",
+        "Encerra com a nota de revisão humana"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Recebemos um pedido para a CGOV consolidar o relatório anual de geoinformação das unidades descentralizadas. Analise.",
+      "expected_output": "Enquadramento NÃO (ou PARCIAL, se houver recorte de governança de processos): a matéria não aparece no Art. 37; a resposta sinaliza que pode pertencer à CGGE (Art. 36) ou a outra unidade, usa a mensagem de fora de escopo, oferece tratar só eventual recorte de governança e não faz análise de mérito.",
+      "expectations": [
+        "Não força enquadramento no Art. 37",
+        "Sinaliza a possível competência da CGGE ou de outra unidade",
+        "Usa a mensagem de fora de escopo",
+        "Não faz análise de mérito da matéria"
+      ]
+    }
+  ]
+}

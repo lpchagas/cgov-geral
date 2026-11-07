@@ -64,15 +64,22 @@ Promovidas na 6.2; o número do processo de referência foi retirado (D46); o co
 | `cgov-modelar-fluxo` | — | Transformar texto normativo em fluxo BPMN com diagrama Mermaid | ⚠️ reinstalar (6.8) |
 | `cgov-saneamento-legistica` | — | Técnica legislativa em minutas (Decreto nº 12.002/2024 e LC nº 95/1998) | ⚠️ reinstalar (6.8) |
 
+## 4-B. Skills de operação do Escritório (`skills/escritorio/`)
+
+Criadas na Fase 6.4 (07/11/2026, D51); ainda não instaladas na conta (6.8).
+
+| Skill | Inciso | Função | Instalada × fonte (07/11) |
+|---|---|---|---|
+| `cgov-gestao-acervo` | — | Triagem da caixa de entrada, pasta e ficha de processo, índices (gerador publicado em `90_escritorio-virtual/ferramentas/`) e arquivamento | ⚠️ não instalada (6.8) |
+| `cgov-triagem-processo-sei` | — | Triagem e instrução de processos SEI (roteamento, passos 0–7, despacho, restituição, ofício, quadro normativo); só Art. 37 (D4, D45) | ⚠️ não instalada (6.8) |
+
 ## 4-A. Formação em Gestão da Biodiversidade (`skills/cgge-fgbio/`, fora do plugin)
 
 `cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`: versionadas na 6.2 (D46), com os nomes do docente e dos convidados trocados por papéis (`[Docente responsável]`, `[Convidado 1]` …); os dados da turma ficam em `local/`. Não entram no plugin `cgov-escritorio`.
 
 ## 5. Previstas
 
-- `cgov-gestao-acervo` (Fase 6.4): triagem de `00_entrada`, pasta e ficha de processo, índices.
-- `cgov-triagem-processo-sei` (D4, 07/11/2026: criar a skill e manter `docs/system-instructions/analista-processos-sei.md` como versão autocontida; escrita junto com a 6.4).
 - `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao` (Fase 6.10, D45, a partir da pasta de prompts `02_dev-prompts`).
-- Ampliações (Fase 6.9(b), D45): `cgov-nt-06-quesitos-pfe` (consulta jurídica facultativa e NT de subsídio) e `cgov-modelar-fluxo` (BPMN → tabela de atividades/POP).
+- Ampliações feitas na Fase 6.9(b) (07/11/2026, D45, D50): `cgov-nt-06-quesitos-pfe` (consulta jurídica facultativa e NT de subsídio) e `cgov-modelar-fluxo` (BPMN → tabela de atividades/POP).
 - Adiada (E7): skill da Política de Governança Institucional (Art. 37, p.u., II).
 - `cgov-pbi-documentar-painel` e `cgov-pbi-revisar-modelo` (Fase 10).

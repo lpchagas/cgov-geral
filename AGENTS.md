@@ -44,6 +44,7 @@ As skills citam papéis, não caminhos. Neste repositório (desenvolvimento), os
 | Pasta de rascunhos da transcrição | `local/pilots/transcricao/<data-hora>-<slug>/` |
 | Registro de decisões | `docs/governance/decision-log.md` |
 | Pasta de trabalho do PGD, lista da equipe | só na operação (`operacao/AGENTS.md`) |
+| Ferramentas do Escritório | `scripts/` (fonte); publicadas na pasta CGOV por `publicar_operacao.py` |
 
 Na pasta CGOV, vale a tabela de `operacao/AGENTS.md` (publicada como `AGENTS.md` na raiz da pasta).
 
@@ -53,6 +54,7 @@ Na pasta CGOV, vale a tabela de `operacao/AGENTS.md` (publicada como `AGENTS.md`
 - `skills/thematic/`: fontes das skills temáticas da CGOV.
 - `skills/pgd/`: fontes das skills do PGD (Art. 37, p.u., VII).
 - `skills/normativo/`: fontes das skills de análise de atos normativos (competências, versões, fluxos, legística).
+- `skills/escritorio/`: fontes das skills de operação do Escritório (`cgov-gestao-acervo`, `cgov-triagem-processo-sei`).
 - `skills/cgge-fgbio/`: fontes das skills da Formação em Gestão da Biodiversidade (CGGE), fora do plugin `cgov-escritorio`.
 - `local/installed-reference/`: snapshots locais de referência de skills instaladas.
 - `operacao/`: fonte dos textos de navegação publicados na pasta CGOV (`LEIA-ME.md`, `AGENTS.md`,

@@ -1381,3 +1381,42 @@ de sanitização e uma cópia de `docs/` publicada para a operação anterior à
   registrado antes; a reinstalação fica para a Fase 6.8, depois da comparação da 6.1.
 
 Detalhes, números e evidências: plano de implantação (`docs/plano-implantacao.md`), Fase 5.
+
+---
+
+## 30. Exportação e comparação das skills instaladas (Fase 6.1 do plano de implantação, 07/11/2026)
+
+**Contexto.** Desde a Fase 4, a fonte (`skills/`) e as skills instaladas na conta divergem (pendência P4). Antes de
+editar qualquer skill na Fase 6, era preciso fixar qual texto vale para cada uma.
+
+**Decisões.**
+
+1. **Ordem da Fase 6** (D42 do plano): 6.1 → decisões 6.6 + 6.9(a) → 6.2 → 6.3 → 6.5 → 6.9(b–d) → 6.4 → 6.7 (em
+   qualquer intervalo) → 6.8.
+2. **Método de exportação** (D42): copiar o retrato da conta recebido pela sessão do Cowork para
+   `local/installed-reference/_export_2026-11-07/` (fora do Git), com manifesto SHA-256, e conferi-lo no PowerShell do
+   Coordenador contra a cópia sincronizada do Claude Code (`%USERPROFILE%\.claude\skills\synced\`). As duas
+   `cgge-fgbio-*`, fora do inventário, também foram exportadas; o destino delas se decide na 6.2.
+3. **Critério de comparação:** a conta reescreve o *frontmatter*, então a comparação usa a normalização de
+   `publicar_operacao.py` (nome, descrição e corpo), não só o SHA-256 dos arquivos.
+4. **Texto-base de cada skill divergente** (D43):
+   - suíte `cgov-nt` (7): **fonte**, com a busca do `NT_ESTADO.md` em ordem e o aviso de local legado aproveitados da
+     conta, em forma neutra na 6.3. As duas convenções (`local/analyses/`, da fonte, e `_CGOV_NT/`, da conta, de
+     07/10/2026) estão superadas por `01_processos/…/trabalho/` (§28);
+   - `cgov-gestao-riscos`: **conta**, uma reescrita com o Regime A (Portaria ICMBio nº 975/2021, vigente) e o Regime B
+     (minutas RADAR). Ela é saneada na promoção: os números de documentos SEI viram referência genérica às minutas, e
+     a descrição é recomposta na 6.5;
+   - `cgov-regimento-interno`: **fonte** (a conta ainda cita `REGISTRO_DECISOES.md`);
+   - `cgov-avaliar-entrega`, `cgov-elaborar-entrega` e `cgov-registro-execucao`: **conta**, com a correção de
+     14/09/2026 (Plano de Entregas **quadrimestral**: Q1 01/01–30/04, Q2 01/05–31/08, Q3 01/09–31/12, sem Q4). A nota
+     de correção vira regra no corpo, e este parágrafo guarda o histórico: as versões anteriores tratavam Q1–Q3 como
+     trimestres e previam um Q4 implícito.
+
+**Resultado.**
+
+- 28 skills e 39 arquivos exportados; conferência cruzada 39/39 igual.
+- 14 com fonte: 5 iguais e 9 divergentes (confirma P4). 12 sem fonte: 9 iguais à `installed-reference` e 3 mais novas
+  na conta. Nenhum arquivo auxiliar faltando; `evals/` só na fonte, como esperado.
+- Relatório e diffs: `local/installed-reference/_export_2026-11-07/COMPARACAO.md` e `diffs/` (fora do Git).
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

@@ -6,7 +6,7 @@
 
 **Resumo:** 26 skills no inventário da Fase 6.
 - **14 com fonte versionada:** 5 iguais ao instalado e 9 desatualizadas na conta (pendência P4; reinstalação na Fase 6.8).
-- **12 sem fonte**, só na conta (promoção a `skills/` na Fase 6.2).
+- **12 sem fonte**, só na conta (promoção a `skills/` na Fase 6.2). Na 6.1 (07/11/2026), 3 delas (`cgov-avaliar-entrega`, `cgov-elaborar-entrega`, `cgov-registro-execucao`) estavam mais novas na conta que em `local/installed-reference/`; a promoção parte da exportação `_export_2026-11-07` (D43).
 
 Inciso = parágrafo único do Art. 37 da Portaria ICMBio nº 5.592/2025. Siglas fixas: **PGR** (Portaria nº 1.572/2023, inciso VIII) ≠ **PGRI** (Portaria nº 255/2020, inciso IX) ≠ **PGD** (IN ICMBio nº 14/2025, inciso VII); a PGE (Portaria nº 768/2020) está revogada.
 
@@ -57,7 +57,7 @@ Cópias de referência em `local/installed-reference/` (fora do Git). Na Fase 6.
 
 ## 4. Fora do inventário
 
-⚠️ Também aparecem na conta `cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`, que não estão entre as 26 do inventário. Decidir na Fase 6.1 se entram no plugin `cgov-escritorio` ou ficam à parte.
+⚠️ Também aparecem na conta `cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`, que não estão entre as 26 do inventário. Foram exportadas na Fase 6.1 (07/11/2026); decidir na 6.2 se entram no plugin `cgov-escritorio` ou ficam à parte.
 
 ## 5. Previstas
 

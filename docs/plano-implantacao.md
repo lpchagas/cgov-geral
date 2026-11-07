@@ -1,6 +1,6 @@
 # Plano de Implantação — Escritório Virtual da CGOV/ICMBio
 
-> **Versão:** 3.32 — 07/11/2026 (**Fase 5 concluída**: *merge* `--no-ff` `e305404` no `main`, *push* conferido, publicação com `publicar_operacao.py` — referência de `docs/` no commit `e305404`, 33/33 arquivos conferidos por SHA-256, `operacao/` 12/12 —; próxima: Fase 6, começando pela 6.1. Histórico completo das versões v1–v3.32: **Apêndice G**.) A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`%USERPROFILE%\My Drive\10_Institucional\CGOV`).
+> **Versão:** 3.33 — 07/11/2026 (**Fase 6 em andamento**: ordem das etapas aprovada (D42); **6.1 concluída** — 28 skills da conta exportadas para `local/installed-reference/_export_2026-11-07/` (39/39 arquivos conferidos por SHA-256 contra a cópia sincronizada da máquina do Coordenador), comparação com fontes e referência em `COMPARACAO.md` e divergências decididas (D43) —; próxima: bloco de decisões 6.6 + 6.9(a). Histórico completo das versões v1–v3.33: **Apêndice G**.) A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`%USERPROFILE%\My Drive\10_Institucional\CGOV`).
 > **Responsável:** Coordenador de Governança (CGOV/CGGE/ICMBio)
 > **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `e305404` (*merge* da Fase 5, D41), conferido em 07/11 (`main...origin/main` sem diferença); o *branch* `implantacao/fase-5` (`ee3b239`) fica só na máquina do Coordenador
 > **Repositório operacional:** `%USERPROFILE%\My Drive\10_Institucional\CGOV` (Google Drive)
@@ -9,7 +9,7 @@
 > **Método:** análise documental (`engineering:documentation`) e arquitetural com ADRs (`engineering:architecture`)
 > **Regra de execução:** uma fase por vez, com confirmação explícita do Coordenador antes de mover, renomear, excluir, reinstalar, fazer *commit* ou *push*.
 > **Regra de manutenção:** a cada etapa concluída, este plano é **atualizado integralmente**, conforme a lista de verificação da Seção "Regra de manutenção deste plano" (logo abaixo do sumário).
-> **Situação atual:** Fases 1, 2, 3, 4 e **5** ✅ (Fase 4 concluída em 06/11; Fase 5 em 07/11: scripts em Python, junções e bloqueios novos, ADRs e catálogo em `docs/`, publicação com `publicar_operacao.py`, *merge* `e305404`) · **próxima: Fase 6** (portfólio de skills), pela 6.1 · quarentenas a revisar: `_a-excluir_2026-11-05` (4.11, lembrete em 05/12/2026) e `_a-excluir_2026-11-07` (publicação, a partir de 07/12/2026) · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D4–D8; ADR-001, 005, 006 e 008–011).
+> **Situação atual:** Fases 1, 2, 3, 4 e 5 ✅ (Fase 4 concluída em 06/11; Fase 5 em 07/11: scripts em Python, junções e bloqueios novos, ADRs e catálogo em `docs/`, publicação com `publicar_operacao.py`, *merge* `e305404`) · **Fase 6 🟨** (portfólio de skills): 6.1 ✅ (07/11, D42–D43); próxima: decisões 6.6 (D4) + 6.9(a) · quarentenas a revisar: `_a-excluir_2026-11-05` (4.11, lembrete em 05/12/2026) e `_a-excluir_2026-11-07` (publicação, a partir de 07/12/2026) · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D4–D8; ADR-001, 005, 006 e 008–011).
 
 ---
 
@@ -70,6 +70,7 @@ A mesma regra está nas instruções do projeto "Escritório CGOV — Implantaç
 | Projeto Cowork "Escritório CGOV — Implantação" (sessão de 05/11) | Criado no Claude Desktop; instruções = Apêndice A; acesso confirmado às duas pastas: 1ª `C:\Projetos\cgov-geral` e 2ª (temporária) `%USERPROFILE%\My Drive\10_Institucional\CGOV`. A sessão leu o plano e aguardou confirmação (teste 3.A.6 aceito pelo Coordenador). Capturas de tela de 05/11: a tela do projeto no Claude Desktop mostra **Instruções**, **Contexto** (2 pastas vinculadas), **Memória** e **Programado**, sem campo de links. O texto do Apêndice A tinha ido para a **descrição**; corrigido pelo Coordenador em 05/11 (as sessões agora recebem a descrição curta de 3.A.2 e as instruções v3.4) |
 | Projeto Cowork `cgov-geral-v1` (capturas de 05/11) | 4 pastas vinculadas: `cgov-geral-v1` (`C:\_cowork\cgov-geral-v1`, segundo as instruções), `pgd-agente-icmbio`, `pgd-ocde-icmbio` e `cgge-fgbio-2026`; instruções preservadas em `C:\Projetos\cgov-geral\local\archive\cowork-projetos\cgov-geral-v1_instrucoes_2026-11-05.md` (SHA-256 `ad862755…`) |
 | Cópia do WSL `~/projetos/cgov-geral-v1` | Redundante desde 04/11: *commit* enviado, `.github/` arquivado, `local/` resgatado e conferido (490/490) |
+| Exportação das skills da conta (Fase 6.1, 07/11) | Retrato da conta recebido pela sessão do Cowork em 07/11/2026 10:33: 28 skills CGOV/CGGE (26 do inventário + `cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`), 39 arquivos, gravados em `C:\Projetos\cgov-geral\local\installed-reference\_export_2026-11-07\` com `MANIFESTO.md` (SHA-256); conferência cruzada no PowerShell do Coordenador contra `%USERPROFILE%\.claude\skills\synced\`: **39/39 iguais**; `COMPARACAO.md` e `diffs\` (12 skills divergentes) na mesma pasta; `--verificar` no HEAD `44310f2`: as mesmas 9 desatualizadas |
 | Pasta CGOV no Drive | Inventário em 05/11 (somente leitura; nomes, contagens, tamanhos e hashes; conteúdo dos documentos **não lido**). Detalhe na Seção 3.4. Recontagem na 4.1: **2.831 arquivos**, todos com SHA-256; pasta não alterada |
 | Mapa de reorganização (4.1–4.2; revisto na 4.4a, 05/11) | Vigente: `C:\Projetos\cgov-geral\local\MAPA_REORGANIZACAO_2026-11.csv` (2.860 linhas; 2.833 arquivos; SHA-256 `83db96e21d6146d2…`). Versões anteriores em `C:\Projetos\cgov-geral\local\reorganizacao\conferencia\`: `MAPA_REORGANIZACAO_2026-11_aprovado-4.2.csv` (`5e686e82…`) e `MAPA_REORGANIZACAO_2026-11_D26-2831arq.csv` (`116bf907…`). Resumo `C:\Projetos\cgov-geral\local\MAPA_REORGANIZACAO_2026-11_resumo.md`, decisões `C:\Projetos\cgov-geral\local\reorganizacao\decisoes.csv` (28), apelidos `C:\Projetos\cgov-geral\local\reorganizacao\apelidos.csv` (11) e cache de SHA-256 `C:\Projetos\cgov-geral\local\reorganizacao\cache_sha256.csv`. Para propor apelidos, foi lida só a abertura de 16 PDFs de processo |
 | Manifesto anterior e simulação (4.3–4.4, 05/11) | Novo `--planejar` em `C:\Projetos\cgov-geral\local\reorganizacao\conferencia\MAPA_conferencia_2026-11-05.csv`: **idêntico byte a byte** ao mapa aprovado (SHA-256 `5e686e821d30744a…`). Manifesto vigente `C:\Projetos\cgov-geral\local\reorganizacao\manifesto_pre_2026-11.sha256` (2.833 linhas; SHA-256 `8847c5e87a0d5f69…`; refeito na 4.4a), com hashes recalculados do disco (3,53 GB): 2.833/2.833 iguais ao mapa vigente. O manifesto da 4.3 (2.831 linhas, `8a6470cd…`) foi guardado como `conferencia\manifesto_pre_2026-11_2831arq.sha256`: nenhum dos 2.831 hashes mudou. Simulação final: 2.860 operações, zero conflitos e zero avisos de caminho longo. Registros em `C:\Projetos\cgov-geral\local\reorganizacao\conferencia\` |
@@ -435,13 +436,13 @@ flowchart LR
 
 | Fase | Nome | Resultado | Executa | Estimativa* | Situação |
 |---|---|---|---|---|---|
-| 0 | Decisões | ADRs e decisões D1–D41 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D41 respondidas; D4–D8 e ADR-001, 005, 006 e 008–011 pendentes |
+| 0 | Decisões | ADRs e decisões D1–D43 respondidos | Coordenador | 1 dia | 🟨 Parcial: D1–D3 e D9–D43 respondidas; D4–D8 e ADR-001, 005, 006 e 008–011 pendentes |
 | 1 | Consolidação do desenvolvimento no Windows | **✅ Concluída em 04/11** | — | — | ✅ 04/11/2026 |
 | 2 | **Arquitetura dos repositórios** | Arranjo das Seções 5.1–5.6 aprovado (ADR-012/013/014; D10–D16) | Coordenador | 1 dia | ✅ 05/11/2026 |
 | 3 | Projetos Cowork | "Implantação" criado; `cgov-geral-v1` preservado e arquivado; vínculos dos demais projetos inventariados | Coordenador (interface) + Claude | ½ dia | ✅ 05/11/2026 |
 | 4 | **Reorganização da pasta CGOV** | Estrutura nova, documentos de navegação, fichas, índices; projeto "Operação" criado | Claude (scripts e textos) + Coordenador (aprovações e execução) | 3–5 dias | ✅ 06/11/2026 (4.11 em 05/12/2026) |
 | 5 | Atualização do repositório de desenvolvimento | Scripts em Python, pasta `operacao/`, documentação corrigida, junções e `.env` com os caminhos novos | Claude, com portões | 2–3 dias | ✅ 07/11/2026 (*merge* `e305404`; D36–D41) |
-| 6 | Portfólio de skills | 12 skills promovidas a fonte; caminhos neutros; nova skill `cgov-gestao-acervo`; modelo geral de análise de atos normativos (6.9, D34); desatualizadas reinstaladas | Claude + Coordenador | 3–5 dias | ⬜ |
+| 6 | Portfólio de skills | 12 skills promovidas a fonte; caminhos neutros; nova skill `cgov-gestao-acervo`; modelo geral de análise de atos normativos (6.9, D34); desatualizadas reinstaladas | Claude + Coordenador | 3–5 dias | 🟨 Em andamento: 6.1 ✅ 07/11 (D42–D43) |
 | 7 | Plugin `cgov-escritorio` | Um zip por versão; 26 skills avulsas substituídas; comandos de acervo | Coordenador + Claude | 1–2 dias | ⬜ |
 | 8 | Multiplataforma e aposentadoria do WSL | Claude Code, Antigravity, Codex e Obsidian (dois cofres) | Coordenador + Claude | 1 dia | ⬜ |
 | 9 | Agentes e orquestração | 5 agentes + comandos; cenário Maestri | Claude + Coordenador | 3–5 dias | ⬜ |
@@ -1004,19 +1005,44 @@ Além disso, `.gitattributes` não existe; os arquivos rastreados estão em LF, 
 
 ---
 
-### Fase 6 — Portfólio de skills — ⬜ não iniciada
+### Fase 6 — Portfólio de skills — 🟨 em andamento (desde 07/11/2026)
 
-| Etapa | Ação | Aceite |
-|---|---|---|
-| 6.1 | Exportar as 26 skills CGOV/CGGE instaladas (texto atual da conta) para `local/installed-reference/_export_AAAA-MM-DD/` e comparar com as 14 fontes e com `local/installed-reference` | Divergências decididas pelo Coordenador |
-| 6.2 | Promover as 12 skills sem fonte a `skills/<família>/`, revisando dados pessoais e eliminando caminhos absolutos (`H:\…`, `C:\…`) | `verificar_sanitizacao.py` aprovado |
-| 6.3 | **Caminhos neutros (ADR-006)**: as skills passam a citar "pasta do processo", "pasta de trabalho do processo", "acervo normativo", "série de Notas Técnicas"; os caminhos concretos ficam no `AGENTS.md` de cada repositório | Busca por `local/analyses` e `_acervo-escritorio-virtual` nas skills = 0 |
-| 6.4 | Nova skill **`cgov-gestao-acervo`** (operação): triagem de `00_entrada`; criação da pasta de processo a partir do modelo; preenchimento e atualização do `PROCESSO.md`; atualização dos índices; envio para `99_arquivo` de versões superadas e processos concluídos | Evals com 5 casos sintéticos |
-| 6.5 | Descrições ≤ 950 caracteres; incorporar o eval do *branch* `claude/cgov-nt-triagem-description-loop-6x6dsc` e apagar o *branch* | — |
-| 6.6 | D4: converter `analista-processos-sei.md` em skill `cgov-triagem-processo-sei` (ou mantê-lo) | Decisão registrada |
-| 6.7 | Validar `ocr_windows.ps1` no Windows | Teste com PDF sem camada de texto |
-| 6.9 | **Modelo geral de análise de atos normativos (D34).** Base: `01_processos\SEI_02070.007589_2025-35_termos-compromisso\trabalho\Instrucoes_Gerais_CGOV_Analise_Atos_Normativos_v1.md` (06/11/2026, derivado das 10 sessões do processo de Termos de Compromisso). (a) Decidir as 6 questões da Parte B.5: profundidade da AIR (Nível 2 como padrão?), competências e legística como padrão ou obrigatórias, foco no conteúdo do ato, tempo verbal dos dispositivos propostos (conferir o Decreto nº 12.002/2024), residual 2–3 no Regime A e pasta `trabalho/`. (b) Tornar regra do pipeline o uso de `cgov-modelar-fluxo`, `cgov-gestao-riscos` e `cgov-air-arr` como subsídios obrigatórios da NT, com dispensa só por decisão registrada no `NT_ESTADO.md`: ajustar o roteiro da `cgov-nt-01` e os capítulos da `cgov-nt-03` a `07`. (c) Corrigir as 8 divergências da Parte B.4: roteiro da `nt-01`; pasta `_CGOV_NT` (com 6.3); tempo verbal `nt-03` × legística; cabeçalhos `nt-03` × `nt-07`; Quadro Consolidado na `nt-05`; 5 ajustes da `cgov-gestao-riscos`; contexto PSPEADBio nas skills analíticas; prefixos de códigos. (d) Publicar a versão consolidada como procedimento em `docs/` e modelo em `operacao/modelos/` (atualizando os caminhos, por exemplo `normative-sources` → `03_normativos`), e citá-la no Apêndice B. (e) Validar num ato normativo real (Fase 11) | Decisões B.5 registradas; evals da `nt-01` com o roteiro novo; procedimento publicado; piloto aprovado |
-| 6.8 | Evals das skills alteradas (`skill-creator`), com números de processo SEI fictícios nas evals da `cgov-nt-01` e da `cgov-nt-03` (D38, pendência E6); *commit*; publicação; reinstalação (inclusive as três desatualizadas desde 06/10) | `--verificar` = nenhuma divergência |
+**Ordem de execução (D42, 07/11/2026).** As etapas mantêm a numeração, mas seguem esta ordem:
+1. **6.1** (exportar e comparar): define o texto-base de cada skill antes de qualquer edição;
+2. **decisões 6.6 (D4) + 6.9(a)** (as 6 questões da Parte B.5): mudam o que se edita depois (pasta `trabalho/`, tempo verbal, skill nova). ⚠️ O arquivo-base da 6.9 está na pasta CGOV, não vinculada a este projeto: o Coordenador fornece o conteúdo;
+3. **6.2** (promover as 12 sem fonte; destino das 2 `cgge-fgbio-*`);
+4. **6.3** (caminhos neutros), que já cobre a divergência "pasta `_CGOV_NT`" da 6.9(c);
+5. **6.5** (descrições ≤ 950 caracteres e eval do *branch* antigo), depois da 6.3, que também mexe nas descrições;
+6. **6.9(b)(c)(d)** (modelo geral de análise de atos normativos);
+7. **6.4** (`cgov-gestao-acervo`, já com caminhos neutros);
+8. **6.7** (OCR no Windows), em qualquer intervalo;
+9. **6.8** (evals, *commit*, publicação, reinstalação, `--verificar` = 0). A 6.9(e) (piloto) fica na Fase 11.
+
+**Resultado da 6.1 (07/11/2026) — ✅ concluída.**
+- **Método (D42):** cópia do retrato da conta recebido pela sessão do Cowork (07/11, 10:33) para `local/installed-reference/_export_2026-11-07/` (fora do Git), com `MANIFESTO.md`. Conferência cruzada no PowerShell do Coordenador contra `%USERPROFILE%\.claude\skills\synced\`: 39/39 arquivos iguais. A conta reescreve o *frontmatter*, por isso a comparação usa a normalização de `publicar_operacao.py` (nome, descrição, corpo), não só o SHA-256.
+- **Exportadas:** 28 skills (as 26 do inventário + `cgge-fgbio-apresentacao` e `cgge-fgbio-plano-aula`, cujo destino se decide na 6.2).
+- **Comparação** (`COMPARACAO.md` e `diffs/`):
+  - 14 com fonte: 5 iguais; 9 diferentes (confirma P4);
+  - 12 sem fonte × `installed-reference`: 9 iguais; 3 mudaram na conta (`cgov-avaliar-entrega`, `cgov-elaborar-entrega`, `cgov-registro-execucao`: correção de trimestre para quadrimestre, de 14/09/2026);
+  - auxiliares: nenhum faltando; `evals/` só na fonte (esperado); `catalogo_indicadores.md` difere só por uma linha em branco final.
+- **Decisões (D43):**
+  - suíte `cgov-nt` (7): base = **fonte**, aproveitando da conta a busca do `NT_ESTADO.md` em ordem e o aviso de local legado, em forma neutra na 6.3 (as duas convenções, `local/analyses/` e `_CGOV_NT/`, estão superadas pela `01_processos/…/trabalho/`);
+  - `cgov-gestao-riscos`: base = **conta** (reescrita com os Regimes A — Portaria nº 975/2021 — e B — minutas RADAR), **saneada**: números de documentos SEI trocados por referência genérica às minutas; descrição recomposta na 6.5; os 5 ajustes da 6.9(c) sobre esta versão;
+  - `cgov-regimento-interno`: base = **fonte** (a conta ainda cita `REGISTRO_DECISOES.md`);
+  - `cgov-avaliar-entrega`, `cgov-elaborar-entrega` e `cgov-registro-execucao`: promovidas na 6.2 a partir da **conta**, com a nota de correção incorporada como regra no corpo e o histórico no decision-log.
+- **Registro:** decision-log §30.
+
+| Etapa | Ação | Aceite | Situação |
+|---|---|---|---|
+| 6.1 | Exportar as 26 skills CGOV/CGGE instaladas (texto atual da conta) para `local/installed-reference/_export_AAAA-MM-DD/` e comparar com as 14 fontes e com `local/installed-reference` | Divergências decididas pelo Coordenador | ✅ 07/11: 28 exportadas, 39/39 conferidas; 12 divergências decididas (D43) |
+| 6.2 | Promover as 12 skills sem fonte a `skills/<família>/`, revisando dados pessoais e eliminando caminhos absolutos (`H:\…`, `C:\…`) | `verificar_sanitizacao.py` aprovado | ⬜ (ordem 3; base: exportação da 6.1; PGD a partir da conta, D43) |
+| 6.3 | **Caminhos neutros (ADR-006)**: as skills passam a citar "pasta do processo", "pasta de trabalho do processo", "acervo normativo", "série de Notas Técnicas"; os caminhos concretos ficam no `AGENTS.md` de cada repositório | Busca por `local/analyses` e `_acervo-escritorio-virtual` nas skills = 0 | ⬜ (ordem 4) |
+| 6.4 | Nova skill **`cgov-gestao-acervo`** (operação): triagem de `00_entrada`; criação da pasta de processo a partir do modelo; preenchimento e atualização do `PROCESSO.md`; atualização dos índices; envio para `99_arquivo` de versões superadas e processos concluídos | Evals com 5 casos sintéticos | ⬜ (ordem 7) |
+| 6.5 | Descrições ≤ 950 caracteres; incorporar o eval do *branch* `claude/cgov-nt-triagem-description-loop-6x6dsc` e apagar o *branch* | — | ⬜ (ordem 5) |
+| 6.6 | D4: converter `analista-processos-sei.md` em skill `cgov-triagem-processo-sei` (ou mantê-lo) | Decisão registrada | ⬜ (ordem 2) |
+| 6.7 | Validar `ocr_windows.ps1` no Windows | Teste com PDF sem camada de texto | ⬜ (ordem 8, qualquer intervalo) |
+| 6.9 | **Modelo geral de análise de atos normativos (D34).** Base: `01_processos\SEI_02070.007589_2025-35_termos-compromisso\trabalho\Instrucoes_Gerais_CGOV_Analise_Atos_Normativos_v1.md` (06/11/2026, derivado das 10 sessões do processo de Termos de Compromisso). (a) Decidir as 6 questões da Parte B.5: profundidade da AIR (Nível 2 como padrão?), competências e legística como padrão ou obrigatórias, foco no conteúdo do ato, tempo verbal dos dispositivos propostos (conferir o Decreto nº 12.002/2024), residual 2–3 no Regime A e pasta `trabalho/`. (b) Tornar regra do pipeline o uso de `cgov-modelar-fluxo`, `cgov-gestao-riscos` e `cgov-air-arr` como subsídios obrigatórios da NT, com dispensa só por decisão registrada no `NT_ESTADO.md`: ajustar o roteiro da `cgov-nt-01` e os capítulos da `cgov-nt-03` a `07`. (c) Corrigir as 8 divergências da Parte B.4: roteiro da `nt-01`; pasta `_CGOV_NT` (com 6.3); tempo verbal `nt-03` × legística; cabeçalhos `nt-03` × `nt-07`; Quadro Consolidado na `nt-05`; 5 ajustes da `cgov-gestao-riscos`; contexto PSPEADBio nas skills analíticas; prefixos de códigos. (d) Publicar a versão consolidada como procedimento em `docs/` e modelo em `operacao/modelos/` (atualizando os caminhos, por exemplo `normative-sources` → `03_normativos`), e citá-la no Apêndice B. (e) Validar num ato normativo real (Fase 11) | Decisões B.5 registradas; evals da `nt-01` com o roteiro novo; procedimento publicado; piloto aprovado | ⬜ ((a) na ordem 2; (b)–(d) na ordem 6; (e) na Fase 11) |
+| 6.8 | Evals das skills alteradas (`skill-creator`), com números de processo SEI fictícios nas evals da `cgov-nt-01` e da `cgov-nt-03` (D38, pendência E6); *commit*; publicação; reinstalação (inclusive as três desatualizadas desde 06/10) | `--verificar` = nenhuma divergência | ⬜ (ordem 9) |
 
 ---
 
@@ -1088,12 +1114,12 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | Sincronização do Drive interpretar movimentação como exclusão + criação, ou conflitar | Média | Alto | Drive em execução e pasta offline; lotes pequenos; aguardar o sincronismo entre lotes; manifestos antes e depois |
 | Perda de arquivo durante a movimentação | Baixa | Alto | Nenhuma exclusão (ADR-014); conferência por SHA-256; CSV reversível |
 | Fichas `PROCESSO.md` com metadados errados inferidos pela IA | Média | Médio | Campos incertos com `⚠️ revisar`; revisão gradual pelo responsável |
-| Dados SEI no Git ou no plugin | Média | Alto | Separação de dados (ADR-007); `verificar_sanitizacao.py` criado no bloco 1 da Fase 5 (06/11, v0.1.1; D37/D38): roda antes de qualquer *commit* em `docs/`, `operacao/` ou `skills/`; números SEI geram aviso |
+| Dados SEI no Git ou no plugin | Média | Alto | Separação de dados (ADR-007); `verificar_sanitizacao.py` criado no bloco 1 da Fase 5 (06/11, v0.1.1; D37/D38): roda antes de qualquer *commit* em `docs/`, `operacao/` ou `skills/`; números SEI geram aviso. Na 6.1 (07/11), a `cgov-gestao-riscos` da conta tem 3 números de documento SEI (13 ocorrências, inclusive na descrição): saneamento na promoção (D43) |
 | Junções novas (`local\processos`, `normativos`, `escritorio`) ficarem sem bloqueio de edição | **Baixa** (era Média) | Alto | **Mitigado** (07/11): os bloqueios novos (5.6) foram gravados antes de qualquer junção; com a D39, a pasta CGOV também fica bloqueada pelo caminho real; teste de bloqueio no aceite |
 | Scripts Python ou Node rodados pelo Claude Code gravarem na pasta CGOV, que as regras deny não alcançam | Baixa | Alto | Só os scripts do repositório gravam na pasta CGOV, sempre com simulação, confirmação e conferência por SHA-256; `Bash(...)` com `py` pede aprovação; documentado em `docs/fluxos-de-trabalho.md` §3.1 |
 | Remover junção antiga de forma recursiva e apagar o conteúdo do Drive | Baixa | Alto | **Mitigado** (07/11): `link_acervo.py` v0.1.0 confere se o item é junção e remove só o ponteiro (`os.rmdir`); para diante de pasta real (testado); nenhum `Remove-Item -Recurse` sobre `local\` |
 | Duplicidade de skills na transição para o plugin | Alta | Médio | Desativar → excluir após uma semana |
-| Deriva fonte × instalado × espelho | **Materializado** (05/11, teste 4.8: a `cgov-nt-01` instalada grava em `CGOV_Processos/…/_CGOV_NT/`, e a fonte diz `local/analyses/`) | Alto | Até a Fase 6: tabela de tradução no `AGENTS.md` v3; Fase 6.1: comparar o instalado com a fonte e reinstalar; Fase 7: plugin + `--verificar` |
+| Deriva fonte × instalado × espelho | **Materializado** (05/11, teste 4.8: a `cgov-nt-01` instalada grava em `CGOV_Processos/…/_CGOV_NT/`, e a fonte diz `local/analyses/`) | Alto | Até a Fase 6: tabela de tradução no `AGENTS.md` v3; **6.1 concluída (07/11):** exportação conferida e divergências decididas (D43); reinstalação na 6.8; Fase 7: plugin + `--verificar` |
 | Uso por servidores sem orientação institucional sobre IA e LGPD | — | Alto | D6 antes da Fase 12 ⚠️ |
 | Dependência de uma só pessoa | Alta | Alto | Runbooks, `LEIA-ME`, guia do mantenedor |
 | Operações Git pelo shell do Cowork falharem (sem credencial do GitHub; travas `.lock` que o shell não apaga) | **Materializado** (05/11) | Médio | Verificação remota, *commit* e *push* pelo PowerShell do Coordenador, com scripts completos (regra 10 do Apêndice A) |
@@ -1166,6 +1192,8 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | D38 | Achados da primeira rodada de `verificar_sanitizacao.py`: 11 caminhos pessoais no plano e 22 números de processo SEI | Trocar por `%USERPROFILE%`; manter os números SEI como aviso, com as evals na Fase 6 | ✅ Respondida (06/11): **as duas recomendações**; aplicadas no plano v3.26 |
 | D39 | Bloquear no `.claude/settings.json` também a pasta CGOV pelo caminho real (`~/My Drive/10_Institucional/CGOV/**`), além das junções e do `.env`? | Sim | ✅ Respondida (07/11): **sim**; antecipa o bloqueio da 8.1 sem `settings.local.json` |
 | D41 | Como integrar o *branch* da Fase 5; o que fazer com `.vscode/` e com o *branch* depois do *merge*? | `--no-ff`; ignorar; manter só local | ✅ Respondida (07/11): **as três recomendações** |
+| D42 | Ordem das etapas da Fase 6 e método de exportação da 6.1 | 6.1 → 6.6 + 6.9(a) → 6.2 → 6.3 → 6.5 → 6.9(b–d) → 6.4 → 6.7 → 6.8; exportar o retrato da conta desta sessão, com conferência cruzada no PowerShell; exportar também as 2 `cgge-fgbio-*` | ✅ Respondida (07/11): **as três recomendações** |
+| D43 | Divergências da 6.1: qual texto vale | `cgov-nt`: fonte + busca da conta; `cgov-gestao-riscos`: conta saneada; `cgov-regimento-interno`: fonte; PGD (3): conta com a nota incorporada | ✅ Respondida (07/11): **as quatro recomendações** |
 | D40 | Quais ADRs viram arquivo em `docs/adr/` e quais propostos aprovar agora? | Os 14, com status; aprovar ADR-004 e ADR-007 | ✅ Respondida (07/11): **os 14**, e **ADR-004 e ADR-007 aceitos**; o ADR-011 continua proposto |
 
 ---
@@ -1204,7 +1232,8 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | 5 (bloco 6) | "Movi o plano para `docs/` e fiz o commit do bloco 5 (`<hash>`). Siga para o bloco 6 da Fase 5 (5.10): revisão do diff do *branch*, *merge* no `main`, *push* e publicação com `publicar_operacao.py`." |
 | 5 (bloco 6, publicação) | "Fiz o *merge*, o *push* e a publicação (saídas abaixo). Confira, registre a Fase 5 como concluída e me diga o que vem a seguir." |
 | 6.1 | "Siga para a Fase 6: leia a seção da Fase 6 do plano, `docs/catalogo-skills.md` e `docs/governance/pendencias.md`, e proponha a ordem das etapas (6.1 a 6.9). Comece pela 6.1: me diga como exportar o texto atual das 26 skills da conta." |
-| 6 | "Execute 6.1 e apresente as divergências entre instalado e fonte em tabela, para eu decidir." |
+| 6.1 (conferência) | "Saída da conferência cruzada: [cole aqui]. Gere o COMPARACAO.md da 6.1 e me apresente as divergências para decisão." |
+| 6.6 + 6.9(a) | "Siga para o bloco de decisões da Fase 6 (6.6 e 6.9(a)). Colo abaixo o conteúdo de `Instrucoes_Gerais_CGOV_Analise_Atos_Normativos_v1.md`: apresente a D4 e as 6 questões da Parte B.5 como perguntas de múltipla escolha." |
 | 7 | "Execute 7.1 a 7.4 e gere o zip do plugin; depois me guie em 7.5 e 7.6." |
 | 9 | "Crie os agentes da Fase 9 conforme o Apêndice D, um por vez, e valide com uma NT fictícia no projeto Operação." |
 
@@ -1214,13 +1243,13 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 
 | Fase | Status | Data | Evidência |
 |---|---|---|---|
-| 0 — Decisões | 🟨 | 06/11/2026 | Respondidas: D1–D3 e D9–D41. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001, 005, 006 e 008–011 (ADR-004 e 007 aceitos em 07/11, D40) |
+| 0 — Decisões | 🟨 | 07/11/2026 | Respondidas: D1–D3 e D9–D43. Pendentes: D4–D8 (não bloqueiam as Fases 3–5) e aprovação formal dos ADR-001, 005, 006 e 008–011 (ADR-004 e 007 aceitos em 07/11, D40) |
 | 1 — Consolidação no Windows | ✅ | 04/11/2026 | WSL: remoto → `cgov-geral`, *push* `4960e11..67957fe`; clone em `C:\Projetos\cgov-geral` (HEAD `67957fe`, `autocrlf=false`); manifesto `local/_manifesto_wsl_20261104.sha256` (490 arquivos): 63/63 em `local\` e 488/488 no Drive; junções e `.env` provisórios |
 | 2 — Arquitetura dos repositórios | ✅ | 05/11/2026 | Arranjo das Seções 5.1–5.6 aceito sem ajustes; ADR-012, 013 e 014 aprovados; D10–D16 respondidas e incorporadas ao mapa (5.5) |
 | 3 — Projetos Cowork | ✅ | 05/11/2026 | 3.B.4 ✅: `cgov-geral-v1` arquivado; *commit* `be2f493` (v3.5) conferido por `ls-remote`. 3.C ✅: inventário simplificado (D21; vínculos antigos inexistentes, nenhum na pasta CGOV). 3.B.3 ✅: memória não preservada (D20). 3.A.4 ✅: instruções corrigidas. *Commits* `6890b63` e `320007d` (conferido por `ls-remote`). Repositório privado confirmado; documentação corrigida (D19). 3.B.1–3.B.2 ✅: 4 pastas do `cgov-geral-v1` registradas; instruções preservadas (SHA-256 `ad862755…`). 3.A ✅: *commits* `8787e0a` e `de0fa54` (conferido por `ls-remote`); projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: Fase 4 |
 | 4 — Reorganização da pasta CGOV | ✅ | 06/11/2026 | 2.860 operações nos lotes a–g (todas `ok`); manifesto posterior 100% (2.833/2.833); 343 pastas vazias removidas; 74 fichas e 5 índices; projeto Operação criado e testado; projetos antigos arquivados; mapa, manifestos e registros em `90_…\manutencao\reorganizacao-2026-11\`; decision-log §28; `reorganizar_cgov.py` v1.2.2 e `gerar_indices.py` v0.1.0; *commits* `7f5a324` a `306ade5`. Resta a 4.11 (05/12/2026) |
 | 5 — Repositório de desenvolvimento | ✅ | 07/11/2026 | Seis blocos no *branch* `implantacao/fase-5` (D37), com os *commits* `115b336` (D38), `0d0c8d2`, `b6a1bd5` (D39), `d94235e`, `4ab53c1` (D40) e `ee3b239` (D41); *merge* `--no-ff` `e305404`, com *push* conferido. Publicação: referência de `docs/` no `e305404` (33/33 SHA-256), `operacao/` 12/12. Decision-log §29. Encaminhado à Fase 6: P4 (9 skills desatualizadas), P5, E6 |
-| 6 — Portfólio de skills | ⬜ | | |
+| 6 — Portfólio de skills | 🟨 | 07/11/2026 | Ordem aprovada (D42). 6.1 ✅: 28 skills exportadas para `local/installed-reference/_export_2026-11-07/` (39/39 SHA-256 contra a máquina do Coordenador); `COMPARACAO.md`; 12 divergências decididas (D43); decision-log §30 |
 | 7 — Plugin | ⬜ | | |
 | 8 — Multiplataforma / WSL | ⬜ | | |
 | 9 — Agentes | ⬜ | | |
@@ -1597,7 +1626,8 @@ cowork_projeto: ""
 | v3.30 (07/11) | *Commit* `d94235e`; blocos 4 e 5; D40 | Bloco 4 concluído (`--verificar` no Windows: 9 skills desatualizadas, `operacao/` 12/12, referência de `docs/` em `4960e11`); bloco 5: 14 ADRs em `docs/adr/` (ADR-004 e 007 aceitos), `docs/catalogo-skills.md`, `docs/README.md`, referências ao novo caminho do plano; Apêndice A com o caminho novo; *prompt* do bloco 6 |
 | v3.31 (07/11) | *Commit* `4ab53c1`; bloco 5; bloco 6 preparado; D41 | Bloco 5 concluído; revisão do diff do *branch* (sem achados); Decisão 29 no decision-log; `.vscode/` ignorado; roteiro de *merge* `--no-ff`, *push* e publicação; *prompt* da conferência da publicação |
 | v3.32 (07/11) | *Merge* `e305404`; publicação | **Fase 5 concluída**: *merge* `--no-ff` e *push*; publicação com `publicar_operacao.py` (referência de `docs/` no `e305404`, 33/33; `operacao/` 12/12); P3 resolvida; P7 nova (quarentena da publicação); `main` no cabeçalho; *prompt* da Fase 6 |
+| v3.33 (07/11) | *Commit* `44310f2` (`fix(plano)`); 6.1; D42 e D43 | **Fase 6 em andamento**: ordem das etapas (D42); 6.1 concluída (exportação de 28 skills, 39/39 conferidos, `COMPARACAO.md`, 12 divergências decididas); evidência na Seção 1.1; coluna Situação nas etapas da Fase 6; riscos de deriva e de dados SEI atualizados; decision-log §30; P4 e catálogo atualizados; *prompt* do bloco 6.6 + 6.9(a) |
 
 ---
 
-*Fim do plano v3.32. Fases 1 a 5 concluídas (Fase 5 em 07/11/2026, *merge* `e305404`). Próxima: Fase 6 (portfólio de skills), começando pela 6.1, numa sessão do projeto "Escritório CGOV — Implantação". Restam também a 4.11 (quarentena de 05/11, a partir de 05/12/2026, com lembrete agendado) e a revisão da quarentena da publicação de 07/11 (P7, a partir de 07/12/2026).*
+*Fim do plano v3.33. Fases 1 a 5 concluídas (Fase 5 em 07/11/2026, *merge* `e305404`). Fase 6 em andamento: 6.1 concluída em 07/11/2026 (D42–D43); próxima: bloco de decisões 6.6 (D4) + 6.9(a), numa sessão do projeto "Escritório CGOV — Implantação", com o conteúdo de `Instrucoes_Gerais_CGOV_Analise_Atos_Normativos_v1.md` fornecido pelo Coordenador. Restam também a 4.11 (quarentena de 05/11, a partir de 05/12/2026, com lembrete agendado) e a revisão da quarentena da publicação de 07/11 (P7, a partir de 07/12/2026).*

@@ -7,7 +7,9 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 ## Fonte de instruções
 
 - Instruções do projeto Cowork "Escritório CGOV — Operação": [`docs/system-instructions/escritorio-cgov-operacao.md`](docs/system-instructions/escritorio-cgov-operacao.md).
-- Plano de implantação (andamento e decisões D1–D35): `cgov-geral-plano-implantacao.md` (raiz).
+- Documentação: [`docs/README.md`](docs/README.md) (página inicial), [ADRs](docs/adr/README.md) e
+  [catálogo de skills](docs/catalogo-skills.md).
+- Plano de implantação (andamento e decisões): [`docs/plano-implantacao.md`](docs/plano-implantacao.md).
 - Pendências de desenvolvimento: [`docs/governance/pendencias.md`](docs/governance/pendencias.md).
 - Assistente de processos SEI: [`docs/system-instructions/analista-processos-sei.md`](docs/system-instructions/analista-processos-sei.md).
 - Registro de decisões: [`docs/governance/decision-log.md`](docs/governance/decision-log.md).

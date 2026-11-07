@@ -38,8 +38,8 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 - `operacao/`: fonte dos textos de navegação publicados na pasta CGOV (`LEIA-ME.md`, `AGENTS.md`,
   `_LEIA-ME.md`, modelos).
 - `scripts/`: `reorganizar_cgov.py` (Fase 4), `gerar_indices.py` (fichas e índices),
-  `verificar_sanitizacao.py` (antes de cada commit) e `link_acervo.py` (junções); os `.sh` do WSL
-  estão bloqueados até os substitutos da Fase 5.
+  `verificar_sanitizacao.py` (antes de cada commit), `link_acervo.py` (junções) e
+  `publicar_operacao.py` (publicação para a pasta CGOV); os `.sh` do WSL foram para `archive/scripts-wsl/`.
 - Junções `local\processos`, `local\normativos` e `local\escritorio` para a pasta CGOV, criadas por
   `scripts/link_acervo.py` a partir do `.env` (as antigas `local/analyses`, `local/normative-sources` e
   `local/acervo-drive` são removidas pelo mesmo script). A edição por elas e na pasta CGOV é bloqueada

@@ -30,7 +30,7 @@ htmlcov/
 # Configuração local (caminhos do acervo no Drive)
 .env
 
-# Pacotes gerados por scripts/publicar-operacao.sh
+# Pacotes gerados por scripts/publicar_operacao.py (dist/skills/<commit>/)
 /dist/
 
 # Configuração pessoal do Claude Code (caminhos absolutos)

@@ -45,7 +45,7 @@
 
 ## 6. Forma dos atos administrativos do ICMBio
 - Lei Complementar nº 95/1998 e Decreto nº 12.002/2024 — elaboração e redação de atos normativos
-- Portaria ICMBio nº 129, de 18/02/2020 — revisão e consolidação de atos normativos: espécies (art. 2º), PFE (arts. 5º e 7º), vigência (art. 10), documentos da proposta (art. 13); prevalece sobre a nº 271/2013 onde colidirem
+- Portaria ICMBio nº 129, de 18/02/2020 — revisão e consolidação de atos normativos: espécies (art. 2º), PFE (arts. 5º e 7º), vigência (art. 10), documentos da proposta (art. 13); prevalece sobre a nº 271/2013 onde colidirem. O art. 3º trata só da proposição de **revisão, consolidação e revogação** pelos titulares dos órgãos; não o cite como regra geral de iniciativa de ato normativo
 - Portaria ICMBio nº 271, de 27/12/2013 — elaboração e expedição de atos administrativos (competência, estrutura, redação, submissão à PFE, consulta jurídica, Anexo II); ⚠️ não revogada expressamente
 - Portaria Conjunta nº 3, de 13/05/2021 — consultas jurídicas à PFE ⚠️ (não está no acervo)
 - Manual de Redação da Presidência da República

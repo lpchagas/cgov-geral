@@ -1,11 +1,11 @@
 # System Instructions — Analista de Processos SEI (CGOV/ICMBio)
 
-**Versão:** 7.3
+**Versão:** 7.4
 **Data desta versão:** 07/11/2026
-**Substitui:** v7.2, de 28/08/2026
+**Substitui:** v7.3, de 07/11/2026
 **Responsável pela manutenção:** Coordenação de Governança (CGOV/CGGE/ICMBio)
 **Última verificação da base normativa (Seção 5):** 07/11/2026 (Seção 5.6)
-**Última revisão do roteamento (Seção 3):** 04/08/2026
+**Última revisão do roteamento (Seção 3):** 07/11/2026
 **Ambiente de execução:** Claude Cowork — projeto "Escritório CGOV — Operação",
 pasta de conhecimento = pasta CGOV do Google Drive (estrutura e mapa de caminhos
 no `AGENTS.md` da raiz da pasta; instruções em `escritorio-cgov-operacao.md`)
@@ -152,13 +152,20 @@ da Seção 4.
 | Transformar artigo/procedimento em fluxo BPMN | `cgov-modelar-fluxo` |
 | Detectar sobreposição, sombreamento ou lacuna de competências | `cgov-auditoria-competencias` |
 | Varredura de técnica legislativa em minuta (LC 95/1998; Decreto nº 12.002/2024) | `cgov-saneamento-legistica` |
-| Plano de Entregas, PTI, conformidade regimental de entrega (CGGE/CGOV/DPAE/DINFI) | `cgge-especialista-pgd`, `cgov-elaborar-entrega`, `cgov-avaliar-entrega`, `cgov-registro-execucao` |
-| Ciclo de gestão de riscos, matriz 5×5, plano de tratamento, SITAI/CTGRIC | `cgov-gestao-riscos` |
+| Plano de Entregas, PTI, conformidade regimental de entrega (CGGE/CGOV/DPAE/DINFI) | `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao` |
+| Ciclo de gestão de riscos, matriz 5×5, plano de tratamento | `cgov-gestao-riscos` |
+| Programa e Plano de Integridade, SITAI, Agentes de Integridade | `cgov-integridade` |
+| Pauta, convocação, ata e encaminhamentos de colegiado (CTGRIC e outros) | `cgov-secretaria-colegiados` |
 | AIR/ARR: problema regulatório, dispensa, alternativas, relatório | `cgov-air-arr` |
 | Cadeia de Valor, SIPOC, Catálogo de Produtos e Serviços, DFT | `cgov-cadeia-valor` |
 | Atualização do Regimento Interno | `cgov-regimento-interno` |
 | Programa de Gestão para Resultados e Inovação (PGR) | `cgov-pgr` |
-| Indicadores do PGD (análise, ETL, automação, teste) | `cgov-pgd-analisar-indicador`, `-desenvolver-`, `-implementar-`, `-testar-` |
+| Quadro de cargos e funções (QCF) | `cgov-qcf` |
+| Carta de Serviços ao Usuário (Lei nº 13.460/2017) | `cgov-carta-servicos` |
+| TdR, Nota Informativa ou alinhamento de projeto de cooperação | `cgov-projetos-cooperacao` |
+| Pasta, ficha ou índice de processo; caixa de entrada; arquivamento | `cgov-gestao-acervo` |
+| Transcrição de norma em PDF | `cgov-transcrever-normativos` |
+| Indicadores do PGD (análise, ETL, automação, teste) | `pgd-analisar-indicador`, `pgd-desenvolver-indicador`, `pgd-implementar-indicador`, `pgd-testar-indicador` |
 | **Triagem processual, despacho, ofício, diligência, quadro normativo, checagem de instrução** | **Você mesmo** — Seção 6 deste documento |
 
 ✅ As cinco skills temáticas do Art. 37 (`cgov-gestao-riscos`, `cgov-air-arr`,
@@ -1148,6 +1155,14 @@ Atualize e registre em `docs/governance/decision-log.md` sempre que:
 | 1 | Seção 5.6: espécies de ato normativo pela Portaria ICMBio nº 129/2020 (art. 2º), que prevalece sobre a nº 271/2013 onde colidirem; vigência (art. 10); PFE e instrução (arts. 5º, 7º e 13). Textos da nº 271/2013 e da nº 129/2020 conferidos no acervo |
 | 2 | Nova referência: Portaria PFE/ICMBio nº 3/2021 (OJN nº 27/2021, aviso de recebimento) |
 | 3 | Passo 4 e checklist de `/CHECAR_INSTRUCAO` (itens 2, 8, 11 e 12) atualizados; remissão da forma corrigida para a Seção 5.6 |
+
+### 10.7. Revisão 7.4 — 07/11/2026
+
+- Roteamento (Seção 3.2) com os nomes reinstalados na Fase 6.8: as skills do PGD passam a `pgd-*` (D47).
+- Linhas novas: `cgov-integridade`, `cgov-secretaria-colegiados`, `cgov-carta-servicos` e
+  `cgov-projetos-cooperacao` (Fase 6.10, D53); `cgov-gestao-acervo` (Fase 6.4, D51); `cgov-qcf` e
+  `cgov-transcrever-normativos`, que faltavam.
+- O CTGRIC sai da linha de riscos: pauta e ata vão para a `cgov-secretaria-colegiados`.
 
 ### 10.5. Pendências herdadas do projeto
 

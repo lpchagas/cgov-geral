@@ -3,7 +3,7 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Preciso abrir uma Nota Técnica sobre os resultados da nossa consulta interna a respeito da revisão da Instrução Normativa nº 14/2025, que trata das regras do PGD. Processo SEI nº 02070.007004/2026-68. Tivemos 351 respondentes. A NT vai subsidiar a decisão da Presidência e vai para a PFE se manifestar sobre a revisão da IN.",
+      "prompt": "Preciso abrir uma Nota Técnica sobre os resultados da nossa consulta interna a respeito da revisão da Instrução Normativa nº 14/2025, que trata das regras do PGD. Processo SEI nº 00000.000000/2026-00. Tivemos 351 respondentes. A NT vai subsidiar a decisão da Presidência e vai para a PFE se manifestar sobre a revisão da IN.",
       "expected_output": "Ficha de Enquadramento classificando a demanda no inciso VII do Art. 37 (operacionalização do PGD) e/ou IX (gestão de riscos, se aplicável), Tipo B (consulta interna com dados), com necessidade de cgov-nt-06 marcada como SIM (com base no destino do produto — vai para a PFE), mesmo sendo Tipo B. Cria NT_ESTADO.md com o roteiro completo.",
       "expectations": [
         "O enquadramento cita o Art. 37 da Portaria ICMBio nº 5.592/2025 com o inciso correto (VII)",
@@ -16,10 +16,10 @@
     {
       "id": 2,
       "prompt": "Quero elaborar um parecer analisando uma minuta de portaria que cria um novo comitê de sustentabilidade no ICMBio, para verificar se há sobreposição com a Coordenação de Meio Ambiente já existente.",
-      "expected_output": "Ficha de Enquadramento classificando a demanda no inciso II e/ou III do Art. 37 (Política de Governança Institucional / gestão por processos), Tipo C (governança institucional), sinalizando que cgov-nt-02 é dispensável na ausência de dados brutos e recomendando diagnóstico de sobreposição de competências antes da redação.",
+      "expected_output": "Ficha de Enquadramento classificando a demanda no inciso II e/ou III do Art. 37 (Política de Governança Institucional / gestão por processos), Tipo C (governança institucional), isolado ou combinado com o Tipo A, sinalizando que cgov-nt-02 é dispensável na ausência de dados brutos e recomendando diagnóstico de sobreposição de competências antes da redação.",
       "expectations": [
         "O enquadramento cita o Art. 37 com inciso pertinente à governança institucional",
-        "O tipo de produto é classificado como C",
+        "O tipo de produto inclui o C (isolado ou combinado com o A)",
         "cgov-nt-02 é marcada como dispensável, com justificativa (ausência de dados brutos)",
         "A skill recomenda cgov-auditoria-competencias como diagnóstico prévio pertinente ao caso de sobreposição"
       ]

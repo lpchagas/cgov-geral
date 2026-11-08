@@ -58,7 +58,8 @@ membros e assinada no SEI.
    técnicos, pedidos de registro).
 3. **Quórum:** compare os presentes com a composição do ato. No CTGRIC, os arts. 9º e 11 tratam do quórum de
    forma diferente (presença mínima de 50% e quórum de reunião por maioria absoluta): se a presença ficar entre
-   os dois, sinalize ⚠️ e não declare a reunião irregular.
+   os dois, sinalize ⚠️ e não declare a reunião irregular. Com a composição atual (11 membros), os dois limites
+   coincidem (6 membros); a diferença só aparece se a composição mudar.
 4. **Redija** pela estrutura de `references/modelo-ata.md`, que segue o conteúdo mínimo do ato (no CTGRIC,
    art. 12: data, hora e local; presentes e convidados; resumo; deliberações, proposições e recomendações
    aprovadas; votos e posicionamentos relevantes).

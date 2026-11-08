@@ -49,7 +49,12 @@ description: >
 3. **Pré-requisito de conteúdo:** os capítulos de diagnóstico e propostas
    (`cgov-nt-04` e, se aplicável, `cgov-nt-05`) devem estar concluídos — os
    achados e recomendações alimentam diretamente as respostas aos quesitos 1,
-   2, 7 e 8 abaixo.
+   2, 7 e 8 abaixo. Se o usuário pedir a redação antes disso, entregue um
+   **rascunho condicionado** (D55): responda já os quesitos que dependem só do
+   ato e do acervo (3, 4, 5 e 6, no que couber) e, nos quesitos 1, 2, 7 e 8,
+   escreva `[A PREENCHER — depende do Cap. N]` com ⚠️ no lugar da resposta,
+   sem presumir achados. Rotule o produto como rascunho; a redação final só sai
+   com os capítulos concluídos.
 4. Aplique o Padrão de Redação CGOV (`cgov-nt-03`): prosa no presente do
    indicativo, sem invenção de norma ou artigo.
 

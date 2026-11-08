@@ -83,5 +83,7 @@ da Cadeia de Valor | unidades afetadas | lacunas (⚠️).
 
 ## Fronteiras
 
-- Contratação pelo ICMBio (Lei nº 14.133/2021) e prestação de contas financeira: fora desta skill.
+- Contratação pelo ICMBio (Lei nº 14.133/2021) e prestação de contas financeira: fora desta skill. Para uma
+  contratação direta, ofereça o escopo e os produtos do TdR como insumo à área de contratações e indique a
+  `cgov-triagem-processo-sei` para a triagem do processo.
 - Nota Técnica de ato normativo: `cgov-nt-01-triagem`.

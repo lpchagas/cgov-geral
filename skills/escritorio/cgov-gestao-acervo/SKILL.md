@@ -62,7 +62,7 @@ Técnicas: apenas move, renomeia, cria pastas, fichas e índices.
    e produtos.
 4. Copie o modelo da ficha `PROCESSO.md` (modelos do Escritório) e preencha o *frontmatter*: `sei`, `apelido`,
    `titulo`, `inciso_art37` (só se o enquadramento estiver confirmado), `situacao: em-andamento`,
-   `unidade_demandante`, `aberto_em` e `atualizado_em`. Campo sem informação confirmada recebe ⚠️.
+   `unidade_demandante`, `aberto_em` e `atualizado_em`. Campo sem informação confirmada recebe ⚠️ no próprio valor (em campo de lista, `["⚠️"]`), nunca só em comentário.
 5. Ofereça rodar o MODO 4 para atualizar o índice de processos.
 
 ## MODO 3 — ATUALIZAR_FICHA

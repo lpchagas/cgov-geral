@@ -46,6 +46,9 @@ description: >
   **uniformidade**: a proposta parte do texto limpo da legística, para que não haja
   duas redações do mesmo artigo. Essa regra é do texto normativo em si, não da
   prosa analítica da NT. Não confunda os dois registros.
+  Exceções (D56): ficam no presente as fórmulas consagradas de objeto ("Esta
+  Portaria institui…"), competência ("Compete à…"), revogação ("Fica revogada…")
+  e vigência ("Esta Portaria entra em vigor…").
 - Dispositivos novos recebem numeração provisória com letra (ex.: art. 6º-A);
   prazos a calibrar pela unidade proponente ficam como "[X]"; um termo definido
   é o mesmo em todas as redações.

@@ -4,12 +4,12 @@
     {
       "id": 1,
       "prompt": "Gere a minuta de ata da reunião extraordinária do CTGRIC a partir desta transcrição resumida (dados fictícios): 'Abertura às 14h05 pela Presidente (Unidade A). Presentes: Membro 1 (Unidade B), Membro 2 (Unidade C), Membro 3 (Unidade D), Membro 4 (Unidade E), Membro 5 (Unidade F), Membro 6 (Unidade G). Item 1: o Membro 2 apresentou a proposta de cronograma do Plano de Gestão de Riscos; houve concordância geral e a Presidente declarou o cronograma aprovado. Item 2: o Membro 4 sugeriu criar um GT para riscos de integridade; ficou de trazer proposta na próxima reunião. Encerramento às 15h20.'",
-      "expected_output": "Minuta de ata do CTGRIC com o conteúdo mínimo do art. 12 da Portaria ICMBio nº 4.529/2025; cronograma registrado como deliberação aprovada; a sugestão do GT registrada como proposta, não como deliberação, com o encaminhamento para a próxima reunião; data e número da reunião como [⚠️ confirmar]; quórum comparado com os 11 membros do art. 2º, com ⚠️ sobre a diferença entre os arts. 9º e 11; lembrete de que a minuta vai aos membros pelo SEI antes da assinatura.",
+      "expected_output": "Minuta de ata do CTGRIC com o conteúdo mínimo do art. 12 da Portaria ICMBio nº 4.529/2025; cronograma registrado como deliberação aprovada; a sugestão do GT registrada como proposta, não como deliberação, com o encaminhamento para a próxima reunião; data e número da reunião como [⚠️ confirmar]; quórum comparado com os 11 membros do art. 2º, calculando os limites dos arts. 9º e 11 (com 11 membros, os dois dão 6); lembrete de que a minuta vai aos membros pelo SEI antes da assinatura.",
       "expectations": [
         "Segue o conteúdo mínimo do art. 12 da Portaria ICMBio nº 4.529/2025",
         "Registra o cronograma como deliberação aprovada e o GT como proposta",
         "Marca a data e o número da reunião como [⚠️ confirmar], sem inventá-los",
-        "Compara os presentes com a composição de 11 membros e sinaliza o quórum com ⚠️",
+        "Compara os presentes com a composição de 11 membros e confere os limites dos arts. 9º e 11",
         "Lembra que a minuta vai aos membros pelo SEI antes da assinatura (art. 12, § 1º)"
       ]
     },

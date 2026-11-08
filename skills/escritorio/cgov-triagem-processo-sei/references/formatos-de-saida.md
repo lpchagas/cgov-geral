@@ -61,6 +61,9 @@ até 5 linhas. Indicar o documento e a folha em que isso foi lido.]
 [Uma das opções: Análise Técnica (NT) / Despacho de encaminhamento /
 Restituição para diligência / Sobrestamento / Arquivamento / Declínio de
 competência — com justificativa em 2 a 3 linhas.]
+[Se o objeto for ato normativo e o encaminhamento for NT: liste os cinco subsídios obrigatórios —
+`cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `cgov-gestao-riscos` e
+`cgov-air-arr` — e `cgov-comparar-versoes` quando houver norma anterior.]
 
 **7. Lacunas e pendências desta análise**
 * [Tudo que não pôde ser verificado e o que seria necessário para verificar.]

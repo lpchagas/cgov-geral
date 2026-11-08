@@ -52,8 +52,11 @@ Verifique:
 
 **Regras do Decreto nº 12.002/2024 e Manual de Redação da Presidência da República:**
 
+- **Citação de dispositivo:** cite só o dispositivo cuja letra sustente a regra apontada; se não houver, cite a
+  regra do Manual de Redação da Presidência da República ou marque ⚠️. Não use a Portaria ICMBio nº 271/2013 para
+  regras que ela não trata.
 - **Uniformidade do tempo verbal (Decreto nº 12.002/2024, art. 11, I, "e"):** o texto usa um só tempo, o presente ou o futuro do presente do indicativo. Aponte a mistura como erro.
-- **Convenção da CGOV para a redação saneada:** futuro do presente do indicativo ("A unidade constituirá…", "O Presidente publicará o edital em 30 dias"), salvo decisão diversa registrada no `NT_ESTADO.md`. O texto limpo da Seção 3 segue essa convenção, e é dele que partem as propostas da NT.
+- **Convenção da CGOV para a redação saneada:** futuro do presente do indicativo ("A unidade constituirá…", "O Presidente publicará o edital em 30 dias"), salvo decisão diversa registrada no `NT_ESTADO.md`. **Exceções (D56):** ficam no presente as fórmulas consagradas de objeto ("Esta Portaria institui/estabelece…"), de competência ("Compete à…"), de revogação ("Fica(m) revogado(s)…") e de vigência ("Esta Portaria entra em vigor…"); elas não contam como mistura de tempos. O texto limpo da Seção 3 segue essa convenção, e é dele que partem as propostas da NT.
 - **Evitar auxiliar modal desnecessário:** "deverá constituir" → "constituirá"; "poderá" só quando houver faculdade real.
 - **Um verbo de ação por inciso:** cada inciso deve conter um único núcleo verbal (uma única ação).
 - **Sujeito explícito:** nunca usar "o mesmo", "ele", "aquele" para retomar sujeito; repetir o substantivo ou usar pronome relativo.

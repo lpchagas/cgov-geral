@@ -46,7 +46,7 @@ a Carta se apoia no Catálogo; não diga que o inciso VI menciona a Carta, porqu
    descrições; C, penalidade para atividade interna. A comparação é por palavra inteira e sem acentos.
 3. Apresente: totais (lidas, candidatas, qualificadas), distribuição por tipo e por unidade, e as limitações de
    `references/limitacoes.md`. Recomende a consulta às unidades para confirmar cada candidato.
-4. Os dois CSVs gerados (delimitador `|`) vão para a pasta de trabalho do processo; nunca para `referencias/`.
+4. Os três CSVs gerados (todas, candidatas e qualificadas; delimitador `|`) vão para a pasta de trabalho do processo; nunca para `referencias/`.
 
 ## MODO 2 — FICHA (descrição de um serviço)
 

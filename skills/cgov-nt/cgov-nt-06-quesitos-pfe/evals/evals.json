@@ -3,12 +3,14 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "NT_ESTADO.md é Tipo B (consulta interna sobre a revisão da IN 14/2025 do PGD), mas a triagem marcou cgov-nt-06 como necessária porque o parecer subsidiará a revisão da própria IN perante a PFE. Redija a análise para a PFE.",
-      "expected_output": "A skill executa normalmente mesmo sendo Tipo B, respondendo aos 8 quesitos da Portaria ICMBio nº 271/2013, sem recusar a execução apenas por não ser Tipo A.",
+      "prompt": "NT_ESTADO.md é Tipo B (consulta interna sobre a revisão da IN 14/2025 do PGD), mas a triagem marcou cgov-nt-06 como necessária porque o parecer subsidiará a revisão da própria IN perante a PFE. Redija a análise para a PFE. Os capítulos 2 a 4 ainda não foram redigidos.",
+      "expected_output": "A skill executa mesmo sendo Tipo B, sem recusar por não ser Tipo A. Como os capítulos 2 a 4 não existem, entrega um rascunho condicionado (D55): responde os quesitos que dependem só do ato e do acervo e deixa os quesitos 1, 2, 7 e 8 como [A PREENCHER — depende do Cap. N] com ⚠️, sem presumir achados.",
       "expectations": [
         "A skill não interrompe a execução alegando que só se aplica a Tipo A",
-        "Todos os 8 quesitos reais do Anexo II recebem resposta assertiva (Sim/Não/Parcialmente) com justificativa, incluindo os quesitos 2, 3, 5 e 6 (ausentes da versão anterior desta skill)",
-        "Referências aos achados dos Capítulos 2-4 são citadas quando pertinentes (ex.: exequibilidade no quesito 7, custo-benefício no quesito 8)"
+        "Apresenta os 8 quesitos reais do Anexo II, incluindo os quesitos 2, 3, 5 e 6",
+        "Responde com justificativa os quesitos que dependem só do ato e do acervo",
+        "Nos quesitos 1, 2, 7 e 8, usa [A PREENCHER — depende do Cap. N] com ⚠️, sem inventar achados",
+        "Rotula o produto como rascunho condicionado"
       ]
     },
     {

@@ -15,7 +15,7 @@
     },
     {
       "id": 2,
-      "prompt": "Tenho a planilha de uma consulta interna sobre o Integra+ com 73 respostas e 10 perguntas. Analise e proponha ajustes ao Programa e ao Plano.",
+      "prompt": "Tenho a planilha de uma consulta interna sobre o Integra+ com 73 respostas e 10 perguntas (arquivo evals/files/consulta_integra.csv, fictício). Analise e proponha ajustes ao Programa e ao Plano.",
       "expected_output": "Pede a planilha (ou a lê, se anexada), descreve a estrutura antes de analisar, calcula as frequências em código, apresenta por pergunta a tabela com contagem e percentual e pelo menos dois parágrafos de análise, aponta limites da amostra, e fecha com uma tabela de sugestões por instrumento ligada às perguntas e aos critérios do art. 12 da Portaria nº 253/2026; trata comentários abertos de forma agregada, sem identificar respondentes.",
       "expectations": [
         "Não apresenta números antes de ler a planilha",
@@ -23,6 +23,9 @@
         "Apresenta por pergunta tabela e pelo menos dois parágrafos de análise",
         "Fecha com sugestões por instrumento ligadas às perguntas",
         "Não identifica respondentes"
+      ],
+      "files": [
+        "evals/files/consulta_integra.csv"
       ]
     },
     {

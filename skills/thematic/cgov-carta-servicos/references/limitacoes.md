@@ -8,5 +8,10 @@
 5. O período analisado limita o resultado.
 6. Não há deduplicação semântica entre unidades.
 7. O nível hierárquico da unidade não é considerado.
+8. O tipo de serviço é o do primeiro grupo de termos encontrado, na ordem fixa do script (por exemplo,
+   "Atendimento ao público no centro de visitantes" sai como "Visitação / Uso Público em UC"); revise o tipo
+   das entregas que combinam temas.
+9. As entregas com pontuação 0 ou negativa ficam só no arquivo `carta_servicos_todas_<carimbo>.csv`, para
+   auditoria do corte.
 
 Por isso o resultado é uma lista de candidatos para confirmação pelas unidades.

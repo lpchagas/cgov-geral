@@ -60,10 +60,20 @@ Tente primeiro a extração direta. Considere a camada textual inadequada quando
 estiver vazia, muito menor que o conteúdo visível, fora de ordem, formada por
 códigos de glifos ou incapaz de preservar caracteres e palavras. Nesses casos:
 
-1. renderize todas as páginas, normalmente a 250–300 dpi;
+1. renderize todas as páginas, normalmente a 250–300 dpi (o `ocr_windows.ps1`
+   recebe imagens, não PDF; no Windows, por exemplo, com `pypdfium2`);
 2. execute OCR em `pt-BR`; em Windows, use
    `scripts/ocr_windows.ps1` (na pasta desta skill) sobre
-   as imagens renderizadas;
+   as imagens renderizadas, sempre pelo Windows PowerShell 5.1
+   (`powershell.exe -File …`), porque o OCR do Windows não carrega no
+   PowerShell 7; confira antes se `pt-BR` está entre os idiomas de OCR
+   instalados;
+   - erro típico do OCR do Windows (validado na Fase 6.7): o ordinal `º` vira
+     `0` e o `§` vira `s` (`Art. 1º` → `Art. 10`; `§ 2º` → `s 20`). Confira
+     todos os ordinais e parágrafos contra a imagem: `Art. 10` pode ser o
+     décimo artigo ou um `Art. 1º` mal lido;
+   - cabeçalhos e rodapés de navegador (data, endereço da página, paginação)
+     entram no OCR e não fazem parte do ato: retire-os da transcrição;
 3. mantenha a ordem das páginas e, no rascunho de trabalho, a referência de
    origem de cada trecho;
 4. inspecione visualmente tabelas, carimbos, textos tachados, notas marginais e

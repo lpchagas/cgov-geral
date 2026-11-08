@@ -45,8 +45,10 @@ etapa, em reuniões trimestrais do CTGRIC (Plano, item 4.4).
 | Ação | Unidade responsável (coordenação) | Entrega prevista | KPA (MMIP) | Prazo | Situação | Evidência | Desvio e medida proposta |
 |---|---|---|---|---|---|---|---|
 
-   Situação: concluída / em andamento / não iniciada / atrasada / sem informação. "Atrasada" é a ação com prazo
-   vencido sem a entrega.
+   Situação: concluída / informada como concluída — evidência pendente / em andamento / não iniciada /
+   atrasada / sem informação. "Concluída" exige a entrega identificada (um ato publicado no acervo normativo
+   conta como evidência). "Informada como concluída — evidência pendente": a unidade disse que entregou, mas
+   sem referência; peça a referência. "Atrasada" é a ação com prazo vencido sem a entrega.
 3. Resumo para a pauta do CTGRIC: totais por situação, ações atrasadas com a medida proposta, e pontos para
    deliberação. A pauta e a ata ficam com a `cgov-secretaria-colegiados`.
 4. Os resultados alimentam o painel integrado, que a CGOV produz e mantém (Portaria nº 253/2026, art. 11,

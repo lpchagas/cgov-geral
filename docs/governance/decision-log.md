@@ -1668,3 +1668,37 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
    marcados para confirmação.
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+## 41. Alcance dos evals da reinstalação (Fase 6.8, D54, 07/11/2026)
+
+1. **Alcance:** antes da reinstalação, rodar os evals qualitativos das 9 skills alteradas que já têm casos
+   (`cgov-nt-01-triagem`, `cgov-nt-06-quesitos-pfe`, `cgov-triagem-processo-sei`, `cgov-gestao-acervo`,
+   `cgov-saneamento-legistica`, `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e
+   `cgov-projetos-cooperacao`; 28 casos).
+2. **Execução:** pelo Claude, na sessão do projeto de implantação, com subagentes sobre as fontes do repositório
+   e o acervo normativo; quem executa um caso não o avalia.
+3. **Sem casos:** as 13 skills sem `evals.json` (8 `pgd-*`, 2 `cgge-fgbio-*`, `cgov-auditoria-competencias`,
+   `cgov-comparar-versoes`, `cgov-modelar-fluxo`) ficam na pendência E9.
+4. **Duas entregas:** 6.8a antes da reinstalação (evals, instruções do projeto Operação v1.1,
+   `analista-processos-sei.md` v7.4) e 6.8b depois ("Locais antigos" no `operacao/AGENTS.md`), porque a tabela
+   de caminhos antigos ainda serve às skills instaladas.
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+## 42. Resultado dos evals e correções antes da reinstalação (Fase 6.8a, 07/11/2026)
+
+1. **Evals (D54):** 28 casos de 9 skills, executados e avaliados por agentes diferentes: 129 de 134 expectativas
+   (96%). As 5 falhas eram de casos sem os insumos necessários, e não de respostas erradas.
+2. **D55:** a `cgov-nt-06-quesitos-pfe` entrega rascunho condicionado quando a redação é pedida antes dos
+   capítulos 2 a 4: responde os quesitos que dependem só do ato e do acervo e marca os quesitos 1, 2, 7 e 8 como
+   `[A PREENCHER — depende do Cap. N]`, com ⚠️.
+3. **D56:** a convenção do futuro do presente na redação saneada continua, com exceções: ficam no presente as
+   fórmulas de objeto, competência, revogação e vigência (`cgov-saneamento-legistica` e `cgov-nt-03`).
+4. **Correções sem decisão nova:** citação só de dispositivo que sustente a regra (legística); cinco subsídios na
+   sugestão de encaminhamento e alcance do art. 3º da Portaria nº 129/2020 (triagem); ⚠️ no valor dos campos
+   (acervo); quórum e Conselho de Governança (colegiados); situação "evidência pendente" e CSV fictício
+   (integridade); Decreto nº 9.094/2017, art. 11, §§ 3º (I a XII) e 4º, e script v0.2.0 (Carta de Serviços);
+   encaminhamento da contratação direta (cooperação); cuidados do OCR nos ordinais (transcrição).
+5. **Pendente:** E11 (tabela de dispositivos e evals mais fortes da legística, depois da C3).
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

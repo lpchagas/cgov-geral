@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Classifica entregas do PGD (exportação do PETRVS) como candidatas à Carta de Serviços ao Usuário.
 
-Versão 0.1.0 (07/11/2026). Adaptado do script da NT CGOV nº 001/2026, sem conexão com banco de dados:
+Versão 0.2.0 (07/11/2026; 0.1.0 do mesmo dia). Adaptado do script da NT CGOV nº 001/2026, sem conexão com banco de dados:
 a entrada é um CSV exportado pelo próprio usuário. Nenhuma credencial é lida ou gravada.
 
 Uso:
@@ -12,6 +12,7 @@ sigla_unidade, nome_unidade, status_pe, nome_template_entrega, descricao_templat
 qtd_registros, qtd_concluidas.
 
 Saídas (delimitador "|", UTF-8 com BOM, para abrir no Excel):
+    carta_servicos_todas_<AAAAMMDD_HHMM>.csv         todas as entregas, com pontuação e evidências (auditoria)
     carta_servicos_candidatos_<AAAAMMDD_HHMM>.csv    pontuação > 0
     carta_servicos_qualificados_<AAAAMMDD_HHMM>.csv  pontuação >= mínimo, com justificativa
 
@@ -29,7 +30,7 @@ from collections import Counter
 from datetime import datetime
 from pathlib import Path
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 COLUNAS = [
     "nome_entrega", "destinatario", "descricao_meta", "sigla_unidade", "nome_unidade", "status_pe",
@@ -178,10 +179,11 @@ def main(argv: list[str] | None = None) -> int:
     candidatos, qualificados = [], []
     for l in linhas:
         score, evid = calcular_score(l)
+        l["score"], l["evidencias"] = score, " | ".join(evid)
+        l["tipo_servico"] = classificar_tipo(l) if score > 0 else ""
+        l["justificativa"] = ""
         if score <= 0:
             continue
-        l["score"], l["evidencias"] = score, " | ".join(evid)
-        l["tipo_servico"] = classificar_tipo(l)
         l["justificativa"] = JUSTIFICATIVA_BASE if score >= a.minimo else ""
         candidatos.append(l)
         if score >= a.minimo:
@@ -189,6 +191,8 @@ def main(argv: list[str] | None = None) -> int:
 
     base = ["sigla_unidade", "nome_unidade", "tipo_servico", "nome_entrega", "descricao_meta", "destinatario",
             "nome_template_entrega", "qtd_registros", "qtd_concluidas", "score", "evidencias"]
+    gravar_csv(saida / f"carta_servicos_todas_{carimbo}.csv",
+               sorted(linhas, key=lambda x: (-x["score"], x["sigla_unidade"])), base)
     gravar_csv(saida / f"carta_servicos_candidatos_{carimbo}.csv",
                sorted(candidatos, key=lambda x: (-x["score"], x["sigla_unidade"])), base)
     gravar_csv(saida / f"carta_servicos_qualificados_{carimbo}.csv",

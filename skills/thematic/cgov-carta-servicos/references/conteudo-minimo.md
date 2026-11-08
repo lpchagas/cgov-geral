@@ -17,8 +17,18 @@
 
 Prioridades de atendimento; tempo de espera; prazo dos serviços; mecanismos de comunicação; procedimentos para
 receber e responder manifestações; etapas e estimativas de prazo; consulta ao andamento; tratamento ao usuário;
-sinalização visual; condições mínimas das unidades de atendimento (acessibilidade, limpeza, conforto). Use os
-incisos de cada norma ao citar (Lei, § 3º, I a V; Decreto, § 3º, I a X).
+sinalização visual; condições mínimas das unidades de atendimento (acessibilidade, limpeza, conforto);
+atendimento quando o sistema informatizado estiver indisponível; outras informações de interesse dos usuários.
+Use os incisos de cada norma ao citar (Lei, § 3º, I a V; Decreto, § 3º, I a XII).
+
+## Ato público de liberação — Decreto, art. 11, § 4º
+
+Quando o serviço for ato público de liberação (Lei nº 13.874/2019, art. 1º, § 6º; por exemplo, autorizações e
+licenças), a ficha inclui também: I, a listagem dos documentos, taxas, tarifas, comprovantes, pareceres e demais
+exigências, dos atos normativos que tratam do ato (inclusive os não cogentes) e dos códigos CNAE aplicáveis; II,
+o fluxo resumido de tramitação (fases, prazos, autoridades competentes e recursos); III, a aplicabilidade dos
+níveis de risco; IV, o prazo e as regras da aprovação tácita; V, o tempo médio de tramitação e demais
+estatísticas. ⚠️ A Lei nº 13.874/2019 não tem transcrição no acervo: confira o art. 1º, § 6º, na fonte oficial.
 
 ## Outras regras
 

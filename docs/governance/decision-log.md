@@ -1702,3 +1702,17 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
 5. **Pendente:** E11 (tabela de dispositivos e evals mais fortes da legística, depois da C3).
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+## 43. Encerramento da Fase 6 (08/11/2026)
+
+1. **Reinstalação:** a primeira tentativa, em 07/11, não chegou à conta (34 divergências; os nomes antigos
+   continuavam lá). Em 08/11, as 34 skills do *commit* `b863ef3` foram reinstaladas e conferidas na conta (nomes e
+   descrições); os 8 nomes antigos do PGD foram excluídos (D47); as instruções v1.1 estão no projeto Operação.
+2. **6.8b:** a tabela de caminhos antigos do `operacao/AGENTS.md` passa a "Locais antigos" (D48), e
+   `docs/fluxos-de-trabalho.md` descreve os caminhos por papel e o gerador de índices publicado.
+3. **Critério de encerramento cumprido:** `publicar_operacao.py --verificar` sem divergências antes e depois do
+   *commit* `066068b` (skills 34/34, `operacao/` 14/14, `docs/` 33/33).
+4. **Lição:** conferir a conta (lista de skills) logo depois de enviar o primeiro zip, antes do lote.
+5. **Pendências que seguem:** E9, E10, E11 e o piloto 6.9(e) (Fase 11).
+
+Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.

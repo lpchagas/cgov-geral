@@ -22,9 +22,9 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 | Pasta de processos | 01_processos/ |
 | Ferramentas do Escritório (somente executar; não editar) | 90_escritorio-virtual/ferramentas/ (gerar_indices.py) |
 
-## Caminhos antigos citados pelas skills (transição até a reinstalação da Fase 6.8)
-As skills instaladas ainda foram escritas com caminhos do repositório de desenvolvimento. Traduza sempre.
-As skills de fonte atual citam só os papéis da tabela acima; esta tabela também serve para achar o NT_ESTADO.md em locais antigos:
+## Locais antigos
+As skills citam só os papéis da tabela acima. Esta tabela serve para achar arquivos (por exemplo, o NT_ESTADO.md)
+gravados em locais anteriores à reorganização de 2026:
 
 | Caminho citado pela skill | Caminho nesta pasta |
 |---|---|

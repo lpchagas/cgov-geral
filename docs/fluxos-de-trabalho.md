@@ -127,14 +127,16 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
 - **Nota Técnica ou parecer:** sempre `cgov-nt-01-triagem`; o estado fica em
   `01_processos/<processo>/trabalho/NT_ESTADO.md`. Processo novo: pasta e ficha a partir de
   `90_escritorio-virtual/modelos/processo/PROCESSO.md`.
-- **Caminhos antigos nas skills:** até a Fase 6.3, as skills ainda citam `local/analyses/…`,
-  `CGOV_Processos/…/_CGOV_NT/` e `local/normative-sources/`; a tabela "Caminhos antigos citados pelas
-  skills" do `AGENTS.md` da pasta traduz para a estrutura nova. Se aparecer uma pasta `local/`,
-  `analyses/` ou `_CGOV_NT/` na pasta CGOV, mova o conteúdo para o lugar certo e registre uma pendência.
+- **Caminhos:** desde a reinstalação da Fase 6.8, as skills citam papéis (pasta do processo, acervo
+  normativo…), e o caminho de cada papel está na tabela "Caminhos canônicos" do `AGENTS.md` da pasta. A
+  tabela "Locais antigos" serve para achar arquivos gravados antes da reorganização. Se aparecer uma pasta
+  `local/`, `analyses/` ou `_CGOV_NT/` na pasta CGOV, mova o conteúdo para o lugar certo e registre uma
+  pendência.
 - **NT assinada:** PDF em `02_notas-tecnicas/<ano>/` (`NT_<nº>-<ano>_SEI_<nº documento>_<tema>.pdf`) e
   registro no `PROCESSO.md`.
-- **Índices:** os `_INDICE.md` são gerados por `scripts/gerar_indices.py` no desenvolvimento; a operação
-  registra "regenerar índices" em `PENDENCIAS.md`.
+- **Índices:** os `_INDICE.md` são gerados pelo gerador publicado em
+  `90_escritorio-virtual/ferramentas/gerar_indices.py` (fonte: `scripts/gerar_indices.py`), pela skill
+  `cgov-gestao-acervo` (modo ATUALIZAR_INDICES); não se editam à mão.
 - **Normas:** `03_normativos/`; para transcrever um PDF novo, `cgov-transcrever-normativos`.
 - **Problema ou melhoria:** não corrigir a skill na operação; registrar em
   `90_escritorio-virtual/manutencao/PENDENCIAS.md` (sem dados pessoais).

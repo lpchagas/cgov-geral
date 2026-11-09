@@ -1,7 +1,7 @@
 ---
 tipo: registro
 status: vigente
-atualizado_em: 2026-11-08
+atualizado_em: 2026-11-09
 relacionados: [docs/governance/decision-log-indice.md, docs/governance/rastreabilidade.md]
 ---
 
@@ -1747,3 +1747,20 @@ análise individual de erros e desatualizações, links entre os arquivos, índi
    no início da Fase 7 (pendência E12).
 
 Detalhes: [`rastreabilidade.md`](rastreabilidade.md) e plano de implantação (etapa 7.0).
+
+## 45. Início da Fase 7: ADR-005 aceito (09/11/2026)
+
+1. **Leitura:** a seção da Fase 7 foi lida pelo índice do plano (linhas 1184–1199), com o ADR-005, as pendências
+   E12–E14 e o Apêndice C (manifesto). Estado de partida: `main` sincronizado com `origin/main` no *commit*
+   `ebb6f1d` (7.0, D57); a pasta `plugins/` ainda não existe; 32 skills vão para o plugin (`cgov-nt` 7,
+   `escritorio` 2, `normativo` 4, `pgd` 8 e `thematic` 11); as 2 `cgge-fgbio-*` ficam fora (D46).
+2. **Decisão (D58):** o Coordenador aceitou o ADR-005 **como está** (plugin único `cgov-escritorio`, distribuído
+   por zip; *marketplace* GitHub só depois de testado e com sincronização automática desligada). Opções
+   descartadas: aceitar com esclarecimento adicional, dividir em dois plugins e manter "Proposto".
+3. **Edição aplicada:** `Status: Aceito` e `Data: 09/11/2026` no ADR-005; linha do `adr/README.md`; §4 do plano;
+   pendência E12 movida para "Resolvidas"; `rastreabilidade.md` atualizada.
+4. **Segue:** etapa 7.1 (`git mv` das 32 skills para `plugins/cgov-escritorio/skills/`), só depois de a lista do
+   que será movido ser mostrada e confirmada; depois, `py scripts\gerar_indices_docs.py` e
+   `py scripts\verificar_docs.py` (pendência E14).
+
+Detalhes: [`rastreabilidade.md`](rastreabilidade.md) e plano de implantação (Fase 7).

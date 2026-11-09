@@ -1,7 +1,7 @@
 ---
 tipo: indice
 status: vigente
-atualizado_em: 2026-11-07
+atualizado_em: 2026-11-09
 relacionados: [docs/governance/rastreabilidade.md, docs/plano-implantacao.md]
 ---
 
@@ -19,7 +19,7 @@ reescrito).
 | [ADR-002 — Desenvolvimento no Windows; WSL aposentado](ADR-002-desenvolvimento-no-windows.md) | Aceito | 04/11/2026 (Fase 1) |
 | [ADR-003 — Dois projetos Cowork: Implantação e Operação](ADR-003-dois-projetos-cowork.md) | Aceito | 05/11/2026 (D2) |
 | [ADR-004 — Scripts multiplataforma em Python](ADR-004-scripts-em-python.md) | Aceito | 07/11/2026 (D40) |
-| [ADR-005 — Distribuição como plugin único `cgov-escritorio`](ADR-005-plugin-unico.md) | Proposto | — (aprovação pendente na Fase 0) |
+| [ADR-005 — Distribuição como plugin único `cgov-escritorio`](ADR-005-plugin-unico.md) | Aceito | 09/11/2026 (D58; início da Fase 7) |
 | [ADR-006 — Skills neutras quanto a caminho](ADR-006-skills-neutras-quanto-a-caminho.md) | Aceito | 07/11/2026 (D48; aplicado na Fase 6.3) |
 | [ADR-007 — Separação de dados: Git só com fonte sanitizada](ADR-007-separacao-de-dados.md) | Aceito | 07/11/2026 (D40) |
 | [ADR-008 — Agentes definidos uma vez no plugin](ADR-008-agentes-no-plugin.md) | Proposto | — (aprovação pendente na Fase 0) |

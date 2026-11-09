@@ -20,7 +20,7 @@ relacionados: [docs/adr/README.md, docs/governance/decision-log.md, docs/governa
 | [ADR-002](../adr/ADR-002-desenvolvimento-no-windows.md) | Desenvolvimento no Windows; WSL aposentado | Aceito | D1 | — | Fase 1 | `archive/scripts-wsl/` |
 | [ADR-003](../adr/ADR-003-dois-projetos-cowork.md) | Dois projetos Cowork | Aceito | D2, D13 | — | Fases 2–3 | instruções dos projetos (plano, Apêndice A; `escritorio-cgov-operacao.md`) |
 | [ADR-004](../adr/ADR-004-scripts-em-python.md) | Scripts em Python | Aceito | D40 | [§29](decision-log.md#29-atualização-do-repositório-de-desenvolvimento-fase-5-do-plano-de-implantação-0607112026) | Fase 5 | `scripts/*.py` |
-| [ADR-005](../adr/ADR-005-plugin-unico.md) | Plugin único `cgov-escritorio` | Proposto | — | — | **Fase 7** | `plugins/` (a criar) |
+| [ADR-005](../adr/ADR-005-plugin-unico.md) | Plugin único `cgov-escritorio` | Aceito | D58 | [§45](decision-log.md#45-início-da-fase-7-adr-005-aceito-09112026) | **Fase 7** | `plugins/` (a criar na 7.1) |
 | [ADR-006](../adr/ADR-006-skills-neutras-quanto-a-caminho.md) | Skills neutras quanto a caminho | Aceito | D48 | [§35](decision-log.md#35-caminhos-neutros-nas-skills-fase-63-07112026) | Fase 6.3 | `AGENTS.md`, `operacao/AGENTS.md`, `skills/` |
 | [ADR-007](../adr/ADR-007-separacao-de-dados.md) | Separação de dados | Aceito | D3, D39, D40 | [§29](decision-log.md#29-atualização-do-repositório-de-desenvolvimento-fase-5-do-plano-de-implantação-0607112026) | Fase 5 | `.gitignore`, `verificar_sanitizacao.py`, `.claude/settings.json` |
 | [ADR-008](../adr/ADR-008-agentes-no-plugin.md) | Agentes no plugin | Proposto | — | — | Fase 9 | — |
@@ -76,4 +76,4 @@ Em 09/11/2026 (D57) o Coordenador confirmou a aceitação dos ADR-001, ADR-009 e
 | ADR-009 | Cofre de desenvolvimento em uso (`.obsidian/` no repositório, ignorado pelo Git, D18) | O cofre de operação segue opcional (Fase 8): aceitar registrando isso |
 | ADR-011 | `verificar_sanitizacao.py` e `publicar_operacao.py --verificar` em uso; evals executados na 6.8 (129 de 134) | Só 14 das 34 skills têm evals (pendência E9): aceitar o princípio, mantendo a E9 |
 
-**Edição aplicada, por ADR:** `- **Status:** Aceito`; `- **Data:** 09/11/2026 (D57; em vigor desde <fase>)`; frontmatter `status: aceito`; linha do [`adr/README.md`](../adr/README.md); linha do §4 do plano. O **ADR-005** continua proposto e deve ser decidido no início da Fase 7 (pendência E12).
+**Edição aplicada, por ADR:** `- **Status:** Aceito`; `- **Data:** 09/11/2026 (D57; em vigor desde <fase>)`; frontmatter `status: aceito`; linha do [`adr/README.md`](../adr/README.md); linha do §4 do plano. O **ADR-005** foi aceito em 09/11/2026, no início da Fase 7 (D58; pendência E12 resolvida), com a mesma edição (Status e Data).

@@ -1,14 +1,14 @@
 ---
 tipo: decisao
-status: proposto
-atualizado_em: 2026-11-07
+status: aceito
+atualizado_em: 2026-11-09
 relacionados: [docs/plano-implantacao.md, docs/catalogo-skills.md]
 ---
 
 # ADR-005 — Distribuição como plugin único `cgov-escritorio`
 
-- **Status:** Proposto
-- **Data:** — (aprovação pendente na Fase 0)
+- **Status:** Aceito
+- **Data:** 09/11/2026 (D58; decidido no início da Fase 7)
 
 ## Contexto
 

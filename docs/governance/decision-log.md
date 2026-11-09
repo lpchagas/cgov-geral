@@ -1807,3 +1807,24 @@ Detalhes: plano de implantação (Fase 7, etapa 7.1).
    local do plugin sincronizado usado pelo `--verificar`).
 
 Detalhes: plano de implantação (Fase 7, etapas 7.2 e 7.3).
+
+## 48. Etapas 7.4 e 7.5: validação, publicação e envio do plugin 0.1.0 (09/11/2026)
+
+1. **7.4:** `claude plugin validate` retornou "Validation passed". Os avisos `LICENSE_MISSING` e `ICON_MISSING` são de
+   submissão a diretório público e não se aplicam; a licença é decisão jurídica do Coordenador e ficou fora.
+2. **7.5, publicação:** `py scripts\publicar_operacao.py --publicar --executar` no HEAD `c58a940`. Zip
+   `dist\cgov-escritorio-0.1.0.zip`, SHA-256 `13a402394d88ed5a6c60c6c04e8a9e176e163b5d630924c156607f23f5ca5075`,
+   178.045 bytes. Publicados na pasta CGOV, ambos conferidos por SHA-256: `operacao\AGENTS.md` (versão anterior em
+   `99_arquivo\_a-excluir_2026-11-09\publicacao_c58a940\`) e a referência de `docs\` (39 arquivos). Nada foi excluído.
+3. **7.5, envio e testes:** zip enviado com sucesso em Customize → Plugins → Add → Upload plugin; testes 1 a 6
+   aprovados no projeto "Escritório CGOV — Operação".
+4. **`--verificar` depois da publicação:** "sem divergências" (34/34 skills, 14/14 `operacao\`, 39/39 `docs\`). Seção
+   1b com [AVISO]: o plugin não está sincronizado no Claude Code desta máquina (nenhum `plugin.json` com `name`
+   `cgov-escritorio` em `~\.claude\plugins`; estrutura real: `synced\<bucket>\<plugin>\.claude-plugin\plugin.json`; há
+   gerações duplicadas, como `design` e `design~g2`).
+5. **Decisão (D60):** manter a E16 aberta e reescrita. A paridade fica provada pelo SHA-256 do zip (`.sha256` com o
+   *commit*) e pela versão 0.1.0 em Customize. `verificar_plugin()` não muda até o plugin aparecer localmente; então,
+   avaliar escolher o maior `~gN` em vez de `sorted(achados)[0]` (`publicar_operacao.py`, linha ~300).
+6. **Pendência nova:** E17 (gerações antigas em `dist\skills\<commit>\` viram candidatas à quarentena depois da 7.6).
+
+Detalhes: plano de implantação (Fase 7, etapas 7.4 e 7.5).

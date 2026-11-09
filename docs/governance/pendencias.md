@@ -27,6 +27,8 @@ relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
 | E10 | `qa_transcription.py`: checagem automática dos ordinais e do `§` mal lidos pelo OCR (`1º` → `10`, `§` → `s`), achado da 6.7 | Evolução da `cgov-transcrever-normativos` | |
 | E11 | `cgov-saneamento-legistica`: tabela "regra → dispositivo conferido" (Decreto nº 12.002/2024, LC nº 95/1998 e Portaria ICMBio nº 271/2013, Anexo I) e evals com verificações específicas no lugar das genéricas, achado dos evals da 6.8 (D54) | Depois da transcrição das duas normas no acervo (C3) | |
 | E13 | Espelho `.agents/skills/` (Antigravity) não existe nesta máquina e cobria 13 skills; decidir entre regerar para as 34 fontes ou aposentar a regra do `CONTRIBUTING.md` | Antes de usar a Antigravity; depois da Fase 7 (novos caminhos) | [`multiplatform.md`](../multiplatform.md) §2 |
+| E15 | Avaliar migrar os 4 comandos de `commands/` para skills (a documentação oficial chama `commands/` de formato antigo; o nome do comando não muda) | Depois da 7.6, com o plugin em uso | Exigiria catálogo, evals e ajuste do verificador (36 skills); ver decision-log §47 |
+| E16 | Confirmar o local do plugin sincronizado (`~/.claude/plugins/synced/…`) e a estrutura do zip aceita no envio; ajustar `verificar_plugin()` do `publicar_operacao.py` | Etapa 7.5 (primeiro envio) | Até lá o `--verificar` imprime `[AVISO]` sem contar divergência |
 
 ## Em aberto — conteúdo da pasta CGOV (revisão gradual pela operação)
 

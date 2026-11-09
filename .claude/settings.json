@@ -12,6 +12,9 @@
       "Edit(/.env)"
     ]
   },
+  "enabledPlugins": {
+    "cgov-escritorio@synced": false
+  },
   "skillOverrides": {
     "cgge-fgbio-apresentacao": "user-invocable-only",
     "cgge-fgbio-plano-aula": "user-invocable-only",

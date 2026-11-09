@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 """publicar_operacao.py — publica o commit atual (HEAD) do cgov-geral para a operação.
 
-Versão 0.1.0 (07/11/2026; Fase 5, bloco 4, etapa 5.3 do plano de implantação; substitui
-scripts/publicar-operacao.sh, do WSL e da estrutura anterior à Fase 4).
+Versão 0.3.0 (09/11/2026; Fase 7, etapa 7.3). A 0.1.0 (07/11/2026; Fase 5, etapa 5.3) substituiu
+scripts/publicar-operacao.sh, do WSL e da estrutura anterior à Fase 4. Desde a 0.3.0 as 32 skills do plugin
+ficam em plugins/cgov-escritorio/skills/ (7.1) e o script gera o zip do plugin; as 2 cgge-fgbio-* seguem em skills/.
 
 Modos
   --verificar            somente leitura:
-                           1. skills instaladas na conta (~/.claude/skills/synced) x fonte (HEAD);
+                           1. skills instaladas na conta (~/.claude/skills/synced) x fonte (HEAD: plugin + skills/);
+                           1b. plugin cgov-escritorio instalado na conta (~/.claude/plugins/synced) x fonte (HEAD);
                            2. operacao/ (HEAD) x pasta CGOV, por SHA-256 (etapa 5.5);
                            3. docs/ (HEAD) x 90_escritorio-virtual/referencia/docs (pendência P3).
   --publicar             simulação da publicação (nada é gravado):
-                           a. pacotes das skills em dist/skills/<commit>/ (para Customize -> Skills);
-                           b. operacao/ -> raiz da pasta CGOV (só o que difere);
-                           c. docs/ -> 90_escritorio-virtual/referencia/docs + LEIA-ME.md.
+                           a. zip do plugin em dist/cgov-escritorio-<versão>.zip (Customize -> Plugins -> Upload);
+                           b. pacotes das skills avulsas (skills/cgge-fgbio) em dist/skills/<commit>/;
+                           c. operacao/ -> raiz da pasta CGOV (só o que difere);
+                           d. docs/ -> 90_escritorio-virtual/referencia/docs + LEIA-ME.md.
   --publicar --executar  grava. O que for substituído na pasta CGOV vai antes para
                          99_arquivo/_a-excluir_<data>/publicacao_<commit>/ (nada é excluído);
                          depois, confere por SHA-256 tudo o que foi gravado.
 
-Publica só o que está em commit: alterações pendentes em skills/, docs/ ou operacao/ bloqueiam.
+Publica só o que está em commit: alterações pendentes em skills/, plugins/, docs/ ou operacao/ bloqueiam.
+Nada é excluído: zips antigos em dist/ só são listados (o runbook manda manter os três mais recentes).
 Pastas: CGOV_RAIZ e CGOV_ESCRITORIO no .env (CGOV_ESCRITORIO padrão: CGOV_RAIZ/90_escritorio-virtual).
 Uso (Windows, na raiz do repositório):  py scripts\\publicar_operacao.py --verificar
 Saída: 0 = ok (ou nada divergente); 1 = divergências ou [PARE]; 2 = erro.
@@ -37,10 +41,17 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.2.0"
+VERSAO = "0.3.0"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
+PASTA_PLUGIN_SYNC = Path.home() / ".claude" / "plugins" / "synced"
+PLUGIN = "plugins/cgov-escritorio"
+PLUGIN_NOME = "cgov-escritorio"
+MANIFESTO = f"{PLUGIN}/.claude-plugin/plugin.json"
+FONTES_SKILLS = (f"{PLUGIN}/skills/", "skills/")  # plugin (32) e fora do plugin (cgge-fgbio)
+MAX_DESCRICAO = 1024  # limite do Customize -> Skills
+DIST = REPO / "dist"  # pacotes gerados (ignorado pelo Git)
 
 
 class Pare(Exception):
@@ -62,6 +73,11 @@ def git(*args: str) -> str:
 def arquivos_head(prefixo: str) -> list[str]:
     nomes = git("ls-tree", "-r", "-z", "--name-only", "HEAD", "--", prefixo).split("\0")
     return sorted(n for n in nomes if n)
+
+
+def arquivos_skills() -> list[str]:
+    """Arquivos do HEAD de todas as fontes de skills (plugin e skills/)."""
+    return sorted(f for raiz in FONTES_SKILLS for f in arquivos_head(raiz))
 
 
 def blob(caminho: str) -> bytes:
@@ -126,13 +142,13 @@ def _partes(texto: str):
 
 
 def verificar_skills() -> int:
-    print("== 1. Skills instaladas na conta x fonte (HEAD)")
+    print("== 1. Skills instaladas na conta x fonte (HEAD: plugin + skills/)")
     if not PASTA_SYNC.is_dir() or not any(PASTA_SYNC.iterdir()):
         print(f"  [AVISO] {PASTA_SYNC} não encontrado: abra o Claude Code uma vez com a conta conectada")
         return 0
     sincs = sorted(p for p in PASTA_SYNC.iterdir() if p.is_dir())
     divergentes = []
-    for f in arquivos_head("skills/"):
+    for f in arquivos_skills():
         if not f.endswith("/SKILL.md") or "-workspace/" in f:
             continue
         nome = f.split("/")[-2]
@@ -148,6 +164,162 @@ def verificar_skills() -> int:
         print(f"  {estado:14} {nome}")
     print(f"  Reinstalar no Claude: {', '.join(divergentes) if divergentes else 'nenhuma'}")
     return len(divergentes)
+
+
+# ---------------------------------------------------------------- plugin
+def _meta(texto: str) -> dict[str, str]:
+    """name e description do frontmatter (com yaml, se houver; senão, leitura simples)."""
+    m = re.match(r"---\n(.*?)\n---\n", texto.replace("\r\n", "\n"), re.S)
+    if not m:
+        return {}
+    try:
+        import yaml  # opcional
+        d = yaml.safe_load(m.group(1))
+        if isinstance(d, dict):
+            return {k: " ".join(str(d.get(k) or "").split()) for k in ("name", "description")}
+    except Exception:
+        pass
+    saida: dict[str, str] = {}
+    linhas = m.group(1).splitlines()
+    for i, l in enumerate(linhas):
+        for k in ("name", "description"):
+            if l.startswith(k + ":"):
+                v = l[len(k) + 1:].strip()
+                if v in (">", "|", ">-", "|-", ">+", "|+"):
+                    bloco = []
+                    for l2 in linhas[i + 1:]:
+                        if l2[:1] in (" ", "\t") or not l2.strip():
+                            bloco.append(l2.strip())
+                        else:
+                            break
+                    v = " ".join(x for x in bloco if x)
+                saida[k] = " ".join(v.strip("\"'").split())
+    return saida
+
+
+def manifesto_plugin() -> dict:
+    import json
+    try:
+        return json.loads(blob(MANIFESTO).decode("utf-8"))
+    except Pare:
+        raise Pare(f"{MANIFESTO} não está no HEAD (a etapa 7.1 precisa estar em commit)")
+    except ValueError as e:
+        raise Pare(f"{MANIFESTO} não é um JSON válido: {e}")
+
+
+def validar_plugin(man: dict) -> list[str]:
+    erros = []
+    if man.get("name") != PLUGIN_NOME:
+        erros.append(f"plugin.json: name deve ser {PLUGIN_NOME!r} (é {man.get('name')!r})")
+    v = str(man.get("version") or "")
+    if not re.fullmatch(r"\d+\.\d+\.\d+(?:[-+][0-9A-Za-z.-]+)?", v):
+        erros.append(f"plugin.json: version ausente ou fora do padrão X.Y.Z (é {v!r})")
+    skills = [f for f in arquivos_head(f"{PLUGIN}/skills/") if f.endswith("/SKILL.md") and f.count("/") == 4]
+    if not skills:
+        erros.append("nenhuma skill em plugins/cgov-escritorio/skills/")
+    for f in skills:
+        pasta = f.split("/")[-2]
+        meta = _meta(blob(f).decode("utf-8", "replace"))
+        if meta.get("name") != pasta:
+            erros.append(f"{f}: name do frontmatter ({meta.get('name')!r}) difere da pasta")
+        d = len(meta.get("description", ""))
+        if d == 0 or d > MAX_DESCRICAO:
+            erros.append(f"{f}: descrição com {d} caracteres (limite {MAX_DESCRICAO})")
+    return erros
+
+
+def arquivos_do_plugin() -> list[tuple[str, str]]:
+    """(caminho no HEAD, caminho no zip). Fora: evals/ e pastas *-workspace."""
+    saida = []
+    for f in arquivos_head(f"{PLUGIN}/"):
+        rel = f[len(PLUGIN) + 1:]
+        partes = rel.split("/")
+        if "evals" in partes[:-1] or any(x.endswith("-workspace") for x in partes[:-1]):
+            continue
+        saida.append((f, rel))
+    return saida
+
+
+def zip_plugin(executar: bool) -> int:
+    man = manifesto_plugin()
+    erros = validar_plugin(man)
+    if erros:
+        raise Pare("plugin inválido:\n  " + "\n  ".join(erros))
+    versao = man["version"]
+    arqs = arquivos_do_plugin()
+    destino = DIST / f"{PLUGIN_NOME}-{versao}.zip"
+    n_skills = sum(1 for _, r in arqs if r.startswith("skills/") and r.endswith("/SKILL.md") and r.count("/") == 2)
+    n_cmds = sum(1 for _, r in arqs if r.startswith("commands/"))
+    print(f"  plugin {PLUGIN_NOME} {versao}: {n_skills} skill(s), {n_cmds} comando(s), {len(arqs)} arquivo(s) (sem evals/)")
+    print(f"  destino: {destino}")
+    if destino.exists():
+        if executar:
+            raise Pare(f"{destino.name} já existe: aumente a version em {MANIFESTO}, faça o commit e publique de novo")
+        print("  [AVISO] já existe; a execução vai parar até a version aumentar")
+    if executar:
+        data = git("log", "-1", "--format=%cd", "--date=format:%Y,%m,%d,%H,%M,%S").strip()
+        dt_zip = tuple(int(x) for x in data.split(","))
+        buf = io.BytesIO()
+        with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
+            for f, rel in sorted(arqs, key=lambda x: x[1]):
+                zi = zipfile.ZipInfo(rel, date_time=dt_zip)
+                zi.compress_type = zipfile.ZIP_DEFLATED
+                zi.external_attr = 0o644 << 16
+                z.writestr(zi, blob(f))
+        destino.parent.mkdir(parents=True, exist_ok=True)
+        destino.write_bytes(buf.getvalue())
+        h = sha(buf.getvalue())
+        destino.with_name(destino.name + ".sha256").write_text(
+            f"{h}  {destino.name}\ncommit {commit_atual()[0]}\n", encoding="utf-8")
+        print(f"  gravado: {destino.name} ({len(buf.getvalue())} bytes); SHA-256 {h[:16]}…")
+    antigos = sorted(destino.parent.glob(f"{PLUGIN_NOME}-*.zip"), key=lambda p: p.stat().st_mtime, reverse=True)[3:] \
+        if destino.parent.is_dir() else []
+    if antigos:
+        print(f"  [AVISO] {len(antigos)} zip(s) além dos 3 mais recentes em dist/ (o script não apaga): "
+              + ", ".join(a.name for a in antigos))
+    return n_skills
+
+
+def verificar_plugin() -> int:
+    print("\n== 1b. Plugin instalado na conta x fonte (HEAD)")
+    man = manifesto_plugin()
+    achados = []
+    if PASTA_PLUGIN_SYNC.is_dir():
+        for padrao in (".claude-plugin/plugin.json", "*/.claude-plugin/plugin.json", "*/*/.claude-plugin/plugin.json"):
+            for m in PASTA_PLUGIN_SYNC.glob(padrao):
+                try:
+                    import json
+                    if json.loads(m.read_text(encoding="utf-8")).get("name") == PLUGIN_NOME:
+                        achados.append(m.parent.parent)
+                except (OSError, ValueError):
+                    continue
+    if not achados:
+        print(f"  [AVISO] plugin {PLUGIN_NOME} não encontrado em {PASTA_PLUGIN_SYNC} (ainda não enviado na 7.5, "
+              "ou sincronização desligada); local exato do plugin sincronizado a confirmar após o primeiro envio")
+        return 0
+    raiz = sorted(achados)[0]
+    inst = json_versao(raiz / ".claude-plugin" / "plugin.json")
+    print(f"  instalado: {inst or '?'} em {raiz}; fonte (HEAD): {man.get('version')}")
+    divergentes = [] if inst == man.get("version") else [f"version ({inst} x {man.get('version')})"]
+    for f in arquivos_head(f"{PLUGIN}/"):
+        if "/evals/" in f or "-workspace/" in f:
+            continue
+        rel = f[len(PLUGIN) + 1:]
+        alvo = raiz / rel
+        if not alvo.is_file() or sha_arquivo(alvo) != sha(blob(f)):
+            divergentes.append(rel)
+    for d in divergentes[:20]:
+        print(f"  DIVERGE  {d}")
+    print(f"  {'sem divergências' if not divergentes else f'{len(divergentes)} divergência(s)'}")
+    return len(divergentes)
+
+
+def json_versao(caminho: Path) -> str | None:
+    import json
+    try:
+        return json.loads(caminho.read_text(encoding="utf-8")).get("version")
+    except (OSError, ValueError):
+        return None
 
 
 # ---------------------------------------------------------------- 2. operacao/
@@ -257,9 +429,9 @@ def quarentenar(origem: Path, quarentena: Path, rel: str, executar: bool, log: l
 def publicar(executar: bool) -> int:
     env = ler_env()
     raiz, escr = pastas(env)
-    pend = git("status", "--porcelain", "--", "skills", "docs", "operacao").strip()
+    pend = git("status", "--porcelain", "--", "skills", "plugins", "docs", "operacao").strip()
     if pend:
-        raise Pare("há alterações sem commit em skills/, docs/ ou operacao/: faça o commit antes de publicar")
+        raise Pare("há alterações sem commit em skills/, plugins/, docs/ ou operacao/: faça o commit antes de publicar")
     commit, data = commit_atual()
     hoje = dt.date.today().isoformat()
     quarentena = raiz / "99_arquivo" / f"_a-excluir_{hoje}" / f"publicacao_{commit}"
@@ -268,10 +440,13 @@ def publicar(executar: bool) -> int:
     gravados: list[tuple[Path, bytes]] = []
     log: list[str] = []
 
-    print("\n== a. Pacotes das skills")
-    zips_skills(REPO / "dist" / "skills" / commit, executar)
+    print("\n== a. Zip do plugin (Customize -> Plugins -> Upload plugin)")
+    zip_plugin(executar)
 
-    print("\n== b. operacao/ -> pasta CGOV")
+    print("\n== b. Pacotes das skills avulsas (skills/: cgge-fgbio)")
+    zips_skills(DIST / "skills" / commit, executar)
+
+    print("\n== c. operacao/ -> pasta CGOV")
     for rel, destino, estado, dados in plano_operacao(raiz):
         if estado == "igual":
             continue
@@ -281,7 +456,7 @@ def publicar(executar: bool) -> int:
         gravados.append((destino, dados))
     print("\n".join(log) if log else "  nada a publicar (tudo igual)")
 
-    print("\n== c. docs/ -> referência")
+    print("\n== d. docs/ -> referência")
     ref, docs_ref, head, estados, sobrando, commit_pub = plano_referencia(escr)
     muda = sobrando or any(e != "igual" for e in estados.values())
     if not muda:
@@ -316,7 +491,9 @@ def publicar(executar: bool) -> int:
     for d in erros:
         print(f"  ERRO  {d}")
     print(f"  {len(gravados) - len(erros)}/{len(gravados)} conferidos")
-    print("\nPara cada skill a reinstalar: Claude -> Customize -> Skills -> enviar "
+    print("\nPlugin: antes do envio, rode `claude plugin validate .\\plugins\\cgov-escritorio`; depois, Claude -> "
+          "Customize -> Plugins -> Add -> Upload plugin -> dist\\cgov-escritorio-<versão>.zip; depois, --verificar.")
+    print("Skills avulsas (cgge-fgbio): Customize -> Skills -> enviar "
           f"dist\\skills\\{commit}\\<skill>.zip (substituir); depois, --verificar.")
     return 1 if erros else 0
 
@@ -342,7 +519,7 @@ def main(argv: list[str] | None = None) -> int:
             return publicar(a.executar)
         env = ler_env()
         raiz, escr = pastas(env)
-        n = verificar_skills() + verificar_operacao(raiz) + verificar_referencia(escr)
+        n = verificar_skills() + verificar_plugin() + verificar_operacao(raiz) + verificar_referencia(escr)
         print(f"\nResultado: {'sem divergências' if not n else f'{n} divergência(s) — ver acima'}")
         return 0 if not n else 1
     except Pare as e:

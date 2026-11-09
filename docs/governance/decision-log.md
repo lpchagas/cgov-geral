@@ -1783,3 +1783,27 @@ Detalhes: [`rastreabilidade.md`](rastreabilidade.md) e plano de implantação (F
    antes de adaptá-lo para gerar o zip do plugin (7.3). Pendência E14 resolvida.
 
 Detalhes: plano de implantação (Fase 7, etapa 7.1).
+
+## 47. Etapas 7.2 e 7.3: comandos, publicação do plugin e desligamento do plugin sincronizado (09/11/2026)
+
+1. **Respostas do Coordenador (D59):** comandos como `commands/` e invólucros finos da skill `cgov-gestao-acervo`;
+   exceção na obrigação 3 do `operacao/AGENTS.md` para o `/registrar-pendencia`; gravar 7.2 e 7.3 sem *commit*.
+2. **7.2:** `plugins/cgov-escritorio/commands/` com `novo-processo`, `triar-entrada`, `atualizar-indices` e
+   `registrar-pendencia` (frontmatter com `description`, `argument-hint` e `disable-model-invocation`; as regras ficam
+   na skill). `operacao/AGENTS.md`: obrigação 3 com a exceção (b), que só permite acrescentar entradas ao fim de
+   `90_escritorio-virtual/manutencao/PENDENCIAS.md`, e seção "Comandos do plugin". Chega à pasta CGOV na próxima
+   publicação. A documentação oficial classifica `commands/` como formato antigo (skills o substituem; o nome
+   `/<plugin>:<nome>` é o mesmo): mantido para não mexer na contagem de 34 skills, no catálogo e nos evals (E15).
+3. **7.3:** `scripts/publicar_operacao.py` v0.3.0: lê o plugin e `skills/`; gera `dist/cgov-escritorio-<versão>.zip`
+   (+ `.sha256` com o commit), sem `evals/`, com datas fixas (mesmo commit, mesmo hash); valida `plugin.json` (`name`,
+   `version`) e cada skill (`name` igual à pasta, descrição ≤ 1.024 caracteres); para se a versão já existir; avisa
+   dos zips além dos 3 mais recentes sem apagar; o bloqueio por alteração sem *commit* inclui `plugins/`; `--verificar`
+   compara o plugin instalado (aviso até o primeiro envio). Teste contra o HEAD `70200ae`, numa pasta temporária:
+   32 skills, 48 arquivos, hash repetível, segunda execução com a mesma versão parou.
+4. **`.claude/settings.json`:** `enabledPlugins` com `"cgov-escritorio@synced": false` (formato `<nome>@synced`
+   confirmado na documentação de carregamento de plugins). O teste local com `claude --plugin-dir` carrega como
+   `@inline` e não é afetado.
+5. **Pendências novas:** E15 (avaliar migrar `commands/` para skills) e E16 (confirmar, depois do primeiro envio, o
+   local do plugin sincronizado usado pelo `--verificar`).
+
+Detalhes: plano de implantação (Fase 7, etapas 7.2 e 7.3).

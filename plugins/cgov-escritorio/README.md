@@ -17,12 +17,24 @@ teste da etapa 7.6 do plano de implantação).
 | PGD (8) | `pgd-analisar-indicador`, `pgd-avaliar-entrega`, `pgd-desenvolver-indicador`, `pgd-elaborar-entrega`, `pgd-especialista`, `pgd-implementar-indicador`, `pgd-registro-execucao`, `pgd-testar-indicador` |
 | Temáticas (11) | `cgov-air-arr`, `cgov-cadeia-valor`, `cgov-carta-servicos`, `cgov-gestao-riscos`, `cgov-integridade`, `cgov-pgr`, `cgov-projetos-cooperacao`, `cgov-qcf`, `cgov-regimento-interno`, `cgov-secretaria-colegiados`, `cgov-transcrever-normativos` |
 
+## Comandos (`commands/`)
+
+Invólucros finos sobre a skill `cgov-gestao-acervo` (as regras ficam na skill):
+
+| Comando | O que faz |
+|---|---|
+| `/cgov-escritorio:novo-processo <nº SEI> <apelido>` | Cria a pasta do processo, as subpastas e a ficha `PROCESSO.md` (modo NOVO_PROCESSO) |
+| `/cgov-escritorio:triar-entrada [escopo]` | Propõe destino e nome padronizado para `00_entrada` (modo TRIAR_ENTRADA) |
+| `/cgov-escritorio:atualizar-indices [--fichas]` | Regenera os `_INDICE.md` com o gerador publicado (modo ATUALIZAR_INDICES) |
+| `/cgov-escritorio:registrar-pendencia <skill ou doc — o que aconteceu>` | Acrescenta uma entrada ao `PENDENCIAS.md` (exceção b da obrigação 3 do `AGENTS.md` da operação) |
+
 Ficam **fora** do plugin as 2 skills da Formação CGGE (`cgge-fgbio-apresentacao`, `cgge-fgbio-plano-aula`), em
-`skills/cgge-fgbio/` na raiz do repositório (D46). Comandos (etapa 7.2) e agentes (Fase 9) serão acrescentados aqui.
+`skills/cgge-fgbio/` na raiz do repositório (D46). Agentes (Fase 9) serão acrescentados aqui.
 
 ## Instalação (resumo; roteiro completo na etapa 7.5 do plano)
 
-1. Gerar o zip com `py scripts\publicar_operacao.py` (etapa 7.3; ainda não disponível nesta versão do script).
+1. Validar com `claude plugin validate .\plugins\cgov-escritorio`, fazer o commit e gerar o zip com
+   `py scripts\publicar_operacao.py --publicar --executar` (grava `dist\cgov-escritorio-<versão>.zip` e o `.sha256`).
 2. Em Claude: **Customize → Plugins → Add → Upload plugin**, enviando `dist\cgov-escritorio-<versão>.zip`.
 3. Testar no projeto "Escritório CGOV — Operação" e conferir com `py scripts\publicar_operacao.py --verificar`.
 

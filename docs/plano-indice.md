@@ -7,7 +7,7 @@ relacionados: [docs/plano-implantacao.md, docs/INDICE.md, docs/governance/rastre
 
 # Índice do plano de implantação
 
-> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`plano-implantacao.md`](plano-implantacao.md) (1620 linhas, 55 cabeçalhos). **Não edite à mão.**
+> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`plano-implantacao.md`](plano-implantacao.md) (1624 linhas, 55 cabeçalhos). **Não edite à mão.**
 > O plano tem mais de 1.500 linhas e 240 KB: **não o leia inteiro**. Abra esta lista, escolha a seção e leia só ela (por exemplo, com `Read` e `offset`/`limit` na linha indicada, ou `grep`).
 
 - [Sumário executivo](plano-implantacao.md#sumário-executivo) — linha 24
@@ -46,22 +46,22 @@ relacionados: [docs/plano-implantacao.md, docs/INDICE.md, docs/governance/rastre
   - [Fase 5 — Atualização do repositório de desenvolvimento — ✅ concluída (07/11/2026)](plano-implantacao.md#fase-5--atualização-do-repositório-de-desenvolvimento---concluída-07112026) — linha 857
   - [Fase 6 — Portfólio de skills — ✅ concluída (08/11/2026)](plano-implantacao.md#fase-6--portfólio-de-skills---concluída-08112026) — linha 1018
   - [Fase 7 — Plugin cgov-escritorio — 🟨 em andamento (7.0 ✅; ADR-005 aceito em 09/11/2026)](plano-implantacao.md#fase-7--plugin-cgov-escritorio---em-andamento-70--adr-005-aceito-em-09112026) — linha 1184
-  - [Fase 8 — Multiplataforma e aposentadoria do WSL — ⬜ não iniciada](plano-implantacao.md#fase-8--multiplataforma-e-aposentadoria-do-wsl---não-iniciada) — linha 1203
-  - [Fase 9 — Agentes e orquestração — ⬜ não iniciada](plano-implantacao.md#fase-9--agentes-e-orquestração---não-iniciada) — linha 1215
-  - [Fase 10 — Painéis Power BI — ⬜ não iniciada](plano-implantacao.md#fase-10--painéis-power-bi---não-iniciada) — linha 1229
-  - [Fase 11 — Qualidade e pilotos — ⬜ não iniciada](plano-implantacao.md#fase-11--qualidade-e-pilotos---não-iniciada) — linha 1236
-  - [Fase 12 — Disseminação e governança — ⬜ não iniciada](plano-implantacao.md#fase-12--disseminação-e-governança---não-iniciada) — linha 1240
-- [7. Riscos e mitigação](plano-implantacao.md#7-riscos-e-mitigação) — linha 1246
-- [8. Critérios de conclusão do projeto](plano-implantacao.md#8-critérios-de-conclusão-do-projeto) — linha 1276
-- [9. Decisões do Coordenador](plano-implantacao.md#9-decisões-do-coordenador) — linha 1290
-- [10. Prompts de execução (projeto "Escritório CGOV — Implantação")](plano-implantacao.md#10-prompts-de-execução-projeto-escritório-cgov--implantação) — linha 1355
-- [11. Quadro de acompanhamento](plano-implantacao.md#11-quadro-de-acompanhamento) — linha 1402
-- [12. Fontes](plano-implantacao.md#12-fontes) — linha 1424
-- [Apêndice A — Instruções do projeto "Escritório CGOV — Implantação" (v2, 06/11/2026 — sem a pasta CGOV, depois da Fase 4)](plano-implantacao.md#apêndice-a--instruções-do-projeto-escritório-cgov--implantação-v2-06112026--sem-a-pasta-cgov-depois-da-fase-4) — linha 1434
-  - [Escritório CGOV — Implantação (desenvolvimento)](plano-implantacao.md#escritório-cgov--implantação-desenvolvimento) — linha 1436
-- [Apêndice B — Instruções do projeto "Escritório CGOV — Operação" (versão 1.1, 07/11/2026 — etapa 6.8)](plano-implantacao.md#apêndice-b--instruções-do-projeto-escritório-cgov--operação-versão-11-07112026--etapa-68) — linha 1498
-- [Apêndice C — Manifesto do plugin](plano-implantacao.md#apêndice-c--manifesto-do-plugin) — linha 1506
-- [Apêndice D — Modelo de agente (agents/revisor-normativo.md)](plano-implantacao.md#apêndice-d--modelo-de-agente-agentsrevisor-normativomd) — linha 1524
-- [Apêndice E — Rascunhos da camada de navegação da raiz (fonte: operacao/)](plano-implantacao.md#apêndice-e--rascunhos-da-camada-de-navegação-da-raiz-fonte-operacao) — linha 1546
-- [Apêndice F — Modelos (fonte: operacao/modelos/)](plano-implantacao.md#apêndice-f--modelos-fonte-operacaomodelos) — linha 1552
-- [Apêndice G — Evolução do plano](plano-implantacao.md#apêndice-g--evolução-do-plano) — linha 1558
+  - [Fase 8 — Multiplataforma e aposentadoria do WSL — ⬜ não iniciada](plano-implantacao.md#fase-8--multiplataforma-e-aposentadoria-do-wsl---não-iniciada) — linha 1205
+  - [Fase 9 — Agentes e orquestração — ⬜ não iniciada](plano-implantacao.md#fase-9--agentes-e-orquestração---não-iniciada) — linha 1217
+  - [Fase 10 — Painéis Power BI — ⬜ não iniciada](plano-implantacao.md#fase-10--painéis-power-bi---não-iniciada) — linha 1231
+  - [Fase 11 — Qualidade e pilotos — ⬜ não iniciada](plano-implantacao.md#fase-11--qualidade-e-pilotos---não-iniciada) — linha 1238
+  - [Fase 12 — Disseminação e governança — ⬜ não iniciada](plano-implantacao.md#fase-12--disseminação-e-governança---não-iniciada) — linha 1242
+- [7. Riscos e mitigação](plano-implantacao.md#7-riscos-e-mitigação) — linha 1248
+- [8. Critérios de conclusão do projeto](plano-implantacao.md#8-critérios-de-conclusão-do-projeto) — linha 1278
+- [9. Decisões do Coordenador](plano-implantacao.md#9-decisões-do-coordenador) — linha 1292
+- [10. Prompts de execução (projeto "Escritório CGOV — Implantação")](plano-implantacao.md#10-prompts-de-execução-projeto-escritório-cgov--implantação) — linha 1358
+- [11. Quadro de acompanhamento](plano-implantacao.md#11-quadro-de-acompanhamento) — linha 1405
+- [12. Fontes](plano-implantacao.md#12-fontes) — linha 1427
+- [Apêndice A — Instruções do projeto "Escritório CGOV — Implantação" (v2, 06/11/2026 — sem a pasta CGOV, depois da Fase 4)](plano-implantacao.md#apêndice-a--instruções-do-projeto-escritório-cgov--implantação-v2-06112026--sem-a-pasta-cgov-depois-da-fase-4) — linha 1437
+  - [Escritório CGOV — Implantação (desenvolvimento)](plano-implantacao.md#escritório-cgov--implantação-desenvolvimento) — linha 1439
+- [Apêndice B — Instruções do projeto "Escritório CGOV — Operação" (versão 1.1, 07/11/2026 — etapa 6.8)](plano-implantacao.md#apêndice-b--instruções-do-projeto-escritório-cgov--operação-versão-11-07112026--etapa-68) — linha 1501
+- [Apêndice C — Manifesto do plugin](plano-implantacao.md#apêndice-c--manifesto-do-plugin) — linha 1509
+- [Apêndice D — Modelo de agente (agents/revisor-normativo.md)](plano-implantacao.md#apêndice-d--modelo-de-agente-agentsrevisor-normativomd) — linha 1527
+- [Apêndice E — Rascunhos da camada de navegação da raiz (fonte: operacao/)](plano-implantacao.md#apêndice-e--rascunhos-da-camada-de-navegação-da-raiz-fonte-operacao) — linha 1549
+- [Apêndice F — Modelos (fonte: operacao/modelos/)](plano-implantacao.md#apêndice-f--modelos-fonte-operacaomodelos) — linha 1555
+- [Apêndice G — Evolução do plano](plano-implantacao.md#apêndice-g--evolução-do-plano) — linha 1561

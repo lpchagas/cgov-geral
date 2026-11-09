@@ -89,22 +89,23 @@ Os textos de navegação (`LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos) tê
 ## 4. Publicação: do desenvolvimento para a operação
 
 A publicação usa `scripts/publicar_operacao.py` (Windows, na raiz do repositório) e parte sempre de um
-commit: alterações pendentes em `skills/`, `docs/` ou `operacao/` bloqueiam.
+commit: alterações pendentes em `skills/`, `plugins/`, `docs/` ou `operacao/` bloqueiam.
 
 1. `py scripts\publicar_operacao.py --verificar` — somente leitura:
-   - skills instaladas na conta (`~/.claude/skills/synced`) × fonte;
+   - skills instaladas na conta (`~/.claude/skills/synced`) × fonte (plugin e `skills/`);
+   - plugin `cgov-escritorio` instalado na conta × fonte (aviso até o primeiro envio da 7.5);
    - `operacao/` × pasta CGOV, por SHA-256;
    - `docs/` × `90_escritorio-virtual/referencia/docs/`.
 2. `py scripts\publicar_operacao.py --publicar` — simulação: mostra o que seria criado, substituído e
    enviado para a quarentena.
 3. `py scripts\publicar_operacao.py --publicar --executar`:
-   - gera os pacotes das skills em `dist/skills/<commit>/`, sem `evals/`;
+   - gera o zip do plugin em `dist/cgov-escritorio-<versão>.zip` (versão do `plugin.json`; sem `evals/`; mesmo commit, mesmo hash) e o `.sha256`; para se a versão já existir (aumente a `version` e faça novo commit);
+   - gera os pacotes das skills avulsas (`skills/cgge-fgbio`) em `dist/skills/<commit>/`, sem `evals/`;
    - publica `operacao/` na raiz da pasta CGOV (só o que difere);
    - republica `docs/` em `90_escritorio-virtual/referencia/`, com um `LEIA-ME.md` que registra o commit.
    Tudo o que for substituído vai antes para `99_arquivo/_a-excluir_<data>/publicacao_<commit>/`. Depois,
    o script confere por SHA-256 o que gravou.
-4. **Skills:** enviar cada `dist\skills\<commit>\<skill>.zip` em Customize → Skills (substituir) e repetir
-   o `--verificar`.
+4. **Plugin:** rodar `claude plugin validate .\plugins\cgov-escritorio`, enviar `dist\cgov-escritorio-<versão>.zip` em Customize → Plugins → Add → Upload plugin e repetir o `--verificar`. **Skills avulsas** (`cgge-fgbio`): enviar cada `dist\skills\<commit>\<skill>.zip` em Customize → Skills (substituir). Nas sessões de desenvolvimento o plugin sincronizado fica desligado por `enabledPlugins` (`cgov-escritorio@synced`: `false`) no `.claude\settings.json`; para testar a cópia da pasta, `claude --plugin-dir .\plugins\cgov-escritorio`.
 5. **Instruções do projeto Operação:** se `escritorio-cgov-operacao.md` mudar, colar o novo bloco no campo
    Instruções do projeto.
 

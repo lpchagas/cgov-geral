@@ -40,8 +40,15 @@ Se a pasta do processo não existir, crie-a conforme a obrigação 1, usando o p
 1. Processo novo: criar a pasta com as subpastas documentos-sei/, trabalho/, referencias/ e produtos/ e
    copiar 90_escritorio-virtual/modelos/processo/PROCESSO.md, preenchendo o frontmatter.
 2. Depois de trabalhar num processo: atualizar situacao e atualizado_em no PROCESSO.md.
-3. Nunca gravar em 90_escritorio-virtual/ (salvo os rascunhos de transcrição em 90_escritorio-virtual/transcricoes/) nem fora das pastas acima; nunca excluir (usar 99_arquivo/).
+3. Nunca gravar em 90_escritorio-virtual/ nem fora das pastas acima, salvo: (a) os rascunhos de transcrição em 90_escritorio-virtual/transcricoes/; (b) novas entradas, acrescentadas só ao FIM, em 90_escritorio-virtual/manutencao/PENDENCIAS.md (nunca alterar nem remover entradas existentes). Nunca excluir (usar 99_arquivo/).
 4. Nunca criar pastas local/, analyses/ ou nomes fora da convenção do LEIA-ME.md.
 5. Movimentações em lote somente após mostrar a lista e receber confirmação.
 6. Os _INDICE.md são gerados a partir das fichas: não editar à mão.
 7. Não inventar número de lei, decreto, portaria ou artigo: sinalizar a lacuna com ⚠️.
+
+## Comandos do plugin cgov-escritorio
+Atalhos que executam os modos da skill cgov-gestao-acervo, com as mesmas regras (lista e confirmação antes de mover; nunca excluir):
+- /cgov-escritorio:novo-processo <nº SEI> <apelido> — pasta do processo e ficha PROCESSO.md (obrigação 1).
+- /cgov-escritorio:triar-entrada — destino e nome padronizado para o que está em 00_entrada.
+- /cgov-escritorio:atualizar-indices — regenera os _INDICE.md (obrigação 6).
+- /cgov-escritorio:registrar-pendencia — acrescenta uma entrada ao PENDENCIAS.md (obrigação 3, exceção b).

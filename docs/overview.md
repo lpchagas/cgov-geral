@@ -1,26 +1,37 @@
+---
+tipo: referencia
+status: vigente
+atualizado_em: 2026-11-09
+relacionados: [docs/architecture.md, docs/catalogo-skills.md, docs/plano-implantacao.md]
+---
+
 # Resumo Estruturado — Suíte `cgov-nt` e Escritório de Trabalho da CGOV
 
 > **Nota de migração:** referências a caminhos numerados registram a estrutura
 > histórica. Para caminhos operacionais vigentes, consulte `README.md` e
-> `docs/architecture.md`.
+> `docs/architecture.md`. Revisado em 09/11/2026 (antes da Fase 7): a tabela "O que existe hoje", a cobertura do
+> Art. 37 e os próximos passos refletem o estado de 08/11/2026; as pendências resolvidas preservam os caminhos da
+> época em que foram resolvidas.
 
 ## O que existe hoje
 
 | Item | Onde | Status |
 |---|---|---|
-| Suíte canônica `cgov-nt-01` a `07` | Instalada na conta Claude (Customize → Skills) + código-fonte em `skills/cgov-nt` | ✅ Ativa, validada por piloto |
-| 13 skills antigas (`pgd-sk*`, `pspeadbio-sk*`) | Removidas da conta Claude; backup em `archive/skills-legacy` | ❌ Desativadas (backup disponível) |
-| Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao`) | Continuam instaladas, não foram tocadas | ✅ Ativas |
+| Suíte canônica `cgov-nt-01` a `07` | Código-fonte em `skills/cgov-nt`; instalada na conta Claude (Customize → Skills), paridade conferida em 08/11/2026 | ✅ Ativa, validada por piloto |
+| 34 skills com fonte versionada | `skills/` (6 famílias); inventário em [`catalogo-skills.md`](catalogo-skills.md) | ✅ Reinstaladas e conferidas em 08/11/2026 (Fase 6.8) |
+| 13 skills antigas (`pgd-sk*`, `pspeadbio-sk*`) | Removidas da conta Claude; backup em `local/archive/` (fora do Git) | ❌ Desativadas (backup disponível) |
+| Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao`) | Promovidas a fonte em `skills/normativo/` e `skills/pgd/` na Fase 6.2 (07/11/2026) | ✅ Ativas, com fonte versionada |
 | Relatório técnico completo (diagnóstico + arquitetura + revisão + piloto) | `docs/reports/RELATORIO_cgov-nt.md` | ✅ |
-| Artefatos do piloto | `docs/reports/NT_ESTADO_piloto.md` | ✅ |
+| Artefatos do piloto | Não versionados (dados de processo real); resumo no relatório técnico | ✅ |
 | Fontes normativas | `03_normativos/` da pasta CGOV (desde 05/11/2026; antes `normative-sources/`) + catálogo público | ✅ |
-| System Instructions independente | `docs/system-instructions/analista-governanca.md` | ✅ versão canônica v3 |
+| System Instructions independente | `docs/system-instructions/analista-governanca.md` (núcleo v4.0) + [anexo normativo](system-instructions/analista-governanca-anexo-normativo.md) + [anexo de funções](system-instructions/analista-governanca-anexo-funcoes.md) | ✅ versão canônica v4.0 (29/08/2026) |
 | Catálogo normativo público | `docs/references/normative-catalog.md` | ✅ |
-| PDF completo da Portaria nº 5.592/2025 | Ainda apenas em `<Google Drive>\CGOV\CGOV_Normativas\` (não copiado — ver limitação na Seção 11.3 do relatório) | ⚠️ Cópia manual pendente, se desejada |
-| Skills temáticas do Art. 37 | Instaladas na conta Claude; código-fonte em `skills/thematic/` | ✅ |
-| System Instructions do Analista de Processos SEI | `docs/system-instructions/analista-processos-sei.md` | ✅ v7.2 |
+| Texto verificado do Art. 37 da Portaria nº 5.592/2025 | `03_normativos/20251211_Art_37_Portaria_5592-2025_texto_verificado.md` da pasta CGOV | ✅ |
+| Skills temáticas do Art. 37 | Código-fonte em `skills/thematic/` (11 skills); instaladas na conta Claude | ✅ |
+| System Instructions do Analista de Processos SEI | `docs/system-instructions/analista-processos-sei.md` | ✅ v7.3 |
+| Instruções do projeto Cowork "Operação" | `docs/system-instructions/escritorio-cgov-operacao.md` | ✅ v1.1 (07/11/2026) |
 | Análises e produtos de skills por processo SEI | `01_processos/<processo>/trabalho/` da pasta CGOV (desde 05/11/2026) | ✅ fora do Git |
-| Suíte `cgov-nt-01` a `07` | Cria/lê `trabalho/NT_ESTADO.md` (skills ainda citam caminhos antigos; tradução no `AGENTS.md` da pasta até a Fase 6.3) | ✅ |
+| Suíte `cgov-nt-01` a `07` | Cria/lê `trabalho/NT_ESTADO.md` (as skills citam papéis, não caminhos, desde a reinstalação de 08/11/2026; caminhos no `AGENTS.md` da pasta CGOV) | ✅ |
 
 ## A suíte `cgov-nt`, em uma tabela
 
@@ -59,19 +70,19 @@
 | Inciso | Competência | Skill |
 |---|---|---|
 | I | Coordenação dos processos organizacionais | `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao` |
-| II | Política de Governança Institucional | suíte `cgov-nt`, `pgd-especialista` |
+| II | Política de Governança Institucional | suíte `cgov-nt`, `pgd-especialista` (skill dedicada adiada: pendência E7) |
 | III | Gestão por processos | `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-cadeia-valor` |
 | IV | Regimento Interno | `cgov-regimento-interno` |
-| V | Quadro de Cargos e Funções (QCF) | ❌ **sem skill dedicada** |
-| VI | Cadeia de Valor / DFT | `cgov-cadeia-valor` |
+| V | Quadro de Cargos e Funções (QCF) | `cgov-qcf` (instalada em 30/08/2026) |
+| VI | Cadeia de Valor / DFT | `cgov-cadeia-valor`, `cgov-carta-servicos` (desdobramento do Catálogo, D53) |
 | VII | PGD (com a CGGP) | `pgd-especialista`, `pgd-*-entrega` |
 | VIII | PGR — Gestão para Resultados | `cgov-pgr` |
-| IX | Gestão de Riscos / CTGRIC | `cgov-gestao-riscos` |
+| IX | Gestão de Riscos / CTGRIC | `cgov-gestao-riscos`, `cgov-integridade` |
 | X | AIR / ARR | `cgov-air-arr` |
 
-**9 de 10 incisos cobertos.**
+**10 de 10 incisos com skill de apoio**; só o inciso II ainda não tem skill dedicada (E7, adiada). A tabela completa, com situação de cada skill, está em [`catalogo-skills.md`](catalogo-skills.md).
 
-## Pendências
+## Pendências (histórico; as pendências em aberto estão em [`governance/pendencias.md`](governance/pendencias.md))
 
 - ~~Validação pessoal do Coordenador sobre o texto do Art. 37~~ — ✅ **Resolvida
   em 05/07/2026.**
@@ -104,7 +115,7 @@
 | **PGR** | Programa de Gestão para Resultados e Inovação | Portaria ICMBio nº 1.572/2023 | VIII |
 | **PGRI** | Política de Gestão de Riscos e Integridade | Portaria ICMBio nº 255/2020 | IX |
 | **PGD** | Programa de Gestão e Desempenho (teletrabalho) | IN ICMBio nº 14/2025 | VII |
-| **PGE** | Política de Gestão Estratégica | Portaria ICMBio nº 768/2020 | — |
+| **PGE** | Política de Gestão Estratégica | Portaria ICMBio nº 768/2020 (**revogada**; não citar como vigente) | — |
 
 Nunca escrever "PGR de riscos", "PGR (riscos)" nem "Plano de Gestão de Riscos —
 PGR". Detalhamento em `04_fontes_normativas/INDICE_FONTES_NORMATIVAS.md`.
@@ -115,10 +126,10 @@ PGR". Detalhamento em `04_fontes_normativas/INDICE_FONTES_NORMATIVAS.md`.
   28/08/2026: 12 de 12 casos aprovados. Os `evals.json` vigentes têm 15 casos
   no total, e não 16 como constava do registro anterior; ver
   `01_relatorios/RELATORIO_EVALS_cgov-nt_2026-08-28.md`.
-## Próximos passos sugeridos
+## Próximos passos
 
-1. Testar as 5 skills recém-instaladas em um caso real de cada eixo.
-2. Testar a suíte `cgov-nt` em um processo novo, do início ao fim, antes de
-   divulgar aos demais servidores da CGOV.
-3. Avaliar a criação de `cgov-qcf` (Art. 37, V — Quadro de Cargos e Funções
-   Comissionadas) — o único inciso ainda sem skill dedicada.
+O andamento vigente está no [plano de implantação](plano-implantacao.md) (próxima fase: 7, plugin
+`cgov-escritorio`; piloto em processo novo na Fase 11) e as pendências em
+[`governance/pendencias.md`](governance/pendencias.md). Os próximos passos sugeridos em 2026 (testar as skills
+recém-instaladas, testar a suíte num processo novo e criar a `cgov-qcf`) foram cumpridos ou absorvidos pelo plano:
+a `cgov-qcf` foi criada e instalada em 30/08/2026 e o piloto está previsto na Fase 11.

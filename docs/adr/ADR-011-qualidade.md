@@ -1,7 +1,14 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-09
+relacionados: [scripts/verificar_sanitizacao.py, scripts/publicar_operacao.py, docs/governance/pendencias.md]
+---
+
 # ADR-011 — Qualidade: evals, paridade e sanitização
 
-- **Status:** Proposto
-- **Data:** — (aprovação pendente na Fase 0)
+- **Status:** Aceito
+- **Data:** 09/11/2026 (D57; em vigor desde a Fases 5 e 6.8 (evals das 14 skills com casos; E9 segue aberta))
 
 ## Contexto
 

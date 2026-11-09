@@ -1,4 +1,13 @@
+---
+tipo: relatorio
+status: historico
+atualizado_em: 2026-08-28
+relacionados: [docs/reports/RELATORIO_cgov-nt.md, docs/governance/pendencias.md]
+---
+
 # Execução dos casos de eval remanescentes — suíte `cgov-nt`
+
+> **Documento histórico** (execução dos evals de 28/08/2026). Mantido sem alteração de conteúdo; as skills foram revisadas depois (decision-log §§36–42). Para o estado vigente, veja [`../catalogo-skills.md`](../catalogo-skills.md) e [`../governance/pendencias.md`](../governance/pendencias.md).
 
 **Data:** 28/08/2026
 **Escopo:** 12 casos de borda que não foram exercitados no piloto inicial.

@@ -1,8 +1,16 @@
+---
+tipo: guia
+status: vigente
+versao: "2.1"
+atualizado_em: 2026-11-09
+relacionados: [docs/architecture.md, docs/governance/pendencias.md, docs/system-instructions/escritorio-cgov-operacao.md, docs/adr/ADR-014-exclusao-controlada.md]
+---
+
 # Fluxos de trabalho — desenvolvimento e operação
 
+> Versão 2.1 — 09/11/2026 (revisão documental antes da Fase 7: marcas ⏳ da Fase 5 removidas e passo 5 corrigido).
 > Versão 2 — 06/11/2026, depois da Fase 4 do plano de implantação (reorganização da pasta CGOV).
 > Substitui a versão de 06/10/2026 (arquivada em `archive/docs/fluxos-de-trabalho_ate-2026-11-06.md`).
-> Itens marcados ⏳ dependem do fechamento da Fase 5 do plano (republicação de `docs/` na 5.10).
 
 ## 1. Visão geral
 
@@ -12,7 +20,7 @@
 | Ferramenta | Claude Code e projeto Cowork **"Escritório CGOV — Implantação"** (Windows); Antigravity e Obsidian | Projeto Cowork **"Escritório CGOV — Operação"** (app Claude no Windows) |
 | Pasta de trabalho | Este repositório (`C:\Projetos\cgov-geral` no computador do Coordenador) | Pasta **CGOV** do Google Drive (`…\My Drive\10_Institucional\CGOV`) |
 | Versão das skills | Fonte em `skills/` (rascunho até o commit) | Skills **instaladas** na conta Claude |
-| Documentação | `docs/` (edição) | `90_escritorio-virtual/referencia/docs/` (cópia só leitura) ⏳ republicação na Fase 5.10 |
+| Documentação | `docs/` (edição) | `90_escritorio-virtual/referencia/docs/` (cópia só leitura) |
 | Navegação da pasta | `operacao/` (fonte) | `LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos (publicados) |
 | Dados de processos | Não produz | `01_processos/<processo>/` (ficha `PROCESSO.md`; estado da NT em `trabalho/NT_ESTADO.md`) |
 | Publicação | Git → GitHub (repositório **privado**, mantido sanitizado) | Nada é publicado; tudo fica no Drive |
@@ -114,7 +122,7 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
    `operacao/` com `py scripts\verificar_sanitizacao.py` (antes do commit: `--staged`; exceções em
    `scripts/sanitizacao_permitidos.txt`; termos pessoais só em `local/sanitizacao_termos.txt`).
 4. **Registrar** a decisão em [`governance/decision-log.md`](governance/decision-log.md) (só acréscimos).
-5. **Espelhar para a Antigravity**, se usada (`.agents/skills/`, ver `CONTRIBUTING.md`).
+5. **Espelhar para a Antigravity**, só se ela for usada (`.agents/skills/` é um espelho local, ignorado pelo Git; hoje não existe nesta máquina; ver `CONTRIBUTING.md`).
 6. **Commit e push**, com confirmação do Coordenador. O shell do Cowork não tem credencial do GitHub:
    `git push` e `git ls-remote` ficam no PowerShell do Coordenador.
 7. **Publicar para a operação** (§4) e reinstalar as skills alteradas.
@@ -156,3 +164,8 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
 ## 8. Pendências
 
 Lista consolidada e atualizada em [`governance/pendencias.md`](governance/pendencias.md).
+
+## 9. Verificação da documentação
+
+Antes de um *commit* que toque em `docs/`, rode `py scripts\verificar_docs.py` (links, âncoras, frontmatter,
+caminhos obsoletos) além de `py scripts\verificar_sanitizacao.py`. Convenções: [`convencoes-documentacao.md`](convencoes-documentacao.md).

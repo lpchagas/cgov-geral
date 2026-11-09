@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [docs/fluxos-de-trabalho.md, docs/system-instructions/escritorio-cgov-operacao.md]
+---
+
 # ADR-003 — Dois projetos Cowork: Implantação e Operação
 
 - **Status:** Aceito

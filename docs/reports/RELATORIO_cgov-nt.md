@@ -1,4 +1,14 @@
+---
+tipo: relatorio
+status: historico
+versao: "7.2"
+atualizado_em: 2026-10-06
+relacionados: [docs/overview.md, docs/governance/decision-log.md]
+---
+
 # Relatório Técnico — Suíte Canônica `cgov-nt` (01 a 07)
+
+> **Documento histórico** (relatório técnico de 05/07/2026, v7.2). Mantido sem alteração de conteúdo: os caminhos, as versões e as pendências citados descrevem o estado da época. Para o estado vigente, veja [`../overview.md`](../overview.md), [`../architecture.md`](../architecture.md) e [`../catalogo-skills.md`](../catalogo-skills.md).
 ### Diagnóstico das skills existentes, proposta de modelo canônico e revisão técnica
 **CGOV/ICMBio — Instituto Chico Mendes de Conservação da Biodiversidade**
 

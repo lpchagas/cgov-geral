@@ -1,3 +1,10 @@
+---
+tipo: registro
+status: vigente
+atualizado_em: 2026-11-08
+relacionados: [docs/governance/decision-log-indice.md, docs/governance/rastreabilidade.md]
+---
+
 # Registro de Decisões — Suíte Canônica `cgov-nt` e Escritório de Trabalho da CGOV
 
 **Processo/Iniciativa:** Desenvolvimento de ferramentas de IA para suporte ao
@@ -1716,3 +1723,27 @@ Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
 5. **Pendências que seguem:** E9, E10, E11 e o piloto 6.9(e) (Fase 11).
 
 Detalhes: plano de implantação (`docs/plano-implantacao.md`), Fase 6.
+
+## 44. Revisão e reorganização da documentação antes da Fase 7 (09/11/2026)
+
+Pedido do Coordenador: transformar a documentação Markdown em "segundo cérebro" de apoio ao Claude Code, com
+análise individual de erros e desatualizações, links entre os arquivos, índices e boas práticas de engenharia.
+
+1. **Diagnóstico (D57):** 103 arquivos `.md`; só 107 links relativos (1 quebrado); nenhum `docs/` com frontmatter;
+   `plano-implantacao.md` (249 KB), `decision-log.md` (109 KB) e `analista-processos-sei.md` (66 KB) grandes demais
+   para leitura integral; 12 documentos com informação desatualizada (`overview.md`, `catalogo-skills.md`,
+   `CLAUDE.md`, `multiplatform.md`, `architecture.md`, `fluxos-de-trabalho.md`, `CONTRIBUTING.md`, `README.md`,
+   `pendencias.md`, plano, `archive/README.md` e relatórios históricos).
+2. **Respostas do Coordenador (D57):** plano com índice e apêndices duplicados por link (um arquivo só);
+   frontmatter leve em todo `docs/`; aceitar os ADR-001, ADR-009 e ADR-011 (proposta confirmada pelo Coordenador no mesmo dia e aplicada).
+3. **Feito:** correções factuais; `docs/INDICE.md` (tarefa → arquivos); `docs/convencoes-documentacao.md`;
+   `docs/governance/rastreabilidade.md`; índices gerados do plano, deste registro e do analista de processos SEI;
+   frontmatter em `docs/`, exceto nas duas instruções coladas inteiras em campos com limite de caracteres;
+   Apêndices B, E e F do plano trocados por links; `pendencias.md` separado em abertas e resolvidas (E9 corrigida de 13
+   para 20 skills sem evals; novas E12–E14).
+4. **Ferramentas:** `scripts/gerar_indices_docs.py` e `scripts/verificar_docs.py` (só biblioteca padrão, ADR-004).
+5. **Cuidado para a Fase 7:** a etapa 7.1 move `skills/<família>/`; depois do `git mv`, rodar
+   `py scripts\gerar_indices_docs.py` e `py scripts\verificar_docs.py` (pendência E14). O ADR-005 precisa ser decidido
+   no início da Fase 7 (pendência E12).
+
+Detalhes: [`rastreabilidade.md`](rastreabilidade.md) e plano de implantação (etapa 7.0).

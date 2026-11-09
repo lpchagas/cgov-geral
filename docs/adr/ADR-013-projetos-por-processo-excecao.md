@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [docs/plano-implantacao.md]
+---
+
 # ADR-013 — Projetos Cowork por processo passam a ser exceção
 
 - **Status:** Aceito

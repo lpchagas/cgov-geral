@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: proposto
+atualizado_em: 2026-11-07
+relacionados: [docs/plano-implantacao.md]
+---
+
 # ADR-010 — Painéis Power BI em PBIP versionado
 
 - **Status:** Proposto

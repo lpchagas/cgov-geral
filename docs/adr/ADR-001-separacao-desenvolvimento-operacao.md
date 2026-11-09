@@ -1,7 +1,14 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-09
+relacionados: [docs/fluxos-de-trabalho.md, docs/governance/pendencias.md]
+---
+
 # ADR-001 — Separação desenvolvimento × operação
 
-- **Status:** Proposto
-- **Data:** — (aprovação pendente na Fase 0)
+- **Status:** Aceito
+- **Data:** 09/11/2026 (D57; em vigor desde a Fase 1)
 
 ## Contexto
 

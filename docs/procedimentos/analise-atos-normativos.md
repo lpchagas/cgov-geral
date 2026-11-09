@@ -1,3 +1,11 @@
+---
+tipo: procedimento
+status: vigente
+versao: "2"
+atualizado_em: 2026-11-07
+relacionados: [docs/catalogo-skills.md, operacao/90_escritorio-virtual/modelos/analise-ato-normativo/INSTRUCOES-PROJETO.md]
+---
+
 # Procedimento — análise de atos normativos pela CGOV
 
 > **Versão 2, 07/11/2026** (etapa 6.9 do plano de implantação; D34, D44, D45 e D50). Substitui a versão 1 de 06/11/2026,

@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: proposto
+atualizado_em: 2026-11-07
+relacionados: [docs/plano-implantacao.md, docs/catalogo-skills.md]
+---
+
 # ADR-005 — Distribuição como plugin único `cgov-escritorio`
 
 - **Status:** Proposto

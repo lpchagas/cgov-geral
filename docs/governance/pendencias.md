@@ -1,24 +1,36 @@
+---
+tipo: pendencias
+status: vigente
+atualizado_em: 2026-11-09
+relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
+---
+
 # Pendências do Escritório CGOV (desenvolvimento)
 
-> Lista consolidada em 06/11/2026, ao fim da Fase 4 do plano de implantação. Fonte do andamento: o plano de
-> implantação (fases e etapas citadas abaixo). Pendências registradas pela operação ficam em
-> `90_escritorio-virtual/manutencao/PENDENCIAS.md` da pasta CGOV; quando uma delas exigir trabalho de
-> desenvolvimento, ela é copiada para cá (sem dados pessoais nem dados de processos).
+> Reorganizada em 09/11/2026 (revisão documental antes da Fase 7); consolidada originalmente em 06/11/2026, ao
+> fim da Fase 4. Fonte do andamento: o [plano de implantação](../plano-implantacao.md). Pendências registradas pela
+> operação ficam em `90_escritorio-virtual/manutencao/PENDENCIAS.md` da pasta CGOV; quando uma delas exigir
+> trabalho de desenvolvimento, ela é copiada para cá (sem dados pessoais nem dados de processos).
+> Os IDs não mudam: **P** = prioridade, **S** = segurança, **C** = conteúdo da pasta CGOV, **E** = evolução.
+> Itens resolvidos ficam na seção final, para consulta.
 
-## Alta prioridade
+## Em aberto — desenvolvimento
 
 | # | Pendência | Onde se resolve | Observação |
 |---|---|---|---|
-| P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontam para pastas que não existem mais | Fase 5.1–5.2 (`link_acervo.py`, `.env`) | ✅ Resolvida em 07/11/2026: `scripts/link_acervo.py --executar` criou `local\processos`, `local\normativos` e `local\escritorio` e removeu as antigas |
-| S1 | ~~Credencial de banco em texto aberto num script da pasta de prompts do Coordenador~~ | ✅ Resolvida em 07/11/2026 pelo Coordenador (script limpo) | Nada foi copiado para o repositório |
-| P2 | `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` (WSL, estrutura antiga) bloqueados em 06/11/2026 | Fase 5.3 (`publicar_operacao.py`) e 5.8 (mover os `.sh` para `archive/scripts-wsl/`) | ✅ Resolvida em 07/11/2026: substitutos em Python prontos; `.sh` em `archive/scripts-wsl/` |
-| P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` é anterior à Fase 4 | Fase 5.10 | ✅ Resolvida em 07/11/2026: republicada no commit `e305404` (33/33 conferidos); anterior em `99_arquivo/_a-excluir_2026-11-07/` |
-| P4 | Deriva fonte × instalado: 9 das 14 skills com fonte estão desatualizadas na conta (`publicar_operacao.py --verificar`, 07/11/2026: as 7 da `cgov-nt`, `cgov-gestao-riscos` e `cgov-regimento-interno`); a `cgov-nt-01-triagem` instalada grava em `CGOV_Processos/…/_CGOV_NT/` e a fonte diz `local/analyses/` | Fase 6.1 (comparar) e 6.8 (reinstalar) | Contornado pela tabela de caminhos do `AGENTS.md` da pasta CGOV. **6.1 ✅ (07/11/2026):** exportação em `local/installed-reference/_export_2026-11-07/` (39/39 conferidos) e divergências decididas (D43 do plano; decision-log §30): `cgov-nt` = fonte + busca da conta; `cgov-gestao-riscos` = conta saneada (sem números de documento SEI); `cgov-regimento-interno` = fonte; 3 skills do PGD promovidas a partir da conta. Falta a reinstalação (6.8) ✅ **Resolvida em 07/11/2026 (6.8):** 34 skills reinstaladas a partir do *commit* `b863ef3` e conferidas (`--verificar` sem divergências, 08/11) |
-| P5 | Skills citam caminhos literais (`local/analyses/`, `local/normative-sources/`, `_CGOV_NT/`); desde a 6.2 (07/11/2026), as três skills de entregas do PGD citam a "pasta de trabalho do PGD", cujo caminho precisa entrar no `AGENTS.md` | Fase 6.3 (caminhos neutros, ADR-006) | **Fonte resolvida em 07/11/2026 (6.3, D48):** 0 caminhos literais em `skills/`; papéis mapeados nos dois `AGENTS.md` (pasta do PGD: `06_gestao-da-coordenacao/pgd/`). Falta, na 6.8: reinstalar, retirar a seção "Caminhos" das instruções do projeto Operação e a frase de tradução do `AGENTS.md` (a tabela fica como "Locais antigos") ✅ **Resolvida em 07/11/2026 (6.8):** skills reinstaladas, instruções do projeto Operação v1.1 coladas e "Locais antigos" no `AGENTS.md` (6.8b) |
-| P6 | Exclusão da quarentena `99_arquivo/_a-excluir_2026-11-05/` | Etapa 4.11, a partir de 05/12/2026 | Vínculo temporário da pasta CGOV; confirmação explícita |
-| P7 | Quarentena da publicação de 07/11/2026: `99_arquivo/_a-excluir_2026-11-07/publicacao_e305404/` (referência de `docs/` do commit `4960e11`, 14 arquivos) | A partir de 07/12/2026 (30 dias, ADR-014), junto com ou depois da 4.11 | Confirmação explícita; nada a recuperar se a referência atual estiver íntegra (`--verificar`) Novas quarentenas de publicação, a revisar no mesmo critério: `_a-excluir_2026-11-07/publicacao_<commit>/` (07/11) e `_a-excluir_2026-11-08/publicacao_066068b/` (08/11) |
+| P6 | Exclusão da quarentena `99_arquivo/_a-excluir_2026-11-05/` | Etapa 4.11, a partir de 05/12/2026 | Vínculo temporário da pasta CGOV; confirmação explícita (ADR-014) |
+| P7 | Quarentenas das publicações: `99_arquivo/_a-excluir_2026-11-07/publicacao_e305404/` (referência de `docs/` do *commit* `4960e11`, 14 arquivos), `_a-excluir_2026-11-07/publicacao_<commit>/` (07/11) e `_a-excluir_2026-11-08/publicacao_066068b/` (08/11) | A partir de 07/12/2026 (30 dias, ADR-014), junto com ou depois da 4.11 | Confirmação explícita; nada a recuperar se a referência atual estiver íntegra (`publicar_operacao.py --verificar`) |
+| E1 | Modelo geral de análise de atos normativos (instruções v1 geradas a partir de um processo real). Decididas em 07/11/2026 (D44) as 6 questões; modelagem de processos, competências, legística, riscos e AIR viraram subsídios obrigatórios da NT, 8 divergências entre skills foram corrigidas e o procedimento foi publicado (6.9(b)–(d), D50; [procedimento](../procedimentos/analise-atos-normativos.md)). **Falta:** inciso do Art. 37 para competências e legística (⚠️), evals da `nt-01` com o roteiro novo (6.8) e o piloto | Piloto na Fase 11 | |
+| E2 | Decisões D5–D8 do plano (acesso dos servidores, orientação institucional sobre IA e LGPD, Fabric/Power BI, Maestri); a D4 foi respondida em 07/11/2026 (skill `cgov-triagem-processo-sei` + `.md` mantido) | Fase 0 | Plano, §9 |
+| E7 | Skill da Política de Governança Institucional (Art. 37, p.u., II; Portaria ICMBio nº 4.101/2023): instâncias internas de governança, Conselho de Governança, não sobreposição de colegiados. Insumos na pasta de prompts `02_dev-prompts` (`CGOV_Política de Governança`, Analista v4.6, `CGOV_Conselho de Participação`) | Adiada pelo Coordenador (D45, 07/11/2026); depois da Fase 6 | |
+| E9 | Criar `evals/evals.json` (3 casos sintéticos cada) para as **20 skills sem casos em 09/11/2026**: as 13 já previstas (8 `pgd-*`, 2 `cgge-fgbio-*`, `cgov-auditoria-competencias`, `cgov-comparar-versoes`, `cgov-modelar-fluxo`) e mais 7 temáticas (`cgov-air-arr`, `cgov-cadeia-valor`, `cgov-gestao-riscos`, `cgov-pgr`, `cgov-qcf`, `cgov-regimento-interno`, `cgov-transcrever-normativos`). Contagem corrigida em 09/11/2026 (D54 falava em 13) | Antes do piloto da Fase 11 | ADR-011 |
+| E10 | `qa_transcription.py`: checagem automática dos ordinais e do `§` mal lidos pelo OCR (`1º` → `10`, `§` → `s`), achado da 6.7 | Evolução da `cgov-transcrever-normativos` | |
+| E11 | `cgov-saneamento-legistica`: tabela "regra → dispositivo conferido" (Decreto nº 12.002/2024, LC nº 95/1998 e Portaria ICMBio nº 271/2013, Anexo I) e evals com verificações específicas no lugar das genéricas, achado dos evals da 6.8 (D54) | Depois da transcrição das duas normas no acervo (C3) | |
+| E12 | O ADR-005 (plugin único) está "Proposto" e é pré-requisito formal da Fase 7; decidir no início da Fase 7. (ADR-001, 009 e 011 foram aceitos em 09/11/2026, D57; restam também ADR-008 e ADR-010, das Fases 9 e 10) | Plano, §4 e §9; [rastreabilidade](rastreabilidade.md) | Muda só Status e Data nos ADRs (ver [`adr/README.md`](../adr/README.md)) |
+| E13 | Espelho `.agents/skills/` (Antigravity) não existe nesta máquina e cobria 13 skills; decidir entre regerar para as 34 fontes ou aposentar a regra do `CONTRIBUTING.md` | Antes de usar a Antigravity; depois da Fase 7 (novos caminhos) | [`multiplatform.md`](../multiplatform.md) §2 |
+| E14 | Depois do `git mv` da etapa 7.1 (`skills/<família>/` → `plugins/cgov-escritorio/skills/`), rodar `py scripts\gerar_indices_docs.py` e `py scripts\verificar_docs.py`, e corrigir os caminhos que sobrarem | Etapa 7.1 | Os caminhos de skills dos documentos passaram a depender do gerador (D57) |
 
-## Conteúdo da pasta CGOV (revisão gradual pela operação)
+## Em aberto — conteúdo da pasta CGOV (revisão gradual pela operação)
 
 | # | Pendência | Observação |
 |---|---|---|
@@ -27,22 +39,22 @@
 | C3 | Normas citadas pelas skills e ausentes de `03_normativos` (Decreto nº 12.002/2024, LC nº 95/1998 e, desde a 6.9, a Portaria Conjunta nº 3, de 13/05/2021, sobre consultas jurídicas à PFE, citada pela `cgov-nt-06` com ⚠️; o arquivo "Portaria Conjunta ICMBio PFE 03-2021" do acervo é outra norma, a Portaria PFE/ICMBio nº 3/2021, da OJN nº 27/2021) e 9 normativos sem o par PDF/`.md`; desde a 6.10, os atos do Conselho de Governança e do CIG, citados pela `cgov-secretaria-colegiados` com ⚠️ | Curadoria do acervo |
 | C4 | Vigência dos normativos (`_INDICE.md` marca "⚠️ verificar") | Curadoria do acervo |
 | C5 | `05_projetos/fundo-rio-doce` fora do padrão `AAAA-MM_apelido`; período do projeto da oficina da GR2 | Ficha `PROJETO.md` |
-| C7 | Criar `06_gestao-da-coordenacao/equipe.md` (nome e papel, sem matrícula nem e-mail) e a pasta `06_gestao-da-coordenacao/pgd/`, lidas pelas skills do PGD desde a 6.2/6.3 (D46, D48); caminhos já no `operacao/AGENTS.md` | Pela operação; sem a lista, a skill pergunta os responsáveis |
 | C6 | Referências de caminho antigas dentro de arquivos de trabalho (por exemplo, "Local deste arquivo" em `NT_ESTADO.md`) | Atualizar no próprio processo, pela operação |
+| C7 | Criar `06_gestao-da-coordenacao/equipe.md` (nome e papel, sem matrícula nem e-mail) e a pasta `06_gestao-da-coordenacao/pgd/`, lidas pelas skills do PGD desde a 6.2/6.3 (D46, D48); caminhos já no `operacao/AGENTS.md` | Pela operação; sem a lista, a skill pergunta os responsáveis |
 | C8 | Curadoria de dois arquivos de `03_normativos`: renomear o da Portaria ICMBio nº 271/2013 (data no nome errada; é de 27/12/2013; incluir o tema) e o da Portaria PFE/ICMBio nº 3/2021 (não é conjunta; tema: OJN nº 27/2021, aviso de recebimento); regenerar o índice; refazer, a partir do PDF, a numeração do Anexo II da nº 271/2013 na transcrição (os quesitos 4 a 8 aparecem como 10 a 14); desde a 6.10, as duas transcrições do Decreto nº 9.094/2017 com nomes diferentes | Pela operação (D52) |
 
-## Evolução
+## Resolvidas
 
-| # | Pendência | Onde se resolve |
+| # | Pendência | Resolução |
 |---|---|---|
-| E1 | Modelo geral de análise de atos normativos (instruções v1 geradas a partir de um processo real): ~~decidir as 6 questões em aberto~~ (✅ 07/11/2026, D44: AIR Nível 2 padrão; competências e legística também obrigatórias; foco por projeto; dispositivos no futuro; residual na classe superior; `trabalho/` neutro), ~~tornar modelagem de processos, competências, legística, riscos e AIR subsídios obrigatórios da NT, corrigir 8 divergências entre skills, publicar o procedimento~~ (✅ 07/11/2026, 6.9(b)–(d), D50; procedimento em `docs/procedimentos/analise-atos-normativos.md`). Falta: inciso do Art. 37 para competências e legística (⚠️), evals da `nt-01` com o roteiro novo (6.8) e o piloto | Piloto na Fase 11 |
-| E2 | Decisões D5–D8 do plano (D4 respondida em 07/11/2026: skill `cgov-triagem-processo-sei` + `.md` mantido; acesso dos servidores, orientação institucional sobre IA e LGPD, Fabric/Power BI, Maestri) | Fase 0 |
-| E3 | ~~`docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md`~~ | ✅ Fase 5.9, bloco 5 (07/11/2026; D40) |
-| E4 | ~~`scripts/verificar_sanitizacao.py`~~ — criado em 06/11/2026 (v0.1.1, Fase 5, bloco 1) | Resolvida; uso em `docs/fluxos-de-trabalho.md` |
-| E7 | Skill da Política de Governança Institucional (Art. 37, p.u., II; Portaria ICMBio nº 4.101/2023): instâncias internas de governança, Conselho de Governança, não sobreposição de colegiados. Insumos na pasta de prompts `02_dev-prompts` (`CGOV_Política de Governança`, Analista v4.6, `CGOV_Conselho de Participação`) | Adiada pelo Coordenador (D45, 07/11/2026); depois da Fase 6 |
-| E8 | ~~Ler as transcrições da Portaria ICMBio nº 129/2020 e da Portaria "Conjunta" nº 3/2021 e corrigir as skills e as instruções~~ | ✅ Resolvida em 07/11/2026 (D52): a nº 129/2020 prevalece em espécies e vigência; a nº 271/2013 vale no resto, com ⚠️; 13 arquivos corrigidos. Resta só a Portaria Conjunta nº 3, de 13/05/2021 (ver C3) |
-| E6 | ~~Evals da `cgov-nt-01-triagem` e da `cgov-nt-03-introducao` citam um número real de processo SEI~~ | ✅ Fase 6.8a (07/11/2026): número fictício |
-| E5 | ~~Validar `ocr_windows.ps1` (`cgov-transcrever-normativos`) no Windows~~ | ✅ Fase 6.7 (07/11/2026): aprovado, com cobertura de 96,1% e 98,3% |
-| E10 | `qa_transcription.py`: checagem automática dos ordinais e do `§` mal lidos pelo OCR (`1º` → `10`, `§` → `s`), achado da 6.7 | Evolução da `cgov-transcrever-normativos` |
-| E11 | `cgov-saneamento-legistica`: tabela "regra → dispositivo conferido" (Decreto nº 12.002/2024, LC nº 95/1998 e Portaria ICMBio nº 271/2013, Anexo I) e evals com verificações específicas no lugar das genéricas, achado dos evals da 6.8 (D54) | Depois da transcrição das duas normas no acervo (C3) |
-| E9 | Criar `evals/evals.json` (3 casos sintéticos cada) para as 13 skills sem casos: as 8 `pgd-*`, as 2 `cgge-fgbio-*`, `cgov-auditoria-competencias`, `cgov-comparar-versoes` e `cgov-modelar-fluxo` (D54, 07/11/2026) | Depois da Fase 6.8; antes do piloto da Fase 11 |
+| P1 | Junções `local\analyses`, `local\normative-sources` e `local\acervo-drive` apontavam para pastas que não existem mais | 07/11/2026: `scripts/link_acervo.py --executar` criou `local\processos`, `local\normativos` e `local\escritorio` e removeu as antigas (Fase 5.1–5.2) |
+| S1 | Credencial de banco em texto aberto num script da pasta de prompts do Coordenador | 07/11/2026, pelo Coordenador (script limpo); nada foi copiado para o repositório |
+| P2 | `scripts/publicar-operacao.sh` e `scripts/link-acervo.sh` (WSL, estrutura antiga) bloqueados em 06/11/2026 | 07/11/2026: substitutos em Python prontos (5.3); `.sh` em `archive/scripts-wsl/` (5.8) |
+| P3 | Cópia de `docs/` em `90_escritorio-virtual/referencia/docs/` anterior à Fase 4 | 07/11/2026 (5.10): republicada no *commit* `e305404` (33/33 conferidos); anterior em `99_arquivo/_a-excluir_2026-11-07/` |
+| P4 | Deriva fonte × instalado: 9 das 14 skills com fonte estavam desatualizadas na conta; a `cgov-nt-01-triagem` instalada gravava em `CGOV_Processos/…/_CGOV_NT/` e a fonte dizia `local/analyses/` | 6.1 (07/11/2026): exportação em `local/installed-reference/_export_2026-11-07/` (39/39 conferidos) e divergências decididas (D43; decision-log §30). 6.8 (07/11–08/11/2026): 34 skills reinstaladas a partir do *commit* `b863ef3` e conferidas (`--verificar` sem divergências, 08/11) |
+| P5 | Skills citavam caminhos literais (`local/analyses/`, `local/normative-sources/`, `_CGOV_NT/`) | 6.3 (07/11/2026, D48): 0 caminhos literais em `skills/`; papéis mapeados nos dois `AGENTS.md` (pasta do PGD: `06_gestao-da-coordenacao/pgd/`). 6.8: skills reinstaladas, instruções do projeto Operação v1.1 coladas e "Locais antigos" no `AGENTS.md` (6.8b) |
+| E3 | `docs/adr/`, `catalogo-skills.md`, `docs/README.md` e mudança do plano para `docs/plano-implantacao.md` | Fase 5.9, bloco 5 (07/11/2026; D40) |
+| E4 | `scripts/verificar_sanitizacao.py` | 06/11/2026 (v0.1.1, Fase 5, bloco 1); uso em [`fluxos-de-trabalho.md`](../fluxos-de-trabalho.md) |
+| E5 | Validar `ocr_windows.ps1` (`cgov-transcrever-normativos`) no Windows | Fase 6.7 (07/11/2026): aprovado, com cobertura de 96,1% e 98,3% |
+| E6 | Evals da `cgov-nt-01-triagem` e da `cgov-nt-03-introducao` citavam um número real de processo SEI | Fase 6.8a (07/11/2026): número fictício |
+| E8 | Ler as transcrições da Portaria ICMBio nº 129/2020 e da Portaria "Conjunta" nº 3/2021 e corrigir as skills e as instruções | 07/11/2026 (D52): a nº 129/2020 prevalece em espécies e vigência; a nº 271/2013 vale no resto, com ⚠️; 13 arquivos corrigidos. Resta só a Portaria Conjunta nº 3, de 13/05/2021 (ver C3) |

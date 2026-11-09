@@ -1,7 +1,14 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-09
+relacionados: [docs/README.md]
+---
+
 # ADR-009 — Obsidian com dois cofres
 
-- **Status:** Proposto
-- **Data:** — (aprovação pendente na Fase 0)
+- **Status:** Aceito
+- **Data:** 09/11/2026 (D57; em vigor desde a Fase 5 (cofre de desenvolvimento; cofre de operação segue opcional, Fase 8))
 
 ## Contexto
 

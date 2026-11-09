@@ -1,6 +1,14 @@
+---
+tipo: plano
+status: vigente
+versao: "3.49"
+atualizado_em: 2026-11-09
+relacionados: [docs/plano-indice.md, docs/governance/decision-log.md, docs/governance/rastreabilidade.md, docs/adr/README.md, docs/governance/pendencias.md]
+---
+
 # Plano de Implantação — Escritório Virtual da CGOV/ICMBio
 
-> **Versão:** 3.48 — 08/11/2026 (**Fase 6 ✅ concluída em 08/11/2026**: 6.8a no *commit* `b863ef3`; 34 skills reinstaladas e conferidas na conta; 8 nomes antigos do PGD excluídos; instruções v1.1 no projeto Operação; 6.8b no *commit* `066068b`, publicada; `--verificar` sem divergências (skills 34/34, `operacao/` 14/14, `docs/` 33/33); próxima: **Fase 7** (plugin `cgov-escritorio`); antes, na v3.47: **evals da 6.8 concluídos** — 129 de 134 expectativas (96%) nas 9 skills alteradas; correções aplicadas; D55 (rascunho condicionado na `cgov-nt-06`) e D56 (exceções ao futuro do presente); **6.8a gravada** (sem *commit*); próximos: *commit*, publicação e reinstalação das 34 skills; antes, na v3.46: *commit* `0d85240` da v3.44 enviado e publicado (35/35 conferidos); pendência **S1 resolvida** (script da pasta de prompts limpo pelo Coordenador); **6.7 concluída** (OCR do Windows aprovado: 96,1% e 98,3% de cobertura nos dois PDFs sem camada de texto; erro típico nos ordinais, tratado na skill); **6.8 preparada** (preparos `6.8a` e `6.8b`); **D54 respondida**: evals das 9 skills alteradas que têm casos, rodados pelo Claude com subagentes; evals das 13 sem casos na pendência E9; antes, na v3.44: **6.10 concluída** — `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao` em `skills/thematic/`, com normas conferidas no acervo, 3 evals cada e o script `classificar_entregas.py` sem conexão a banco; Carta de Serviços enquadrada no inciso VI (D53); próximas: 6.7 e 6.8; antes, na v3.43: **E8 resolvida** — Portarias ICMBio nº 271/2013 e nº 129/2020 e Portaria PFE/ICMBio nº 3/2021 lidas no acervo; espécies e vigência pela nº 129/2020 nas skills e nas instruções (D52); próxima: 6.10; antes, na v3.42: **6.4 concluída** e skill da **6.6** criada — `cgov-gestao-acervo` e `cgov-triagem-processo-sei` em `skills/escritorio/`, `publicar_operacao.py` v0.2.0 publica o gerador de índices em `90_escritorio-virtual/ferramentas/` (D51); próxima: 6.10; antes, na v3.41: **6.9(b)–(d) concluídas** — roteiro da `cgov-nt-01` com os cinco subsídios obrigatórios, 8 divergências da Parte B.4 corrigidas, `cgov-nt-06` (consulta facultativa) e `cgov-modelar-fluxo` (BPMN → POP) ampliadas, procedimento v2 em `docs/procedimentos/` e modelo em `operacao/` (D50); próxima: 6.4 + `cgov-triagem-processo-sei`; antes, na v3.40: **6.5 concluída** — 8 descrições encurtadas (todas as 28 ≤ 950 caracteres), `cgov-gestao-riscos` rebaseada sobre a versão da conta e saneada (D43), eval de gatilho da `cgov-nt-01` incorporado do *branch* antigo, com rótulos corrigidos (D49); próxima: 6.9(b)–(d); antes, na v3.39: **6.3 concluída** — 13 skills com caminhos neutros (busca por `local/analyses` e `_acervo-escritorio-virtual` = 0), mapeamento por papel nos dois `AGENTS.md`, `gerar_indices.py` v0.1.1, ADR-006 aceito (D48); próxima: 6.5; antes, na v3.38: as 8 skills de `skills/pgd/` passam a usar o prefixo `pgd-` (D47); antes, na v3.37: **6.2 concluída** — 12 skills promovidas a `skills/pgd/` e `skills/normativo/` e as 2 `cgge-fgbio-*` versionadas em `skills/cgge-fgbio/` (fora do plugin), saneadas, com `skillOverrides` (D46); próxima: 6.3; antes, na v3.36: análise da pasta de prompts `%USERPROFILE%\My Drive\_projetos\02_dev-prompts\` e **nova etapa 6.10** (D45: skills `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao`; ampliação da `cgov-nt-06` e da `cgov-modelar-fluxo`); antes, na v3.35: **bloco de decisões concluído** — 6.6 (D4: nova skill `cgov-triagem-processo-sei`, mantendo o `.md` autocontido) e 6.9(a) (D44: as 6 questões da Parte B.5); próxima: 6.2; antes, na v3.33: ordem das etapas aprovada (D42) e **6.1 concluída** — 28 skills da conta exportadas para `local/installed-reference/_export_2026-11-07/` (39/39 arquivos conferidos por SHA-256 contra a cópia sincronizada da máquina do Coordenador), comparação com fontes e referência em `COMPARACAO.md` e divergências decididas (D43) —; próxima: bloco de decisões 6.6 + 6.9(a). Histórico completo das versões v1–v3.48: **Apêndice G**.) A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`%USERPROFILE%\My Drive\10_Institucional\CGOV`).
+> **Versão:** 3.49 — 09/11/2026 (**revisão documental antes da Fase 7, etapa 7.0, D57**: índices, rastreabilidade, convenções, frontmatter e verificadores; ADR-001, 009 e 011 aceitos; sem *commit* ainda). Versão 3.48 — 08/11/2026 (**Fase 6 ✅ concluída em 08/11/2026**: 6.8a no *commit* `b863ef3`; 34 skills reinstaladas e conferidas na conta; 8 nomes antigos do PGD excluídos; instruções v1.1 no projeto Operação; 6.8b no *commit* `066068b`, publicada; `--verificar` sem divergências (skills 34/34, `operacao/` 14/14, `docs/` 33/33); próxima: **Fase 7** (plugin `cgov-escritorio`); antes, na v3.47: **evals da 6.8 concluídos** — 129 de 134 expectativas (96%) nas 9 skills alteradas; correções aplicadas; D55 (rascunho condicionado na `cgov-nt-06`) e D56 (exceções ao futuro do presente); **6.8a gravada** (sem *commit*); próximos: *commit*, publicação e reinstalação das 34 skills; antes, na v3.46: *commit* `0d85240` da v3.44 enviado e publicado (35/35 conferidos); pendência **S1 resolvida** (script da pasta de prompts limpo pelo Coordenador); **6.7 concluída** (OCR do Windows aprovado: 96,1% e 98,3% de cobertura nos dois PDFs sem camada de texto; erro típico nos ordinais, tratado na skill); **6.8 preparada** (preparos `6.8a` e `6.8b`); **D54 respondida**: evals das 9 skills alteradas que têm casos, rodados pelo Claude com subagentes; evals das 13 sem casos na pendência E9; antes, na v3.44: **6.10 concluída** — `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao` em `skills/thematic/`, com normas conferidas no acervo, 3 evals cada e o script `classificar_entregas.py` sem conexão a banco; Carta de Serviços enquadrada no inciso VI (D53); próximas: 6.7 e 6.8; antes, na v3.43: **E8 resolvida** — Portarias ICMBio nº 271/2013 e nº 129/2020 e Portaria PFE/ICMBio nº 3/2021 lidas no acervo; espécies e vigência pela nº 129/2020 nas skills e nas instruções (D52); próxima: 6.10; antes, na v3.42: **6.4 concluída** e skill da **6.6** criada — `cgov-gestao-acervo` e `cgov-triagem-processo-sei` em `skills/escritorio/`, `publicar_operacao.py` v0.2.0 publica o gerador de índices em `90_escritorio-virtual/ferramentas/` (D51); próxima: 6.10; antes, na v3.41: **6.9(b)–(d) concluídas** — roteiro da `cgov-nt-01` com os cinco subsídios obrigatórios, 8 divergências da Parte B.4 corrigidas, `cgov-nt-06` (consulta facultativa) e `cgov-modelar-fluxo` (BPMN → POP) ampliadas, procedimento v2 em `docs/procedimentos/` e modelo em `operacao/` (D50); próxima: 6.4 + `cgov-triagem-processo-sei`; antes, na v3.40: **6.5 concluída** — 8 descrições encurtadas (todas as 28 ≤ 950 caracteres), `cgov-gestao-riscos` rebaseada sobre a versão da conta e saneada (D43), eval de gatilho da `cgov-nt-01` incorporado do *branch* antigo, com rótulos corrigidos (D49); próxima: 6.9(b)–(d); antes, na v3.39: **6.3 concluída** — 13 skills com caminhos neutros (busca por `local/analyses` e `_acervo-escritorio-virtual` = 0), mapeamento por papel nos dois `AGENTS.md`, `gerar_indices.py` v0.1.1, ADR-006 aceito (D48); próxima: 6.5; antes, na v3.38: as 8 skills de `skills/pgd/` passam a usar o prefixo `pgd-` (D47); antes, na v3.37: **6.2 concluída** — 12 skills promovidas a `skills/pgd/` e `skills/normativo/` e as 2 `cgge-fgbio-*` versionadas em `skills/cgge-fgbio/` (fora do plugin), saneadas, com `skillOverrides` (D46); próxima: 6.3; antes, na v3.36: análise da pasta de prompts `%USERPROFILE%\My Drive\_projetos\02_dev-prompts\` e **nova etapa 6.10** (D45: skills `cgov-secretaria-colegiados`, `cgov-integridade`, `cgov-carta-servicos` e `cgov-projetos-cooperacao`; ampliação da `cgov-nt-06` e da `cgov-modelar-fluxo`); antes, na v3.35: **bloco de decisões concluído** — 6.6 (D4: nova skill `cgov-triagem-processo-sei`, mantendo o `.md` autocontido) e 6.9(a) (D44: as 6 questões da Parte B.5); próxima: 6.2; antes, na v3.33: ordem das etapas aprovada (D42) e **6.1 concluída** — 28 skills da conta exportadas para `local/installed-reference/_export_2026-11-07/` (39/39 arquivos conferidos por SHA-256 contra a cópia sincronizada da máquina do Coordenador), comparação com fontes e referência em `COMPARACAO.md` e divergências decididas (D43) —; próxima: bloco de decisões 6.6 + 6.9(a). Histórico completo das versões v1–v3.48: **Apêndice G**.) A v3 incorpora o **rearranjo dos dois repositórios**: o de desenvolvimento (`C:\Projetos\cgov-geral`) e o operacional (`%USERPROFILE%\My Drive\10_Institucional\CGOV`).
 > **Responsável:** Coordenador de Governança (CGOV/CGGE/ICMBio)
 > **Repositório de desenvolvimento:** `C:\Projetos\cgov-geral` ⇄ GitHub `lpchagas/cgov-geral` (**privado**, confirmado em 05/11), `main` = `e305404` (*merge* da Fase 5, D41), conferido em 07/11 (`main...origin/main` sem diferença); o *branch* `implantacao/fase-5` (`ee3b239`) fica só na máquina do Coordenador
 > **Repositório operacional:** `%USERPROFILE%\My Drive\10_Institucional\CGOV` (Google Drive)
@@ -9,7 +17,7 @@
 > **Método:** análise documental (`engineering:documentation`) e arquitetural com ADRs (`engineering:architecture`)
 > **Regra de execução:** uma fase por vez, com confirmação explícita do Coordenador antes de mover, renomear, excluir, reinstalar, fazer *commit* ou *push*.
 > **Regra de manutenção:** a cada etapa concluída, este plano é **atualizado integralmente**, conforme a lista de verificação da Seção "Regra de manutenção deste plano" (logo abaixo do sumário).
-> **Situação atual:** Fases 1, 2, 3, 4 e 5 ✅ (Fase 4 concluída em 06/11; Fase 5 em 07/11: scripts em Python, junções e bloqueios novos, ADRs e catálogo em `docs/`, publicação com `publicar_operacao.py`, *merge* `e305404`) · **Fase 6 ✅** (portfólio de skills, concluída em 08/11): 6.1 ✅ (07/11, D42–D43); 6.6 ✅ decidida (D4); 6.9(a) ✅ decidida (D44); nova etapa 6.10 (D45); 6.2 ✅ (D46); prefixo `pgd-` (D47); 6.3 ✅ (D48); 6.5 ✅ (D49); 6.9(b)–(d) ✅ (D50); 6.4 ✅ (D51); E8 ✅ (D52); 6.10 ✅ (D53); 6.7 ✅ (OCR aprovado); 6.8 ✅: evals 129/134 (D54), 6.8a (`b863ef3`), reinstalação, 6.8b (`066068b`), `--verificar` sem divergências · quarentenas a revisar: `_a-excluir_2026-11-05` (4.11, lembrete em 05/12/2026) e `_a-excluir_2026-11-07` (publicação, a partir de 07/12/2026) · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D5–D8; ADR-001, 005 e 008–011).
+> **Situação atual:** etapa 7.0 (documentação) ✅ em 09/11/2026, aguardando *commit*; Fases 1, 2, 3, 4 e 5 ✅ (Fase 4 concluída em 06/11; Fase 5 em 07/11: scripts em Python, junções e bloqueios novos, ADRs e catálogo em `docs/`, publicação com `publicar_operacao.py`, *merge* `e305404`) · **Fase 6 ✅** (portfólio de skills, concluída em 08/11): 6.1 ✅ (07/11, D42–D43); 6.6 ✅ decidida (D4); 6.9(a) ✅ decidida (D44); nova etapa 6.10 (D45); 6.2 ✅ (D46); prefixo `pgd-` (D47); 6.3 ✅ (D48); 6.5 ✅ (D49); 6.9(b)–(d) ✅ (D50); 6.4 ✅ (D51); E8 ✅ (D52); 6.10 ✅ (D53); 6.7 ✅ (OCR aprovado); 6.8 ✅: evals 129/134 (D54), 6.8a (`b863ef3`), reinstalação, 6.8b (`066068b`), `--verificar` sem divergências · quarentenas a revisar: `_a-excluir_2026-11-05` (4.11, lembrete em 05/12/2026) e `_a-excluir_2026-11-07` (publicação, a partir de 07/12/2026) · novo objetivo D34 na etapa 6.9 · Fase 0 parcial (D5–D8; ADR-001, 005 e 008–011).
 
 ---
 
@@ -54,6 +62,7 @@ Este arquivo é a **fonte de verdade do andamento** da implantação. Uma atuali
 | 12 | Apêndice G (evolução) e linha final | Registrar a versão nova e o próximo passo |
 | 13 | Coerência | Buscar no arquivo por "Proposto", "a decidir", "Pendente" e "⚠️" e confirmar que cada ocorrência ainda é verdadeira |
 | 14 | Versionamento | Depois da etapa 3.A.0, fazer *commit* da atualização (`docs(plano): …`) com a confirmação do Coordenador |
+| 15 | Índices e verificação | Rodar `py scripts\gerar_indices_docs.py` e `py scripts\verificar_docs.py` (0 erros) antes do *commit*; ver [`convencoes-documentacao.md`](convencoes-documentacao.md) |
 
 A mesma regra está nas instruções do projeto "Escritório CGOV — Implantação" (Apêndice A, regra 8).
 
@@ -173,7 +182,7 @@ O desenvolvimento acontece no repositório (agora no Windows) e publica para a o
 
 | ADR | Decisão | Status |
 |---|---|---|
-| 001 | Preservar a separação desenvolvimento × operação (Decisão 27), o canal `PENDENCIAS.md` e a regra "produção = *commit* publicado" | Proposto |
+| 001 | Preservar a separação desenvolvimento × operação (Decisão 27), o canal `PENDENCIAS.md` e a regra "produção = *commit* publicado" | **Aceito (09/11, D57)** |
 | 002 | Desenvolvimento em `C:\Projetos\cgov-geral` (Windows); WSL aposentado | **Aceito** (Fase 1) |
 | 003 | Dois projetos Cowork: **Implantação** (pasta do repositório; acesso temporário à pasta CGOV durante a Fase 4) e **Operação** (pasta CGOV; nunca edita o repositório) | **Aceito** (D2, 05/11) |
 | 004 | Scripts multiplataforma em Python (`link_acervo.py`, `publicar_operacao.py`, `gerar_indices.py`, `reorganizar_cgov.py`) | **Aceito (07/11, D40)** — os cinco scripts em Python existem |
@@ -181,9 +190,9 @@ O desenvolvimento acontece no repositório (agora no Windows) e publica para a o
 | 006 | Skills neutras quanto a caminho: citam **papéis** ("pasta do processo", "acervo normativo"); os caminhos concretos ficam no `AGENTS.md` de cada repositório | ✅ Aceito (07/11/2026, D48; aplicado na 6.3) |
 | 007 | Separação de dados: Git só com fonte e documentação sanitizada; processos, normativos e produtos só no Drive | **Aceito (07/11, D40)** — `.gitignore`, `verificar_sanitizacao.py` e bloqueios (D39) |
 | 008 | Agentes definidos uma vez no plugin; execução no Cowork e no Claude Code; Maestri opcional | Proposto |
-| 009 | Obsidian: cofre de desenvolvimento = repositório; cofre de operação = pasta CGOV (opcional, Fase 8) | Proposto |
+| 009 | Obsidian: cofre de desenvolvimento = repositório; cofre de operação = pasta CGOV (opcional, Fase 8) | **Aceito (09/11, D57)** |
 | 010 | Painéis Power BI em PBIP versionado sem dados; MCP de autoria só no desenvolvimento; Fabric IQ só com autorização da TI | Proposto |
-| 011 | Qualidade: evals com `skill-creator`, paridade fonte × instalado, verificação de sanitização | Proposto |
+| 011 | Qualidade: evals com `skill-creator`, paridade fonte × instalado, verificação de sanitização | **Aceito (09/11, D57)** |
 | **012** | **Estrutura do repositório operacional** (Seções 5.2 e 5.3) | **Aceito (05/11)** |
 | **013** | **Projetos Cowork por processo passam a ser exceção** | **Aceito (05/11)** |
 | **014** | **Exclusão controlada** | **Aceito (05/11)** |
@@ -1176,12 +1185,13 @@ Além disso, `.gitattributes` não existe; os arquivos rastreados estão em LF, 
 
 | Etapa | Ação |
 |---|---|
+| 7.0 | **Revisão documental (pré-requisito, ✅ 09/11/2026, D57):** `docs/INDICE.md`, `docs/convencoes-documentacao.md`, `docs/governance/rastreabilidade.md`, índices gerados (plano, decision-log, analista SEI), frontmatter em `docs/`, `scripts/gerar_indices_docs.py` e `scripts/verificar_docs.py`. **Resultado:** 109 `.md`, 469 links relativos, 0 erros no verificador; plano de 1.801 para ~1.610 linhas (Apêndices B, E e F por link). Antes da 7.1: decidir o ADR-005 (E12); depois do `git mv`, rodar o gerador e o verificador (E14) |
 | 7.1 | `git mv skills/<família>/<s> plugins/cgov-escritorio/skills/<s>` (estrutura plana); `plugin.json` e `README.md` do plugin (Apêndice C) |
 | 7.2 | Comandos do acervo: `/cgov-escritorio:novo-processo`, `:triar-entrada`, `:atualizar-indices`, `:registrar-pendencia` |
 | 7.3 | `publicar_operacao.py` gera `dist/cgov-escritorio-<versão>.zip`; `.claude/settings.json` desabilita o plugin sincronizado nas sessões de desenvolvimento (⚠️ confirmar a chave na documentação de *synced plugins* do Claude Code; testar com `claude --plugin-dir`) |
 | 7.4 | `claude plugin validate .\plugins\cgov-escritorio` |
 | 7.5 | **Customize → Plugins → Add → Upload plugin**; testar no projeto Operação |
-| 7.6 | Desativar as 26 skills avulsas por uma semana; sem regressão, excluí-las; versão `1.0.0` no `CHANGELOG.md` |
+| 7.6 | Desativar as skills avulsas do plugin (32 em 08/11/2026; as 2 `cgge-fgbio-*` ficam fora) por uma semana; sem regressão, excluí-las; versão `1.0.0` no `CHANGELOG.md` |
 | 7.7 | (Opcional) Marketplace GitHub: **Add marketplace** → `lpchagas/cgov-geral`, com **Connect GitHub / Install the Claude GitHub App** só para este repositório e **Sync automatically desligado**, depois de testar que um *commit* não publicado não chega à conta |
 
 **Runbook "Alterar uma skill":** pendência → *branch* → editar → evals (`skill-creator`) → sanitização + validação → `version`/`CHANGELOG`/log → *merge*/tag/*push* → `publicar_operacao.py` → enviar o zip → `--verificar` → fechar a pendência. Reversão: reenviar o zip anterior (os três últimos ficam em `dist/`).
@@ -1335,6 +1345,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 | D53 | 6.10: gravar as quatro skills novas; enquadramento da Carta de Serviços | Gravar; registrar a competência com ⚠️ e pendência | ✅ Respondida (07/11): **gravar**; Carta de Serviços **no inciso VI**, como desdobramento do Catálogo |
 | D52 | E8: relação entre as Portarias ICMBio nº 271/2013 e nº 129/2020; extensão das correções; curadoria do acervo | A nº 129/2020 prevalece onde colidir, a nº 271/2013 no resto, com ⚠️; corrigir todas as skills e instruções afetadas; curadoria pela operação | ✅ Respondida (07/11): **as três recomendações** |
 | D40 | Quais ADRs viram arquivo em `docs/adr/` e quais propostos aprovar agora? | Os 14, com status; aprovar ADR-004 e ADR-007 | ✅ Respondida (07/11): **os 14**, e **ADR-004 e ADR-007 aceitos**; o ADR-011 continua proposto |
+| D57 | Revisão da documentação antes da Fase 7: como tratar o plano (249 KB), o frontmatter e os ADRs "Proposto" em vigor? | Índice + apêndices por link; frontmatter leve em `docs/`; propor aceitar ADR-001, 009 e 011 | ✅ Respondida (09/11): **as três recomendações**; **ADR-001, 009 e 011 aceitos em 09/11/2026** (confirmado pelo Coordenador; ADR-005 fica para o início da Fase 7); decision-log §44 |
 
 ---
 
@@ -1389,7 +1400,7 @@ Evals de todas as skills com `skill-creator` (taxa de acerto no catálogo); 3 ca
 
 | Fase | Status | Data | Evidência |
 |---|---|---|---|
-| 0 — Decisões | 🟨 | 07/11/2026 | Respondidas: D1–D4 e D9–D56. Pendentes: D5–D8 (não bloqueiam as Fases 3–6) e aprovação formal dos ADR-001, 005 e 008–011 (ADR-004 e 007 aceitos em 07/11, D40; ADR-006 em 07/11, D48) |
+| 0 — Decisões | 🟨 | 07/11/2026 | Respondidas: D1–D4 e D9–D56. Pendentes: D5–D8 (não bloqueiam as Fases 3–6) e aprovação formal dos ADR-005, 008 e 010 (ADR-001, 009 e 011 aceitos em 09/11, D57) (ADR-004 e 007 aceitos em 07/11, D40; ADR-006 em 07/11, D48) |
 | 1 — Consolidação no Windows | ✅ | 04/11/2026 | WSL: remoto → `cgov-geral`, *push* `4960e11..67957fe`; clone em `C:\Projetos\cgov-geral` (HEAD `67957fe`, `autocrlf=false`); manifesto `local/_manifesto_wsl_20261104.sha256` (490 arquivos): 63/63 em `local\` e 488/488 no Drive; junções e `.env` provisórios |
 | 2 — Arquitetura dos repositórios | ✅ | 05/11/2026 | Arranjo das Seções 5.1–5.6 aceito sem ajustes; ADR-012, 013 e 014 aprovados; D10–D16 respondidas e incorporadas ao mapa (5.5) |
 | 3 — Projetos Cowork | ✅ | 05/11/2026 | 3.B.4 ✅: `cgov-geral-v1` arquivado; *commit* `be2f493` (v3.5) conferido por `ls-remote`. 3.C ✅: inventário simplificado (D21; vínculos antigos inexistentes, nenhum na pasta CGOV). 3.B.3 ✅: memória não preservada (D20). 3.A.4 ✅: instruções corrigidas. *Commits* `6890b63` e `320007d` (conferido por `ls-remote`). Repositório privado confirmado; documentação corrigida (D19). 3.B.1–3.B.2 ✅: 4 pastas do `cgov-geral-v1` registradas; instruções preservadas (SHA-256 `ad862755…`). 3.A ✅: *commits* `8787e0a` e `de0fa54` (conferido por `ls-remote`); projeto "Implantação" com as duas pastas confirmadas; teste 3.A.6 aceito; `.obsidian/` ignorado (D18); regras de interação (D17). Próximo: Fase 4 |
@@ -1485,77 +1496,7 @@ GitHub: verificações remotas (git fetch, git ls-remote) e push ficam no PowerS
 
 Fonte versionada: `C:\Projetos\cgov-geral\docs\system-instructions\escritorio-cgov-operacao.md`. A v1.0 (05/11/2026, etapa 4.8) substituiu o `escritorio-cgov.md`, arquivado em `C:\Projetos\cgov-geral\archive\system-instructions\escritorio-cgov_ate-2026-11-05.md`. A **v1.1** (6.8a) lista as skills com os nomes reinstalados (`pgd-*`, as da 6.4 e da 6.10), troca a seção de caminhos de transição pela de caminhos por papel (ADR-006, D48) e passa os índices ao gerador publicado. **Colada no projeto Operação em 07/11/2026, depois da reinstalação das 34 skills**; a tabela "Locais antigos" do `AGENTS.md` entrou na 6.8b.
 
-### Escritório CGOV — Operação
-
-#### Papel
-Você é o assistente técnico da Coordenação de Governança (CGOV/CGGE) do ICMBio. Atende o Coordenador e
-os servidores da CGOV na elaboração de Notas Técnicas, pareceres, análises de processos SEI e demais
-produtos da Coordenação. Trate cada sessão como podendo ser de um servidor diferente; não presuma
-histórico além do que estiver nos arquivos.
-
-#### Antes de qualquer tarefa
-1. Leia LEIA-ME.md e AGENTS.md na raiz da pasta. Eles definem onde ler, onde gravar e como nomear.
-2. Para um processo, abra 01_processos/_INDICE.md, localize a pasta e leia primeiro o PROCESSO.md dela.
-   Campos marcados ⚠️ na ficha ainda não foram revisados: não os trate como fato.
-
-#### Competência
-Enquadre toda demanda no parágrafo único do Art. 37 da Portaria ICMBio nº 5.592/2025. Texto verificado:
-03_normativos/20251211_Art_37_Portaria_5592-2025_texto_verificado.md. Se não houver enquadramento,
-diga isso com transparência em vez de forçar um.
-
-#### Caminhos
-As skills citam papéis (pasta do processo, acervo normativo, caixa de entrada…); o caminho de cada papel
-está na tabela "Caminhos canônicos" do AGENTS.md. Arquivo citado num local antigo: use a tabela "Locais
-antigos" do AGENTS.md. Nunca crie pastas `local/`, `analyses/` ou `normative-sources/`.
-
-#### Skills
-- Nota Técnica ou parecer: comece sempre por `cgov-nt-01-triagem`, mesmo que peçam um capítulo
-  específico; ela cria `trabalho/NT_ESTADO.md` e define quais das `cgov-nt-02` a `cgov-nt-07` usar.
-- Análise normativa: `cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`,
-  `cgov-saneamento-legistica`.
-- Plano de Entregas e PGD: `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`,
-  `pgd-registro-execucao`; indicadores: `pgd-analisar-indicador`, `pgd-desenvolver-indicador`,
-  `pgd-implementar-indicador`, `pgd-testar-indicador`.
-- Eixos do Art. 37: `cgov-gestao-riscos`, `cgov-air-arr`, `cgov-cadeia-valor`, `cgov-regimento-interno`,
-  `cgov-qcf`, `cgov-pgr`.
-- Integridade, colegiados, Carta de Serviços e cooperação: `cgov-integridade`, `cgov-secretaria-colegiados`,
-  `cgov-carta-servicos`, `cgov-projetos-cooperacao`.
-- Operação da pasta: `cgov-triagem-processo-sei` (triagem e despachos de processo SEI) e
-  `cgov-gestao-acervo` (caixa de entrada, pastas e fichas de processo, índices, arquivamento);
-  `cgov-transcrever-normativos` (PDF de norma para Markdown).
-Se uma skill divergir destas instruções ou do AGENTS.md quanto a caminhos, prevalecem estas instruções.
-
-#### Regras
-1. Processo novo: crie a pasta em 01_processos/ conforme o AGENTS.md (subpastas e PROCESSO.md a partir
-   de 90_escritorio-virtual/modelos/processo/PROCESSO.md).
-2. Ao terminar uma etapa num processo, atualize no PROCESSO.md: situacao, atualizado_em, Andamento e
-   Produtos. Preencha um campo ⚠️ só com informação confirmada pelo usuário ou por documento.
-3. NT assinada: o PDF vai para 02_notas-tecnicas/<ano>/ com o nome
-   NT_<nº>-<ano>_SEI_<nº documento>_<tema>.pdf; registre a NT no PROCESSO.md.
-4. Arquivo novo sem destino claro: 00_entrada/; proponha o destino e aguarde confirmação.
-5. Os _INDICE.md são gerados por 90_escritorio-virtual/ferramentas/gerar_indices.py (skill
-   `cgov-gestao-acervo`, modo ATUALIZAR_INDICES): não os edite à mão; rode o gerador quando algo mudar
-   um índice (processo novo, NT assinada, norma nova).
-6. Nunca invente norma, número, artigo ou dado; sinalize lacunas com ⚠️ e pergunte.
-7. Siglas fixas: PGR = Programa de Gestão para Resultados e Inovação (Portaria nº 1.572/2023);
-   PGRI = Política de Gestão de Riscos e Integridade (Portaria nº 255/2020); PGD = Programa de Gestão
-   e Desempenho (IN ICMBio nº 14/2025); PGE (Portaria nº 768/2020) está revogada — não cite como vigente.
-8. Redação de NT: presente do indicativo (futuro só no texto de ato normativo); capítulos
-   "### Capítulo N — Nome" e subseções "#### N.1" reiniciadas a cada capítulo, nunca 4.1.1; proposição
-   final em (i), (ii), (iii); Encaminhamentos com o destinatário em negrito. Saída em Markdown no chat;
-   .docx só se pedido.
-9. LGPD: sem nomes ou matrículas em achados consolidados, fichas e índices, salvo autorização expressa.
-10. Nunca edite 90_escritorio-virtual/ (é publicado pelo desenvolvimento), exceto para acrescentar
-    entradas em 90_escritorio-virtual/manutencao/PENDENCIAS.md. Nunca exclua arquivos: o que não serve
-    vai para 99_arquivo/_a-excluir_<AAAA-MM-DD>/.
-11. Operações em lote (mover, renomear, arquivar): mostre a lista e aguarde confirmação.
-12. Problema em skill, norma desatualizada ou melhoria: registre em PENDENCIAS.md (data, skill ou
-    documento, o que aconteceu, processo SEI de origem, sem dados pessoais). Não corrija skills aqui.
-
-#### Postura
-Divida tarefas complexas em subtarefas, explique a abordagem antes de responder, justifique as
-conclusões e verifique a resposta, sobretudo em análise normativa. Quando faltar um dado, declare a
-lacuna e pergunte.
+> **Texto removido em 09/11/2026** (regra "link, não duplique": [`convencoes-documentacao.md`](convencoes-documentacao.md)). O bloco de instruções que ficava aqui era uma cópia da versão 1.1; a **fonte única** é [`system-instructions/escritorio-cgov-operacao.md`](system-instructions/escritorio-cgov-operacao.md). O texto anterior permanece no histórico do Git (por exemplo, no *commit* `449dbf0`, plano v3.48).
 
 ---
 
@@ -1601,141 +1542,13 @@ Nunca altere arquivos. Nunca invente norma; na dúvida, marque ⚠️.
 
 ## Apêndice E — Rascunhos da camada de navegação da raiz (fonte: `operacao/`)
 
-### E.1 — `CGOV\LEIA-ME.md`
-
-#### Escritório CGOV — pasta de trabalho da Coordenação de Governança (ICMBio)
-
-Esta pasta reúne o trabalho da CGOV: processos SEI, Notas Técnicas, normativos, colegiados, projetos
-e gestão da coordenação. O assistente Claude (projeto "Escritório CGOV — Operação") usa esta mesma
-pasta e segue estas regras.
-
-##### Mapa
-| Pasta | O que guarda |
-|---|---|
-| 00_entrada | Arquivos novos que ainda não sabemos onde guardar. Esvaziar toda semana |
-| 01_processos | Uma pasta por processo SEI, com a ficha PROCESSO.md. Veja 01_processos/_INDICE.md |
-| 02_notas-tecnicas | Série oficial de NTs e Informações assinadas, por ano. Veja o _INDICE.md |
-| 03_normativos | Leis, decretos, portarias e INs (PDF + texto .md). Revogados em revogados/ |
-| 04_colegiados | Pautas, atas e transcrições do CTGRIC, Conselho de Governança, CIG e CTGD |
-| 05_projetos | Oficinas, eventos, parcerias e iniciativas sem processo SEI próprio |
-| 06_gestao-da-coordenacao | Plano de entregas, PGD da equipe, planejamento e acompanhamento |
-| 90_escritorio-virtual | Infraestrutura do assistente de IA. Não editar |
-| 99_arquivo | Processos encerrados, versões superadas e quarentena de exclusão |
-
-##### Tenho um arquivo. Onde salvo?
-| Se é… | Salve em… |
-|---|---|
-| Documento baixado do SEI | 01_processos/<processo>/documentos-sei |
-| Rascunho, análise ou planilha de trabalho de um processo | 01_processos/<processo>/trabalho |
-| Material de apoio (dados, mapas, estudos, áudios) | 01_processos/<processo>/referencias |
-| Versão final enviada ao SEI | 01_processos/<processo>/produtos |
-| NT ou Informação já assinada | 02_notas-tecnicas/<ano> (e registre no _INDICE.md) |
-| Norma publicada | 03_normativos (o assistente transcreve e cataloga) |
-| Material de reunião de colegiado | 04_colegiados/<colegiado> |
-| Apresentação de oficina ou evento | 05_projetos/<AAAA-MM_apelido> |
-| Não sei | 00_entrada (o assistente sugere o destino) |
-
-##### Como nomear
-- Processo: SEI_02070.020239_2025-64_plano-setorial (número SEI com "_" no lugar da barra; apelido curto
-  em minúsculas, com hífen)
-- Documento do SEI: AAAAMMDD_SEI_<nº do documento>_<tipo>_<descrição>.pdf
-- Versões: _v1, _v2…; ao concluir, as anteriores vão para 99_arquivo/versoes-anteriores
-
-##### Regras
-- Nada se apaga: o que não serve vai para 99_arquivo/_a-excluir_<data> e é revisto em 30 dias.
-- Sem nomes ou matrículas de servidores em fichas e índices (LGPD).
-- Problemas com o assistente ou com as skills: 90_escritorio-virtual/manutencao/PENDENCIAS.md.
-
-##### Como pedir ajuda ao Claude (projeto "Escritório CGOV — Operação")
-"Abra o processo do Plano Setorial e resuma o andamento" · "Preciso de uma Nota Técnica sobre…"
-· "Classifique o que está em 00_entrada" · "Atualize os índices"
-
-### E.2 — `CGOV\AGENTS.md` (regras para agentes de IA)
-
-#### AGENTS.md — pasta operacional da CGOV
-
-Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que trabalhe nesta pasta.
-
-##### Caminhos canônicos
-| Papel citado pelas skills | Caminho |
-|---|---|
-| Pasta do processo | 01_processos/SEI_<nº>_<ano>-<dv>_<apelido>/ |
-| Ficha do processo | <pasta do processo>/PROCESSO.md |
-| Pasta de trabalho / estado da NT | <pasta do processo>/trabalho/ · trabalho/NT_ESTADO.md |
-| Documentos do SEI / referências / produtos | <pasta do processo>/documentos-sei · referencias · produtos |
-| Série de Notas Técnicas | 02_notas-tecnicas/<ano>/ + 02_notas-tecnicas/_INDICE.md |
-| Acervo normativo | 03_normativos/ (+ _INDICE.md; revogados/) |
-| Caixa de entrada | 00_entrada/ |
-| Documentação do Escritório (somente leitura) | 90_escritorio-virtual/referencia/docs/ |
-| Modelos | 90_escritorio-virtual/modelos/ |
-| Pendências para o desenvolvimento | 90_escritorio-virtual/manutencao/PENDENCIAS.md |
-
-##### Obrigações
-1. Processo novo: criar a pasta a partir de 90_escritorio-virtual/modelos/processo/ e preencher o PROCESSO.md.
-2. Depois de trabalhar num processo: atualizar situacao e atualizado_em no PROCESSO.md.
-3. Nunca gravar em 90_escritorio-virtual/ nem fora das pastas acima; nunca excluir (usar 99_arquivo/).
-4. Nunca criar pastas local/, analyses/ ou nomes fora da convenção do LEIA-ME.md.
-5. Movimentações em lote somente após mostrar a lista e receber confirmação.
-6. Os _INDICE.md são gerados: não editar à mão; usar /cgov-escritorio:atualizar-indices.
+> **Texto removido em 09/11/2026.** Os rascunhos E.1 (`CGOV\LEIA-ME.md`) e E.2 (`CGOV\AGENTS.md`) viraram os arquivos de `operacao/` no lote (a) da Fase 4 (v3.11), com ajustes. Fontes vigentes: [`../operacao/LEIA-ME.md`](../operacao/LEIA-ME.md) e [`../operacao/AGENTS.md`](../operacao/AGENTS.md), publicados na raiz da pasta CGOV por `publicar_operacao.py`. Os rascunhos originais permanecem no histórico do Git.
 
 ---
 
 ## Apêndice F — Modelos (fonte: `operacao/modelos/`)
 
-### F.1 — `01_processos\_LEIA-ME.md` (modelo de `_LEIA-ME` de área)
-
-#### 01_processos — uma pasta por processo SEI
-
-**Finalidade:** reunir tudo o que pertence a um processo SEI: documentos, trabalho, referências e produtos.
-**Entra:** qualquer arquivo ligado a um número SEI. **Não entra:** NT já assinada (vai para 02_notas-tecnicas).
-**Nome da pasta:** SEI_<órgão>.<número>_<ano>-<dígito>_<apelido> — ex.: SEI_02070.020239_2025-64_plano-setorial
-**Dentro de cada processo:** PROCESSO.md · documentos-sei/ · trabalho/ · referencias/ · produtos/
-**Índice:** _INDICE.md (gerado a partir das fichas; não editar à mão).
-**Processo encerrado:** mover a pasta inteira para 99_arquivo/processos-encerrados/ e marcar situacao: arquivado.
-
-### F.2 — `PROCESSO.md`
-
-```markdown
----
-tipo: processo
-sei: "02070.000000/0000-00"
-apelido: apelido-curto
-titulo: ""
-inciso_art37: []            # I a X do parágrafo único do Art. 37 da Portaria ICMBio nº 5.592/2025
-situacao: em-andamento      # em-andamento | aguardando-terceiros | concluido | arquivado
-unidade_demandante: ""
-aberto_em:
-atualizado_em:
-notas_tecnicas: []
-cowork_projeto: ""
----
-
-# <título do processo>
-
-## Objeto
-<o que o processo trata, em 2–3 linhas>
-
-## Andamento
-| Data | Evento | Documento SEI |
-|---|---|---|
-
-## Produtos da CGOV
-- <NT nº/ano — link para 02_notas-tecnicas/…>
-
-## Instruções específicas
-<orientações herdadas de projeto Cowork dedicado ou combinadas para este processo>
-
-## Pendências
-- [ ] …
-```
-
-### F.3 — `01_processos\_INDICE.md` (gerado)
-
-#### Índice de processos — gerado em 2026-11-05 por gerar_indices.py (não editar)
-
-| Processo | Título | Inciso | Situação | Atualizado | NTs |
-|---|---|---|---|---|---|
-| [SEI_02070.020239_2025-64_plano-setorial](SEI_02070.020239_2025-64_plano-setorial/PROCESSO.md) | … | II | em-andamento | 2026-11-05 | NT 31/2026 |
+> **Texto removido em 09/11/2026.** Os modelos F.1 (`_LEIA-ME.md` de área) e F.2 (`PROCESSO.md`) viraram os arquivos de `operacao/`; o F.3 (`_INDICE.md`) é gerado por `scripts/gerar_indices.py`. Fontes vigentes: [`../operacao/01_processos/_LEIA-ME.md`](../operacao/01_processos/_LEIA-ME.md) (e os `_LEIA-ME.md` das demais áreas) e [`../operacao/90_escritorio-virtual/modelos/processo/PROCESSO.md`](../operacao/90_escritorio-virtual/modelos/processo/PROCESSO.md). Os rascunhos originais permanecem no histórico do Git.
 
 ---
 
@@ -1794,7 +1607,8 @@ cowork_projeto: ""
 | v3.46 (07/11) | 6.7 | **6.7 concluída**: OCR do Windows aprovado (96,1% e 98,3%); erro típico nos ordinais e no `§` levado ao Passo 2 da `cgov-transcrever-normativos` (preparo 6.8a); E5 resolvida; E10 nova |
 | v3.47 (07/11) | Evals da 6.8; D55, D56; 6.8a | Evals das 9 skills alteradas: 129/134 (96%); correções em 10 skills; rascunho condicionado na `cgov-nt-06` (D55); exceções ao futuro do presente (D56); 6.8a gravada (23 arquivos); Apêndice B v1.1; E6 resolvida; E11 nova; decision-log §42 |
 | v3.48 (08/11) | *Commits* `b863ef3` (v3.47) e `066068b` (6.8b), publicados; reinstalação conferida | **Fase 6 concluída**: primeira tentativa de reinstalação sem efeito na conta (34 divergências); depois, 34 skills reinstaladas pelo Coordenador e conferidas pelo Claude na conta, 8 nomes antigos do PGD excluídos, instruções v1.1 coladas no projeto Operação; 6.8b ("Locais antigos" no `AGENTS.md`; fluxos de trabalho); `--verificar` sem divergências; P4 e P5 resolvidas; decision-log §43; próxima: Fase 7 |
+| v3.49 (09/11) | Revisão documental; D57 | Etapa 7.0: `docs/INDICE.md`, convenções, rastreabilidade, índices gerados, frontmatter, dois scripts de verificação; Apêndices B, E e F viram links; `pendencias.md` reorganizado (E9: 20 skills sem evals; E12–E14); decision-log §44. ADR-001, 009 e 011 aceitos |
 
 ---
 
-*Fim do plano v3.48. Fases 1 a 6 concluídas (Fase 5 em 07/11/2026, *merge* `e305404`; Fase 6 em 08/11/2026, *commits* `b863ef3` e `066068b`, `--verificar` sem divergências). Próxima: Fase 7 (plugin `cgov-escritorio`), numa sessão do projeto "Escritório CGOV — Implantação". Seguem as pendências E9, E10 e E11, o piloto 6.9(e) (Fase 11), a 4.11 (quarentena de 05/11, a partir de 05/12/2026, com lembrete agendado) e a revisão das quarentenas de publicação (P7, a partir de 07/12/2026).*
+*Fim do plano v3.49 (etapa 7.0, revisão documental, em 09/11/2026). Fases 1 a 6 concluídas (Fase 5 em 07/11/2026, *merge* `e305404`; Fase 6 em 08/11/2026, *commits* `b863ef3` e `066068b`, `--verificar` sem divergências). Próxima: Fase 7 (plugin `cgov-escritorio`), numa sessão do projeto "Escritório CGOV — Implantação". Seguem as pendências E9, E10 e E11, o piloto 6.9(e) (Fase 11), a 4.11 (quarentena de 05/11, a partir de 05/12/2026, com lembrete agendado) e a revisão das quarentenas de publicação (P7, a partir de 07/12/2026).*

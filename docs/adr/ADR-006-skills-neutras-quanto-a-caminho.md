@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [AGENTS.md, operacao/AGENTS.md, docs/governance/decision-log.md]
+---
+
 # ADR-006 — Skills neutras quanto a caminho
 
 - **Status:** Aceito

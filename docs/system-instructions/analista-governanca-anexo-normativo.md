@@ -1,3 +1,10 @@
+---
+tipo: instrucao
+status: vigente
+atualizado_em: 2026-11-07
+relacionados: [docs/system-instructions/analista-governanca.md, docs/multiplatform.md]
+---
+
 # Anexo A — Base normativa internalizada
 
 > Anexe este arquivo à Library do Project (ChatGPT) ou aos arquivos do Gem

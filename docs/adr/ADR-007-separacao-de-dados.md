@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [scripts/verificar_sanitizacao.py, docs/fluxos-de-trabalho.md]
+---
+
 # ADR-007 — Separação de dados: Git só com fonte sanitizada
 
 - **Status:** Aceito

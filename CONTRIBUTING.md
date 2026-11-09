@@ -24,15 +24,26 @@
 A Antigravity carrega skills de `.agents/skills/<nome>/SKILL.md`, não de
 `skills/`. `.agents/skills/` é um espelho gerado, ignorado pelo Git — nunca
 edite os arquivos ali diretamente. Sempre que um `SKILL.md` em
-em `skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/escritorio/` ou `skills/cgge-fgbio/` for alterado, regenere a cópia
+`skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/escritorio/` ou `skills/cgge-fgbio/` for alterado, regenere a cópia
 correspondente em `.agents/skills/` antes da próxima sessão na Antigravity:
 
-```bash
-cp skills/<família>/<skill>/SKILL.md .agents/skills/<skill>/SKILL.md
+```powershell
+New-Item -ItemType Directory -Force .agents\skills\<skill> | Out-Null
+Copy-Item skills\<família>\<skill>\SKILL.md .agents\skills\<skill>\SKILL.md -Force
 ```
+
+O espelho é opcional e local: só vale a pena mantê-lo enquanto a Antigravity for usada. Na Fase 7 as pastas
+`skills/<família>/` passam para `plugins/cgov-escritorio/skills/`; depois do `git mv`, rode
+`py scripts\gerar_indices_docs.py` para refazer os links do catálogo e `py scripts\verificar_docs.py` para achar
+referências de caminho que ficaram para trás.
 
 Ver `docs/multiplatform.md` para o mapeamento completo de qual aplicativo lê
 qual arquivo.
+
+## Documentação
+
+Mapa de leitura: [`docs/INDICE.md`](docs/INDICE.md). Regras de escrita (fonte única, frontmatter, links, tamanho):
+[`docs/convencoes-documentacao.md`](docs/convencoes-documentacao.md). Antes do *commit*: `py scripts\verificar_docs.py`.
 
 ## Revisão antes de publicar
 

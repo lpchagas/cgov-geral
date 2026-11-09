@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [docs/fluxos-de-trabalho.md, docs/governance/pendencias.md]
+---
+
 # ADR-014 — Exclusão controlada
 
 - **Status:** Aceito

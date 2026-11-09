@@ -1,7 +1,17 @@
+---
+tipo: referencia
+status: vigente
+versao: "3.0"
+atualizado_em: 2026-11-09
+relacionados: [docs/system-instructions/analista-governanca.md, docs/system-instructions/analista-governanca-anexo-normativo.md, docs/system-instructions/analista-governanca-anexo-funcoes.md, CONTRIBUTING.md]
+---
+
 # Compatibilidade multiplataforma — Claude, ChatGPT, Antigravity
 
 > Proposta registrada em 28/08/2026; pendências 1 e 2 executadas em
 > 29/08/2026 (ver `docs/governance/decision-log.md`).
+> Revisão de 09/11/2026: as notas **Situação em 09/11/2026** atualizam o que mudou desde então (34 skills,
+> `.agents/` ausente, decisão D4); o texto original de 28–29/08 é preservado.
 
 ## 1. O que cada aplicativo lê hoje
 
@@ -17,9 +27,11 @@
 
 ## 2. Antigravity não enxergava as skills — resolvido
 
-A Antigravity carrega skills de `<raiz-do-projeto>/.agents/skills/<nome>/SKILL.md` (escopo de workspace). As 13 skills deste projeto vivem em `skills/cgov-nt/` e `skills/thematic/` — fora desse caminho.
+A Antigravity carrega skills de `<raiz-do-projeto>/.agents/skills/<nome>/SKILL.md` (escopo de workspace). As 13 skills deste projeto na data da proposta viviam em `skills/cgov-nt/` e `skills/thematic/` — fora desse caminho.
 
 **Executado em 29/08/2026:** criado `.agents/skills/` com uma cópia de cada uma das 13 `SKILL.md` (mesmos nomes de pasta). `skills/` continua sendo a única fonte de verdade — o mesmo papel que `local/installed-reference/` já cumpre para as skills instaladas no Claude. `.gitignore` já ignorava `/.agents/`, então o espelho nunca é versionado, consistente com ser derivado, não original. A skill `cgov-transcrever-normativos` referencia seus utilitários diretamente em `skills/thematic/cgov-transcrever-normativos/scripts/`; esses scripts não são duplicados no espelho.
+
+**Situação em 09/11/2026:** o espelho é local e ignorado pelo Git, e hoje **não existe** nesta máquina (`.agents/` ausente); as fontes passaram a 34 (`skills/<família>/`, seis famílias). Enquanto a Antigravity não for usada, o espelho é opcional; para regerá-lo, use o comando de `CONTRIBUTING.md` (agora em PowerShell). Na Fase 7 as pastas passam para `plugins/cgov-escritorio/skills/`.
 
 **Regra de resincronização registrada em `CONTRIBUTING.md`:** qualquer edição em `skills/**/SKILL.md` exige regerar o arquivo correspondente em `.agents/skills/` antes da próxima sessão na Antigravity — mesmo comando de cópia usado na criação inicial. Isto evita repetir o problema já registrado duas vezes neste projeto (decision-log, §§10–11 e 14): uma cópia divergindo silenciosamente da fonte.
 
@@ -32,7 +44,7 @@ A Antigravity carrega skills de `<raiz-do-projeto>/.agents/skills/<nome>/SKILL.m
 | Arquivo | Tamanho original | Limite do campo Instructions de um Project no ChatGPT |
 |---|---|---|
 | `docs/system-instructions/analista-governanca.md` (v3.0) | 56.199 caracteres | **8.000 caracteres** (Custom Instructions global: 5.000, usuários pagos, desde jul/2026) |
-| `AGENTS.md` | 2.353 caracteres | Regras da Antigravity: 12.000 — folga confortável |
+| `AGENTS.md` | 2.353 caracteres (4.841 bytes em 09/11/2026) | Regras da Antigravity: 12.000 — folga confortável |
 
 Colar o texto de 56.199 caracteres seria truncado pelo ChatGPT sem aviso, arriscando cortar justamente os guardrails do final do documento.
 
@@ -69,5 +81,5 @@ A Antigravity também reconhece `GEMINI.md`, e **`GEMINI.md` tem precedência so
 ## 5. Pendências que ainda dependem de decisão sua
 
 1. Revisar o núcleo `analista-governanca.md` (v4.0) linha a linha antes de usá-lo em produção — é uma condensação de um documento validado por várias rodadas, feita sem segunda verificação humana (Seção 3.3).
-2. Decidir se `analista-processos-sei.md` deve ser fundido com `escritorio-cgov-operacao.md` (que substituiu `escritorio-cgov.md` em 05/11/2026), mantido separado, ou aposentado em favor das próprias skills (decisão D4 do plano, Fase 6.6) — as três fontes se sobrepõem dentro do Claude Cowork (Seção 3.2). Não decidi isso por você.
+2. Decidir se `analista-processos-sei.md` deve ser fundido com `escritorio-cgov-operacao.md` (que substituiu `escritorio-cgov.md` em 05/11/2026), mantido separado, ou aposentado em favor das próprias skills (decisão D4 do plano, Fase 6.6) — as três fontes se sobrepõem dentro do Claude Cowork (Seção 3.2). Não decidi isso por você. **Resolvido em 07/11/2026 (D4):** criar a skill `cgov-triagem-processo-sei` e manter o `.md` autocontido para Gems e GPTs.
 3. Se for usar o núcleo em um Gem do Gemini, testar diretamente ou pedir uma segunda condensação mais curta (Seção 3.4).

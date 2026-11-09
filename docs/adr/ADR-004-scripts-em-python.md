@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [scripts/publicar_operacao.py, scripts/link_acervo.py]
+---
+
 # ADR-004 — Scripts multiplataforma em Python
 
 - **Status:** Aceito

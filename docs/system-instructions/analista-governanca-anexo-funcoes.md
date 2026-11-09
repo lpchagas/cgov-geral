@@ -1,3 +1,10 @@
+---
+tipo: instrucao
+status: vigente
+atualizado_em: 2026-11-07
+relacionados: [docs/system-instructions/analista-governanca.md, docs/multiplatform.md]
+---
+
 # Anexo B — As nove funções da CGOV (modelos completos)
 
 > Anexe este arquivo junto do núcleo `analista-governanca.md` e do Anexo A.

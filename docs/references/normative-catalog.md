@@ -1,3 +1,10 @@
+---
+tipo: referencia
+status: vigente
+atualizado_em: 2026-11-06
+relacionados: [docs/catalogo-skills.md]
+---
+
 # Catálogo público de fontes normativas
 
 Este é o catálogo público e sanitizado do acervo normativo da pasta CGOV, hoje em

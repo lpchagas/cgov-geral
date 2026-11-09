@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [docs/fluxos-de-trabalho.md, archive/scripts-wsl/README.md]
+---
+
 # ADR-002 — Desenvolvimento no Windows; WSL aposentado
 
 - **Status:** Aceito

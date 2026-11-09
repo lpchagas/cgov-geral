@@ -1,3 +1,11 @@
+---
+tipo: instrucao
+status: vigente
+versao: "1.1"
+atualizado_em: 2026-11-07
+relacionados: [operacao/AGENTS.md, operacao/LEIA-ME.md, docs/fluxos-de-trabalho.md]
+---
+
 # Instruções do projeto Cowork "Escritório CGOV — Operação"
 
 > Cole o bloco abaixo no campo **Instruções** do projeto (não na descrição). Pasta vinculada: a pasta

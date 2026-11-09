@@ -1,3 +1,10 @@
+---
+tipo: decisao
+status: aceito
+atualizado_em: 2026-11-07
+relacionados: [docs/fluxos-de-trabalho.md, operacao/LEIA-ME.md]
+---
+
 # ADR-012 — Estrutura do repositório operacional
 
 - **Status:** Aceito

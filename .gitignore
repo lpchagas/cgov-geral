@@ -25,7 +25,7 @@ htmlcov/
 /tmp/
 
 # Workspace de execução de evals (pode conter dados de processos)
-/skills/cgov-nt/cgov-nt-01-triagem-workspace/
+/plugins/cgov-escritorio/skills/cgov-nt-01-triagem-workspace/
 
 # Configuração local (caminhos do acervo no Drive)
 .env

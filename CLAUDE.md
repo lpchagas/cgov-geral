@@ -10,7 +10,7 @@ Not a software codebase — it is the versioned source for a suite of Claude **S
 
 ## Commands
 
-- **Run an eval case**: open `skills/<family>/<skill-name>/evals/evals.json`, take one `prompt`, run it through the corresponding skill, and manually check the output against that case's `expected_output` and `expectations` list. There is no runner script — do this by hand or via a subagent.
+- **Run an eval case**: open `plugins/cgov-escritorio/skills/<skill-name>/evals/evals.json` (or `skills/cgge-fgbio/<skill-name>/evals/evals.json`), take one `prompt`, run it through the corresponding skill, and manually check the output against that case's `expected_output` and `expectations` list. There is no runner script — do this by hand or via a subagent.
 - **Validate a `SKILL.md` edit**: confirm the YAML frontmatter still has `name` and `description`; the `description` field has a **1,024-character hard limit** when installed via Customize → Skills in Claude (this has bitten the thematic skills before — see `docs/governance/decision-log.md` §10.3).
 - **Sanitization check**: `py scripts\verificar_sanitizacao.py` (whole tree) or `--staged` (index only) before any commit touching `docs/`, `operacao/`, `skills/` or `plugins/`; exit 1 = errors (personal paths, e-mails, CPF, matrícula, secrets, PDF/Office files). Versioned exceptions in `scripts/sanitizacao_permitidos.txt`; personal terms only in `local/sanitizacao_termos.txt`.
 - **Git**: single-branch repo (`main`); the repository is **private** (GitHub `lpchagas/cgov-geral`), but `docs/` and `skills/` are kept sanitized as if they were public (plan decision D3). `local/` is fully gitignored — never `git add` anything under it.
@@ -35,7 +35,7 @@ Claude Code in this repository (and the Cowork project "Escritório CGOV — Imp
 
 | Path | Role | Change rule |
 |---|---|---|
-| `skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/escritorio/`, `skills/cgge-fgbio/` | Canonical skill **source** (`cgge-fgbio/` stays outside the `cgov-escritorio` plugin) | Edit → run relevant evals → record decision in `docs/governance/decision-log.md` |
+| `plugins/cgov-escritorio/skills/` (32 skills, flat), `skills/cgge-fgbio/` | Canonical skill **source** (`cgge-fgbio/` stays outside the `cgov-escritorio` plugin; the other families moved into the plugin in step 7.1) | Edit → run relevant evals → record decision in `docs/governance/decision-log.md` |
 | `local/installed-reference/` | Read-only snapshots of *other* skills as actually installed | Reference only; don't edit to "fix" the installed skill |
 | `archive/` | Sanitized historical evidence | Append context; never rewrite content |
 | `docs/` | Publishable (sanitized) documentation | Keep links, normative citations, and personal-data scrubbing accurate |

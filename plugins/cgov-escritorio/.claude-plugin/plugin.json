@@ -1,0 +1,7 @@
+{
+  "name": "cgov-escritorio",
+  "displayName": "Escritório CGOV — ICMBio",
+  "version": "0.1.0",
+  "description": "Skills, agentes e comandos da Coordenação de Governança do ICMBio: Notas Técnicas (suíte cgov-nt), análise normativa, gestão de riscos, AIR/ARR, cadeia de valor, regimento interno, PGR, PGD, QCF e gestão do acervo.",
+  "author": { "name": "CGOV/CGGE/ICMBio" }
+}

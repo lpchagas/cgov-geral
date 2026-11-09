@@ -7,7 +7,7 @@ relacionados: [docs/governance/decision-log.md, docs/governance/rastreabilidade.
 
 # Índice do registro de decisões
 
-> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`decision-log.md`](decision-log.md) (1767 linhas, 45 cabeçalhos). **Não edite à mão.**
+> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`decision-log.md`](decision-log.md) (1786 linhas, 46 cabeçalhos). **Não edite à mão.**
 > O registro de decisões só recebe acréscimos (regra 6 do projeto Implantação) e tem mais de 1.700 linhas: use esta lista para ir direto à seção. A ligação entre seções, decisões D, ADRs e fases está em [`rastreabilidade.md`](rastreabilidade.md).
 
 - [1. Motivação e escopo original](decision-log.md#1-motivação-e-escopo-original) — linha 25
@@ -55,3 +55,4 @@ relacionados: [docs/governance/decision-log.md, docs/governance/rastreabilidade.
 - [43. Encerramento da Fase 6 (08/11/2026)](decision-log.md#43-encerramento-da-fase-6-08112026) — linha 1713
 - [44. Revisão e reorganização da documentação antes da Fase 7 (09/11/2026)](decision-log.md#44-revisão-e-reorganização-da-documentação-antes-da-fase-7-09112026) — linha 1727
 - [45. Início da Fase 7: ADR-005 aceito (09/11/2026)](decision-log.md#45-início-da-fase-7-adr-005-aceito-09112026) — linha 1751
+- [46. Etapa 7.1: skills movidas para o plugin (09/11/2026)](decision-log.md#46-etapa-71-skills-movidas-para-o-plugin-09112026) — linha 1768

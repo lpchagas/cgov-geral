@@ -27,7 +27,7 @@ relacionados: [docs/convencoes-documentacao.md, docs/governance/rastreabilidade.
 | Configurar ou atualizar as instruções de um assistente | [Instruções do projeto Operação](system-instructions/escritorio-cgov-operacao.md) → [Multiplataforma](multiplatform.md) → [Assistente especialista (núcleo)](system-instructions/analista-governanca.md) |
 | Analisar um ato normativo | [Procedimento](procedimentos/analise-atos-normativos.md) → [Instruções de projeto (modelo)](../operacao/90_escritorio-virtual/modelos/analise-ato-normativo/INSTRUCOES-PROJETO.md) → [Catálogo §4](catalogo-skills.md#4-skills-de-análise-de-atos-normativos-skillsnormativo) |
 | Conferir uma norma citada pelas skills | [Catálogo de fontes normativas](references/normative-catalog.md) → acervo `03_normativos/` da pasta CGOV |
-| Triar um processo SEI | [Skill `cgov-triagem-processo-sei`](../skills/escritorio/cgov-triagem-processo-sei/SKILL.md) e, para Gems e GPTs, [instruções do analista de processos SEI](system-instructions/analista-processos-sei-indice.md) |
+| Triar um processo SEI | [Skill `cgov-triagem-processo-sei`](../plugins/cgov-escritorio/skills/cgov-triagem-processo-sei/SKILL.md) e, para Gems e GPTs, [instruções do analista de processos SEI](system-instructions/analista-processos-sei-indice.md) |
 | Escrever ou revisar documentação | [Convenções de documentação](convencoes-documentacao.md) → `py scripts\verificar_docs.py` |
 | Consultar evidência histórica | [Relatório técnico da suíte `cgov-nt`](reports/RELATORIO_cgov-nt.md), [relatório de evals](reports/RELATORIO_EVALS_cgov-nt_2026-08-28.md), [arquivo morto](../archive/README.md) |
 

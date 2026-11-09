@@ -27,7 +27,6 @@ relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
 | E10 | `qa_transcription.py`: checagem automática dos ordinais e do `§` mal lidos pelo OCR (`1º` → `10`, `§` → `s`), achado da 6.7 | Evolução da `cgov-transcrever-normativos` | |
 | E11 | `cgov-saneamento-legistica`: tabela "regra → dispositivo conferido" (Decreto nº 12.002/2024, LC nº 95/1998 e Portaria ICMBio nº 271/2013, Anexo I) e evals com verificações específicas no lugar das genéricas, achado dos evals da 6.8 (D54) | Depois da transcrição das duas normas no acervo (C3) | |
 | E13 | Espelho `.agents/skills/` (Antigravity) não existe nesta máquina e cobria 13 skills; decidir entre regerar para as 34 fontes ou aposentar a regra do `CONTRIBUTING.md` | Antes de usar a Antigravity; depois da Fase 7 (novos caminhos) | [`multiplatform.md`](../multiplatform.md) §2 |
-| E14 | Depois do `git mv` da etapa 7.1 (`skills/<família>/` → `plugins/cgov-escritorio/skills/`), rodar `py scripts\gerar_indices_docs.py` e `py scripts\verificar_docs.py`, e corrigir os caminhos que sobrarem | Etapa 7.1 | Os caminhos de skills dos documentos passaram a depender do gerador (D57) |
 
 ## Em aberto — conteúdo da pasta CGOV (revisão gradual pela operação)
 
@@ -58,3 +57,4 @@ relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
 | E6 | Evals da `cgov-nt-01-triagem` e da `cgov-nt-03-introducao` citavam um número real de processo SEI | Fase 6.8a (07/11/2026): número fictício |
 | E8 | Ler as transcrições da Portaria ICMBio nº 129/2020 e da Portaria "Conjunta" nº 3/2021 e corrigir as skills e as instruções | 07/11/2026 (D52): a nº 129/2020 prevalece em espécies e vigência; a nº 271/2013 vale no resto, com ⚠️; 13 arquivos corrigidos. Resta só a Portaria Conjunta nº 3, de 13/05/2021 (ver C3) |
 | E12 | ADR-005 (plugin único) "Proposto" e pré-requisito formal da Fase 7 | 09/11/2026 (D58): aceito como está, no início da Fase 7; decision-log §45 |
+| E14 | Regerar índices e verificar `docs/` depois do `git mv` da 7.1 | 09/11/2026 (7.1): `gerar_indices_docs.py` regerou o catálogo; `verificar_docs.py` passou a varrer `plugins/` (110 `.md`, 0 erros); decision-log §46 |

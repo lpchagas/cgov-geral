@@ -116,7 +116,7 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
 
 1. **Origem.** Ler `90_escritorio-virtual/manutencao/PENDENCIAS.md` da pasta CGOV (colado pelo Coordenador
    ou pela junção `local\escritorio`) e [`governance/pendencias.md`](governance/pendencias.md).
-2. **Editar a fonte** em `skills/<família>/<skill>/SKILL.md`, `docs/`, `operacao/` ou `scripts/`.
+2. **Editar a fonte** em `plugins/cgov-escritorio/skills/<skill>/SKILL.md` (ou `skills/cgge-fgbio/<skill>/SKILL.md`), `docs/`, `operacao/` ou `scripts/`.
 3. **Validar:** frontmatter do `SKILL.md` com `name` e `description` (até 1.024 caracteres); evals
    (`evals/evals.json`), com saídas de teste em `local/pilots/`; sanitização de `docs/`, `skills/` e
    `operacao/` com `py scripts\verificar_sanitizacao.py` (antes do commit: `--staged`; exceções em

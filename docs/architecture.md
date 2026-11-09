@@ -31,7 +31,7 @@ no desenvolvimento, no [`AGENTS.md`](../AGENTS.md) da raiz.
 
 | Local | Papel | Regra de alteração |
 |---|---|---|
-| `skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/escritorio/` e `skills/cgge-fgbio/` | Código-fonte de skills mantidas pela CGOV (a família `cgge-fgbio/` fica fora do plugin `cgov-escritorio`) | Revisar, executar evals e registrar decisão. |
+| `plugins/cgov-escritorio/skills/` (32 skills) e `skills/cgge-fgbio/` | Código-fonte de skills mantidas pela CGOV (a família `cgge-fgbio/` fica fora do plugin `cgov-escritorio`; as demais foram movidas para o plugin na 7.1) | Revisar, executar evals e registrar decisão. |
 | `local/installed-reference/` | Snapshot de skills instaladas ou externas | Consulta local; não publicar sem sanitização. |
 | `archive/` | Evidência histórica sanitizada | Não alterar conteúdo; apenas acrescentar contexto. |
 | `docs/` | Documentação pública sanitizada | Revisar links, precisão normativa e dados pessoais. |

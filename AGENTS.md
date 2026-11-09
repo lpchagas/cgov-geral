@@ -50,11 +50,10 @@ Na pasta CGOV, vale a tabela de `operacao/AGENTS.md` (publicada como `AGENTS.md`
 
 ## Estrutura relevante
 
-- `skills/cgov-nt/`: fonte canônica da suíte de Notas Técnicas.
-- `skills/thematic/`: fontes das skills temáticas da CGOV.
-- `skills/pgd/`: fontes das skills do PGD (Art. 37, p.u., VII).
-- `skills/normativo/`: fontes das skills de análise de atos normativos (competências, versões, fluxos, legística).
-- `skills/escritorio/`: fontes das skills de operação do Escritório (`cgov-gestao-acervo`, `cgov-triagem-processo-sei`).
+- `plugins/cgov-escritorio/skills/`: fonte canônica das 32 skills do plugin `cgov-escritorio` (estrutura plana, uma
+  pasta por skill): suíte `cgov-nt-01` a `07` (Notas Técnicas), temáticas da CGOV, PGD (`pgd-*`, Art. 37, p.u., VII),
+  análise de atos normativos (competências, versões, fluxos, legística) e operação do Escritório
+  (`cgov-gestao-acervo`, `cgov-triagem-processo-sei`). Desde a etapa 7.1 (09/11/2026); antes ficavam em `skills/<família>/`.
 - `skills/cgge-fgbio/`: fontes das skills da Formação em Gestão da Biodiversidade (CGGE), fora do plugin `cgov-escritorio`.
 - `local/installed-reference/`: snapshots locais de referência de skills instaladas.
 - `operacao/`: fonte dos textos de navegação publicados na pasta CGOV (`LEIA-ME.md`, `AGENTS.md`,

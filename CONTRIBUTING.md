@@ -11,7 +11,7 @@
 
 ## Mudanças em skills
 
-1. Altere a fonte em `skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/escritorio/` ou `skills/cgge-fgbio/`.
+1. Altere a fonte em `plugins/cgov-escritorio/skills/<skill>/` ou, para a Formação CGGE, em `skills/cgge-fgbio/`.
 2. Atualize ou execute os evals aplicáveis.
 3. Confirme que instruções, exemplos e caminhos ativos permanecem coerentes.
 4. Registre a decisão e o resultado em `docs/governance/decision-log.md`.
@@ -24,12 +24,12 @@
 A Antigravity carrega skills de `.agents/skills/<nome>/SKILL.md`, não de
 `skills/`. `.agents/skills/` é um espelho gerado, ignorado pelo Git — nunca
 edite os arquivos ali diretamente. Sempre que um `SKILL.md` em
-`skills/cgov-nt/`, `skills/thematic/`, `skills/pgd/`, `skills/normativo/`, `skills/escritorio/` ou `skills/cgge-fgbio/` for alterado, regenere a cópia
+`plugins/cgov-escritorio/skills/<skill>/` ou `skills/cgge-fgbio/` for alterado, regenere a cópia
 correspondente em `.agents/skills/` antes da próxima sessão na Antigravity:
 
 ```powershell
 New-Item -ItemType Directory -Force .agents\skills\<skill> | Out-Null
-Copy-Item skills\<família>\<skill>\SKILL.md .agents\skills\<skill>\SKILL.md -Force
+Copy-Item plugins\cgov-escritorio\skills\<skill>\SKILL.md .agents\skills\<skill>\SKILL.md -Force
 ```
 
 O espelho é opcional e local: só vale a pena mantê-lo enquanto a Antigravity for usada. Na Fase 7 as pastas

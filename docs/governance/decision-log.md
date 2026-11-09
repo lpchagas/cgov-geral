@@ -1764,3 +1764,22 @@ Detalhes: [`rastreabilidade.md`](rastreabilidade.md) e plano de implantação (e
    `py scripts\verificar_docs.py` (pendência E14).
 
 Detalhes: [`rastreabilidade.md`](rastreabilidade.md) e plano de implantação (Fase 7).
+
+## 46. Etapa 7.1: skills movidas para o plugin (09/11/2026)
+
+1. **Confirmação:** o Coordenador aprovou a lista dos 32 `git mv` e o manifesto com `version` `0.1.0` (opção
+   recomendada; a `1.0.0` fica para a 7.6, depois de uma semana sem regressão).
+2. **Feito:** 32 skills (`cgov-nt` 7, `escritorio` 2, `normativo` 4, `pgd` 8, `thematic` 11) movidas por `git mv`
+   para `plugins/cgov-escritorio/skills/` (70 renomeações, estrutura plana); criados
+   `plugins/cgov-escritorio/.claude-plugin/plugin.json` (sem a skill de painéis, da Fase 10) e
+   `plugins/cgov-escritorio/README.md`. `skills/cgge-fgbio/` fica fora do plugin (D46).
+3. **Ajustes:** referências a `skills/<família>` corrigidas em `AGENTS.md`, `CLAUDE.md`, `CONTRIBUTING.md`,
+   `README.md`, `.gitignore` e em `docs/` (`INDICE`, `architecture`, `overview`, `fluxos-de-trabalho`,
+   `multiplatform`, `catalogo-skills`); histórico (decision-log, plano, relatório de evals) mantido. As cinco pastas de
+   família ficaram vazias (o shell do Cowork não apaga).
+4. **Achado:** `scripts/verificar_docs.py` ignorava `plugins/`, o que tirava as skills da checagem (109 → 67 `.md`);
+   corrigido (110 `.md`, 469 links, 0 erros). Sanitização aprovada (0 erros).
+5. **Risco até a 7.3:** `scripts/publicar_operacao.py` lê só `skills/`; não usar `--verificar` nem `--publicar`
+   antes de adaptá-lo para gerar o zip do plugin (7.3). Pendência E14 resolvida.
+
+Detalhes: plano de implantação (Fase 7, etapa 7.1).

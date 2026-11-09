@@ -17,17 +17,17 @@ relacionados: [docs/architecture.md, docs/catalogo-skills.md, docs/plano-implant
 
 | Item | Onde | Status |
 |---|---|---|
-| Suíte canônica `cgov-nt-01` a `07` | Código-fonte em `skills/cgov-nt`; instalada na conta Claude (Customize → Skills), paridade conferida em 08/11/2026 | ✅ Ativa, validada por piloto |
+| Suíte canônica `cgov-nt-01` a `07` | Código-fonte em `plugins/cgov-escritorio/skills/` (7.1); instalada na conta Claude (Customize → Skills), paridade conferida em 08/11/2026 | ✅ Ativa, validada por piloto |
 | 34 skills com fonte versionada | `skills/` (6 famílias); inventário em [`catalogo-skills.md`](catalogo-skills.md) | ✅ Reinstaladas e conferidas em 08/11/2026 (Fase 6.8) |
 | 13 skills antigas (`pgd-sk*`, `pspeadbio-sk*`) | Removidas da conta Claude; backup em `local/archive/` (fora do Git) | ❌ Desativadas (backup disponível) |
-| Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao`) | Promovidas a fonte em `skills/normativo/` e `skills/pgd/` na Fase 6.2 (07/11/2026) | ✅ Ativas, com fonte versionada |
+| Skills genéricas pré-existentes (`cgov-comparar-versoes`, `cgov-modelar-fluxo`, `cgov-auditoria-competencias`, `cgov-saneamento-legistica`, `pgd-especialista`, `pgd-elaborar-entrega`, `pgd-avaliar-entrega`, `pgd-registro-execucao`) | Promovidas a fonte na Fase 6.2 (07/11/2026); hoje em `plugins/cgov-escritorio/skills/` (7.1) | ✅ Ativas, com fonte versionada |
 | Relatório técnico completo (diagnóstico + arquitetura + revisão + piloto) | `docs/reports/RELATORIO_cgov-nt.md` | ✅ |
 | Artefatos do piloto | Não versionados (dados de processo real); resumo no relatório técnico | ✅ |
 | Fontes normativas | `03_normativos/` da pasta CGOV (desde 05/11/2026; antes `normative-sources/`) + catálogo público | ✅ |
 | System Instructions independente | `docs/system-instructions/analista-governanca.md` (núcleo v4.0) + [anexo normativo](system-instructions/analista-governanca-anexo-normativo.md) + [anexo de funções](system-instructions/analista-governanca-anexo-funcoes.md) | ✅ versão canônica v4.0 (29/08/2026) |
 | Catálogo normativo público | `docs/references/normative-catalog.md` | ✅ |
 | Texto verificado do Art. 37 da Portaria nº 5.592/2025 | `03_normativos/20251211_Art_37_Portaria_5592-2025_texto_verificado.md` da pasta CGOV | ✅ |
-| Skills temáticas do Art. 37 | Código-fonte em `skills/thematic/` (11 skills); instaladas na conta Claude | ✅ |
+| Skills temáticas do Art. 37 | Código-fonte em `plugins/cgov-escritorio/skills/` (11 skills temáticas); instaladas na conta Claude | ✅ |
 | System Instructions do Analista de Processos SEI | `docs/system-instructions/analista-processos-sei.md` | ✅ v7.3 |
 | Instruções do projeto Cowork "Operação" | `docs/system-instructions/escritorio-cgov-operacao.md` | ✅ v1.1 (07/11/2026) |
 | Análises e produtos de skills por processo SEI | `01_processos/<processo>/trabalho/` da pasta CGOV (desde 05/11/2026) | ✅ fora do Git |

@@ -28,7 +28,7 @@ from gerar_indices_docs import INDICES, cabecalhos, gerar_indice, mapa_skills, r
 
 RAIZ = Path(__file__).resolve().parent.parent
 DOCS = RAIZ / "docs"
-IGNORAR = {".git", "local", "dist", "node_modules", ".obsidian", ".vscode", ".claude", "__pycache__", ".agents", "plugins"}
+IGNORAR = {".git", "local", "dist", "node_modules", ".obsidian", ".vscode", ".claude", "__pycache__", ".agents"}
 
 TIPOS = {"guia", "referencia", "arquitetura", "decisao", "registro", "plano", "procedimento", "instrucao", "relatorio",
          "indice", "indice-gerado", "pendencias", "catalogo"}

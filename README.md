@@ -10,7 +10,7 @@ manutenção de skills, documentação metodológica e instruções de assistent
 - [Página inicial da documentação](docs/README.md), [ADRs](docs/adr/README.md) e [catálogo de skills](docs/catalogo-skills.md).
 - [Plano de implantação do Escritório Virtual](docs/plano-implantacao.md) (andamento, decisões e evidências).
 - [Pendências](docs/governance/pendencias.md).
-- Skills (fontes): [`cgov-nt`](skills/cgov-nt/), [temáticas](skills/thematic/), [PGD](skills/pgd/), [atos normativos](skills/normativo/), [operação do Escritório](skills/escritorio/) e [Formação CGGE](skills/cgge-fgbio/); inventário em [`docs/catalogo-skills.md`](docs/catalogo-skills.md).
+- Skills (fontes): [plugin `cgov-escritorio`](plugins/cgov-escritorio/) (32 skills: NT, temáticas, PGD, atos normativos e operação do Escritório) e [Formação CGGE](skills/cgge-fgbio/); inventário em [`docs/catalogo-skills.md`](docs/catalogo-skills.md).
 - [Procedimento de análise de atos normativos](docs/procedimentos/analise-atos-normativos.md).
 - [Instruções de assistentes](docs/system-instructions/), entre elas as do projeto Cowork ["Escritório CGOV — Operação"](docs/system-instructions/escritorio-cgov-operacao.md).
 - [Navegação da pasta operacional](operacao/) (fonte de `LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md` e modelos) e [scripts](scripts/) de manutenção.

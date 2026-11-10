@@ -1828,3 +1828,25 @@ Detalhes: plano de implantação (Fase 7, etapas 7.2 e 7.3).
 6. **Pendência nova:** E17 (gerações antigas em `dist\skills\<commit>\` viram candidatas à quarentena depois da 7.6).
 
 Detalhes: plano de implantação (Fase 7, etapas 7.4 e 7.5).
+
+## 49. Etapa 7.6a: avulsas desativadas e ajuste do `--verificar` (09/11/2026)
+
+1. **Desativação:** o Coordenador desativou as 32 skills avulsas em Customize → Skills. A `cgov-secretaria-colegiados`
+   estava ativa quando a primeira verificação foi feita e foi desativada em seguida. As 2 `cgge-fgbio-*` seguem avulsas.
+2. **Evidência (`--verificar`, script 0.3.1, HEAD `19f2dc2`):** 31 das 32 skills do plugin fora da cache local
+   `~\.claude\skills\synced`; a `cgov-secretaria-colegiados` ainda aparecia como avulsa (aviso); as 2 `cgge-fgbio-*`
+   iguais. Seção 1b: o plugin 0.1.0 apareceu sincronizado em `~\.claude\plugins\synced\<bucket>\cgov-escritorio`
+   (estrutura plana, sem `~gN`), `version` igual à do HEAD, com 28 divergências em `SKILL.md` por SHA-256. Seção 2:
+   14/14 iguais. Seção 3: 5 diferenças esperadas (arquivos de `docs\` alterados no *commit* `19f2dc2`). Total: 33.
+3. **Decisão (D61):** `verificar_skills()` avisa, sem contar divergência, se uma skill do plugin ainda estiver como
+   avulsa, e a flag `--sem-avulsas` (7.6b) a transforma em divergência; a 7.6a só é registrada com a saída real do
+   `--verificar`; a seção 1b passa a comparar os `SKILL.md` por nome, descrição e corpo (a causa das 28 divergências
+   não foi verificada; a hipótese é a conta regravar o cabeçalho) e a escolher a geração `~gN` mais recente.
+   `publicar_operacao.py` v0.3.1, testado numa cache falsa e depois na máquina do Coordenador: seção 1b sem
+   divergências; seção 1 com 1 aviso (`cgov-secretaria-colegiados` ainda na cache, já desativada); total 5
+   divergências, todas da seção 3 (esperadas).
+4. **Pendências:** E16 reescrita (local do plugin confirmado e 1b sem divergências com a v0.3.1; resta conferir a geração `~gN` no reenvio da `1.0.0`), E18 (confirmar
+   a cache e a seção 1b na máquina do Coordenador; depois, a 7.6b) e E19 (a referência de `docs\` só chega à pasta
+   CGOV com a publicação da `1.0.0`, porque `--publicar --executar` para quando já existe o zip da `version`).
+
+Detalhes: plano de implantação (Fase 7, etapa 7.6a).

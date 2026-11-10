@@ -1,16 +1,22 @@
 #!/usr/bin/env python3
 """publicar_operacao.py — publica o commit atual (HEAD) do cgov-geral para a operação.
 
-Versão 0.3.0 (09/11/2026; Fase 7, etapa 7.3). A 0.1.0 (07/11/2026; Fase 5, etapa 5.3) substituiu
+Versão 0.3.1 (09/11/2026; Fase 7, etapa 7.6a): com as 32 skills avulsas desativadas na conta, a seção 1 passa a exigir só
+as 2 cgge-fgbio-* e a esperar o plugin sem avulsas (--sem-avulsas torna as avulsas divergência). A seção 1b passa a
+comparar os SKILL.md do plugin instalado pelo nome, pela descrição e pelo corpo (como a seção 1), porque o Claude
+regrava o cabeçalho; escolhe a geração mais recente (~gN) do plugin sincronizado. Versão 0.3.0 (09/11/2026; Fase 7, etapa 7.3). A 0.1.0 (07/11/2026; Fase 5, etapa 5.3) substituiu
 scripts/publicar-operacao.sh, do WSL e da estrutura anterior à Fase 4. Desde a 0.3.0 as 32 skills do plugin
 ficam em plugins/cgov-escritorio/skills/ (7.1) e o script gera o zip do plugin; as 2 cgge-fgbio-* seguem em skills/.
 
 Modos
   --verificar            somente leitura:
-                           1. skills instaladas na conta (~/.claude/skills/synced) x fonte (HEAD: plugin + skills/);
+                           1. skills avulsas instaladas na conta (~/.claude/skills/synced) x fonte (HEAD: skills/, as
+                              cgge-fgbio-*); as 32 do plugin não devem estar como avulsas (aviso; com --sem-avulsas, divergência);
                            1b. plugin cgov-escritorio instalado na conta (~/.claude/plugins/synced) x fonte (HEAD);
                            2. operacao/ (HEAD) x pasta CGOV, por SHA-256 (etapa 5.5);
                            3. docs/ (HEAD) x 90_escritorio-virtual/referencia/docs (pendência P3).
+  --sem-avulsas          com --verificar: as skills do plugin que ainda estiverem como avulsas na conta viram divergência
+                         (usar depois da exclusão, etapa 7.6b)
   --publicar             simulação da publicação (nada é gravado):
                            a. zip do plugin em dist/cgov-escritorio-<versão>.zip (Customize -> Plugins -> Upload);
                            b. pacotes das skills avulsas (skills/cgge-fgbio) em dist/skills/<commit>/;
@@ -41,7 +47,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.3.0"
+VERSAO = "0.3.1"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
@@ -141,18 +147,30 @@ def _partes(texto: str):
     return meta, m.group(2).strip()
 
 
-def verificar_skills() -> int:
-    print("== 1. Skills instaladas na conta x fonte (HEAD: plugin + skills/)")
+def verificar_skills(sem_avulsas: bool = False) -> int:
+    print("== 1. Skills avulsas instaladas na conta x fonte (HEAD: skills/); plugin sem avulsas")
     if not PASTA_SYNC.is_dir() or not any(PASTA_SYNC.iterdir()):
         print(f"  [AVISO] {PASTA_SYNC} não encontrado: abra o Claude Code uma vez com a conta conectada")
         return 0
     sincs = sorted(p for p in PASTA_SYNC.iterdir() if p.is_dir())
+
+    def instalada(nome: str):
+        return next((s / nome / "SKILL.md" for s in sincs if (s / nome / "SKILL.md").is_file()), None)
+
     divergentes = []
+    do_plugin = []
     for f in arquivos_skills():
         if not f.endswith("/SKILL.md") or "-workspace/" in f:
             continue
         nome = f.split("/")[-2]
-        inst = next((s / nome / "SKILL.md" for s in sincs if (s / nome / "SKILL.md").is_file()), None)
+        inst = instalada(nome)
+        if f.startswith(f"{PLUGIN}/skills/"):  # vem do plugin: não deve existir como avulsa
+            do_plugin.append(nome)
+            if inst is not None:
+                print(f"  {'AVULSA NA CONTA' if sem_avulsas else '[AVISO] avulsa na cache'}  {nome}")
+                if sem_avulsas:
+                    divergentes.append(nome)
+            continue
         if inst is None:
             estado = "NÃO INSTALADA"
         else:
@@ -162,7 +180,11 @@ def verificar_skills() -> int:
         if estado != "igual":
             divergentes.append(nome)
         print(f"  {estado:14} {nome}")
-    print(f"  Reinstalar no Claude: {', '.join(divergentes) if divergentes else 'nenhuma'}")
+    na_cache = [n for n in do_plugin if instalada(n) is not None]
+    print(f"  Skills do plugin ({len(do_plugin)}): {len(na_cache)} ainda como avulsa na cache local"
+          f"{'' if sem_avulsas or not na_cache else ' (aviso: desativada pode continuar no disco; excluir na 7.6b)'}")
+    print(f"  Reinstalar no Claude: {', '.join(d for d in divergentes if d not in do_plugin) or 'nenhuma'}"
+          f"{'; excluir avulsas: ' + ', '.join(d for d in divergentes if d in do_plugin) if any(d in do_plugin for d in divergentes) else ''}")
     return len(divergentes)
 
 
@@ -280,6 +302,11 @@ def zip_plugin(executar: bool) -> int:
     return n_skills
 
 
+def _geracao(pasta: Path) -> int:
+    m = re.search(r"~g(\d+)$", pasta.name)
+    return int(m.group(1)) if m else 1
+
+
 def verificar_plugin() -> int:
     print("\n== 1b. Plugin instalado na conta x fonte (HEAD)")
     man = manifesto_plugin()
@@ -297,7 +324,9 @@ def verificar_plugin() -> int:
         print(f"  [AVISO] plugin {PLUGIN_NOME} não encontrado em {PASTA_PLUGIN_SYNC} (ainda não enviado na 7.5, "
               "ou sincronização desligada); local exato do plugin sincronizado a confirmar após o primeiro envio")
         return 0
-    raiz = sorted(achados)[0]
+    raiz = max(achados, key=lambda d: (_geracao(d), d.name))  # geração mais recente (~gN); sem sufixo = 1ª
+    if len(achados) > 1:
+        print(f"  {len(achados)} gerações do plugin na conta; usada: {raiz.name}")
     inst = json_versao(raiz / ".claude-plugin" / "plugin.json")
     print(f"  instalado: {inst or '?'} em {raiz}; fonte (HEAD): {man.get('version')}")
     divergentes = [] if inst == man.get("version") else [f"version ({inst} x {man.get('version')})"]
@@ -306,7 +335,12 @@ def verificar_plugin() -> int:
             continue
         rel = f[len(PLUGIN) + 1:]
         alvo = raiz / rel
-        if not alvo.is_file() or sha_arquivo(alvo) != sha(blob(f)):
+        if not alvo.is_file():
+            divergentes.append(rel)
+        elif rel.endswith("/SKILL.md"):  # o Claude regrava o cabeçalho: compara nome, descrição e corpo
+            if _partes(blob(f).decode("utf-8", "replace")) != _partes(alvo.read_text(encoding="utf-8", errors="replace")):
+                divergentes.append(rel)
+        elif sha_arquivo(alvo) != sha(blob(f)):
             divergentes.append(rel)
     for d in divergentes[:20]:
         print(f"  DIVERGE  {d}")
@@ -509,17 +543,21 @@ def main(argv: list[str] | None = None) -> int:
     g.add_argument("--verificar", action="store_true", help="comparações somente leitura")
     g.add_argument("--publicar", action="store_true", help="publicação (simulação sem --executar)")
     ap.add_argument("--executar", action="store_true", help="com --publicar: gravar de fato")
+    ap.add_argument("--sem-avulsas", action="store_true",
+                    help="com --verificar: skills do plugin ainda instaladas como avulsas viram divergência (7.6b)")
     ap.add_argument("--version", action="version", version=VERSAO)
     a = ap.parse_args(argv)
     if a.executar and not a.publicar:
         ap.error("--executar só vale com --publicar")
+    if a.sem_avulsas and a.publicar:
+        ap.error("--sem-avulsas só vale com --verificar")
     print(f"publicar_operacao.py {VERSAO} — HEAD {commit_atual()[0]}")
     try:
         if a.publicar:
             return publicar(a.executar)
         env = ler_env()
         raiz, escr = pastas(env)
-        n = verificar_skills() + verificar_plugin() + verificar_operacao(raiz) + verificar_referencia(escr)
+        n = verificar_skills(a.sem_avulsas) + verificar_plugin() + verificar_operacao(raiz) + verificar_referencia(escr)
         print(f"\nResultado: {'sem divergências' if not n else f'{n} divergência(s) — ver acima'}")
         return 0 if not n else 1
     except Pare as e:

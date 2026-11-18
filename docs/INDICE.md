@@ -1,7 +1,7 @@
 ---
 tipo: indice
 status: vigente
-atualizado_em: 2026-11-09
+atualizado_em: 2026-11-18
 relacionados: [docs/convencoes-documentacao.md, docs/governance/rastreabilidade.md, docs/plano-indice.md, docs/README.md, archive/README.md, CLAUDE.md, AGENTS.md]
 ---
 
@@ -19,7 +19,7 @@ relacionados: [docs/convencoes-documentacao.md, docs/governance/rastreabilidade.
 | Entender o projeto em cinco minutos | [Visão geral](overview.md) → [Arquitetura](architecture.md) → [Fluxos §1](fluxos-de-trabalho.md#1-visão-geral) |
 | Saber em que fase estamos e o que falta | [Índice do plano](plano-indice.md) → [Quadro de acompanhamento (plano §11)](plano-implantacao.md#11-quadro-de-acompanhamento) → [Pendências em aberto](governance/pendencias.md#em-aberto--desenvolvimento) |
 | Alterar uma skill | [CONTRIBUTING](../CONTRIBUTING.md#mudanças-em-skills) → [Fluxos §5](fluxos-de-trabalho.md#5-fluxo-de-desenvolvimento) → [Catálogo de skills](catalogo-skills.md) → [ADR-006 (caminhos por papel)](adr/ADR-006-skills-neutras-quanto-a-caminho.md) |
-| Publicar para a operação e reinstalar as skills | [Fluxos §4](fluxos-de-trabalho.md#4-publicação-do-desenvolvimento-para-a-operação) → [ADR-014 (exclusão controlada)](adr/ADR-014-exclusao-controlada.md) |
+| Publicar para a operação e reinstalar as skills | [Fluxos §4](fluxos-de-trabalho.md#4-publicação-do-desenvolvimento-para-a-operação) → [ADR-014 (exclusão controlada)](adr/ADR-014-exclusao-controlada.md) → [Checklist de interface do plugin](procedimentos/checklist-plugin-interface.md) |
 | Fazer commit com segurança | [Convenções §8](convencoes-documentacao.md#8-antes-do-commit) → [Fluxos §5](fluxos-de-trabalho.md#5-fluxo-de-desenvolvimento) → [ADR-007 (separação de dados)](adr/ADR-007-separacao-de-dados.md) |
 | Saber por que algo foi decidido | [Rastreabilidade](governance/rastreabilidade.md) → [ADRs](adr/README.md) → [Índice do registro de decisões](governance/decision-log-indice.md) |
 | Preparar a Fase 7 (plugin `cgov-escritorio`) | [Índice do plano](plano-indice.md) (Fase 7) → [ADR-005](adr/ADR-005-plugin-unico.md) → [Rastreabilidade §4](governance/rastreabilidade.md#4-aceitação-dos-adr-001-009-e-011-aplicada-em-09112026) → [Pendências E12 e E14](governance/pendencias.md#em-aberto--desenvolvimento) |
@@ -47,7 +47,7 @@ relacionados: [docs/convencoes-documentacao.md, docs/governance/rastreabilidade.
 | [`governance/decision-log.md`](governance/decision-log.md) | registro | Histórico cronológico, só acréscimos (**grande: use o índice**) |
 | [`governance/pendencias.md`](governance/pendencias.md) | pendências | Abertas e resolvidas |
 | [`governance/rastreabilidade.md`](governance/rastreabilidade.md) | registro | ADR ↔ decisão D ↔ seção do registro ↔ fase |
-| [`procedimentos/`](procedimentos/analise-atos-normativos.md) | procedimento | Análise de atos normativos pela CGOV |
+| [`procedimentos/`](procedimentos/analise-atos-normativos.md) | procedimento | Análise de atos normativos pela CGOV; [checklist de interface do plugin](procedimentos/checklist-plugin-interface.md) |
 | [`references/`](references/normative-catalog.md) | referência | Catálogo público de fontes normativas |
 | [`reports/`](reports/RELATORIO_cgov-nt.md) | relatório | Evidência histórica da suíte `cgov-nt` |
 | [`system-instructions/`](system-instructions/escritorio-cgov-operacao.md) | instrução | Instruções de assistentes (cinco documentos; ver §1) |

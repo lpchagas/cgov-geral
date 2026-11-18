@@ -7,7 +7,7 @@ relacionados: [docs/governance/decision-log.md, docs/governance/rastreabilidade.
 
 # Índice do registro de decisões
 
-> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`decision-log.md`](decision-log.md) (1939 linhas, 53 cabeçalhos). **Não edite à mão.**
+> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`decision-log.md`](decision-log.md) (1953 linhas, 54 cabeçalhos). **Não edite à mão.**
 > O registro de decisões só recebe acréscimos (regra 6 do projeto Implantação) e tem mais de 1.700 linhas: use esta lista para ir direto à seção. A ligação entre seções, decisões D, ADRs e fases está em [`rastreabilidade.md`](rastreabilidade.md).
 
 - [1. Motivação e escopo original](decision-log.md#1-motivação-e-escopo-original) — linha 25
@@ -63,3 +63,4 @@ relacionados: [docs/governance/decision-log.md, docs/governance/rastreabilidade.
 - [51. Modo de execução do Claude Code: autonomia com gate (18/11/2026)](decision-log.md#51-modo-de-execução-do-claude-code-autonomia-com-gate-18112026) — linha 1881
 - [52. Pendência E20: exclusão da avulsa "Pgd analisar indicador" (18/11/2026)](decision-log.md#52-pendência-e20-exclusão-da-avulsa-pgd-analisar-indicador-18112026) — linha 1905
 - [53. Encerramento da Fase 7: etapa 7.7 dispensada (18/11/2026)](decision-log.md#53-encerramento-da-fase-7-etapa-77-dispensada-18112026) — linha 1921
+- [54. Publicação sem repetir o zip da mesma versão: publicar_operacao.py 0.4.0 (18/11/2026)](decision-log.md#54-publicação-sem-repetir-o-zip-da-mesma-versão-publicar_operacaopy-040-18112026) — linha 1940

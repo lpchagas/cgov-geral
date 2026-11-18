@@ -1937,3 +1937,17 @@ Detalhes: plano de implantação (Fase 7, etapa 7.6b, parágrafo E20).
 4. **Fase 7 concluída.** Próxima: Fase 8.
 
 Detalhes: plano de implantação (Fase 7, encerramento; Seção 9, D64).
+## 54. Publicação sem repetir o zip da mesma versão: `publicar_operacao.py` 0.4.0 (18/11/2026)
+
+1. **Problema:** com o plugin estável em 1.0.0, `--publicar --executar` parava inteiro porque
+   `dist\cgov-escritorio-1.0.0.zip` já existia (regra da 7.3, contra dois zips diferentes com a mesma versão); por isso
+   `operacao\` e `docs\` não chegavam à pasta CGOV (a referência ficou em `8b24d3e`, como na E19).
+2. **Decisão (D65):** pular o zip quando ele já existe e tem o mesmo conteúdo do plugin no HEAD, e seguir para
+   `operacao\` e `docs\`; com conteúdo diferente, continuar parando até a `version` aumentar. Os pacotes das
+   `cgge-fgbio-*` só são gerados quando nenhuma geração em `dist\skills\` for igual. Descartadas: opção `--sem-plugin`
+   (depende de quem roda) e versão 1.0.1 sem mudanças (versão vazia e reenvio a cada publicação de documentação).
+3. **Implementação e testes:** `publicar_operacao.py` 0.4.0 (`conteudo_zip()`; comparação por nome e bytes de cada
+   arquivo do zip). Testes em pastas temporárias: zip idêntico com `--executar` não regravado; zip com um arquivo
+   alterado para com [PARE]; pacotes avulsos iguais a uma geração existente não regerados; sem geração igual, gerados.
+
+Detalhes: plano de implantação (Seção 9, D65).

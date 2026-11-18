@@ -1918,3 +1918,22 @@ Detalhes: plano de implantação (Seção 9, D63).
 4. **Pendência:** E20 resolvida.
 
 Detalhes: plano de implantação (Fase 7, etapa 7.6b, parágrafo E20).
+## 53. Encerramento da Fase 7: etapa 7.7 dispensada (18/11/2026)
+
+1. **Decisão (D64):** o Coordenador escolheu seguir para a Fase 8 e dispensar a 7.7 (*marketplace* GitHub do plugin).
+   Motivos: para um só usuário, o envio do zip em Customize → Plugins basta; com o *push* autônomo da D63, a
+   sincronização pelo GitHub poderia levar à conta um *commit* ainda não publicado; o acesso do GitHub App ao
+   repositório privado deixa de ser necessário. O ADR-005 não muda (o *marketplace* era opcional). Reavaliar se o
+   plugin passar a ter mais usuários (Fase 12).
+2. **Testes automatizados do plugin 1.0.0 (HEAD `e627c52`):** `plugin.json` 1.0.0; 32 skills e 4 comandos; 32/32
+   `SKILL.md` com `name` igual à pasta e `description` ≤ 1.024 caracteres; `dist\cgov-escritorio-1.0.0.zip` com
+   SHA-256 igual ao `.sha256` (`70e00adc…d977`), 53 arquivos, 0 de `evals/` e 53/53 idênticos à fonte atual;
+   `claude plugin validate` "Validation passed"; 14 skills com `evals.json` válidos (38 casos; não executados, sem
+   *runner*; as 18 sem casos na E9); `--verificar --sem-avulsas` sem divergências nas seções 1, 1b e 2, com 7
+   diferenças esperadas de `docs\` na seção 3 (publicação pendente).
+3. **Testes de interface:** ficaram como lista de conferência do Coordenador (listagem `/cgov-escritorio:`,
+   `/cgov-escritorio:triar-entrada`, acionamento único da `cgov-nt-01-triagem` e da `pgd-analisar-indicador`,
+   Customize → Plugins e → Skills).
+4. **Fase 7 concluída.** Próxima: Fase 8.
+
+Detalhes: plano de implantação (Fase 7, encerramento; Seção 9, D64).

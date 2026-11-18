@@ -61,6 +61,7 @@ relacionados: [docs/adr/README.md, docs/governance/decision-log.md, docs/governa
 | 7.6b — plugin 1.0.0 | D62 | [§50](decision-log.md#50-etapa-76b-plugin-100-exclusão-das-avulsas-e-cgge-fgbio--opcionais-18112026) |
 | Modo de execução do Claude Code (18/11) | D63 | [§51](decision-log.md#51-modo-de-execução-do-claude-code-autonomia-com-gate-18112026) |
 | E20 — "Pgd analisar indicador" excluída (18/11) | — | [§52](decision-log.md#52-pendência-e20-exclusão-da-avulsa-pgd-analisar-indicador-18112026) |
+| Encerramento da Fase 7 — 7.7 dispensada (18/11) | D64 | [§53](decision-log.md#53-encerramento-da-fase-7-etapa-77-dispensada-18112026) |
 
 As decisões D estão no [§9 do plano](../plano-implantacao.md#9-decisões-do-coordenador); as fases, no [índice do plano](../plano-indice.md).
 

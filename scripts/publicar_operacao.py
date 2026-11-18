@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """publicar_operacao.py — publica o commit atual (HEAD) do cgov-geral para a operação.
 
+Versão 0.4.1 (18/11/2026): as instruções finais de envio à conta só aparecem para o que foi de fato gerado.
 Versão 0.4.0 (18/11/2026; D65): se dist/cgov-escritorio-<versão>.zip já existe e tem o mesmo conteúdo do plugin no
 HEAD, o zip não é regerado e a publicação segue para operacao/ e docs/ (com conteúdo diferente, continua parando até a
 version aumentar); os pacotes das avulsas (skills/) só são gerados se nenhuma geração em dist/skills/ for igual.
@@ -53,7 +54,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.4.0"
+VERSAO = "0.4.1"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
@@ -305,7 +306,7 @@ def zip_plugin(executar: bool) -> int:
         if conteudo_zip(destino) == esperado:
             print(f"  [AVISO] {destino.name} já existe e é idêntico ao plugin do HEAD: não regerado "
                   "(nada a reenviar em Customize -> Plugins)")
-            return n_skills
+            return 0
         if executar:
             raise Pare(f"{destino.name} já existe com conteúdo diferente do HEAD: aumente a version em {MANIFESTO}, "
                        "faça o commit e publique de novo")
@@ -479,7 +480,7 @@ def zips_skills(destino: Path, executar: bool) -> int:
         zips = {p.stem: p for p in g.glob("*.zip")}
         if set(zips) == set(esperado) and all(conteudo_zip(zips[n]) == esperado[n] for n in esperado):
             print(f"  [AVISO] {len(esperado)} pacote(s) iguais aos de {g}: não regerados (nada a reenviar)")
-            return len(validas)
+            return 0
     print(f"  {len(validas)} pacote(s) em {destino}")
     if executar:
         if destino.exists():
@@ -519,10 +520,10 @@ def publicar(executar: bool) -> int:
     log: list[str] = []
 
     print("\n== a. Zip do plugin (Customize -> Plugins -> Upload plugin)")
-    zip_plugin(executar)
+    novo_zip = zip_plugin(executar) > 0  # 0 = zip idêntico já existente, não regerado (D65)
 
     print("\n== b. Pacotes das skills avulsas (skills/: cgge-fgbio)")
-    zips_skills(DIST / "skills" / commit, executar)
+    novos_pacotes = zips_skills(DIST / "skills" / commit, executar) > 0  # 0 = iguais a uma geração existente
 
     print("\n== c. operacao/ -> pasta CGOV")
     for rel, destino, estado, dados in plano_operacao(raiz):
@@ -569,10 +570,14 @@ def publicar(executar: bool) -> int:
     for d in erros:
         print(f"  ERRO  {d}")
     print(f"  {len(gravados) - len(erros)}/{len(gravados)} conferidos")
-    print("\nPlugin: antes do envio, rode `claude plugin validate .\\plugins\\cgov-escritorio`; depois, Claude -> "
-          "Customize -> Plugins -> Add -> Upload plugin -> dist\\cgov-escritorio-<versão>.zip; depois, --verificar.")
-    print("Skills avulsas (cgge-fgbio): Customize -> Skills -> enviar "
-          f"dist\\skills\\{commit}\\<skill>.zip (substituir); depois, --verificar.")
+    if novo_zip:
+        print("\nPlugin: antes do envio, rode `claude plugin validate .\\plugins\\cgov-escritorio`; depois, Claude -> "
+              "Customize -> Plugins -> Add -> Upload plugin -> dist\\cgov-escritorio-<versão>.zip; depois, --verificar.")
+    if novos_pacotes:
+        print("Skills avulsas (cgge-fgbio): Customize -> Skills -> enviar "
+              f"dist\\skills\\{commit}\\<skill>.zip (substituir); depois, --verificar.")
+    if not (novo_zip or novos_pacotes):
+        print("\nNada a enviar à conta Claude (plugin e pacotes avulsos iguais aos já gerados); depois, --verificar.")
     return 1 if erros else 0
 
 

@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """publicar_operacao.py — publica o commit atual (HEAD) do cgov-geral para a operação.
 
-Versão 0.3.1 (09/11/2026; Fase 7, etapa 7.6a): com as 32 skills avulsas desativadas na conta, a seção 1 passa a exigir só
+Versão 0.3.2 (18/11/2026; Fase 7, etapa 7.6b, D62): as 2 cgge-fgbio-* (AVULSAS_OPCIONAIS), desativadas na conta pelo
+Coordenador, passam a [AVISO] quando ausentes, sem contar divergência. Versão 0.3.1 (09/11/2026; Fase 7, etapa 7.6a): com as 32 skills avulsas desativadas na conta, a seção 1 passa a exigir só
 as 2 cgge-fgbio-* e a esperar o plugin sem avulsas (--sem-avulsas torna as avulsas divergência). A seção 1b passa a
 comparar os SKILL.md do plugin instalado pelo nome, pela descrição e pelo corpo (como a seção 1), porque o Claude
 regrava o cabeçalho; escolhe a geração mais recente (~gN) do plugin sincronizado. Versão 0.3.0 (09/11/2026; Fase 7, etapa 7.3). A 0.1.0 (07/11/2026; Fase 5, etapa 5.3) substituiu
@@ -47,7 +48,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.3.1"
+VERSAO = "0.3.2"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
@@ -56,6 +57,9 @@ PLUGIN = "plugins/cgov-escritorio"
 PLUGIN_NOME = "cgov-escritorio"
 MANIFESTO = f"{PLUGIN}/.claude-plugin/plugin.json"
 FONTES_SKILLS = (f"{PLUGIN}/skills/", "skills/")  # plugin (32) e fora do plugin (cgge-fgbio)
+# Avulsas fora do plugin que a conta pode manter desativadas (D62; desativadas pelo Coordenador em 18/11/2026).
+# Ausentes: só [AVISO]; instaladas e diferentes da fonte continuam divergência. Lista fechada de propósito.
+AVULSAS_OPCIONAIS = frozenset({"cgge-fgbio-apresentacao", "cgge-fgbio-plano-aula"})
 MAX_DESCRICAO = 1024  # limite do Customize -> Skills
 DIST = REPO / "dist"  # pacotes gerados (ignorado pelo Git)
 
@@ -159,6 +163,7 @@ def verificar_skills(sem_avulsas: bool = False) -> int:
 
     divergentes = []
     do_plugin = []
+    opcionais_ausentes = []
     for f in arquivos_skills():
         if not f.endswith("/SKILL.md") or "-workspace/" in f:
             continue
@@ -170,6 +175,10 @@ def verificar_skills(sem_avulsas: bool = False) -> int:
                 print(f"  {'AVULSA NA CONTA' if sem_avulsas else '[AVISO] avulsa na cache'}  {nome}")
                 if sem_avulsas:
                     divergentes.append(nome)
+            continue
+        if inst is None and nome in AVULSAS_OPCIONAIS:
+            print(f"  [AVISO] desativada ou não instalada (opcional, D62)  {nome}")
+            opcionais_ausentes.append(nome)
             continue
         if inst is None:
             estado = "NÃO INSTALADA"
@@ -185,6 +194,8 @@ def verificar_skills(sem_avulsas: bool = False) -> int:
           f"{'' if sem_avulsas or not na_cache else ' (aviso: desativada pode continuar no disco; excluir na 7.6b)'}")
     print(f"  Reinstalar no Claude: {', '.join(d for d in divergentes if d not in do_plugin) or 'nenhuma'}"
           f"{'; excluir avulsas: ' + ', '.join(d for d in divergentes if d in do_plugin) if any(d in do_plugin for d in divergentes) else ''}")
+    if opcionais_ausentes:
+        print(f"  Opcionais ausentes (não contam): {', '.join(opcionais_ausentes)}")
     return len(divergentes)
 
 

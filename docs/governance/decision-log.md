@@ -1902,3 +1902,19 @@ Detalhes: plano de implantação (Fase 7, etapa 7.6b).
    v2.2 (§3.1, §5, passo 6, e §7); `.claude/settings.json`; plano v3.56 (cabeçalho, regra de manutenção, Seção 7, Seção 9, quadro e Apêndice G).
 
 Detalhes: plano de implantação (Seção 9, D63).
+## 52. Pendência E20: exclusão da avulsa "Pgd analisar indicador" (18/11/2026)
+
+1. **Identidade:** o Coordenador comparou o texto da avulsa "Pgd analisar indicador" (Customize → Skills) com o da
+   `pgd-analisar-indicador` do plugin: SHA-256 `29004b1f908c8068b2dea1b2fa8e30ab7407f18c4b636c2a9c1f2baf587bd288`
+   nos dois textos e diff sem diferença. O hash foi calculado sobre o texto da interface e não se reproduz sobre o
+   arquivo da fonte (`plugins/cgov-escritorio/skills/pgd-analisar-indicador/SKILL.md`, SHA-256 `897adf46…39bd`, com
+   cabeçalho); a conferência é a do Coordenador.
+2. **Exclusão:** feita pelo Coordenador em Customize → Skills. Rede de segurança: `dist\skills\066068b\`.
+3. **Evidência (`publicar_operacao.py --verificar --sem-avulsas`, script 0.3.2, HEAD `e9942fe`):** seção 1 com os 2
+   avisos das `cgge-fgbio-*` (opcionais, D62) e 0 skills do plugin como avulsas; seção 1b com o plugin 1.0.0
+   (`cgov-escritorio~g2`) e sem divergências; seção 2 com 14/14 iguais; seção 3 com 7 diferenças esperadas (os
+   `docs\` alterados pela D63 e por esta etapa depois da publicação `8b24d3e`; chegam à pasta CGOV no próximo
+   `--publicar --executar`).
+4. **Pendência:** E20 resolvida.
+
+Detalhes: plano de implantação (Fase 7, etapa 7.6b, parágrafo E20).

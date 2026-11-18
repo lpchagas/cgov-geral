@@ -1,7 +1,7 @@
 ---
 tipo: pendencias
 status: vigente
-atualizado_em: 2026-11-09
+atualizado_em: 2026-11-18
 relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
 ---
 
@@ -29,7 +29,6 @@ relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
 | E13 | Espelho `.agents/skills/` (Antigravity) não existe nesta máquina e cobria 13 skills; decidir entre regerar para as 34 fontes ou aposentar a regra do `CONTRIBUTING.md` | Antes de usar a Antigravity; depois da Fase 7 (novos caminhos) | [`multiplatform.md`](../multiplatform.md) §2 |
 | E15 | Avaliar migrar os 4 comandos de `commands/` para skills (a documentação oficial chama `commands/` de formato antigo; o nome do comando não muda) | Depois da 7.6, com o plugin em uso | Exigiria catálogo, evals e ajuste do verificador (36 skills); ver decision-log §47 |
 | E17 | Gerações antigas de pacotes em `dist/skills/<commit>/` (`0d85240`, `3723745`, `449dbf0`, `b863ef3`, `d4f75c8`, `d5d144e`, `e305404`) viram candidatas à quarentena. **Não** mover `066068b` (rede de segurança da exclusão das avulsas: 34 pacotes idênticos às skills do plugin) | Depois que a 1.0.0 estabilizar | Prioridade baixa; nunca excluir |
-| E20 | A "Pgd analisar indicador" continua em Customize → Skills (o Coordenador a manteve na 7.6b por dúvida). O plugin tem a `pgd-analisar-indicador`, e o `--verificar` não acha avulsa com esse nome na cache. Identificar: é a avulsa da mesma skill ou uma skill antiga com outro nome? | Conferir a descrição da entrada contra a do plugin; depois, desativar e excluir, com confirmação | Prioridade média; evita duplicidade e gatilho em dobro (D62; decision-log §50) |
 
 ## Em aberto — conteúdo da pasta CGOV (revisão gradual pela operação)
 
@@ -64,3 +63,4 @@ relacionados: [docs/plano-implantacao.md, docs/governance/rastreabilidade.md]
 | E16 | Conferir a geração `~gN` do plugin `cgov-escritorio` e a seção 1b do `--verificar` | 18/11/2026 (7.6b): o reenvio da 1.0.0 criou `cgov-escritorio~g2`; `verificar_plugin()` v0.3.1 o escolheu e a 1b deu "sem divergências"; decision-log §50 |
 | E18 | Confirmar a cache local e a semana de uso do plugin | 18/11/2026 (7.6b): 0 skills do plugin como avulsas na cache; semana de uso sem falhas, por informação do Coordenador; decision-log §50 |
 | E19 | Referência de `docs/` na pasta CGOV defasada porque `--publicar --executar` parava com a `version` repetida | 18/11/2026 (7.6b): publicação da 1.0.0 levou a referência a `8b24d3e` (39/39 iguais); decision-log §50 |
+| E20 | A avulsa "Pgd analisar indicador" continuava em Customize → Skills (mantida na 7.6b por dúvida de identidade) | 18/11/2026: texto idêntico ao da `pgd-analisar-indicador` do plugin (SHA-256 `29004b1f…bd288` nos dois, conferido pelo Coordenador); excluída pelo Coordenador; `--verificar --sem-avulsas` sem divergências nas seções 1 e 1b; decision-log §52 |

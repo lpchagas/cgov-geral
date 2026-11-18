@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """publicar_operacao.py — publica o commit atual (HEAD) do cgov-geral para a operação.
 
+Versão 0.4.0 (18/11/2026; D65): se dist/cgov-escritorio-<versão>.zip já existe e tem o mesmo conteúdo do plugin no
+HEAD, o zip não é regerado e a publicação segue para operacao/ e docs/ (com conteúdo diferente, continua parando até a
+version aumentar); os pacotes das avulsas (skills/) só são gerados se nenhuma geração em dist/skills/ for igual.
 Versão 0.3.2 (18/11/2026; Fase 7, etapa 7.6b, D62): as 2 cgge-fgbio-* (AVULSAS_OPCIONAIS), desativadas na conta pelo
 Coordenador, passam a [AVISO] quando ausentes, sem contar divergência. Versão 0.3.1 (09/11/2026; Fase 7, etapa 7.6a): com as 32 skills avulsas desativadas na conta, a seção 1 passa a exigir só
 as 2 cgge-fgbio-* e a esperar o plugin sem avulsas (--sem-avulsas torna as avulsas divergência). A seção 1b passa a
@@ -20,7 +23,9 @@ Modos
                          (usar depois da exclusão, etapa 7.6b)
   --publicar             simulação da publicação (nada é gravado):
                            a. zip do plugin em dist/cgov-escritorio-<versão>.zip (Customize -> Plugins -> Upload);
-                           b. pacotes das skills avulsas (skills/cgge-fgbio) em dist/skills/<commit>/;
+                              se já existir com o mesmo conteúdo, não é regerado; com conteúdo diferente, para;
+                           b. pacotes das skills avulsas (skills/cgge-fgbio) em dist/skills/<commit>/, só se
+                              nenhuma geração anterior em dist/skills/ for igual;
                            c. operacao/ -> raiz da pasta CGOV (só o que difere);
                            d. docs/ -> 90_escritorio-virtual/referencia/docs + LEIA-ME.md.
   --publicar --executar  grava. O que for substituído na pasta CGOV vai antes para
@@ -48,7 +53,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.3.2"
+VERSAO = "0.4.0"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
@@ -273,6 +278,15 @@ def arquivos_do_plugin() -> list[tuple[str, str]]:
     return saida
 
 
+def conteudo_zip(caminho: Path) -> dict[str, bytes]:
+    """Arquivos de um zip (nome -> bytes), sem as pastas; vazio se o zip não abrir."""
+    try:
+        with zipfile.ZipFile(caminho) as z:
+            return {n: z.read(n) for n in z.namelist() if not n.endswith("/")}
+    except (OSError, zipfile.BadZipFile):
+        return {}
+
+
 def zip_plugin(executar: bool) -> int:
     man = manifesto_plugin()
     erros = validar_plugin(man)
@@ -286,9 +300,16 @@ def zip_plugin(executar: bool) -> int:
     print(f"  plugin {PLUGIN_NOME} {versao}: {n_skills} skill(s), {n_cmds} comando(s), {len(arqs)} arquivo(s) (sem evals/)")
     print(f"  destino: {destino}")
     if destino.exists():
+        # D65 (0.4.0): mesma version com o mesmo conteúdo -> não regera e segue; conteúdo diferente -> para.
+        esperado = {rel: blob(f) for f, rel in arqs}
+        if conteudo_zip(destino) == esperado:
+            print(f"  [AVISO] {destino.name} já existe e é idêntico ao plugin do HEAD: não regerado "
+                  "(nada a reenviar em Customize -> Plugins)")
+            return n_skills
         if executar:
-            raise Pare(f"{destino.name} já existe: aumente a version em {MANIFESTO}, faça o commit e publique de novo")
-        print("  [AVISO] já existe; a execução vai parar até a version aumentar")
+            raise Pare(f"{destino.name} já existe com conteúdo diferente do HEAD: aumente a version em {MANIFESTO}, "
+                       "faça o commit e publique de novo")
+        print("  [AVISO] já existe com conteúdo diferente do HEAD; a execução vai parar até a version aumentar")
     if executar:
         data = git("log", "-1", "--format=%cd", "--date=format:%Y,%m,%d,%H,%M,%S").strip()
         dt_zip = tuple(int(x) for x in data.split(","))
@@ -446,17 +467,29 @@ def zips_skills(destino: Path, executar: bool) -> int:
                 and partes[3] != "evals":
             nomes.setdefault(partes[2], []).append(f)
     validas = {n: fs for n, fs in nomes.items() if f"skills/{fs[0].split('/')[1]}/{n}/SKILL.md" in fs}
+    esperado = {}
+    for nome, fs in validas.items():
+        base = "/".join(fs[0].split("/")[:3])
+        esperado[nome] = {f"{nome}/{f[len(base) + 1:]}": blob(f) for f in fs}
+    # D65 (0.4.0): se uma geração anterior em dist/skills/ já tem exatamente estes pacotes, não gera de novo.
+    raiz = destino.parent
+    geracoes = sorted((p for p in raiz.iterdir() if p.is_dir()), key=lambda p: p.stat().st_mtime, reverse=True) \
+        if raiz.is_dir() else []
+    for g in geracoes:
+        zips = {p.stem: p for p in g.glob("*.zip")}
+        if set(zips) == set(esperado) and all(conteudo_zip(zips[n]) == esperado[n] for n in esperado):
+            print(f"  [AVISO] {len(esperado)} pacote(s) iguais aos de {g}: não regerados (nada a reenviar)")
+            return len(validas)
     print(f"  {len(validas)} pacote(s) em {destino}")
     if executar:
         if destino.exists():
-            raise Pare(f"{destino} já existe (pacotes deste commit já gerados)")
+            raise Pare(f"{destino} já existe com pacotes diferentes dos do HEAD")
         destino.mkdir(parents=True)
-        for nome, fs in sorted(validas.items()):
+        for nome, arquivos in sorted(esperado.items()):
             buf = io.BytesIO()
             with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
-                for f in sorted(fs):
-                    base = "/".join(f.split("/")[:3])
-                    z.writestr(f"{nome}/{f[len(base) + 1:]}", blob(f))
+                for interno, dados in sorted(arquivos.items()):
+                    z.writestr(interno, dados)
             (destino / f"{nome}.zip").write_bytes(buf.getvalue())
     return len(validas)
 

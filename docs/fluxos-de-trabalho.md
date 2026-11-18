@@ -8,7 +8,8 @@ relacionados: [docs/architecture.md, docs/governance/pendencias.md, docs/system-
 
 # Fluxos de trabalho — desenvolvimento e operação
 
-> Versão 2.2 — 18/11/2026 (modo de execução do Claude Code, D63: *commit* e *push* depois do gate, §5 e §7).
+> Versão 2.2 — 18/11/2026 (modo de execução do Claude Code, D63: *commit* e *push* depois do gate, §5 e §7; §4 com o
+> `publicar_operacao.py` 0.4.0, que não regera o zip idêntico da mesma versão, D65).
 > Versão 2.1 — 09/11/2026 (revisão documental antes da Fase 7: marcas ⏳ da Fase 5 removidas e passo 5 corrigido).
 > Versão 2 — 06/11/2026, depois da Fase 4 do plano de implantação (reorganização da pasta CGOV).
 > Substitui a versão de 06/10/2026 (arquivada em `archive/docs/fluxos-de-trabalho_ate-2026-11-06.md`).
@@ -101,8 +102,8 @@ commit: alterações pendentes em `skills/`, `plugins/`, `docs/` ou `operacao/` 
 2. `py scripts\publicar_operacao.py --publicar` — simulação: mostra o que seria criado, substituído e
    enviado para a quarentena.
 3. `py scripts\publicar_operacao.py --publicar --executar`:
-   - gera o zip do plugin em `dist/cgov-escritorio-<versão>.zip` (versão do `plugin.json`; sem `evals/`; mesmo commit, mesmo hash) e o `.sha256`; para se a versão já existir (aumente a `version` e faça novo commit);
-   - gera os pacotes das skills avulsas (`skills/cgge-fgbio`) em `dist/skills/<commit>/`, sem `evals/`;
+   - gera o zip do plugin em `dist/cgov-escritorio-<versão>.zip` (versão do `plugin.json`; sem `evals/`; mesmo commit, mesmo hash) e o `.sha256`. Se o zip da versão já existir: com o mesmo conteúdo do HEAD, não é regerado e a publicação segue (só `docs/` e `operacao/` mudaram); com conteúdo diferente, para (aumente a `version` e faça novo commit) (D65, v0.4.0);
+   - gera os pacotes das skills avulsas (`skills/cgge-fgbio`) em `dist/skills/<commit>/`, sem `evals/`, só se nenhuma geração anterior em `dist/skills/` for igual;
    - publica `operacao/` na raiz da pasta CGOV (só o que difere);
    - republica `docs/` em `90_escritorio-virtual/referencia/`, com um `LEIA-ME.md` que registra o commit.
    Tudo o que for substituído vai antes para `99_arquivo/_a-excluir_<data>/publicacao_<commit>/`. Depois,

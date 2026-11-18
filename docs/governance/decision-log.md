@@ -1850,3 +1850,30 @@ Detalhes: plano de implantação (Fase 7, etapas 7.4 e 7.5).
    CGOV com a publicação da `1.0.0`, porque `--publicar --executar` para quando já existe o zip da `version`).
 
 Detalhes: plano de implantação (Fase 7, etapa 7.6a).
+
+## 50. Etapa 7.6b: plugin 1.0.0, exclusão das avulsas e `cgge-fgbio-*` opcionais (18/11/2026)
+
+1. **Versão 1.0.0:** *commit* `8b24d3e` (`version` `1.0.0`, `CHANGELOG.md`, README). Publicação com
+   `py scripts\publicar_operacao.py --publicar --executar`: zip `dist\cgov-escritorio-1.0.0.zip`, SHA-256
+   `70e00adc168cb16db42cc88c0e74236334ddf627018762d1a6ae7e864ec2d977`, 178.739 bytes, 53 arquivos; 40/40 gravados
+   e conferidos; referência de `docs\` atualizada para `8b24d3e` (a anterior em
+   `99_arquivo\_a-excluir_2026-11-18\publicacao_8b24d3e\`). O zip de teste `cgov-escritorio-v1.zip` foi movido pelo
+   Coordenador para essa mesma quarentena (estava em `plugins\` e reprovava a sanitização).
+2. **Envio:** Customize → Plugins mostra v1.0.0, com 32 skills, em uma só entrada; a cache local ganhou
+   `cgov-escritorio~g2`, e o `--verificar` (seção 1b) deu "sem divergências" com a geração mais recente.
+3. **Testes no projeto Operação:** `/triar-entrada`, `/novo-processo`, `/atualizar-indices` e a frase da NT aprovados
+   (os dois comandos de gravação foram cancelados antes de gravar); `/registrar-pendencia` funciona, por informação do
+   Coordenador. As skills e os comandos são idênticos aos da 0.1.0; mudaram só `version`, `CHANGELOG.md` e README.
+4. **Exclusão das avulsas (Customize → Skills):** feita pelo Coordenador, exceto a "Pgd analisar indicador", mantida
+   por dúvida de identidade (E20). Rede de segurança: `dist\skills\066068b\`, com os 34 pacotes, idênticos às skills
+   do plugin.
+5. **Decisão (D62):** as 2 `cgge-fgbio-*`, desativadas pelo Coordenador por falta de uso, seguem no repositório
+   (`skills\cgge-fgbio\`, fora do plugin, D46) e o `--verificar` as trata como opcionais: `publicar_operacao.py`
+   v0.3.2 (*commit* `68bb988`), `AVULSAS_OPCIONAIS`; ausentes viram [AVISO], instaladas e diferentes continuam
+   divergência.
+6. **`--verificar --sem-avulsas` (script 0.3.2):** "sem divergências" (seção 1 com 2 avisos e 0 skills do plugin como
+   avulsas; seção 1b com `~g2`, 1.0.0).
+7. **Pendências:** E16, E18 e E19 resolvidas; E17 ajustada (poupar `066068b`); E20 nova (identificar a "Pgd analisar
+   indicador"); P7 com as quarentenas de 18/11.
+
+Detalhes: plano de implantação (Fase 7, etapa 7.6b).

@@ -7,7 +7,7 @@ relacionados: [docs/governance/decision-log.md, docs/governance/rastreabilidade.
 
 # Índice do registro de decisões
 
-> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`decision-log.md`](decision-log.md) (1880 linhas, 50 cabeçalhos). **Não edite à mão.**
+> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`decision-log.md`](decision-log.md) (1904 linhas, 51 cabeçalhos). **Não edite à mão.**
 > O registro de decisões só recebe acréscimos (regra 6 do projeto Implantação) e tem mais de 1.700 linhas: use esta lista para ir direto à seção. A ligação entre seções, decisões D, ADRs e fases está em [`rastreabilidade.md`](rastreabilidade.md).
 
 - [1. Motivação e escopo original](decision-log.md#1-motivação-e-escopo-original) — linha 25
@@ -60,3 +60,4 @@ relacionados: [docs/governance/decision-log.md, docs/governance/rastreabilidade.
 - [48. Etapas 7.4 e 7.5: validação, publicação e envio do plugin 0.1.0 (09/11/2026)](decision-log.md#48-etapas-74-e-75-validação-publicação-e-envio-do-plugin-010-09112026) — linha 1811
 - [49. Etapa 7.6a: avulsas desativadas e ajuste do --verificar (09/11/2026)](decision-log.md#49-etapa-76a-avulsas-desativadas-e-ajuste-do---verificar-09112026) — linha 1832
 - [50. Etapa 7.6b: plugin 1.0.0, exclusão das avulsas e cgge-fgbio-* opcionais (18/11/2026)](decision-log.md#50-etapa-76b-plugin-100-exclusão-das-avulsas-e-cgge-fgbio--opcionais-18112026) — linha 1854
+- [51. Modo de execução do Claude Code: autonomia com gate (18/11/2026)](decision-log.md#51-modo-de-execução-do-claude-code-autonomia-com-gate-18112026) — linha 1881

@@ -1,13 +1,14 @@
 ---
 tipo: guia
 status: vigente
-versao: "2.1"
-atualizado_em: 2026-11-09
+versao: "2.2"
+atualizado_em: 2026-11-18
 relacionados: [docs/architecture.md, docs/governance/pendencias.md, docs/system-instructions/escritorio-cgov-operacao.md, docs/adr/ADR-014-exclusao-controlada.md]
 ---
 
 # Fluxos de trabalho — desenvolvimento e operação
 
+> Versão 2.2 — 18/11/2026 (modo de execução do Claude Code, D63: *commit* e *push* depois do gate, §5 e §7).
 > Versão 2.1 — 09/11/2026 (revisão documental antes da Fase 7: marcas ⏳ da Fase 5 removidas e passo 5 corrigido).
 > Versão 2 — 06/11/2026, depois da Fase 4 do plano de implantação (reorganização da pasta CGOV).
 > Substitui a versão de 06/10/2026 (arquivada em `archive/docs/fluxos-de-trabalho_ate-2026-11-06.md`).
@@ -70,11 +71,12 @@ Os textos de navegação (`LEIA-ME.md`, `AGENTS.md`, `_LEIA-ME.md`, modelos) tê
 4. Projeto Cowork "Escritório CGOV — Implantação": pasta única `C:\Projetos\cgov-geral`; instruções no
    Apêndice A do plano de implantação. A pasta CGOV só é vinculada temporariamente, com autorização do
    Coordenador (por exemplo, na exclusão da quarentena).
-5. `.claude/settings.json` (versionado): pede confirmação antes de `git commit` e `git push`, bloqueia a
-   edição das áreas operacionais e oculta do modelo as skills cuja fonte está em `skills/`
+5. `.claude/settings.json` (versionado): bloqueia a edição das áreas operacionais e oculta do modelo as skills cuja fonte está em `skills/`
    (`skillOverrides`). Bloqueios: `local/processos/**`, `local/normativos/**`, `local/escritorio/**`, a
    pasta CGOV (`~/My Drive/10_Institucional/CGOV/**`) e `.env`. Regras deny valem para o link e para o
-   alvo, mas não para scripts Python ou Node, que abrem arquivos por conta própria.
+   alvo, mas não para scripts Python ou Node, que abrem arquivos por conta própria. As regras `ask` de
+   `git commit` e `git push` saíram em 18/11/2026 (D63): o controle passou a ser o gate do "Modo de execução"
+   do `AGENTS.md`.
 
 ### 3.2 Operação
 
@@ -124,8 +126,10 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
    `scripts/sanitizacao_permitidos.txt`; termos pessoais só em `local/sanitizacao_termos.txt`).
 4. **Registrar** a decisão em [`governance/decision-log.md`](governance/decision-log.md) (só acréscimos).
 5. **Espelhar para a Antigravity**, só se ela for usada (`.agents/skills/` é um espelho local, ignorado pelo Git; hoje não existe nesta máquina; ver `CONTRIBUTING.md`).
-6. **Commit e push**, com confirmação do Coordenador. O shell do Cowork não tem credencial do GitHub:
-   `git push` e `git ls-remote` ficam no PowerShell do Coordenador.
+6. **Commit e push.** No Claude Code, sem confirmação, desde que o gate do "Modo de execução" do
+   [`AGENTS.md`](../AGENTS.md) passe (D63: índices, `verificar_docs.py` com 0 erro, sanitização aprovada,
+   `git status` e `git diff --stat`); no projeto Implantação (Cowork), com confirmação do Coordenador. O shell
+   do Cowork não tem credencial do GitHub: `git push` e `git ls-remote` ficam no PowerShell do Coordenador.
 7. **Publicar para a operação** (§4) e reinstalar as skills alteradas.
 8. **Fechar a pendência** em `PENDENCIAS.md`: "resolvida em `<commit>`".
 
@@ -158,7 +162,7 @@ Ciclo de uma mudança (Claude Code ou projeto Implantação, em `C:\Projetos\cgo
 | Nada se apaga direto: quarentena `99_arquivo/_a-excluir_<data>/`, revista após 30 dias | ADR-014; permite recuperar |
 | Movimentação em lote só por mapa aprovado, conferida por SHA-256 e com registro | Rastreabilidade e reversão |
 | Nada de `local/`, `.env` ou `dist/` no Git | Ignorados pelo `.gitignore` |
-| Commit e push sempre com confirmação | `.claude/settings.json` e regra do projeto Implantação |
+| Commit e push só depois do gate (Claude Code, D63) ou com confirmação (projeto Implantação) | Gate do "Modo de execução" no `AGENTS.md`; regra 1 do Apêndice A do plano |
 | A referência e a navegação publicadas no Drive não se editam à mão | São substituídas a cada publicação |
 | Skill instalada só a partir do commit publicado | Produção = commit publicado |
 

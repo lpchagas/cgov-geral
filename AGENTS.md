@@ -32,6 +32,35 @@ competência é o art. 37 da Portaria ICMBio nº 5.592/2025.
 5. Alterações em fontes de skills exigem atualização sincronizada do snapshot
    instalado quando aplicável e registro no decision log.
 
+## Modo de execução (Claude Code, D63)
+
+Decisão do Coordenador de 18/11/2026 (D63; decision-log §51). Vale para as sessões do Claude Code neste
+repositório; o projeto Cowork "Escritório CGOV — Implantação" segue a regra 1 do Apêndice A do plano.
+
+**Sem pedir confirmação:** rodar scripts, verificadores e testes automatizados; criar e editar arquivos do
+repositório; regenerar índices; `publicar_operacao.py --verificar` e `--publicar` (simulação); *commit* e
+*push* em `main` (sem regras `ask` de Git no `.claude/settings.json` desde a D63; as `deny` continuam).
+
+**Gate antes de cada *commit*** (se algum falhar: parar, corrigir ou reportar; nunca commitar com falha):
+
+1. `py scripts\gerar_indices_docs.py`;
+2. `py scripts\verificar_docs.py` com 0 erro;
+3. `py scripts\verificar_sanitizacao.py` com "APROVADO";
+4. `git status` e `git diff --stat` conferidos.
+
+*Push* só de *commit* que passou no gate; depois, conferir `main...origin/main` sem diferença. *Commits* em
+português, no padrão convencional (`feat`/`fix`/`docs`/`chore`, escopo entre parênteses), um por etapa lógica.
+
+**Exige decisão do Coordenador** (perguntas com 2 a 4 opções, a recomendada primeiro, marcada "(Recomendado)"):
+
+- decisão de negócio ou regra importante: escopo de skills, conteúdo normativo, política de versões,
+  publicação em marketplace, desligamento de plataformas;
+- ação irreversível ou fora do repositório: `git push --force`, reescrever histórico, excluir ou mover
+  arquivos fora da quarentena, mexer na pasta CGOV além do que `publicar_operacao.py --executar` faz com
+  conferência SHA-256;
+- `publicar_operacao.py --publicar --executar`: mostrar a simulação e a lista de arquivos e esperar "confirmo";
+- ambiguidade que mudaria o resultado.
+
 ## Caminhos por papel (ADR-006)
 
 As skills citam papéis, não caminhos. Neste repositório (desenvolvimento), os papéis significam:

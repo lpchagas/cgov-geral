@@ -53,6 +53,13 @@ relacionados: [docs/adr/README.md, docs/governance/decision-log.md, docs/governa
 | 6.8a — resultado dos evals | D55, D56 | [§42](decision-log.md#42-resultado-dos-evals-e-correções-antes-da-reinstalação-fase-68a-07112026) |
 | Encerramento da Fase 6 (08/11) | — | [§43](decision-log.md#43-encerramento-da-fase-6-08112026) |
 | Revisão documental antes da Fase 7 (09/11) | D57 | [§44](decision-log.md#44-revisão-e-reorganização-da-documentação-antes-da-fase-7-09112026) |
+| Início da Fase 7 — ADR-005 (09/11) | D58 | [§45](decision-log.md#45-início-da-fase-7-adr-005-aceito-09112026) |
+| 7.1 — skills no plugin | — | [§46](decision-log.md#46-etapa-71-skills-movidas-para-o-plugin-09112026) |
+| 7.2 e 7.3 — comandos e publicação do plugin | D59 | [§47](decision-log.md#47-etapas-72-e-73-comandos-publicação-do-plugin-e-desligamento-do-plugin-sincronizado-09112026) |
+| 7.4 e 7.5 — plugin 0.1.0 | D60 | [§48](decision-log.md#48-etapas-74-e-75-validação-publicação-e-envio-do-plugin-010-09112026) |
+| 7.6a — avulsas desativadas | D61 | [§49](decision-log.md#49-etapa-76a-avulsas-desativadas-e-ajuste-do---verificar-09112026) |
+| 7.6b — plugin 1.0.0 | D62 | [§50](decision-log.md#50-etapa-76b-plugin-100-exclusão-das-avulsas-e-cgge-fgbio--opcionais-18112026) |
+| Modo de execução do Claude Code (18/11) | D63 | [§51](decision-log.md#51-modo-de-execução-do-claude-code-autonomia-com-gate-18112026) |
 
 As decisões D estão no [§9 do plano](../plano-implantacao.md#9-decisões-do-coordenador); as fases, no [índice do plano](../plano-indice.md).
 

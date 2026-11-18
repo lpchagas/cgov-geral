@@ -27,7 +27,7 @@ Claude Code in this repository (and the Cowork project "Escritório CGOV — Imp
 - Don't produce process work here. Process material lives in the CGOV folder (`01_processos/<processo>/`); editing the operational areas is denied in `.claude/settings.json`. Eval/test output goes to `local/pilots/`.
 - The 34 skills whose source lives in `plugins/cgov-escritorio/skills/` (32) and `skills/cgge-fgbio/` (2) (all 34 listed in `skillOverrides` of `.claude/settings.json`) are hidden from the model here, because the installed copy synced into Claude Code can lag behind the source; the synced plugin itself is off here (`enabledPlugins`: `cgov-escritorio@synced` = `false`). Test the folder copy with `claude --plugin-dir .\plugins\cgov-escritorio`. Read and test the source `SKILL.md`, not the installed skill.
 - Operational feedback arrives in `90_escritorio-virtual/manutencao/PENDENCIAS.md` of the CGOV folder (ask the user for it until the phase 5.1 junction `local\escritorio` exists); development backlog: `docs/governance/pendencias.md`.
-- `git commit` and `git push` always ask for confirmation; the user must approve explicitly.
+- Execution mode (D63, 18/11/2026; see "Modo de execução" in `AGENTS.md`): Claude Code may commit and push to `main` without asking, but only after the gate passes (`gerar_indices_docs.py`, `verificar_docs.py` with 0 errors, `verificar_sanitizacao.py` APROVADO, `git status`/`git diff --stat` checked). Business decisions, irreversible or out-of-repo actions and `--publicar --executar` still need the Coordinator's explicit decision.
 
 ## Architecture
 

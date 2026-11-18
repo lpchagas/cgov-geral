@@ -1877,3 +1877,28 @@ Detalhes: plano de implantação (Fase 7, etapa 7.6a).
    indicador"); P7 com as quarentenas de 18/11.
 
 Detalhes: plano de implantação (Fase 7, etapa 7.6b).
+
+## 51. Modo de execução do Claude Code: autonomia com gate (18/11/2026)
+
+1. **Decisão (D63):** o Coordenador autorizou o Claude Code, neste repositório, a rodar scripts, verificadores e
+   testes automatizados, criar e editar arquivos do repositório, regenerar índices, rodar
+   `publicar_operacao.py --verificar` e `--publicar` (simulação) e fazer *commit* e *push* em `main` sem pedir
+   confirmação.
+2. **Gate antes de cada *commit*:** `py scripts\gerar_indices_docs.py`; `py scripts\verificar_docs.py` com 0 erro;
+   `py scripts\verificar_sanitizacao.py` com "APROVADO"; `git status` e `git diff --stat` conferidos. Se algum
+   falhar, o Claude para, corrige ou reporta, e não faz o *commit*. *Push* só de *commit* que passou no gate,
+   seguido da conferência `main...origin/main` sem diferença. *Commits* em português, no padrão convencional, um
+   por etapa lógica.
+3. **Continua com o Coordenador:** decisão de negócio ou regra importante (escopo de skills, conteúdo normativo,
+   política de versões, publicação em marketplace, desligamento de plataformas); ação irreversível ou fora do
+   repositório (`git push --force`, reescrita de histórico, exclusão ou movimentação fora da quarentena, mudanças
+   na pasta CGOV além do `publicar_operacao.py --executar` com conferência SHA-256); `--publicar --executar`, com
+   simulação e lista de arquivos antes do "confirmo"; ambiguidade que mude o resultado.
+4. **Alcance:** só o Claude Code. O projeto Cowork "Escritório CGOV — Implantação" segue a regra 1 do Apêndice A
+   do plano (confirmação antes de *commit* e *push*), e as instruções coladas nele não mudam.
+5. **Permissões:** a pedido do Coordenador, saíram do `.claude/settings.json` as regras `ask` de `git commit` e
+   `git push`; as regras `deny` (pasta CGOV, junções, `.env`) continuam.
+6. **Onde ficou registrado:** seção "Modo de execução" no `AGENTS.md`; `CLAUDE.md`; `docs/fluxos-de-trabalho.md`
+   v2.2 (§3.1, §5, passo 6, e §7); `.claude/settings.json`; plano v3.56 (cabeçalho, regra de manutenção, Seção 7, Seção 9, quadro e Apêndice G).
+
+Detalhes: plano de implantação (Seção 9, D63).

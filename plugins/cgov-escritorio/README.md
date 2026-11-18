@@ -1,8 +1,8 @@
 # Plugin `cgov-escritorio` — Escritório CGOV (ICMBio)
 
 Plugin do Escritório Virtual da Coordenação de Governança (CGOV/CGGE/ICMBio): reúne as skills que apoiam Notas Técnicas,
-análise normativa e demais instrumentos de governança. Versão atual: **0.1.0** (pré-lançamento; a `1.0.0` só depois do
-teste da etapa 7.6 do plano de implantação).
+análise normativa e demais instrumentos de governança. Versão atual: **1.0.0** (histórico no
+[CHANGELOG.md](CHANGELOG.md)).
 
 > Fonte de desenvolvimento. A operação diária (Notas Técnicas, processos SEI) acontece no projeto Cowork
 > "Escritório CGOV — Operação", não aqui. Decisão de arquitetura: [ADR-005](../../docs/adr/ADR-005-plugin-unico.md).
@@ -41,6 +41,6 @@ Ficam **fora** do plugin as 2 skills da Formação CGGE (`cgge-fgbio-apresentaca
 ## Manutenção
 
 Alterar uma skill: editar `skills/<skill>/SKILL.md` aqui, rodar os evals (`skills/<skill>/evals/`), validar com
-`claude plugin validate .\plugins\cgov-escritorio`, registrar no `CHANGELOG.md` (a criar na 7.6) e no
+`claude plugin validate .\plugins\cgov-escritorio`, registrar no [CHANGELOG.md](CHANGELOG.md) e no
 [decision-log](../../docs/governance/decision-log.md). Sem dados pessoais, matrículas ou documentos SEI: rodar
 `py scripts\verificar_sanitizacao.py` antes de cada commit.

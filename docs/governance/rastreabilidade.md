@@ -63,6 +63,7 @@ relacionados: [docs/adr/README.md, docs/governance/decision-log.md, docs/governa
 | E20 — "Pgd analisar indicador" excluída (18/11) | — | [§52](decision-log.md#52-pendência-e20-exclusão-da-avulsa-pgd-analisar-indicador-18112026) |
 | Encerramento da Fase 7 — 7.7 dispensada (18/11) | D64 | [§53](decision-log.md#53-encerramento-da-fase-7-etapa-77-dispensada-18112026) |
 | Publicação sem repetir o zip (`publicar_operacao.py` 0.4.0) | D65 | [§54](decision-log.md#54-publicação-sem-repetir-o-zip-da-mesma-versão-publicar_operacaopy-040-18112026) |
+| `.docx` de revisão da NT (`cgov-nt-03` a `07`, plugin 1.1.0) | D66 | [§55](decision-log.md#55-docx-de-revisão-da-nota-técnica-alimentado-pelas-skills-cgov-nt-03-a-07-19112026) |
 
 As decisões D estão no [§9 do plano](../plano-implantacao.md#9-decisões-do-coordenador); as fases, no [índice do plano](../plano-indice.md).
 

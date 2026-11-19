@@ -1951,3 +1951,28 @@ Detalhes: plano de implantação (Fase 7, encerramento; Seção 9, D64).
    alterado para com [PARE]; pacotes avulsos iguais a uma geração existente não regerados; sem geração igual, gerados.
 
 Detalhes: plano de implantação (Seção 9, D65).
+
+## 55. `.docx` de revisão da Nota Técnica alimentado pelas skills `cgov-nt-03` a `07` (19/11/2026)
+
+1. **Problema:** a revisão e a assinatura da NT pela CGOV são feitas no Word, mas as skills 03 a 07 entregavam só
+   Markdown ("não gerar `.docx`"); a montagem do `.docx` consolidado era manual e as edições do revisor não voltavam
+   para as versões seguintes.
+2. **Decisão (D66, do Coordenador, 19/11/2026):** (a) cada etapa **acrescenta** o seu capítulo à versão mais recente
+   do `.docx` da NT, preservando as edições do revisor (refazer um capítulo exige `--substituir` e confirmação);
+   (b) o número principal da versão é a **fase** (`v1` introdução, `v2.N` diagnóstico por subsídio, `v3` propostas,
+   `v4` quesitos PFE, `v5` conclusão; revisões `vN.M-revisao`); (c) o gerador fica nas **Ferramentas do Escritório**
+   (fonte única `scripts/montar_nt_docx.py`, publicada por `publicar_operacao.py`). Descartadas: regenerar tudo a
+   partir do Markdown (perde as edições feitas no Word), versão sequencial simples (não indica a fase) e uma cópia do
+   script em cada skill (cinco cópias para manter).
+3. **Padrão gráfico:** extraído da NT consolidada v5 do processo de termos de compromisso (A4; margens 2,5/2,0/3,0/2,0 cm;
+   Calibri 11,5; verde `#1E4D3A`; cabeçalho e rodapé com "Página X de Y"; Sumário e Listas de Quadros e de Figuras por
+   campo; quadros zebrados com cabeçalho verde repetido; seções paisagem para quadros largos; cores de prioridade;
+   caixas de recomendação, fundamento e risco; bloco de assinaturas). Corrigidos em relação ao modelo: idioma pt-BR,
+   margens únicas nas seções paisagem e um só estilo de lista.
+4. **Testes:** a NT de termos de compromisso montada em 7 versões (`v1` a `v5`, com `v2.1` a `v2.3` e o subitem da PFE);
+   validação OOXML aprovada; conversão para PDF conferida página a página; edição simulada do revisor preservada na
+   versão seguinte; erros esperados (versão existente, versão não posterior, capítulo existente sem `--substituir`)
+   conferidos; teste com subagente da `cgov-nt-05` nova contra a anterior. Plugin `cgov-escritorio` 1.1.0;
+   `publicar_operacao.py` 0.4.2.
+
+Detalhes: plano de implantação (Seção 9, D66) — registrado (plano v3.62).

@@ -7,7 +7,7 @@ relacionados: [docs/plano-implantacao.md, docs/INDICE.md, docs/governance/rastre
 
 # Índice do plano de implantação
 
-> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`plano-implantacao.md`](plano-implantacao.md) (1679 linhas, 55 cabeçalhos). **Não edite à mão.**
+> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`plano-implantacao.md`](plano-implantacao.md) (1681 linhas, 55 cabeçalhos). **Não edite à mão.**
 > O plano tem mais de 1.500 linhas e 240 KB: **não o leia inteiro**. Abra esta lista, escolha a seção e leia só ela (por exemplo, com `Read` e `offset`/`limit` na linha indicada, ou `grep`).
 
 - [Sumário executivo](plano-implantacao.md#sumário-executivo) — linha 24
@@ -54,14 +54,14 @@ relacionados: [docs/plano-implantacao.md, docs/INDICE.md, docs/governance/rastre
 - [7. Riscos e mitigação](plano-implantacao.md#7-riscos-e-mitigação) — linha 1287
 - [8. Critérios de conclusão do projeto](plano-implantacao.md#8-critérios-de-conclusão-do-projeto) — linha 1318
 - [9. Decisões do Coordenador](plano-implantacao.md#9-decisões-do-coordenador) — linha 1332
-- [10. Prompts de execução (projeto "Escritório CGOV — Implantação")](plano-implantacao.md#10-prompts-de-execução-projeto-escritório-cgov--implantação) — linha 1404
-- [11. Quadro de acompanhamento](plano-implantacao.md#11-quadro-de-acompanhamento) — linha 1451
-- [12. Fontes](plano-implantacao.md#12-fontes) — linha 1473
-- [Apêndice A — Instruções do projeto "Escritório CGOV — Implantação" (v2, 06/11/2026 — sem a pasta CGOV, depois da Fase 4)](plano-implantacao.md#apêndice-a--instruções-do-projeto-escritório-cgov--implantação-v2-06112026--sem-a-pasta-cgov-depois-da-fase-4) — linha 1483
-  - [Escritório CGOV — Implantação (desenvolvimento)](plano-implantacao.md#escritório-cgov--implantação-desenvolvimento) — linha 1485
-- [Apêndice B — Instruções do projeto "Escritório CGOV — Operação" (versão 1.1, 07/11/2026 — etapa 6.8)](plano-implantacao.md#apêndice-b--instruções-do-projeto-escritório-cgov--operação-versão-11-07112026--etapa-68) — linha 1547
-- [Apêndice C — Manifesto do plugin](plano-implantacao.md#apêndice-c--manifesto-do-plugin) — linha 1555
-- [Apêndice D — Modelo de agente (agents/revisor-normativo.md)](plano-implantacao.md#apêndice-d--modelo-de-agente-agentsrevisor-normativomd) — linha 1573
-- [Apêndice E — Rascunhos da camada de navegação da raiz (fonte: operacao/)](plano-implantacao.md#apêndice-e--rascunhos-da-camada-de-navegação-da-raiz-fonte-operacao) — linha 1595
-- [Apêndice F — Modelos (fonte: operacao/modelos/)](plano-implantacao.md#apêndice-f--modelos-fonte-operacaomodelos) — linha 1601
-- [Apêndice G — Evolução do plano](plano-implantacao.md#apêndice-g--evolução-do-plano) — linha 1607
+- [10. Prompts de execução (projeto "Escritório CGOV — Implantação")](plano-implantacao.md#10-prompts-de-execução-projeto-escritório-cgov--implantação) — linha 1405
+- [11. Quadro de acompanhamento](plano-implantacao.md#11-quadro-de-acompanhamento) — linha 1452
+- [12. Fontes](plano-implantacao.md#12-fontes) — linha 1474
+- [Apêndice A — Instruções do projeto "Escritório CGOV — Implantação" (v2, 06/11/2026 — sem a pasta CGOV, depois da Fase 4)](plano-implantacao.md#apêndice-a--instruções-do-projeto-escritório-cgov--implantação-v2-06112026--sem-a-pasta-cgov-depois-da-fase-4) — linha 1484
+  - [Escritório CGOV — Implantação (desenvolvimento)](plano-implantacao.md#escritório-cgov--implantação-desenvolvimento) — linha 1486
+- [Apêndice B — Instruções do projeto "Escritório CGOV — Operação" (versão 1.1, 07/11/2026 — etapa 6.8)](plano-implantacao.md#apêndice-b--instruções-do-projeto-escritório-cgov--operação-versão-11-07112026--etapa-68) — linha 1548
+- [Apêndice C — Manifesto do plugin](plano-implantacao.md#apêndice-c--manifesto-do-plugin) — linha 1556
+- [Apêndice D — Modelo de agente (agents/revisor-normativo.md)](plano-implantacao.md#apêndice-d--modelo-de-agente-agentsrevisor-normativomd) — linha 1574
+- [Apêndice E — Rascunhos da camada de navegação da raiz (fonte: operacao/)](plano-implantacao.md#apêndice-e--rascunhos-da-camada-de-navegação-da-raiz-fonte-operacao) — linha 1596
+- [Apêndice F — Modelos (fonte: operacao/modelos/)](plano-implantacao.md#apêndice-f--modelos-fonte-operacaomodelos) — linha 1602
+- [Apêndice G — Evolução do plano](plano-implantacao.md#apêndice-g--evolução-do-plano) — linha 1608

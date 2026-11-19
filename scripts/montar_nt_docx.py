@@ -38,6 +38,9 @@ Convenções de Markdown reconhecidas (as mesmas das skills cgov-nt):
 
 Requer python-docx. Diagramas Mermaid são renderizados se o comando `mmdc` existir; senão,
 entra um marcador ⚠ para inserir a imagem. Sem caminhos pessoais neste arquivo.
+
+Versão 0.1.1 (19/11/2026): o rodapé omite a nota "⚠ …" que estiver na linha do título ou do processo.
+Versão 0.1.0 (19/11/2026; D66): primeira versão; relatório em UTF-8 mesmo com saída redirecionada.
 """
 from __future__ import annotations
 
@@ -63,7 +66,7 @@ try:
 except ImportError:  # pragma: no cover
     sys.exit("Falta a biblioteca python-docx: pip install python-docx")
 
-VERSAO = "0.1.0"
+VERSAO = "0.1.1"
 
 # ------------------------------------------------------------------ padrão gráfico (modelo v5)
 VERDE, VERDE2, TEXTO, CINZA = "1E4D3A", "2E6B50", "1F2421", "5F6B64"
@@ -101,6 +104,11 @@ def limpar_md(s: str) -> str:
     """Texto sem marcação inline (para títulos e comparações)."""
     s = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", s)
     return re.sub(r"[*_`]", "", s).strip()
+
+
+def sem_marca(s: str) -> str:
+    """Texto para o rodapé: sem marcação e sem nota de pendência ("⚠ …") na mesma linha."""
+    return limpar_md(re.split(r"\s*⚠", s, maxsplit=1)[0])
 
 
 def versoes(pasta: Path, apelido: str | None = None) -> list[tuple[tuple[int, ...], Path, str]]:
@@ -1151,8 +1159,8 @@ def montar(args) -> dict:
                 if b["tipo"] == "par":
                     for ln in b["linhas"]:
                         tl = tipo_paragrafo(ln)
-                        tit = tit or (limpar_md(ln) if tl == "titulo_nt" else None)
-                        proc = proc or (limpar_md(ln) if tl == "processo" else None)
+                        tit = tit or (sem_marca(ln) if tl == "titulo_nt" else None)
+                        proc = proc or (sem_marca(ln) if tl == "processo" else None)
         rodape = f"{tit or 'Nota Técnica nº [N]/[ANO]/CGOV/CGGE/GABIN/ICMBio'}  ·  {proc or 'Processo SEI nº [preencher]'}"
         preencher_cabecalho_rodape(d.sections[0], rodape, LARG_RETRATO)
 

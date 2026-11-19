@@ -20,7 +20,7 @@ Leia também LEIA-ME.md. Estas regras valem para qualquer agente de IA que traba
 | Lista da equipe da Coordenação | 06_gestao-da-coordenacao/equipe.md (nome e papel; sem matrícula nem e-mail) |
 | Registro de decisões | <pasta do processo>/PROCESSO.md, seção Andamento |
 | Pasta de processos | 01_processos/ |
-| Ferramentas do Escritório (somente executar; não editar) | 90_escritorio-virtual/ferramentas/ (gerar_indices.py) |
+| Ferramentas do Escritório (somente executar; não editar) | 90_escritorio-virtual/ferramentas/ (gerar_indices.py; montar_nt_docx.py, que gera as versões do .docx da NT) |
 
 ## Locais antigos
 As skills citam só os papéis da tabela acima. Esta tabela serve para achar arquivos (por exemplo, o NT_ESTADO.md)

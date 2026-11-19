@@ -36,7 +36,7 @@ no desenvolvimento, no [`AGENTS.md`](../AGENTS.md) da raiz.
 | `archive/` | Evidência histórica sanitizada | Não alterar conteúdo; apenas acrescentar contexto. |
 | `docs/` | Documentação pública sanitizada | Revisar links, precisão normativa e dados pessoais. |
 | `operacao/` | Fonte da navegação publicada na pasta CGOV | Publicar sem sobrescrita, com a versão anterior na quarentena. |
-| `scripts/` | Ferramentas de manutenção em Python (`publicar_operacao.py`, `link_acervo.py`, `verificar_sanitizacao.py`, `verificar_docs.py`, `gerar_indices_docs.py`, `reorganizar_cgov.py`, `gerar_indices.py`) e `transcribe_normative_batch.mjs` | Versão no cabeçalho; testar antes de usar na pasta CGOV. |
+| `scripts/` | Ferramentas de manutenção em Python (`publicar_operacao.py`, `link_acervo.py`, `verificar_sanitizacao.py`, `verificar_docs.py`, `gerar_indices_docs.py`, `reorganizar_cgov.py`, `gerar_indices.py`, `montar_nt_docx.py`) e `transcribe_normative_batch.mjs` | Versão no cabeçalho; testar antes de usar na pasta CGOV. |
 | `dist/` | Pacotes `.zip` das skills gerados por `publicar_operacao.py` | Gerado; fora do Git. |
 | `local/` | Processos, insumos e acervo local | Nunca adicionar ao Git. |
 

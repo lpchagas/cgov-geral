@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """publicar_operacao.py — publica o commit atual (HEAD) do cgov-geral para a operação.
 
+Versão 0.4.2 (19/11/2026; D66): publica também scripts/montar_nt_docx.py nas Ferramentas do Escritório.
 Versão 0.4.1 (18/11/2026): as instruções finais de envio à conta só aparecem para o que foi de fato gerado.
 Versão 0.4.0 (18/11/2026; D65): se dist/cgov-escritorio-<versão>.zip já existe e tem o mesmo conteúdo do plugin no
 HEAD, o zip não é regerado e a publicação segue para operacao/ e docs/ (com conteúdo diferente, continua parando até a
@@ -54,7 +55,7 @@ import sys
 import zipfile
 from pathlib import Path
 
-VERSAO = "0.4.1"
+VERSAO = "0.4.2"
 REPO = Path(__file__).resolve().parent.parent
 URL_FONTE = "https://github.com/lpchagas/cgov-geral"
 PASTA_SYNC = Path.home() / ".claude" / "skills" / "synced"
@@ -391,7 +392,8 @@ def json_versao(caminho: Path) -> str | None:
 
 # ---------------------------------------------------------------- 2. operacao/
 # Ferramentas do repositório publicadas na pasta CGOV (fonte única aqui; destino somente para execução)
-FERRAMENTAS = {"scripts/gerar_indices.py": "90_escritorio-virtual/ferramentas/gerar_indices.py"}
+FERRAMENTAS = {"scripts/gerar_indices.py": "90_escritorio-virtual/ferramentas/gerar_indices.py",
+               "scripts/montar_nt_docx.py": "90_escritorio-virtual/ferramentas/montar_nt_docx.py"}
 
 
 def plano_operacao(raiz: Path) -> list[tuple[str, Path, str, bytes]]:

@@ -7,7 +7,7 @@ relacionados: [docs/plano-implantacao.md, docs/INDICE.md, docs/governance/rastre
 
 # Índice do plano de implantação
 
-> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`plano-implantacao.md`](plano-implantacao.md) (1681 linhas, 55 cabeçalhos). **Não edite à mão.**
+> Gerado por `py scripts\gerar_indices_docs.py` a partir de [`plano-implantacao.md`](plano-implantacao.md) (1682 linhas, 55 cabeçalhos). **Não edite à mão.**
 > O plano tem mais de 1.500 linhas e 240 KB: **não o leia inteiro**. Abra esta lista, escolha a seção e leia só ela (por exemplo, com `Read` e `offset`/`limit` na linha indicada, ou `grep`).
 
 - [Sumário executivo](plano-implantacao.md#sumário-executivo) — linha 24

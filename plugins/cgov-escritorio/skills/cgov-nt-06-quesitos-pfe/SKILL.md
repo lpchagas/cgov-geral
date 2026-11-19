@@ -225,7 +225,57 @@ R: [...]
 - Nunca invente artigo, número de norma ou dado quantitativo não constante de
   `NT_ESTADO.md`.
 
-## PÓS-EXECUÇÃO
+## PÓS-EXECUÇÃO — .docx DE REVISÃO (v4-quesitos-pfe)
+
+A CGOV revisa a NT no Word. Por isso esta etapa termina com uma **nova versão do `.docx` da NT**,
+que acumula os capítulos já redigidos e preserva as edições feitas pelo revisor na versão anterior.
+O Markdown continua sendo a entrega no chat e a fonte do capítulo. O gerador é o
+`montar_nt_docx.py` das **Ferramentas do Escritório** (caminho no `AGENTS.md`); ele aplica o padrão
+gráfico das NTs da CGOV e nunca sobrescreve arquivo.
+
+O `.md` começa pelo título do subitem (`#### 4.N. Questões a analisar…`, com o N seguinte ao
+último subitem do Capítulo 4): o gerador o encaixa no fim do Capítulo 4, antes da Seção 5.
+Cada quesito fica numa linha em negrito e a resposta (`R: …`) na linha de baixo.
+No **MODO 2** (consulta facultativa), a NT de subsídio é outro documento: não alimente o `.docx`
+desta NT; pergunte ao usuário se a NT de subsídio terá `.docx` próprio (com `--apelido` distinto).
+
+1. **Antes de numerar quadros e figuras**, rode
+   `python "<Ferramentas do Escritório>/montar_nt_docx.py" --listar --pasta "<pasta de trabalho>"`.
+   A lista mostra as versões existentes e a última linha dá o próximo Quadro nº e a próxima Figura nº:
+   numere o capítulo a partir deles.
+2. **Grave o capítulo** na pasta de trabalho como `NT_<apelido>_v4-quesitos-pfe.md` (`<apelido>` é o final do nome da
+   pasta do processo, `SEI_…_<apelido>`): o mesmo texto entregue no chat, com legenda
+   `**Quadro N — título**` antes de cada tabela e `Fonte: …` depois; pendências ficam fora do arquivo
+   (vão para a resposta e para o `NT_ESTADO.md`).
+3. **Simule e gere:**
+   `python "<Ferramentas do Escritório>/montar_nt_docx.py" "<pasta de trabalho>/NT_<apelido>_v4-quesitos-pfe.md" --versao 4 --etapa quesitos-pfe --simular`.
+   Se o relatório (JSON) não trouxer erro, rode o mesmo comando sem `--simular`.
+4. **Relate ao usuário**, em até cinco linhas: arquivo gerado, versão usada como base, avisos do
+   relatório (numeração de quadros ou figuras, figura não inserida, tabela sem legenda, trecho
+   excluído) e quantos ⚠ restam no texto.
+5. **Registre** no `NT_ESTADO.md`, seção "Versões do .docx" (crie-a se não existir):
+   `v4-quesitos-pfe — NT_<apelido>_v4-quesitos-pfe.docx — [data] — base: [versão anterior ou "novo"] — [n] aviso(s)`.
+
+**Casos especiais**
+- **Capítulo refeito** (correção pedida depois de gerado): a versão nova é a próxima subversão da
+  versão **mais recente**, com o sufixo da etapa refeita (ex.: a última é `v3-propostas` e o usuário pede
+  para refazer as competências → `v3.1-competencias`), com `--substituir`. Rode primeiro com `--simular`, mostre ao usuário os
+  avisos de títulos que sairiam e as edições do revisor que se perdem nesse trecho, e só gere após a
+  confirmação dele. Para trocar um único subitem, o `.md` começa pelo título do subitem (`#### N.M.`).
+- **Revisão humana**: o gerador parte da versão de **maior número**. Se o revisor salvou as edições
+  com outro nome, peça a ele que salve como a próxima subversão com sufixo `-revisao`
+  (ex.: a última é `v3-propostas` → `NT_<apelido>_v3.1-revisao.docx`) antes de gerar; não renomeie arquivos sem confirmação.
+- **Erros do gerador**: "já existe" ou "não é posterior" → use a próxima subversão; "Capítulo N
+  ainda não está no documento base" → gere antes a etapa que falta; falta de `python-docx` →
+  `pip install python-docx`. Se o gerador não estiver nas Ferramentas do Escritório, entregue só o
+  Markdown, avise o usuário e registre a falta em `PENDENCIAS.md`.
+- **Figuras**: diagrama Mermaid só vira imagem se o comando `mmdc` existir; sem ele, o `.docx`
+  recebe um marcador ⚠ no lugar. Se já houver PNG do diagrama (ex.: produto da
+  `cgov-modelar-fluxo`), referencie-o no `.md` com `![Figura N — título](arquivo.png)`.
+- **Quadros largos** (7 colunas ou mais, ou 6 com texto longo) vão sozinhos para página paisagem;
+  `<!-- paisagem -->` ou `<!-- retrato -->` na linha anterior à legenda força a orientação.
+
+## REGISTRO NO NT_ESTADO.md
 
 Acrescente ao `NT_ESTADO.md` (na subpasta localizada na Pré-execução):
 `Quesitos PFE (Anexo II, Portaria nº 271/2013): concluídos em [data].`

@@ -37,7 +37,7 @@ description: >
    ainda não constam do NT_ESTADO.md. Execute essa etapa antes de prosseguir."
 4. Aplique o **Padrão de Redação CGOV** definido em `cgov-nt-03` (prosa no
    presente do indicativo, remissões completas, numeração decimal, proibição de
-   invenção normativa, sem `.docx`).
+   invenção normativa; `.docx` só o da NT, alimentado na PÓS-EXECUÇÃO).
 
 ## FASE 1 — SELEÇÃO DA ESTRUTURA DE DIAGNÓSTICO
 
@@ -115,7 +115,61 @@ Diagramas Mermaid só devem ser incluídos quando o achado envolver um fluxo
 processual com mais de uma etapa/ator. Não force um diagrama para achados
 puramente quantitativos ou de mérito jurídico — nesses casos, a tabela basta.
 
-## PÓS-EXECUÇÃO
+## PÓS-EXECUÇÃO — .docx DE REVISÃO (v2.N-<subsídio>)
+
+A CGOV revisa a NT no Word. Por isso esta etapa termina com uma **nova versão do `.docx` da NT**,
+que acumula os capítulos já redigidos e preserva as edições feitas pelo revisor na versão anterior.
+O Markdown continua sendo a entrega no chat e a fonte do capítulo. O gerador é o
+`montar_nt_docx.py` das **Ferramentas do Escritório** (caminho no `AGENTS.md`); ele aplica o padrão
+gráfico das NTs da CGOV e nunca sobrescreve arquivo.
+
+**Incrementos da fase 2.** O diagnóstico costuma ser escrito por subsídio analítico; cada
+subsídio entregue vira um incremento, para o revisor acompanhar o capítulo crescer:
+- primeiro incremento: `.md` com `### Capítulo 2 — …` e a primeira subseção → `--versao 2.1 --etapa fluxo`
+  (ou o subsídio que vier primeiro);
+- incrementos seguintes: `.md` que começa por `#### 2.N.` → `--versao 2.2 --etapa competencias`,
+  `2.3 legistica`, `riscos`, `air`, `cotejo`, `consulta`… (o gerador encaixa o subitem no fim do Capítulo 2);
+- último incremento: `.md` com `### Capítulo 3 — Quadro Consolidado de Achados` → `--etapa achados`.
+Se o usuário pedir os Capítulos 2 e 3 de uma vez, um só `.md` → `--versao 2 --etapa diagnostico`.
+Nos passos abaixo, `2.N` e `<subsídio>` são os valores do incremento em curso.
+
+1. **Antes de numerar quadros e figuras**, rode
+   `python "<Ferramentas do Escritório>/montar_nt_docx.py" --listar --pasta "<pasta de trabalho>"`.
+   A lista mostra as versões existentes e a última linha dá o próximo Quadro nº e a próxima Figura nº:
+   numere o capítulo a partir deles.
+2. **Grave o capítulo** na pasta de trabalho como `NT_<apelido>_v2.N-<subsídio>.md` (`<apelido>` é o final do nome da
+   pasta do processo, `SEI_…_<apelido>`): o mesmo texto entregue no chat, com legenda
+   `**Quadro N — título**` antes de cada tabela e `Fonte: …` depois; pendências ficam fora do arquivo
+   (vão para a resposta e para o `NT_ESTADO.md`).
+3. **Simule e gere:**
+   `python "<Ferramentas do Escritório>/montar_nt_docx.py" "<pasta de trabalho>/NT_<apelido>_v2.N-<subsídio>.md" --versao 2.N --etapa <subsídio> --simular`.
+   Se o relatório (JSON) não trouxer erro, rode o mesmo comando sem `--simular`.
+4. **Relate ao usuário**, em até cinco linhas: arquivo gerado, versão usada como base, avisos do
+   relatório (numeração de quadros ou figuras, figura não inserida, tabela sem legenda, trecho
+   excluído) e quantos ⚠ restam no texto.
+5. **Registre** no `NT_ESTADO.md`, seção "Versões do .docx" (crie-a se não existir):
+   `v2.N-<subsídio> — NT_<apelido>_v2.N-<subsídio>.docx — [data] — base: [versão anterior ou "novo"] — [n] aviso(s)`.
+
+**Casos especiais**
+- **Capítulo refeito** (correção pedida depois de gerado): a versão nova é a próxima subversão da
+  versão **mais recente**, com o sufixo da etapa refeita (ex.: a última é `v3-propostas` e o usuário pede
+  para refazer as competências → `v3.1-competencias`), com `--substituir`. Rode primeiro com `--simular`, mostre ao usuário os
+  avisos de títulos que sairiam e as edições do revisor que se perdem nesse trecho, e só gere após a
+  confirmação dele. Para trocar um único subitem, o `.md` começa pelo título do subitem (`#### N.M.`).
+- **Revisão humana**: o gerador parte da versão de **maior número**. Se o revisor salvou as edições
+  com outro nome, peça a ele que salve como a próxima subversão com sufixo `-revisao`
+  (ex.: a última é `v3-propostas` → `NT_<apelido>_v3.1-revisao.docx`) antes de gerar; não renomeie arquivos sem confirmação.
+- **Erros do gerador**: "já existe" ou "não é posterior" → use a próxima subversão; "Capítulo N
+  ainda não está no documento base" → gere antes a etapa que falta; falta de `python-docx` →
+  `pip install python-docx`. Se o gerador não estiver nas Ferramentas do Escritório, entregue só o
+  Markdown, avise o usuário e registre a falta em `PENDENCIAS.md`.
+- **Figuras**: diagrama Mermaid só vira imagem se o comando `mmdc` existir; sem ele, o `.docx`
+  recebe um marcador ⚠ no lugar. Se já houver PNG do diagrama (ex.: produto da
+  `cgov-modelar-fluxo`), referencie-o no `.md` com `![Figura N — título](arquivo.png)`.
+- **Quadros largos** (7 colunas ou mais, ou 6 com texto longo) vão sozinhos para página paisagem;
+  `<!-- paisagem -->` ou `<!-- retrato -->` na linha anterior à legenda força a orientação.
+
+## REGISTRO NO NT_ESTADO.md
 
 O Quadro Consolidado fica no produto do Cap. 2-3 (na pasta de trabalho do
 processo, quando gravado); o `NT_ESTADO.md` guarda a contagem e o caminho desse

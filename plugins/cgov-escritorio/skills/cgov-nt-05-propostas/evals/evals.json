@@ -19,6 +19,17 @@
         "A recomendação é explicitamente rotulada como necessidade de estudo complementar",
         "A skill não força uma solução técnica sem lastro nos dados disponíveis"
       ]
+    },
+    {
+      "id": 3,
+      "prompt": "O NT_ESTADO.md registra v2-diagnostico como última versão do .docx e 3 achados (1 Urgente, 1 Prioritário, 1 Desejável). Redija o Capítulo 4.",
+      "expected_output": "Capítulo 4 no chat e em NT_<apelido>_v3-propostas.md; gerador chamado com --versao 3 --etapa propostas sobre a v2-diagnostico; registro em 'Versões do .docx'.",
+      "expectations": [
+        "Existe NT_<apelido>_v3-propostas.docx e a v2-diagnostico.docx continua intacta",
+        "Cada recomendação abre com '**Recomendação nº N — … (achado nº X do Quadro Consolidado)**'",
+        "As tabelas do capítulo têm legenda '**Quadro N — …**' continuando a numeração do Capítulo 3",
+        "O NT_ESTADO.md registra a v3-propostas com a base v2-diagnostico"
+      ]
     }
   ]
 }

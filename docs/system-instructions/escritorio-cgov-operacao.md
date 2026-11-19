@@ -1,8 +1,8 @@
 ---
 tipo: instrucao
 status: vigente
-versao: "1.1"
-atualizado_em: 2026-11-07
+versao: "1.2"
+atualizado_em: 2026-11-19
 relacionados: [operacao/AGENTS.md, operacao/LEIA-ME.md, docs/fluxos-de-trabalho.md]
 ---
 
@@ -11,7 +11,7 @@ relacionados: [operacao/AGENTS.md, operacao/LEIA-ME.md, docs/fluxos-de-trabalho.
 > Cole o bloco abaixo no campo **Instruções** do projeto (não na descrição). Pasta vinculada: a pasta
 > operacional CGOV no Google Drive (a que tem `LEIA-ME.md`, `AGENTS.md` e `00_entrada` a `99_arquivo` na
 > raiz). Não vincule o repositório de desenvolvimento. Substitui `escritorio-cgov.md` (arquivado).
-> Versão 1.1 — 07/11/2026 (etapa 6.8 do plano de implantação: skills reinstaladas com caminhos por papel e nomes
+> Versão 1.2 — 19/11/2026 (regra 8: `.docx` de revisão da NT gerado pelas skills 03 a 07, D66). Versão 1.1 — 07/11/2026 (etapa 6.8 do plano de implantação: skills reinstaladas com caminhos por papel e nomes
 > `pgd-*`; skills novas da 6.4 e da 6.10). Cole esta versão só depois da reinstalação. Versão 1.0: 05/11/2026 (etapa 4.8).
 
 ---
@@ -75,7 +75,8 @@ Se uma skill divergir destas instruções ou do AGENTS.md quanto a caminhos, pre
 8. Redação de NT: presente do indicativo (futuro só no texto de ato normativo); capítulos
    "### Capítulo N — Nome" e subseções "#### N.1" reiniciadas a cada capítulo, nunca 4.1.1; proposição
    final em (i), (ii), (iii); Encaminhamentos com o destinatário em negrito. Saída em Markdown no chat;
-   .docx só se pedido.
+   o único .docx é o da NT, gerado ao fim de cada skill 03 a 07 (NT_<apelido>_v<fase>-<etapa>.docx,
+   em trabalho/); outro .docx só se pedido.
 9. LGPD: sem nomes ou matrículas em achados consolidados, fichas e índices, salvo autorização expressa.
 10. Nunca edite 90_escritorio-virtual/ (é publicado pelo desenvolvimento), exceto para acrescentar
     entradas em 90_escritorio-virtual/manutencao/PENDENCIAS.md. Nunca exclua arquivos: o que não serve

@@ -21,6 +21,17 @@
         "Uma Matriz RACI é incluída para o achado de sobreposição de competências",
         "O Capítulo 3 consolida os dois achados na mesma tabela, com eixos distintos identificados"
       ]
+    },
+    {
+      "id": 3,
+      "prompt": "A pasta de trabalho já tem NT_revisao-in-pgd_v1-introducao.docx. A modelagem de fluxo (cgov-modelar-fluxo) está pronta; a auditoria de competências ainda não. Redija a parte de fluxos do diagnóstico.",
+      "expected_output": "Primeiro incremento da fase 2: .md com '### Capítulo 2 — …' e a subseção de fluxos, gerado como v2.1-fluxo a partir da v1, com quadros numerados a partir do próximo número informado por --listar.",
+      "expectations": [
+        "O gerador é chamado com --versao 2.1 --etapa fluxo (não 2 nem 2-diagnostico)",
+        "O .md começa por '### Capítulo 2 —' e não inclui o Capítulo 3",
+        "A numeração do primeiro quadro é a indicada por 'montar_nt_docx.py --listar'",
+        "A resposta avisa se o diagrama Mermaid não pôde ser renderizado (marcador ⚠ no .docx)"
+      ]
     }
   ]
 }

@@ -21,6 +21,17 @@
         "A skill não redige a Seção 5 sem os capítulos pré-requisito aplicáveis concluídos",
         "A skill lista explicitamente o que falta (cgov-nt-05) antes de prosseguir"
       ]
+    },
+    {
+      "id": 3,
+      "prompt": "Todos os capítulos aplicáveis estão concluídos e a última versão do .docx é v3.1-revisao (o revisor editou a v3-propostas no Word). Feche a NT.",
+      "expected_output": "Seção 5 gerada como v5-conclusao a partir da v3.1-revisao, preservando as edições do revisor; o usuário é orientado a revisar a v5-conclusao e a aceitar a atualização dos campos no Word.",
+      "expectations": [
+        "O gerador é chamado com --versao 5 --etapa conclusao e usa a v3.1-revisao como base",
+        "O .md começa por '## 5. CONCLUSÃO E PROPOSIÇÃO' e termina no bloco de assinaturas, sem matrícula",
+        "A resposta indica a v5-conclusao como a versão a revisar antes da tramitação",
+        "Nenhuma versão anterior é sobrescrita ou apagada"
+      ]
     }
   ]
 }

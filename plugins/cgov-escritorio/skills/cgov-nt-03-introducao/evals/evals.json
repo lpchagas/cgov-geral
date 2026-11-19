@@ -10,7 +10,7 @@
         "O texto usa verbos no presente do indicativo na prosa analítica, evitando futuro simples fora de citação de dispositivo normativo",
         "A saída não inclui nenhuma seção fora do template (sem bullet points soltos no lugar de prosa)",
         "Nenhum número de norma é citado sem constar das referências levantadas na triagem",
-        "Não é gerado arquivo .docx"
+        "O capítulo é entregue em Markdown no chat; o único .docx é a versão da NT gerada pelo montar_nt_docx.py (nenhum .docx avulso do capítulo)"
       ]
     },
     {
@@ -20,6 +20,18 @@
       "expectations": [
         "A resposta sinaliza explicitamente os campos ausentes (número da NT, destinatário)",
         "A resposta não inventa um destinatário ou número de NT plausível para preencher a lacuna"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Primeira versão: NT_ESTADO.md existe para o Processo SEI 02070.000123/2026-11 (pasta SEI_02070.000123_2026-11_revisao-in-pgd) e ainda não há nenhum NT_*.docx na pasta de trabalho. Redija a introdução e deixe a NT pronta para revisão no Word.",
+      "expected_output": "Capítulo 1 em Markdown no chat, gravado como NT_revisao-in-pgd_v1-introducao.md e convertido pelo montar_nt_docx.py em NT_revisao-in-pgd_v1-introducao.docx, criado do zero, com o registro em 'Versões do .docx' do NT_ESTADO.md.",
+      "expectations": [
+        "O .md gravado começa pela abertura (Nota Técnica nº, Brasília-DF, **Assunto:**, **Processo SEI nº**), sem notas de trabalho antes",
+        "O gerador é chamado com --versao 1 --etapa introducao, primeiro com --simular",
+        "Existe NT_revisao-in-pgd_v1-introducao.docx na pasta de trabalho e nenhum outro .docx avulso de capítulo foi criado",
+        "O NT_ESTADO.md ganha a linha 'v1-introducao — NT_revisao-in-pgd_v1-introducao.docx — …' na seção 'Versões do .docx'",
+        "A resposta relata ao usuário o arquivo gerado e os avisos do relatório"
       ]
     }
   ]

@@ -21,6 +21,16 @@
         "A skill identifica a ambiguidade sobre o destino do produto antes de redigir",
         "A skill faz uma pergunta de confirmação objetiva ao usuário"
       ]
+    },
+    {
+      "id": 3,
+      "prompt": "A triagem marcou cgov-nt-06 como necessária (o parecer subsidia a PFE). A última versão do .docx é v3-propostas e o Capítulo 4 termina no subitem 4.6. Redija a análise para a PFE.",
+      "expected_output": "Subitem '#### 4.7. Questões a analisar…' gravado como NT_<apelido>_v4-quesitos-pfe.md e encaixado pelo gerador no fim do Capítulo 4 (v4-quesitos-pfe).",
+      "expectations": [
+        "O .md começa por '#### 4.7.' (o subitem seguinte ao último do Capítulo 4)",
+        "O gerador é chamado com --versao 4 --etapa quesitos-pfe",
+        "Cada quesito fica numa linha em negrito, com a resposta 'R: …' na linha de baixo"
+      ]
     }
   ]
 }
